@@ -8,22 +8,80 @@ import stainless.math._
 import stainless.proof._
 
 
-object Utils {
+object Subseq {
 
-  def isSubsequenceOf[T](L: List[T], S: List[T]): Boolean = {
+  def isSubseqOf[T](L: List[T], S: List[T]): Boolean = {
     (L, S) match {
       case (Nil(), _) => true
       case (_, Nil()) => false
       case (Cons(l, ls), Cons(s, ss)) => {
-        if (l == s) isSubsequenceOf(ls, ss)
-        else isSubsequenceOf(L, ss)
+        if (l == s) isSubseqOf(ls, ss)
+        else        isSubseqOf(L, ss)
       }
     }
   } ensuring { _ ==> (L.content subsetOf S.content) }
 
+
+  @induct
+  def subseqId[T](l: List[T]): Boolean = {
+    isSubseqOf(l, l)
+  }.holds
+
+
+  def subseqProp1[T](l: List[T], x: T): Boolean = {
+    isSubseqOf(l, x :: l) because {
+      l match {
+        case Nil()      => true
+        case Cons(h, t) =>
+          if (h == x) subseqProp1(t, h)
+          else        subseqId(l)
+      }
+    }
+  }.holds
+
+
+  @induct
+  def subseqTail[T](l: List[T]): Boolean = {
+    l match {
+      case Nil()      => true
+      case Cons(h, t) => isSubseqOf(t, l) because subseqProp1(t, h)
+    }
+  }.holds
+
+  // === Verified ==============================================================
+
+  def subseqTransitive[T](a: List[T], b: List[T], c: List[T]): Boolean = {
+    require(isSubseqOf(a, b))
+    require(isSubseqOf(b, c))
+
+    isSubseqOf(a, c) because {
+      a match {
+        case Nil()       => true
+        case Cons(x, xs) => 
+
+          assert(b.nonEmpty)
+          assert(c.nonEmpty because isSubseqOf(b, c))
+
+          b match {
+  
+        // case Nil() => impossible
+          case Cons(y, ys) => c match {
+            // case Nil() => impossible
+            case Cons(z, zs) =>
+              if (x == y)
+                ((y == z) && subseqTransitive(xs, ys, zs)) || (subseqTransitive(a, b, zs))
+              else subseqTransitive(a, ys, c)
+          }
+        }
+      }
+    }
+  }.holds
+
 }
 
-import Utils._
+
+import Subseq._
+
 
 case class Automaton[State](
   S: List[State],                  // internal states
@@ -31,17 +89,30 @@ case class Automaton[State](
   S0: State,                       // initial states
   F: List[State]                   // final states
 ) {
+  // FIXME: Should we require no repeated elements?
   require(S.nonEmpty)
 
-  require(forall((s: State, w: Char) => isSubsequenceOf(M(s, w), S)))
+  require(forall((s: State, w: Char) => isSubseqOf(M(s, w), S)))
 
   require(S contains S0)
-  require(isSubsequenceOf(F, S))
+  require(isSubseqOf(F, S))
 
 
   def validSet(s: List[State]): Boolean = {
-    isSubsequenceOf(s, S)
+    isSubseqOf(s, S)
   }
+
+
+  def validSetProp1(set: List[State]): Boolean = {
+    require(validSet(set))
+
+    set match {
+      case Nil() => true
+      case Cons(_, t) => validSet(t) because {
+        subseqTail(set) && subseqTransitive(t, set, S)
+      }
+    }
+  }.holds
 
 
   def lessThan(s: State, t: State): Boolean = {
@@ -64,22 +135,20 @@ case class Automaton[State](
     }
   }
 
-
-  // === Verified ==============================================================
-
-
   // flatMap
   // Removes repeated elements. Strictly ordered.
-  def unionMap(set: List[State], f: State => List[State]): List[State] = {
+  def move(set: List[State], w: Char): List[State] = {
     require(validSet(set))
-    require(forall((s: State) => validSet(f(s))))
 
     set match {
       case Nil()      => Nil()
-      case Cons(h, t) => merge(f(h), unionMap(t, f))
+      case Cons(h, t) => 
+        assert(validSet(t) because validSetProp1(set))
+        merge(M(h, w), move(t, w))
     }
   }
 
+  // === Verified ==============================================================
 
   // Removes repeated elements. Strictly ordered.
   def merge(a: List[State], b: List[State]): List[State] = {
@@ -173,7 +242,7 @@ case class Automaton[State](
 
     word match {
       case Nil()       => from
-      case Cons(w, ws) => runFrom(ws, unionMap(from, { M(_, w) }))
+      case Cons(w, ws) => runFrom(ws, move(from, w))
     }
   }
 
@@ -187,7 +256,7 @@ case class Automaton[State](
 
   def det(): Automaton[List[State]] = {
     val valid   = validSubsets(S)
-    val trans   = { (s: List[State], w: Char) => List(unionMap(s, { M(_, w) })) }
+    val trans   = { (s: List[State], w: Char) => List(move(s, w)) }
     val initial = List(S0)
     val final_  = for (s <- valid if (s & F).nonEmpty) yield s
 
