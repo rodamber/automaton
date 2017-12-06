@@ -93,10 +93,16 @@ case class Automaton[State](
     require(validSet(a))
     require(validSet(b))
 
+    assert(a.content subsetOf S.content)
+    assert(b.content subsetOf S.content)
+
     (a, b) match {
       case (_, Nil()) => a
       case (Nil(), _) => b
       case (Cons(x, xs), Cons(y, ys)) =>
+        assert(S contains x)
+        assert(S contains y)
+
         if (x == y)              x :: merge(xs, ys) // FIXME
         else if (lessThan(x, y)) x :: merge(xs, b)  // FIXME
         else                     y :: merge(a, ys)
@@ -158,9 +164,6 @@ case class Automaton[State](
 
     word match {
       case Nil()       => from
-      // FIXME: There is an obvious problem here: the output of M is not
-      // guaranteed to be a valid set, so the precondition to unionMap is not
-      // verified.
       case Cons(w, ws) => runNFA(ws, unionMap(from, { M(_, w) }))
     }
   }
