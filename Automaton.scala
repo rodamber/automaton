@@ -159,113 +159,48 @@ case class Automaton[State](
   }
 
 
-  def runNFA(word: List[Char], from: List[State]): List[State] = {
+  // Returns the set of possible states the NFA might be in after processing the
+  // word.
+  def runFrom(word: List[Char], from: List[State]): List[State] = {
     require(validSet(from))
 
     word match {
       case Nil()       => from
-      case Cons(w, ws) => runNFA(ws, unionMap(from, { M(_, w) }))
+      case Cons(w, ws) => runFrom(ws, unionMap(from, { M(_, w) }))
     }
   }
 
 
-  // // FIXME:
-  // def mkPathIsSound(x: List[Char], p: List[State], from: State): Boolean = {
-  //   require(S contains from)
-  //   require(p == mkPath(x, from))
-
-  //   require(forall { (s: State, c: Char) => M(s, c).nonEmpty })
-
-  //   // FIXME: These are exactly the postconditions for mkPath
-  //   assert(p.content subsetOf S.content)
-  //   assert(p.size == x.size + 1)
-
-  //   isPath(p, x, List(from)) because {
-  //     // FIXME: Here, the match exhaustiveness should be implied by the last assertion
-  //     (p, x) match {
-  //       case (Cons(s0, Nil()), Nil()) =>
-  //         trivial
-  //       case (Cons(sk1, ss @ Cons(sk, _)), Cons(xk, xs)) => {
-  //         isPath(ss, x, List(from))  ==| mkPathIsSound(xs, ss, from) |
-  //         isPath(p,  x, List(from))  ==| M(sk, xk).contains(sk1)     |
-  //         trivial
-  //       }.qed
-  //     }
-  //   }
-  // }.holds
+  // Run starting from the initial state.
+  def run(word: List[Char]): List[State] = runFrom(word, List(S0))
 
 
-  // @ignore
-  // // FIXME: adt invariant ?
-  // def det(): Automaton[List[State]] = {
-  //   val T = powerSet(S)
-  //   val N = { (t: List[State], c: Char) =>
-  //     if (T.contains(t))
-  //       List(t.flatMap { M(_, c) })
-  //     else Nil[List[State]]()
-  //   }
-  //   val t0 = List(S0)
-  //   val G  = for (t <- T if (t & F).nonEmpty) yield t
-
-  //   Automaton(T, N, t0, G)
-  // } ensuring { res =>
-  //   res.isDeterministic
-  //   //   && forall { (t: List[State], c: Char) =>
-  //   //   if ((res.S contains t))
-  //   //     res.M(t, c).nonEmpty
-  //   //   else true
-  //   // }
-  // }
+  def accepts(word: List[Char]): Boolean = (run(word) & F).nonEmpty
 
 
-  // @ignore
-  // def TA_in_TDA(x: List[Char], s: List[State], t: List[State]): Boolean = {
-  //   require(isAcceptingPath(s, x))
-  //   // require(D == det())
+  @ignore
+  def det(): Automaton[List[State]] = {
+    val valid   = powerSet(S)
+    val trans   = { (s: List[State], w: Char) => List(unionMap(s, { M(_, w) })) }
+    val initial = List(S0)
+    val final_  = for (s <- valid if (s & F).nonEmpty) yield s
 
-  //   det().isAcceptingPath(t, x)
-  // }.holds
+    Automaton(valid, trans, initial, final_)
+  } ensuring { res =>
+    res.isDeterministic
+  }
 
 
-  // def sk_in_tk(x: List[Char], s: List[State]): Boolean = {
-  //   require(s.content subsetOf S.content)
-  //   require(isPath(s, x, S0))
+  @ignore
+  def detSound(word: List[Char]): Boolean = {
+    run(word) == det().run(word).head
+  }.holds
 
-  //   val D = det()
-  //   val t = D.mkPath(x, D.S0.head)
 
-  //   assert(D.mkPathIsSound(x, t, S0))
+  @ignore
+  def detSound2(word: List[Char]): Boolean = {
+    accepts(word) == det().accepts(word)
+  }.holds
 
-  //   // FIXME: Follows from the previous assertion
-  //   assert(D.isPath(t, x, List(S0)))
-
-  //   // Postcondition of det
-  //   assert(forall { (t: List[State], c: Char) =>
-  //            require(D.S contains t)
-
-  //            D.M(t, c).nonEmpty
-  //          })
-
-  //   // FIXME: Because s and t are paths for x from S0
-  //   assert(s.nonEmpty)
-  //   assert(s.size == x.size + 1)
-  //   assert(t.nonEmpty)
-  //   assert(t.size == x.size + 1)
-
-  //   assert(s.size == t.size) // Trivial
-
-  //   t.head.contains(s.head) because {
-  //     (s, t, x) match {
-  //       case (Cons(sk1, ss @ Cons(sk, _)), Cons(tk1, Cons(tk, _)), Cons(xk, xs)) => {
-  //         tk.contains(sk)                                              ==| sk_in_tk(xs, ss) |
-  //         M(sk, xk).content.subsetOf(tk.flatMap({ M(_, xk) }).content) ==| trivial          |
-  //         M(sk, xk).content.subsetOf(tk1.content)                      ==| trivial          |
-  //         tk1.contains(sk1)
-  //       }.qed
-  //       case _ => trivial
-  //     }
-  //   }
-
-  // }.holds
 
 }
