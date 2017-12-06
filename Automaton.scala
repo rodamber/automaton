@@ -31,20 +31,6 @@ object Utils {
     }
   }
 
-
-  // Same as isSorted, but with a custom order.
-  def isOrdered[T](L: List[T], leq: (T, T) => Boolean): Boolean = L match {
-    case Nil()          => true
-    case Cons(_, Nil()) => true
-    case Cons(a, tail @ Cons(b, _)) => leq(a, b) && isOrdered(tail, leq)
-  }
-
-
-  def subsequenceIsOrdered[T](l: List[T], s: List[T], leq: (T, T) => Boolean): Boolean = {
-    require(isOrdered(s, leq))
-    isSubsequenceOf(l, s) ==> isOrdered(l, leq)
-  }.holds
-
 }
 
 import Utils._
@@ -53,13 +39,9 @@ case class Automaton[State](
   S: List[State],                  // internal states
   M: (State, Char) => List[State], // transition function
   S0: State,                       // initial states
-  F: List[State],                  // final states
-
-  // We need some way to order the states.
-  // FIXME: We'll probably have problems with this.
-  leq: (State, State) => Boolean
+  F: List[State]                   // final states
 ) {
-  require(S.nonEmpty && isOrdered(S, leq))
+  require(S.nonEmpty)
 
   require(forall((s: State, w: Char) => isSubsequenceOf(M(s, w), S)))
 
@@ -67,17 +49,37 @@ case class Automaton[State](
   require(isSubsequenceOf(F, S))
 
 
-  def validSet(L: List[State]): Boolean = {
-    // FIXME: The last condition should not be needed to be stated explicitly.
-    isSubsequenceOf(L, S) && isOrdered(L, leq)
+  def validSet(s: List[State]): Boolean = {
+    isSubsequenceOf(s, S)
+  }
+
+
+  def lessThan(s: State, t: State): Boolean = {
+    require(S contains s)
+    require(S contains t)
+
+    lessThanAux(s, t, S)
+  }
+
+
+  def lessThanAux(s: State, t: State, l: List[State]): Boolean = {
+    require(l contains s)
+    require(l contains t)
+
+    l match {
+      case Cons(x, xs) => 
+        if      (s == x) true
+        else if (t == x) false
+        else             lessThanAux(s, t, xs)
+    }
   }
 
 
   // flatMap
   // Removes repeated elements. Strictly ordered.
   def unionMap(set: List[State], f: State => List[State]): List[State] = {
-    require(isOrdered(set, leq))
-    require(forall((s: State) => isOrdered(f(s), leq)))
+    require(validSet(set))
+    require(forall((s: State) => validSet(f(s))))
 
     set match {
       case Nil()      => Nil()
@@ -88,16 +90,16 @@ case class Automaton[State](
 
   // Removes repeated elements. Strictly ordered.
   def merge(a: List[State], b: List[State]): List[State] = {
-    require(isOrdered(a, leq))
-    require(isOrdered(b, leq))
+    require(validSet(a))
+    require(validSet(b))
 
     (a, b) match {
       case (_, Nil()) => a
       case (Nil(), _) => b
       case (Cons(x, xs), Cons(y, ys)) =>
-        if (x == y)         x :: merge(xs, ys) // FIXME
-        else if (leq(x, y)) x :: merge(xs, b)  // FIXME
-        else                y :: merge(a, ys)
+        if (x == y)              x :: merge(xs, ys) // FIXME
+        else if (lessThan(x, y)) x :: merge(xs, b)  // FIXME
+        else                     y :: merge(a, ys)
     }
   }
 
