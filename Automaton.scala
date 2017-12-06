@@ -10,16 +10,6 @@ import stainless.proof._
 
 object Utils {
 
-  def powerSet[A](l: List[A]): List[List[A]] = {
-    l match {
-      case Nil() => List(Nil())
-      case Cons(h, t) =>
-        val ps = powerSet(t)
-        ps ++ ps.map { h :: _ }
-    }
-  }
-
-
   def isSubsequenceOf[T](L: List[T], S: List[T]): Boolean = {
     (L, S) match {
       case (Nil(), _) => true
@@ -75,6 +65,9 @@ case class Automaton[State](
   }
 
 
+  // === Verified ==============================================================
+
+
   // flatMap
   // Removes repeated elements. Strictly ordered.
   def unionMap(set: List[State], f: State => List[State]): List[State] = {
@@ -108,6 +101,20 @@ case class Automaton[State](
         else                     y :: merge(a, ys)
     }
   }
+
+
+  def validSubsets[A](l: List[A]): List[List[A]] = {
+    l match {
+      case Nil()      => List(Nil())
+      case Cons(h, t) =>
+        val ps = validSubsets(t)
+
+        // FIXME: Uses map...
+        ps ++ ps.map { h :: _ }
+    }
+
+    // FIXME: Not obvious at all.
+  } // ensuring { res => res.forall(validSet(_)) }
 
 
   def isDeterministic: Boolean =
@@ -178,9 +185,8 @@ case class Automaton[State](
   def accepts(word: List[Char]): Boolean = (run(word) & F).nonEmpty
 
 
-  @ignore
   def det(): Automaton[List[State]] = {
-    val valid   = powerSet(S)
+    val valid   = validSubsets(S)
     val trans   = { (s: List[State], w: Char) => List(unionMap(s, { M(_, w) })) }
     val initial = List(S0)
     val final_  = for (s <- valid if (s & F).nonEmpty) yield s
@@ -191,13 +197,11 @@ case class Automaton[State](
   }
 
 
-  @ignore
   def detSound(word: List[Char]): Boolean = {
     run(word) == det().run(word).head
   }.holds
 
 
-  @ignore
   def detSound2(word: List[Char]): Boolean = {
     accepts(word) == det().accepts(word)
   }.holds
