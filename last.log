@@ -1,0 +1,203 @@
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for powerSet @14:5...
+[[34m  Info  [0m]  - Now solving 'precond. (call unionMap[State](thiss, t, f))' VC for unionMap @86:38...
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for mkPath @151:30...
+[[34m  Info  [0m]  - Now solving 'precond. (call mkPath[State](thiss, ws, from))' VC for mkPath @149:27...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for powerSet @14:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Result for 'precond. (call mkPath[State](thiss, ws, from))' VC for mkPath @149:27:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for mkPath @147:5...
+[[34m  Info  [0m]  - Now solving 'precond. (call runFrom[State](thiss, word, Cons[State]( ...)' VC for run @175:44...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for mkPath @147:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for mkPath @149:27...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for mkPath @149:27:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for mkPath @150:28...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for mkPath @151:30:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for inv @38:1...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for inv @38:1:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for inv @46:57...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for inv @46:57:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for isDeterministic @115:27...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for mkPath @150:28:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for mkPath @151:30...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for mkPath @151:30:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for isDeterministic @115:27:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[A], List[A]](ps, (x$1: List[A]) ...)' VC for powerSet @18:15...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[A], List[A]](ps, (x$1: List[A]) ...)' VC for powerSet @18:15:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call isPath[State](thiss, states, word, thiss ...)' VC for isAcceptingPath @124:43...
+[[34m  Info  [0m]  - Now solving 'precond. (call unionMap[State](thiss, from, (x$8: State ...)' VC for runFrom @169:39...
+[[34m  Info  [0m]  - Result for 'precond. (call isPath[State](thiss, states, word, thiss ...)' VC for isAcceptingPath @124:43:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for isAcceptingPath @122:5...
+[[34m  Info  [0m]  - Result for 'precond. (call unionMap[State](thiss, from, (x$8: State ...)' VC for runFrom @169:39:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for runFrom @167:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for isAcceptingPath @122:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call runFrom[State](thiss, ws, unionMap[State ...)' VC for runFrom @169:27...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for runFrom @167:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for runFrom @169:56...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for runFrom @169:56:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for runFrom @169:56...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for runFrom @169:56:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call merge[State](thiss, f(h), unionMap[State ...)' VC for unionMap @86:26...
+[[31m Error  [0m] Quantification isSubsequenceOf[State](x$237.M.f(x$82, x$95), x$238) does not fit in supported fragment.
+[[31m Error  [0m]   Reason: Unandled implications from operation isSubsequenceOf[State](x$237.M.f(x$82, x$95), x$238)
+[[31m Error  [0m] Model obtained was:
+[[31m Error  [0m]   f: (State) => List[State] -> (x$261: State) => if (x$261 == State#3) {
+[[31m Error  [0m]     Cons[State](State#2, Nil[State]())
+[[31m Error  [0m]   } else {
+[[31m Error  [0m]     Cons[State](State#2, Nil[State]())
+[[31m Error  [0m]   }
+[[31m Error  [0m]   thiss: Automaton[State]   -> Automaton[State](Cons[State](State#3, Nil[State]()), (x$276: State, x$277: Char) => if (x$276 == State#6 && x$277 == '\u0000') {
+[[31m Error  [0m]     Nil[State]()
+[[31m Error  [0m]   } else if (x$277 == '\u0000') {
+[[31m Error  [0m]     Nil[State]()
+[[31m Error  [0m]   } else if (x$276 == State#6) {
+[[31m Error  [0m]     Nil[State]()
+[[31m Error  [0m]   } else {
+[[31m Error  [0m]     Nil[State]()
+[[31m Error  [0m]   }, State#3, Cons[State](State#3, Nil[State]()))
+[[31m Error  [0m]   set: List[State]          -> Cons[State](State#3, Nil[State]())
+[[34m  Info  [0m]  - Result for 'precond. (call merge[State](thiss, f(h), unionMap[State ...)' VC for unionMap @86:26:
+[[33mWarning [0m]  => UNKNOWN
+[[34m  Info  [0m]  - Now solving 'body assertion' VC for merge @102:39...
+[[34m  Info  [0m]  - Result for 'body assertion' VC for merge @102:39:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'body assertion' VC for merge @104:9...
+[[34m  Info  [0m]  - Result for 'body assertion' VC for merge @104:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for merge @99:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for merge @99:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call lessThanAux[State](thiss, s, t, thiss.S))' VC for lessThan @61:5...
+[[34m  Info  [0m]  - Result for 'precond. (call lessThanAux[State](thiss, s, t, thiss.S))' VC for lessThan @61:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call lessThanAux[State](thiss, s, t, xs))' VC for lessThanAux @73:26...
+[[34m  Info  [0m]  - Result for 'precond. (call lessThanAux[State](thiss, s, t, xs))' VC for lessThanAux @73:26:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for lessThanAux @69:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for lessThanAux @69:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for isSubsequenceOf @32:16...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for isSubsequenceOf @32:16:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for isSubsequenceOf @24:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for isSubsequenceOf @24:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call isPath[State](thiss, ss, ws, from))' VC for isPath @137:32...
+[[34m  Info  [0m]  - Result for 'precond. (call isPath[State](thiss, ss, ws, from))' VC for isPath @137:32:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for isPath @133:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for isPath @133:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for isPath @137:9...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for isPath @137:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call lessThan[State](thiss, x, y))' VC for merge @107:18...
+[[34m  Info  [0m]  - Result for 'precond. (call lessThan[State](thiss, x, y))' VC for merge @107:18:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call merge[State](thiss, xs, b))' VC for merge @107:39...
+[[34m  Info  [0m]  - Result for 'precond. (call runFrom[State](thiss, word, Cons[State]( ...)' VC for run @175:44:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Result for 'precond. (call unionMap[State](thiss, t, f))' VC for unionMap @86:38:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for unionMap @80:34...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for unionMap @80:34:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for unionMap @84:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for unionMap @84:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for unionMap @86:32...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for unionMap @86:32:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call merge[State](thiss, xs, ys))' VC for merge @106:39...
+[[34m  Info  [0m]  - Result for 'precond. (call runFrom[State](thiss, ws, unionMap[State ...)' VC for runFrom @169:27:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now solving 'precond. (call merge[State](thiss, a, ys))' VC for merge @108:39...
+[[34m  Info  [0m]  - Result for 'precond. (call merge[State](thiss, a, ys))' VC for merge @108:39:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'body assertion' VC for merge @96:5...
+[[34m  Info  [0m]  - Result for 'body assertion' VC for merge @96:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'body assertion' VC for merge @97:5...
+[[31m Error  [0m] Quantification isSubsequenceOf[State](x$400.M.f(x$288, x$95), x$401) does not fit in supported fragment.
+[[31m Error  [0m]   Reason: Unandled implications from operation isSubsequenceOf[State](x$400.M.f(x$288, x$95), x$401)
+[[31m Error  [0m] Model obtained was:
+[[31m Error  [0m]   a: List[State]          -> Nil[State]()
+[[31m Error  [0m]   thiss: Automaton[State] -> Automaton[State](Cons[State](State#3, Cons[State](State#4, Nil[State]())), (x$418: State, x$419: Char) => if (x$418 == State#6 && x$419 == '\u0000') {
+[[31m Error  [0m]     Nil[State]()
+[[31m Error  [0m]   } else if (x$419 == '\u0000') {
+[[31m Error  [0m]     Nil[State]()
+[[31m Error  [0m]   } else if (x$418 == State#6) {
+[[31m Error  [0m]     Nil[State]()
+[[31m Error  [0m]   } else {
+[[31m Error  [0m]     Nil[State]()
+[[31m Error  [0m]   }, State#3, Nil[State]())
+[[31m Error  [0m]   b: List[State]          -> Cons[State](State#1, Nil[State]())
+[[34m  Info  [0m]  - Result for 'body assertion' VC for merge @97:5:
+[[33mWarning [0m]  => UNKNOWN
+[[34m  Info  [0m]  - Result for 'precond. (call merge[State](thiss, xs, b))' VC for merge @107:39:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Result for 'precond. (call merge[State](thiss, xs, ys))' VC for merge @106:39:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ verification summary ╞═════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                                                                             ║
+[[34m  Info  [0m] ║ NEW  inv              lambda precondition                                           Automaton.scala:38:1    valid    nativez3  0.031 ║
+[[34m  Info  [0m] ║ NEW  inv              lambda precondition                                           Automaton.scala:46:57   valid    nativez3  0.059 ║
+[[34m  Info  [0m] ║ NEW  isAcceptingPath  match exhaustiveness                                          Automaton.scala:122:5   valid    nativez3  0.052 ║
+[[34m  Info  [0m] ║ NEW  isAcceptingPath  precond. (call isPath[State](thiss, states, word, thiss ...)  Automaton.scala:124:43  valid    nativez3  0.096 ║
+[[34m  Info  [0m] ║ NEW  isDeterministic  lambda precondition                                           Automaton.scala:115:27  valid    nativez3  0.201 ║
+[[34m  Info  [0m] ║ NEW  isPath           lambda precondition                                           Automaton.scala:137:9   valid    nativez3  0.151 ║
+[[34m  Info  [0m] ║ NEW  isPath           match exhaustiveness                                          Automaton.scala:133:5   valid    nativez3  0.075 ║
+[[34m  Info  [0m] ║ NEW  isPath           precond. (call isPath[State](thiss, ss, ws, from))            Automaton.scala:137:32  valid    nativez3  0.166 ║
+[[34m  Info  [0m] ║ NEW  isSubsequenceOf  match exhaustiveness                                          Automaton.scala:24:5    valid    nativez3  0.043 ║
+[[34m  Info  [0m] ║ NEW  isSubsequenceOf  postcondition                                                 Automaton.scala:32:16   valid    nativez3  0.123 ║
+[[34m  Info  [0m] ║ NEW  lessThan         precond. (call lessThanAux[State](thiss, s, t, thiss.S))      Automaton.scala:61:5    valid    nativez3  0.026 ║
+[[34m  Info  [0m] ║ NEW  lessThanAux      match exhaustiveness                                          Automaton.scala:69:5    valid    nativez3  0.036 ║
+[[34m  Info  [0m] ║ NEW  lessThanAux      precond. (call lessThanAux[State](thiss, s, t, xs))           Automaton.scala:73:26   valid    nativez3  0.051 ║
+[[34m  Info  [0m] ║ NEW  merge            body assertion                                                Automaton.scala:104:9   valid    nativez3  0.118 ║
+[[34m  Info  [0m] ║ NEW  merge            body assertion                                                Automaton.scala:97:5    unknown  nativez3  0.568 ║
+[[34m  Info  [0m] ║ NEW  merge            body assertion                                                Automaton.scala:96:5    valid    nativez3  0.117 ║
+[[34m  Info  [0m] ║ NEW  merge            body assertion                                                Automaton.scala:102:39  valid    nativez3  0.203 ║
+[[34m  Info  [0m] ║ NEW  merge            match exhaustiveness                                          Automaton.scala:99:5    valid    nativez3  0.080 ║
+[[34m  Info  [0m] ║ NEW  merge            precond. (call lessThan[State](thiss, x, y))                  Automaton.scala:107:18  valid    nativez3  0.086 ║
+[[34m  Info  [0m] ║ NEW  merge            precond. (call merge[State](thiss, a, ys))                    Automaton.scala:108:39  valid    nativez3  0.049 ║
+[[34m  Info  [0m] ║ NEW  merge            precond. (call merge[State](thiss, xs, b))                    Automaton.scala:107:39  timeout  nativez3  5.096 ║
+[[34m  Info  [0m] ║ NEW  merge            precond. (call merge[State](thiss, xs, ys))                   Automaton.scala:106:39  timeout  nativez3  5.086 ║
+[[34m  Info  [0m] ║ NEW  mkPath           lambda precondition                                           Automaton.scala:151:30  valid    nativez3  0.926 ║
+[[34m  Info  [0m] ║ NEW  mkPath           match exhaustiveness                                          Automaton.scala:151:30  valid    nativez3  0.106 ║
+[[34m  Info  [0m] ║ NEW  mkPath           match exhaustiveness                                          Automaton.scala:147:5   valid    nativez3  0.039 ║
+[[34m  Info  [0m] ║ NEW  mkPath           match exhaustiveness                                          Automaton.scala:150:28  valid    nativez3  0.344 ║
+[[34m  Info  [0m] ║ NEW  mkPath           match exhaustiveness                                          Automaton.scala:149:27  valid    nativez3  0.070 ║
+[[34m  Info  [0m] ║ NEW  mkPath           precond. (call mkPath[State](thiss, ws, from))                Automaton.scala:149:27  valid    nativez3  0.582 ║
+[[34m  Info  [0m] ║ NEW  powerSet         match exhaustiveness                                          Automaton.scala:14:5    valid    nativez3  0.582 ║
+[[34m  Info  [0m] ║ NEW  powerSet         precond. (call map[List[A], List[A]](ps, (x$1: List[A]) ...)  Automaton.scala:18:15   valid    nativez3  0.092 ║
+[[34m  Info  [0m] ║ NEW  run              precond. (call runFrom[State](thiss, word, Cons[State]( ...)  Automaton.scala:175:44  timeout  nativez3  5.060 ║
+[[34m  Info  [0m] ║ NEW  runFrom          lambda precondition                                           Automaton.scala:169:56  valid    nativez3  0.086 ║
+[[34m  Info  [0m] ║ NEW  runFrom          lambda precondition                                           Automaton.scala:169:56  valid    nativez3  0.085 ║
+[[34m  Info  [0m] ║ NEW  runFrom          match exhaustiveness                                          Automaton.scala:167:5   valid    nativez3  0.038 ║
+[[34m  Info  [0m] ║ NEW  runFrom          precond. (call runFrom[State](thiss, ws, unionMap[State ...)  Automaton.scala:169:27  timeout  nativez3  5.347 ║
+[[34m  Info  [0m] ║ NEW  runFrom          precond. (call unionMap[State](thiss, from, (x$8: State ...)  Automaton.scala:169:39  valid    nativez3  0.122 ║
+[[34m  Info  [0m] ║ NEW  unionMap         lambda precondition                                           Automaton.scala:86:32   valid    nativez3  0.052 ║
+[[34m  Info  [0m] ║ NEW  unionMap         lambda precondition                                           Automaton.scala:80:34   valid    nativez3  0.082 ║
+[[34m  Info  [0m] ║ NEW  unionMap         match exhaustiveness                                          Automaton.scala:84:5    valid    nativez3  0.093 ║
+[[34m  Info  [0m] ║ NEW  unionMap         precond. (call merge[State](thiss, f(h), unionMap[State ...)  Automaton.scala:86:26   unknown  nativez3  1.571 ║
+[[34m  Info  [0m] ║ NEW  unionMap         precond. (call unionMap[State](thiss, t, f))                  Automaton.scala:86:38   timeout  nativez3  5.726 ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ total: 41     valid: 34   (0 from cache)   invalid: 0      unknown: 7     time:  33.516                                              ║
+[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Shutting down executor service.
