@@ -29,7 +29,7 @@ object Utils {
         else isSubsequenceOf(L, ss)
       }
     }
-  }
+  } ensuring { _ ==> (L.content subsetOf S.content) }
 
 }
 
