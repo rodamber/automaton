@@ -234,16 +234,6 @@ case class Automaton[State](
   }.holds
 
 
-  // def mergeSoundLemma(x: State, xs: List[State], ys: List[State]): Boolean = {
-  //   require(validSet(xs))
-  //   require(validSet(x :: xs))
-  //   require(validSet(ys))
-
-  //   require(mergeSound(xs, ys))
-
-  // }
-
-
   def isDeterministic: Boolean =
     forall { (s: State, c: Char) =>
       (S contains s) ==> (M(s, c).size <= 1)
