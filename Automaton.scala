@@ -46,6 +46,36 @@ object Subseq {
   }.holds
 
 
+  def subseqProp3[T](a: List[T], b: List[T]): Boolean = {
+    require(a.nonEmpty)
+    require(isSubseqOf(a, b))
+
+    // FIXME:
+    assert(b.nonEmpty because subseqProp2(a, b))
+
+    (a, b) match {
+      case (Cons(x, xs), Cons(y, ys)) =>
+        if (x == y) isSubseqOf(xs, ys)
+        else        true
+    }
+  }.holds
+
+
+  def subseqProp4[T](a: List[T], b: List[T]): Boolean = {
+    require(a.nonEmpty)
+    require(isSubseqOf(a, b))
+
+    // FIXME:
+    assert(b.nonEmpty because subseqProp2(a, b))
+
+    (a, b) match {
+      case (Cons(x, _), Cons(y, ys)) =>
+        if (x == y) true
+        else        isSubseqOf(a, ys)
+    }
+  }.holds
+
+
   @induct
   def subseqTail[T](l: List[T]): Boolean = {
     l match {
@@ -67,7 +97,7 @@ object Subseq {
           assert(b.nonEmpty)
 
           // FIXME:
-          assert(c.nonEmpty because subseqProp2(b, c) because isSubseqOf(b, c))
+          assert(c.nonEmpty because subseqProp2(b, c))
 
           b match {
             case Cons(y, ys) => c match {
@@ -195,13 +225,23 @@ case class Automaton[State](
         case (Cons(x, xs), Cons(y, ys)) =>
           assert(validSet(xs) because validSetTail(a))
 
-          if (x == y)              check(mergeSound(xs, ys))
-          else if (lessThan(x, y)) check(mergeSound(xs, b))
-          else                     check(mergeSound(a, ys))
+          if (x == y)              mergeSound(xs, ys)
+          else if (lessThan(x, y)) mergeSound(xs, b)
+          else                     mergeSound(a, ys)
 
       }
     }
   }.holds
+
+
+  // def mergeSoundLemma(x: State, xs: List[State], ys: List[State]): Boolean = {
+  //   require(validSet(xs))
+  //   require(validSet(x :: xs))
+  //   require(validSet(ys))
+
+  //   require(mergeSound(xs, ys))
+
+  // }
 
 
   def isDeterministic: Boolean =

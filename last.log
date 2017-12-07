@@ -1,51 +1,26 @@
-[[34m  Info  [0m]  - Now solving 'precond. (call subseqProp2[T](b, c))' VC for subseqTransitive @68:37...
-[[34m  Info  [0m]  - Now solving 'precond. (call subseqTransitive[T](a, b, zs))' VC for subseqTransitive @74:66...
-[[34m  Info  [0m]  - Now solving 'body assertion' VC for subseqTransitive @68:11...
-[[34m  Info  [0m]  - Now solving 'precond. (call subseqTransitive[T](xs, ys, zs))' VC for subseqTransitive @74:32...
-[[34m  Info  [0m]  - Result for 'precond. (call subseqTransitive[T](a, b, zs))' VC for subseqTransitive @74:66:
+[[34m  Info  [0m]  - Now solving 'precond. (call subseqProp2[T](a, b))' VC for subseqProp4 @69:31...
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for subseqProp4 @64:57...
+[[34m  Info  [0m]  - Now solving 'body assertion' VC for subseqProp4 @69:5...
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subseqProp4 @71:5...
+[[34m  Info  [0m]  - Result for 'body assertion' VC for subseqProp4 @69:5:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call subseqTransitive[T](a, ys, c))' VC for subseqTransitive @75:22...
-[[34m  Info  [0m]  - Result for 'precond. (call subseqTransitive[T](xs, ys, zs))' VC for subseqTransitive @74:32:
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subseqProp4 @71:5:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subseqTransitive @64:7...
-[[34m  Info  [0m]  - Result for 'precond. (call subseqTransitive[T](a, ys, c))' VC for subseqTransitive @75:22:
+[[34m  Info  [0m]  - Result for 'postcondition' VC for subseqProp4 @64:57:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'body assertion' VC for subseqTransitive @66:26...
-[[34m  Info  [0m]  - Result for 'body assertion' VC for subseqTransitive @68:11:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for subseqTransitive @59:74...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subseqTransitive @64:7:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subseqTransitive @70:11...
-[[34m  Info  [0m]  - Result for 'body assertion' VC for subseqTransitive @66:26:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subseqTransitive @70:11:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subseqTransitive @71:33...
-[[34m  Info  [0m]  - Result for 'precond. (call subseqProp2[T](b, c))' VC for subseqTransitive @68:37:
+[[34m  Info  [0m]  - Result for 'precond. (call subseqProp2[T](a, b))' VC for subseqProp4 @69:31:
 [[33mWarning [0m]  => INVALID
 [[33mWarning [0m] Found counter-example:
-[[33mWarning [0m]   b: List[T] -> Cons[T](T#0, Nil[T]())
-[[33mWarning [0m]   a: List[T] -> Cons[T](T#0, Nil[T]())
-[[33mWarning [0m]   c: List[T] -> Nil[T]()
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subseqTransitive @71:33:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Result for 'postcondition' VC for subseqTransitive @59:74:
-[[34m  Info  [0m]  => VALID
+[[33mWarning [0m]   b: List[T] -> Nil[T]()
+[[33mWarning [0m]   a: List[T] -> Cons[T](T#1, Cons[T](T#0, Nil[T]()))
 [[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ verification summary ╞════════════════════════════════════════════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                                                                ║
-[[34m  Info  [0m] ║ NEW  subseqTransitive  body assertion                                   Automaton.scala:66:26  valid    nativez3  0.102 ║
-[[34m  Info  [0m] ║ NEW  subseqTransitive  body assertion                                   Automaton.scala:68:11  valid    nativez3  0.820 ║
-[[34m  Info  [0m] ║ NEW  subseqTransitive  match exhaustiveness                             Automaton.scala:64:7   valid    nativez3  0.039 ║
-[[34m  Info  [0m] ║ NEW  subseqTransitive  match exhaustiveness                             Automaton.scala:70:11  valid    nativez3  0.145 ║
-[[34m  Info  [0m] ║ NEW  subseqTransitive  match exhaustiveness                             Automaton.scala:71:33  valid    nativez3  0.113 ║
-[[34m  Info  [0m] ║ NEW  subseqTransitive  postcondition                                    Automaton.scala:59:74  valid    nativez3  0.412 ║
-[[34m  Info  [0m] ║ NEW  subseqTransitive  precond. (call subseqProp2[T](b, c))             Automaton.scala:68:37  invalid  nativez3  1.101 ║
-[[34m  Info  [0m] ║ NEW  subseqTransitive  precond. (call subseqTransitive[T](a, b, zs))    Automaton.scala:74:66  valid    nativez3  0.591 ║
-[[34m  Info  [0m] ║ NEW  subseqTransitive  precond. (call subseqTransitive[T](a, ys, c))    Automaton.scala:75:22  valid    nativez3  0.193 ║
-[[34m  Info  [0m] ║ NEW  subseqTransitive  precond. (call subseqTransitive[T](xs, ys, zs))  Automaton.scala:74:32  valid    nativez3  0.784 ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ total: 10     valid: 9    (0 from cache)   invalid: 1      unknown: 0     time:   4.300                                 ║
-[[34m  Info  [0m] ╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] ╔═╡ verification summary ╞════════════════════════════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                                                ║
+[[34m  Info  [0m] ║ NEW  subseqProp4  body assertion                        Automaton.scala:69:5   valid    nativez3  0.700 ║
+[[34m  Info  [0m] ║ NEW  subseqProp4  match exhaustiveness                  Automaton.scala:71:5   valid    nativez3  0.734 ║
+[[34m  Info  [0m] ║ NEW  subseqProp4  postcondition                         Automaton.scala:64:57  valid    nativez3  0.750 ║
+[[34m  Info  [0m] ║ NEW  subseqProp4  precond. (call subseqProp2[T](a, b))  Automaton.scala:69:31  invalid  nativez3  0.793 ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ total: 4      valid: 3    (0 from cache)   invalid: 1      unknown: 0     time:   2.977                 ║
+[[34m  Info  [0m] ╚═════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 [[34m  Info  [0m] Shutting down executor service.
