@@ -50,6 +50,7 @@ object Subseq {
 
   // === Verified ==============================================================
 
+  // FIXME: Unverified.
   def subseqTransitive[T](a: List[T], b: List[T], c: List[T]): Boolean = {
     require(isSubseqOf(a, b))
     require(isSubseqOf(b, c))
@@ -57,13 +58,13 @@ object Subseq {
     isSubseqOf(a, c) because {
       a match {
         case Nil()       => true
-        case Cons(x, xs) => 
+        case Cons(x, xs) =>
 
           assert(b.nonEmpty)
           assert(c.nonEmpty because isSubseqOf(b, c))
 
           b match {
-  
+
         // case Nil() => impossible
           case Cons(y, ys) => c match {
             // case Nil() => impossible
@@ -86,7 +87,7 @@ import Subseq._
 case class Automaton[State](
   S: List[State],                  // internal states
   M: (State, Char) => List[State], // transition function
-  S0: State,                       // initial states
+  S0: State,                       // initial state
   F: List[State]                   // final states
 ) {
   // FIXME: We should probably require no repeated elements
@@ -94,7 +95,7 @@ case class Automaton[State](
 
   require(forall((s: State, w: Char) => isSubseqOf(M(s, w), S)))
 
-  require(S contains S0)
+  require(isSubseqOf(List(S0), S))
   require(isSubseqOf(F, S))
 
 
@@ -147,6 +148,20 @@ case class Automaton[State](
     }
   }
 
+
+  def moveSound(set: List[State], w: Char): Boolean = {
+    require(validSet(set))
+
+    validSet(move(set, w)) because {
+      set match {
+        case Nil()      => trivial
+        case Cons(h, t) => 
+          assert(validSet(t) because validSetTail(set))
+          mergeSound(M(h, w), move(t, w)) && moveSound(t, w)
+      }
+    }
+  }.holds
+
   // Removes repeated elements. Strictly ordered.
   def merge(a: List[State], b: List[State]): List[State] = {
     require(validSet(a))
@@ -158,25 +173,32 @@ case class Automaton[State](
       case (Cons(x, xs), Cons(y, ys)) =>
         assert(validSet(xs) because validSetTail(a))
 
-        if (x == y)              x :: merge(xs, ys) // FIXME
-        else if (lessThan(x, y)) x :: merge(xs, b)  // FIXME
+        if (x == y)              x :: merge(xs, ys)
+        else if (lessThan(x, y)) x :: merge(xs, b)
         else                     y :: merge(a, ys)
     }
   }
 
-  // === Verified ==============================================================
 
-  def validSubsets[A](l: List[A]): List[List[A]] = {
-    l match {
-      case Nil()      => List(Nil())
-      case Cons(h, t) =>
-        val ps = validSubsets(t)
+  // FIXME: Unverified.
+  def mergeSound(a: List[State], b: List[State]): Boolean = {
+    require(validSet(a))
+    require(validSet(b))
 
-        // FIXME: Uses map...
-        ps ++ ps.map { h :: _ }
+    validSet(merge(a, b)) because { 
+      (a, b) match {
+        case (_, Nil()) => trivial
+        case (Nil(), _) => trivial
+        case (Cons(x, xs), Cons(y, ys)) =>
+          assert(validSet(xs) because validSetTail(a))
+
+          if (x == y)              check(mergeSound(xs, ys))
+          else if (lessThan(x, y)) check(mergeSound(xs, b))
+          else                     check(mergeSound(a, ys))
+
+      }
     }
-
-  } // ensuring { res => res.forall(validSet(_)) }
+  }.holds
 
 
   def isDeterministic: Boolean =
@@ -227,7 +249,6 @@ case class Automaton[State](
     }
   }
 
-
   // Returns the set of possible states the NFA might be in after processing the
   // word.
   def runFrom(word: List[Char], from: List[State]): List[State] = {
@@ -235,35 +256,68 @@ case class Automaton[State](
 
     word match {
       case Nil()       => from
-      case Cons(w, ws) => runFrom(ws, move(from, w))
+      case Cons(w, ws) => 
+        val m = move(from, w)
+
+        assert(validSet(m) because moveSound(from, w))
+        runFrom(ws, m)
+    }
+  } ensuring { validSet(_) }
+
+
+  // Run starting from the initial state.
+  def run(word: List[Char]): List[State] = {
+    runFrom(word, List(S0))
+  } ensuring { validSet(_) }
+
+
+  def accepts(word: List[Char]): Boolean = {
+    (run(word) & F).nonEmpty
+  }
+
+
+  def validSubsets(set: List[State]): List[List[State]] = {
+    require(validSet(set))
+
+    set match {
+      case Nil()      => List(Nil())
+      case Cons(h, t) =>
+        assert(validSet(t) because validSetTail(set))
+        val ps = validSubsets(t)
+
+        // FIXME: Uses map...
+        ps ++ ps.map { h :: _ }
     }
   }
 
 
-  // Run starting from the initial state.
-  def run(word: List[Char]): List[State] = runFrom(word, List(S0))
+  // FIXME: Unverified.
+  def validSubsetsSound(set: List[State]): Boolean = {
+    require(validSet(set))
+    validSubsets(set).forall { validSet(_) }
+  }.holds
 
 
-  def accepts(word: List[Char]): Boolean = (run(word) & F).nonEmpty
-
-
+  // FIXME: adt invariant?
   def det(): Automaton[List[State]] = {
+    assert(validSet(S) because subseqId(S))
+
     val valid   = validSubsets(S)
     val trans   = { (s: List[State], w: Char) => List(move(s, w)) }
     val initial = List(S0)
     val final_  = for (s <- valid if (s & F).nonEmpty) yield s
 
     Automaton(valid, trans, initial, final_)
-  } ensuring { res =>
-    res.isDeterministic
-  }
+  } ensuring { _.isDeterministic }
 
 
+  // FIXME: Unverified.
   def detSound1(word: List[Char]): Boolean = {
     run(word) == det().run(word).head
   }.holds
 
 
+  // FIXME: Unverified.
   def detSound2(word: List[Char]): Boolean = {
     accepts(word) == det().accepts(word)
   }.holds
