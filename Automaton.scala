@@ -40,6 +40,12 @@ object Subseq {
   }.holds
 
 
+  def subseqProp2[T](a: List[T], b: List[T]): Boolean = {
+    require(isSubseqOf(a, b))
+    a.nonEmpty ==> b.nonEmpty
+  }.holds
+
+
   @induct
   def subseqTail[T](l: List[T]): Boolean = {
     l match {
@@ -48,7 +54,6 @@ object Subseq {
     }
   }.holds
 
-  // === Verified ==============================================================
 
   // FIXME: Unverified.
   def subseqTransitive[T](a: List[T], b: List[T], c: List[T]): Boolean = {
@@ -59,21 +64,19 @@ object Subseq {
       a match {
         case Nil()       => true
         case Cons(x, xs) =>
-
           assert(b.nonEmpty)
-          assert(c.nonEmpty because isSubseqOf(b, c))
+
+          // FIXME:
+          assert(c.nonEmpty because subseqProp2(b, c) because isSubseqOf(b, c))
 
           b match {
-
-        // case Nil() => impossible
-          case Cons(y, ys) => c match {
-            // case Nil() => impossible
-            case Cons(z, zs) =>
-              if (x == y)
-                ((y == z) && subseqTransitive(xs, ys, zs)) || (subseqTransitive(a, b, zs))
-              else subseqTransitive(a, ys, c)
+            case Cons(y, ys) => c match {
+              case Cons(z, zs) =>
+                if (x == y)
+                  ((y == z) && subseqTransitive(xs, ys, zs)) || (subseqTransitive(a, b, zs))
+                else subseqTransitive(a, ys, c)
+            }
           }
-        }
       }
     }
   }.holds
@@ -129,7 +132,7 @@ case class Automaton[State](
     require(l contains t)
 
     l match {
-      case Cons(x, xs) => 
+      case Cons(x, xs) =>
         if      (s == x) true
         else if (t == x) false
         else             lessThanAux(s, t, xs)
@@ -142,7 +145,7 @@ case class Automaton[State](
 
     set match {
       case Nil()      => Nil()
-      case Cons(h, t) => 
+      case Cons(h, t) =>
         assert(validSet(t) because validSetTail(set))
         merge(M(h, w), move(t, w))
     }
@@ -155,7 +158,7 @@ case class Automaton[State](
     validSet(move(set, w)) because {
       set match {
         case Nil()      => trivial
-        case Cons(h, t) => 
+        case Cons(h, t) =>
           assert(validSet(t) because validSetTail(set))
           mergeSound(M(h, w), move(t, w)) && moveSound(t, w)
       }
@@ -185,7 +188,7 @@ case class Automaton[State](
     require(validSet(a))
     require(validSet(b))
 
-    validSet(merge(a, b)) because { 
+    validSet(merge(a, b)) because {
       (a, b) match {
         case (_, Nil()) => trivial
         case (Nil(), _) => trivial
@@ -256,7 +259,7 @@ case class Automaton[State](
 
     word match {
       case Nil()       => from
-      case Cons(w, ws) => 
+      case Cons(w, ws) =>
         val m = move(from, w)
 
         assert(validSet(m) because moveSound(from, w))

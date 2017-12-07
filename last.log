@@ -1,35 +1,51 @@
-[[34m  Info  [0m]  - Now solving 'precond. (call validSubsets[State](thiss, thiss.S))' VC for det @305:19...
-[[34m  Info  [0m]  - Now solving 'precond. (call withFilter[List[State]](valid, (s: List[ ...)' VC for det @308:29...
-[[34m  Info  [0m]  - Now solving 'precond. (call move[State](thiss, s, w))' VC for det @306:55...
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for det @311:16...
-[[34m  Info  [0m]  - Result for 'precond. (call withFilter[List[State]](valid, (s: List[ ...)' VC for det @308:29:
+[[34m  Info  [0m]  - Now solving 'precond. (call subseqProp2[T](b, c))' VC for subseqTransitive @68:37...
+[[34m  Info  [0m]  - Now solving 'precond. (call subseqTransitive[T](a, b, zs))' VC for subseqTransitive @74:66...
+[[34m  Info  [0m]  - Now solving 'body assertion' VC for subseqTransitive @68:11...
+[[34m  Info  [0m]  - Now solving 'precond. (call subseqTransitive[T](xs, ys, zs))' VC for subseqTransitive @74:32...
+[[34m  Info  [0m]  - Result for 'precond. (call subseqTransitive[T](a, b, zs))' VC for subseqTransitive @74:66:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Result for 'precond. (call move[State](thiss, s, w))' VC for det @306:55:
+[[34m  Info  [0m]  - Now solving 'precond. (call subseqTransitive[T](a, ys, c))' VC for subseqTransitive @75:22...
+[[34m  Info  [0m]  - Result for 'precond. (call subseqTransitive[T](xs, ys, zs))' VC for subseqTransitive @74:32:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'body assertion' VC for det @302:39...
-[[34m  Info  [0m]  - Now solving 'precond. (call map[List[State], List[State]](withFilter ...)' VC for det @308:19...
-[[34m  Info  [0m]  - Result for 'precond. (call map[List[State], List[State]](withFilter ...)' VC for det @308:19:
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subseqTransitive @64:7...
+[[34m  Info  [0m]  - Result for 'precond. (call subseqTransitive[T](a, ys, c))' VC for subseqTransitive @75:22:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'adt invariant' VC for det @310:5...
-[[34m  Info  [0m]  - Result for 'precond. (call validSubsets[State](thiss, thiss.S))' VC for det @305:19:
+[[34m  Info  [0m]  - Now solving 'body assertion' VC for subseqTransitive @66:26...
+[[34m  Info  [0m]  - Result for 'body assertion' VC for subseqTransitive @68:11:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Result for 'body assertion' VC for det @302:39:
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for subseqTransitive @59:74...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subseqTransitive @64:7:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Result for 'postcondition' VC for det @311:16:
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subseqTransitive @70:11...
+[[34m  Info  [0m]  - Result for 'body assertion' VC for subseqTransitive @66:26:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Result for 'adt invariant' VC for det @310:5:
-[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subseqTransitive @70:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subseqTransitive @71:33...
+[[34m  Info  [0m]  - Result for 'precond. (call subseqProp2[T](b, c))' VC for subseqTransitive @68:37:
+[[33mWarning [0m]  => INVALID
+[[33mWarning [0m] Found counter-example:
+[[33mWarning [0m]   b: List[T] -> Cons[T](T#0, Nil[T]())
+[[33mWarning [0m]   a: List[T] -> Cons[T](T#0, Nil[T]())
+[[33mWarning [0m]   c: List[T] -> Nil[T]()
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subseqTransitive @71:33:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Result for 'postcondition' VC for subseqTransitive @59:74:
+[[34m  Info  [0m]  => VALID
 [[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ verification summary ╞═════════════════════════════════════════════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                                                                 ║
-[[34m  Info  [0m] ║ NEW  det  adt invariant                                                 Automaton.scala:310:5   timeout  nativez3  5.272 ║
-[[34m  Info  [0m] ║ NEW  det  body assertion                                                Automaton.scala:302:39  valid    nativez3  0.385 ║
-[[34m  Info  [0m] ║ NEW  det  postcondition                                                 Automaton.scala:311:16  valid    nativez3  1.367 ║
-[[34m  Info  [0m] ║ NEW  det  precond. (call map[List[State], List[State]](withFilter ...)  Automaton.scala:308:19  valid    nativez3  0.065 ║
-[[34m  Info  [0m] ║ NEW  det  precond. (call move[State](thiss, s, w))                      Automaton.scala:306:55  valid    nativez3  0.715 ║
-[[34m  Info  [0m] ║ NEW  det  precond. (call validSubsets[State](thiss, thiss.S))           Automaton.scala:305:19  valid    nativez3  1.109 ║
-[[34m  Info  [0m] ║ NEW  det  precond. (call withFilter[List[State]](valid, (s: List[ ...)  Automaton.scala:308:29  valid    nativez3  0.715 ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ total: 7      valid: 6    (0 from cache)   invalid: 0      unknown: 1     time:   9.628                                  ║
-[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] ╔═╡ verification summary ╞════════════════════════════════════════════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                                                                ║
+[[34m  Info  [0m] ║ NEW  subseqTransitive  body assertion                                   Automaton.scala:66:26  valid    nativez3  0.102 ║
+[[34m  Info  [0m] ║ NEW  subseqTransitive  body assertion                                   Automaton.scala:68:11  valid    nativez3  0.820 ║
+[[34m  Info  [0m] ║ NEW  subseqTransitive  match exhaustiveness                             Automaton.scala:64:7   valid    nativez3  0.039 ║
+[[34m  Info  [0m] ║ NEW  subseqTransitive  match exhaustiveness                             Automaton.scala:70:11  valid    nativez3  0.145 ║
+[[34m  Info  [0m] ║ NEW  subseqTransitive  match exhaustiveness                             Automaton.scala:71:33  valid    nativez3  0.113 ║
+[[34m  Info  [0m] ║ NEW  subseqTransitive  postcondition                                    Automaton.scala:59:74  valid    nativez3  0.412 ║
+[[34m  Info  [0m] ║ NEW  subseqTransitive  precond. (call subseqProp2[T](b, c))             Automaton.scala:68:37  invalid  nativez3  1.101 ║
+[[34m  Info  [0m] ║ NEW  subseqTransitive  precond. (call subseqTransitive[T](a, b, zs))    Automaton.scala:74:66  valid    nativez3  0.591 ║
+[[34m  Info  [0m] ║ NEW  subseqTransitive  precond. (call subseqTransitive[T](a, ys, c))    Automaton.scala:75:22  valid    nativez3  0.193 ║
+[[34m  Info  [0m] ║ NEW  subseqTransitive  precond. (call subseqTransitive[T](xs, ys, zs))  Automaton.scala:74:32  valid    nativez3  0.784 ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ total: 10     valid: 9    (0 from cache)   invalid: 1      unknown: 0     time:   4.300                                 ║
+[[34m  Info  [0m] ╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 [[34m  Info  [0m] Shutting down executor service.
