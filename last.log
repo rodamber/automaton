@@ -1,31 +1,35 @@
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for move @145:5...
-[[34m  Info  [0m]  - Now solving 'body assertion' VC for move @147:23...
-[[34m  Info  [0m]  - Now solving 'precond. (call merge[State](thiss, thiss.M(h, w), move[ ...)' VC for move @149:9...
-[[34m  Info  [0m]  - Now solving 'precond. (call validSetProp1[State](thiss, set))' VC for move @148:36...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for move @145:5:
+[[34m  Info  [0m]  - Now solving 'precond. (call validSetTail[State](thiss, a))' VC for merge @161:37...
+[[34m  Info  [0m]  - Now solving 'body assertion' VC for merge @160:39...
+[[34m  Info  [0m]  - Now solving 'precond. (call merge[State](thiss, xs, ys))' VC for merge @163:39...
+[[34m  Info  [0m]  - Now solving 'precond. (call merge[State](thiss, xs, b))' VC for merge @164:39...
+[[34m  Info  [0m]  - Result for 'precond. (call validSetTail[State](thiss, a))' VC for merge @161:37:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Result for 'precond. (call validSetProp1[State](thiss, set))' VC for move @148:36:
+[[34m  Info  [0m]  - Now solving 'precond. (call lessThan[State](thiss, x, y))' VC for merge @164:18...
+[[34m  Info  [0m]  - Result for 'precond. (call merge[State](thiss, xs, b))' VC for merge @164:39:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for move @149:15...
-[[34m  Info  [0m]  - Now solving 'precond. (call move[State](thiss, t, w))' VC for move @149:24...
-[[34m  Info  [0m]  - Result for 'lambda precondition' VC for move @149:15:
+[[34m  Info  [0m]  - Result for 'precond. (call merge[State](thiss, xs, ys))' VC for merge @163:39:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Result for 'precond. (call move[State](thiss, t, w))' VC for move @149:24:
+[[34m  Info  [0m]  - Now solving 'precond. (call merge[State](thiss, a, ys))' VC for merge @165:39...
+[[34m  Info  [0m]  - Result for 'precond. (call merge[State](thiss, a, ys))' VC for merge @165:39:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Result for 'precond. (call merge[State](thiss, thiss.M(h, w), move[ ...)' VC for move @149:9:
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for merge @157:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for merge @157:5:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Result for 'body assertion' VC for move @147:23:
+[[34m  Info  [0m]  - Result for 'body assertion' VC for merge @160:39:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Result for 'precond. (call lessThan[State](thiss, x, y))' VC for merge @164:18:
 [[34m  Info  [0m]  => VALID
 [[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ verification summary ╞════════════════════════════════════════════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                                                                ║
-[[34m  Info  [0m] ║ NEW  move  body assertion                                                Automaton.scala:147:23  valid  nativez3  1.750 ║
-[[34m  Info  [0m] ║ NEW  move  lambda precondition                                           Automaton.scala:149:15  valid  nativez3  0.467 ║
-[[34m  Info  [0m] ║ NEW  move  match exhaustiveness                                          Automaton.scala:145:5   valid  nativez3  0.842 ║
-[[34m  Info  [0m] ║ NEW  move  precond. (call merge[State](thiss, thiss.M(h, w), move[ ...)  Automaton.scala:149:9   valid  nativez3  1.702 ║
-[[34m  Info  [0m] ║ NEW  move  precond. (call move[State](thiss, t, w))                      Automaton.scala:149:24  valid  nativez3  0.491 ║
-[[34m  Info  [0m] ║ NEW  move  precond. (call validSetProp1[State](thiss, set))              Automaton.scala:148:36  valid  nativez3  0.842 ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ total: 6      valid: 6    (0 from cache)   invalid: 0      unknown: 0     time:   6.094                                 ║
-[[34m  Info  [0m] ╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] ╔═╡ verification summary ╞══════════════════════════════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                                                  ║
+[[34m  Info  [0m] ║ NEW  merge  body assertion                                 Automaton.scala:160:39  valid  nativez3  1.442 ║
+[[34m  Info  [0m] ║ NEW  merge  match exhaustiveness                           Automaton.scala:157:5   valid  nativez3  0.025 ║
+[[34m  Info  [0m] ║ NEW  merge  precond. (call lessThan[State](thiss, x, y))   Automaton.scala:164:18  valid  nativez3  0.768 ║
+[[34m  Info  [0m] ║ NEW  merge  precond. (call merge[State](thiss, a, ys))     Automaton.scala:165:39  valid  nativez3  0.108 ║
+[[34m  Info  [0m] ║ NEW  merge  precond. (call merge[State](thiss, xs, b))     Automaton.scala:164:39  valid  nativez3  1.167 ║
+[[34m  Info  [0m] ║ NEW  merge  precond. (call merge[State](thiss, xs, ys))    Automaton.scala:163:39  valid  nativez3  1.167 ║
+[[34m  Info  [0m] ║ NEW  merge  precond. (call validSetTail[State](thiss, a))  Automaton.scala:161:37  valid  nativez3  0.751 ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ total: 7      valid: 7    (0 from cache)   invalid: 0      unknown: 0     time:   5.428                   ║
+[[34m  Info  [0m] ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 [[34m  Info  [0m] Shutting down executor service.

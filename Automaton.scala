@@ -89,7 +89,7 @@ case class Automaton[State](
   S0: State,                       // initial states
   F: List[State]                   // final states
 ) {
-  // FIXME: Should we require no repeated elements?
+  // FIXME: We should probably require no repeated elements
   require(S.nonEmpty)
 
   require(forall((s: State, w: Char) => isSubseqOf(M(s, w), S)))
@@ -103,7 +103,7 @@ case class Automaton[State](
   }
 
 
-  def validSetProp1(set: List[State]): Boolean = {
+  def validSetTail(set: List[State]): Boolean = {
     require(validSet(set))
 
     set match {
@@ -135,35 +135,28 @@ case class Automaton[State](
     }
   }
 
-  // flatMap
-  // Removes repeated elements. Strictly ordered.
+
   def move(set: List[State], w: Char): List[State] = {
     require(validSet(set))
 
     set match {
       case Nil()      => Nil()
       case Cons(h, t) => 
-        assert(validSet(t) because validSetProp1(set))
+        assert(validSet(t) because validSetTail(set))
         merge(M(h, w), move(t, w))
     }
   }
-
-  // === Verified ==============================================================
 
   // Removes repeated elements. Strictly ordered.
   def merge(a: List[State], b: List[State]): List[State] = {
     require(validSet(a))
     require(validSet(b))
 
-    assert(a.content subsetOf S.content)
-    assert(b.content subsetOf S.content)
-
     (a, b) match {
       case (_, Nil()) => a
       case (Nil(), _) => b
       case (Cons(x, xs), Cons(y, ys)) =>
-        assert(S contains x)
-        assert(S contains y)
+        assert(validSet(xs) because validSetTail(a))
 
         if (x == y)              x :: merge(xs, ys) // FIXME
         else if (lessThan(x, y)) x :: merge(xs, b)  // FIXME
@@ -171,6 +164,7 @@ case class Automaton[State](
     }
   }
 
+  // === Verified ==============================================================
 
   def validSubsets[A](l: List[A]): List[List[A]] = {
     l match {
@@ -182,7 +176,6 @@ case class Automaton[State](
         ps ++ ps.map { h :: _ }
     }
 
-    // FIXME: Not obvious at all.
   } // ensuring { res => res.forall(validSet(_)) }
 
 
@@ -266,7 +259,7 @@ case class Automaton[State](
   }
 
 
-  def detSound(word: List[Char]): Boolean = {
+  def detSound1(word: List[Char]): Boolean = {
     run(word) == det().run(word).head
   }.holds
 
