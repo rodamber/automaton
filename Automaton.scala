@@ -54,17 +54,13 @@ object Subseq {
     require(isSubseqOf(a, b) && isSubseqOf(b, c))
 
     isSubseqOf(a, c) because {
-      a match {
-        case Nil()       => true
-        case Cons(x, xs) =>
-          b match {
-            case Cons(y, ys) => c match {
-              case Cons(z, zs) =>
-                if (x == y)
-                  ((y == z) && subseqTransitive(xs, ys, zs)) || (subseqTransitive(a, b, zs))
-                else subseqTransitive(a, ys, c)
-            }
-          }
+      (a, b, c) match {
+        case (Nil(), _, _) => true
+        case (Cons(x, xs), Cons(y, ys), Cons(z, zs)) =>
+          if (x == y) {
+            if (y == z) subseqTransitive(xs, ys, zs)
+            else        subseqTransitive(a,  b,  zs)
+          } else        subseqTransitive(a,  ys, c) // FIXME
       }
     }
   }.holds
