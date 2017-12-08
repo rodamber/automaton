@@ -47,8 +47,7 @@ object Subseq {
 
 
   def subseqProp3[T](a: List[T], b: List[T]): Boolean = {
-    require(a.nonEmpty)
-    require(isSubseqOf(a, b))
+    require(a.nonEmpty && isSubseqOf(a, b))
 
     // FIXME:
     assert(b.nonEmpty because subseqProp2(a, b))
@@ -62,8 +61,7 @@ object Subseq {
 
 
   def subseqProp4[T](a: List[T], b: List[T]): Boolean = {
-    require(a.nonEmpty)
-    require(isSubseqOf(a, b))
+    require(a.nonEmpty && isSubseqOf(a, b))
 
     // FIXME:
     assert(b.nonEmpty because subseqProp2(a, b))
@@ -87,8 +85,7 @@ object Subseq {
 
   // FIXME: Unverified.
   def subseqTransitive[T](a: List[T], b: List[T], c: List[T]): Boolean = {
-    require(isSubseqOf(a, b))
-    require(isSubseqOf(b, c))
+    require(isSubseqOf(a, b) && isSubseqOf(b, c))
 
     isSubseqOf(a, c) because {
       a match {
@@ -124,12 +121,13 @@ case class Automaton[State](
   F: List[State]                   // final states
 ) {
   // FIXME: We should probably require no repeated elements
-  require(S.nonEmpty)
 
-  require(forall((s: State, w: Char) => isSubseqOf(M(s, w), S)))
-
-  require(isSubseqOf(List(S0), S))
-  require(isSubseqOf(F, S))
+  require(
+    S.nonEmpty &&
+      (forall((s: State, w: Char) => isSubseqOf(M(s, w), S))) &&
+      (isSubseqOf(List(S0), S)) &&
+      (isSubseqOf(F, S))
+  )
 
 
   def validSet(s: List[State]): Boolean = {
@@ -150,16 +148,13 @@ case class Automaton[State](
 
 
   def lessThan(s: State, t: State): Boolean = {
-    require(S contains s)
-    require(S contains t)
-
+    require((S contains s) && (S contains t))
     lessThanAux(s, t, S)
   }
 
 
   def lessThanAux(s: State, t: State, l: List[State]): Boolean = {
-    require(l contains s)
-    require(l contains t)
+    require((l contains s) && (l contains t))
 
     l match {
       case Cons(x, xs) =>
@@ -197,8 +192,7 @@ case class Automaton[State](
 
   // Removes repeated elements. Strictly ordered.
   def merge(a: List[State], b: List[State]): List[State] = {
-    require(validSet(a))
-    require(validSet(b))
+    require(validSet(a) && validSet(b))
 
     (a, b) match {
       case (_, Nil()) => a
@@ -215,8 +209,7 @@ case class Automaton[State](
 
   // FIXME: Unverified.
   def mergeSound(a: List[State], b: List[State]): Boolean = {
-    require(validSet(a))
-    require(validSet(b))
+    require(validSet(a) && validSet(b))
 
     validSet(merge(a, b)) because {
       (a, b) match {
@@ -251,8 +244,7 @@ case class Automaton[State](
 
 
   def isPath(states: List[State], word: List[Char], from: State): Boolean = {
-    require(states.content subsetOf S.content)
-    require(S contains from)
+    require((states.content subsetOf S.content) && (S contains from))
 
     (states, word) match {
       case (Cons(s, Nil()), Nil()) =>
