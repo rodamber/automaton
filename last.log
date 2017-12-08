@@ -1,427 +1,71 @@
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for detSound2 @347:5...
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for merge @197:5...
-[[34m  Info  [0m]  - Now solving 'precond. (call isPath[State](thiss, ss, ws, from))' VC for isPath @253:32...
-[[34m  Info  [0m]  - Now solving 'precond. (call moveSound[State](thiss, t, w))' VC for moveSound @188:46...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for merge @197:5:
+[[34m  Info  [0m]  - Now solving 'precond. (call subseqTransitive[T](a, b, zs))' VC for subseqTransitive @64:66...
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subseqCons @33:7...
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on l: List[T] / Cons)' VC for subseqTail @44:3...
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for subseqTransitive @53:74...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subseqCons @33:7:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call subseqTransitive[State](t, set, thiss.S))' VC for validSetTail @144:28...
-[[34m  Info  [0m]  - Result for 'precond. (call isPath[State](thiss, ss, ws, from))' VC for isPath @253:32:
+[[34m  Info  [0m]  - Now solving 'precond. (call subseqTransitive[T](xs, ys, zs))' VC for subseqTransitive @64:32...
+[[34m  Info  [0m]  - Result for 'precond. (call subseqTransitive[T](xs, ys, zs))' VC for subseqTransitive @64:32:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for isPath @249:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for isPath @249:5:
+[[34m  Info  [0m]  - Now solving 'precond. (call subseqTransitive[T](a, ys, c))' VC for subseqTransitive @65:22...
+[[34m  Info  [0m]  - Result for 'precond. (call subseqTransitive[T](a, b, zs))' VC for subseqTransitive @64:66:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for isPath @253:9...
-[[34m  Info  [0m]  - Result for 'precond. (call moveSound[State](thiss, t, w))' VC for moveSound @188:46:
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on l: List[T] / Cons)' VC for subseqTail @44:3:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'body assertion' VC for moveSound @186:25...
-[[34m  Info  [0m]  - Result for 'precond. (call subseqTransitive[State](t, set, thiss.S))' VC for validSetTail @144:28:
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on l: List[T] / Nil)' VC for subseqTail @44:3...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for subseqTransitive @53:74:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for validSetTail @138:49...
-[[34m  Info  [0m]  - Result for 'lambda precondition' VC for isPath @253:9:
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subseqTransitive @57:7...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subseqTransitive @57:7:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call validSubsets[State](thiss, thiss.S))' VC for det @330:19...
-[[34m  Info  [0m]  - Result for 'precond. (call validSubsets[State](thiss, thiss.S))' VC for det @330:19:
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subseqTransitive @60:11...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on l: List[T] / Nil)' VC for subseqTail @44:3:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call move[State](thiss, s, w))' VC for det @331:55...
-[[34m  Info  [0m]  - Result for 'precond. (call move[State](thiss, s, w))' VC for det @331:55:
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subseqTail @45:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subseqTail @45:5:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call map[List[State], List[State]](withFilter ...)' VC for det @333:19...
-[[34m  Info  [0m]  - Result for 'precond. (call map[List[State], List[State]](withFilter ...)' VC for det @333:19:
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for subseqCons @32:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subseqTransitive @60:11:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call withFilter[List[State]](valid, (s: List[ ...)' VC for det @333:29...
-[[34m  Info  [0m]  - Result for 'body assertion' VC for moveSound @186:25:
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subseqTransitive @61:33...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subseqTransitive @61:33:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for moveSound @180:55...
-[[34m  Info  [0m]  - Result for 'precond. (call withFilter[List[State]](valid, (s: List[ ...)' VC for det @333:29:
+[[34m  Info  [0m]  - Result for 'postcondition' VC for subseqCons @32:5:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'body assertion' VC for det @327:39...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for validSetTail @138:49:
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on l: List[T] / Cons)' VC for subseqRefl @26:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on l: List[T] / Cons)' VC for subseqRefl @26:3:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for validSetTail @141:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for validSetTail @141:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call subseqProp2[T](b, c))' VC for subseqTransitive @97:37...
-[[34m  Info  [0m]  - Result for 'precond. (call subseqProp2[T](b, c))' VC for subseqTransitive @97:37:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call subseqTransitive[T](xs, ys, zs))' VC for subseqTransitive @103:32...
-[[34m  Info  [0m]  - Result for 'body assertion' VC for det @327:39:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for det @336:16...
-[[34m  Info  [0m]  - Result for 'precond. (call subseqTransitive[T](xs, ys, zs))' VC for subseqTransitive @103:32:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call subseqTransitive[T](a, b, zs))' VC for subseqTransitive @103:66...
-[[34m  Info  [0m]  - Result for 'precond. (call subseqTransitive[T](a, b, zs))' VC for subseqTransitive @103:66:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call subseqTransitive[T](a, ys, c))' VC for subseqTransitive @104:22...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for det @336:16:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'adt invariant' VC for det @335:5...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for moveSound @180:55:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for moveSound @184:7...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for moveSound @184:7:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for moveSound @188:22...
-[[34m  Info  [0m]  - Result for 'lambda precondition' VC for moveSound @188:22:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call merge[State](thiss, a, b))' VC for mergeSound @214:14...
-[[34m  Info  [0m]  - Result for 'precond. (call merge[State](thiss, a, b))' VC for mergeSound @214:14:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call validSetTail[State](thiss, a))' VC for mergeSound @219:39...
-[[34m  Info  [0m]  - Result for 'precond. (call validSetTail[State](thiss, a))' VC for mergeSound @219:39:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call mergeSound[State](thiss, xs, ys))' VC for mergeSound @221:36...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for detSound2 @347:5:
-[[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Now solving 'precond. (call mkPath[State](thiss, ws, from))' VC for mkPath @265:27...
-[[34m  Info  [0m]  - Result for 'precond. (call mkPath[State](thiss, ws, from))' VC for mkPath @265:27:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for mkPath @263:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for mkPath @263:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for mkPath @265:27...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for mkPath @265:27:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for mkPath @266:28...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for mkPath @266:28:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for mkPath @267:30...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for mkPath @267:30:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for mkPath @267:30...
-[[34m  Info  [0m]  - Result for 'lambda precondition' VC for mkPath @267:30:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call subseqProp2[T](a, b))' VC for subseqProp4 @67:31...
-[[34m  Info  [0m]  - Result for 'precond. (call subseqProp2[T](a, b))' VC for subseqProp4 @67:31:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'body assertion' VC for subseqProp4 @67:5...
-[[34m  Info  [0m]  - Result for 'body assertion' VC for subseqProp4 @67:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for subseqProp4 @63:57...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for subseqProp4 @63:57:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subseqProp4 @69:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subseqProp4 @69:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call head[List[State]](run[List[State]](det[S ...)' VC for detSound1 @341:18...
-[[34m  Info  [0m]  - Result for 'precond. (call subseqTransitive[T](a, ys, c))' VC for subseqTransitive @104:22:
-[[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Now solving 'body assertion' VC for subseqTransitive @93:26...
-[[34m  Info  [0m]  - Result for 'body assertion' VC for subseqTransitive @93:26:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'body assertion' VC for subseqTransitive @97:11...
-[[34m  Info  [0m]  - Result for 'body assertion' VC for subseqTransitive @97:11:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for subseqTransitive @87:74...
-[[34m  Info  [0m]  - Result for 'adt invariant' VC for det @335:5:
-[[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for isDeterministic @232:27...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for subseqTransitive @87:74:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subseqTransitive @91:7...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subseqTransitive @91:7:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subseqTransitive @99:11...
-[[34m  Info  [0m]  - Result for 'lambda precondition' VC for isDeterministic @232:27:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call validSetTail[State](thiss, set))' VC for validSubsets @310:36...
-[[34m  Info  [0m]  - Result for 'precond. (call validSetTail[State](thiss, set))' VC for validSubsets @310:36:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call validSubsets[State](thiss, t))' VC for validSubsets @311:18...
-[[34m  Info  [0m]  - Result for 'precond. (call mergeSound[State](thiss, xs, ys))' VC for mergeSound @221:36:
-[[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subseqTransitive @99:11:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subseqTransitive @100:33...
-[[34m  Info  [0m]  - Now solving 'precond. (call lessThan[State](thiss, x, y))' VC for mergeSound @222:20...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subseqTransitive @100:33:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for subseqProp2 @43:57...
-[[34m  Info  [0m]  - Result for 'precond. (call validSubsets[State](thiss, t))' VC for validSubsets @311:18:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call map[List[State], List[State]](ps, (x$9:  ...)' VC for validSubsets @314:15...
-[[34m  Info  [0m]  - Result for 'precond. (call map[List[State], List[State]](ps, (x$9:  ...)' VC for validSubsets @314:15:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'body assertion' VC for validSubsets @309:23...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for subseqProp2 @43:57:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcond. (ind. on l: List[T] / Cons)' VC for subseqTail @78:3...
-[[34m  Info  [0m]  - Result for 'precond. (call lessThan[State](thiss, x, y))' VC for mergeSound @222:20:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call mergeSound[State](thiss, xs, b))' VC for mergeSound @222:36...
-[[34m  Info  [0m]  - Result for 'postcond. (ind. on l: List[T] / Cons)' VC for subseqTail @78:3:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcond. (ind. on l: List[T] / Nil)' VC for subseqTail @78:3...
-[[34m  Info  [0m]  - Result for 'postcond. (ind. on l: List[T] / Nil)' VC for subseqTail @78:3:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subseqTail @79:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subseqTail @79:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for subseqProp1 @32:5...
-[[34m  Info  [0m]  - Result for 'precond. (call mergeSound[State](thiss, xs, b))' VC for mergeSound @222:36:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call mergeSound[State](thiss, a, ys))' VC for mergeSound @223:36...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for subseqProp1 @32:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subseqProp1 @33:7...
-[[34m  Info  [0m]  - Result for 'body assertion' VC for validSubsets @309:23:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for validSubsets @307:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for validSubsets @307:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call move[State](thiss, from, w))' VC for runFrom @285:17...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subseqProp1 @33:7:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcond. (ind. on l: List[T] / Cons)' VC for subseqId @26:3...
-[[34m  Info  [0m]  - Result for 'precond. (call move[State](thiss, from, w))' VC for runFrom @285:17:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call moveSound[State](thiss, from, w))' VC for runFrom @287:36...
-[[34m  Info  [0m]  - Result for 'postcond. (ind. on l: List[T] / Cons)' VC for subseqId @26:3:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcond. (ind. on l: List[T] / Nil)' VC for subseqId @26:3...
-[[34m  Info  [0m]  - Result for 'precond. (call moveSound[State](thiss, from, w))' VC for runFrom @287:36:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call runFrom[State](thiss, ws, m))' VC for runFrom @288:9...
-[[34m  Info  [0m]  - Result for 'postcond. (ind. on l: List[T] / Nil)' VC for subseqId @26:3:
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on l: List[T] / Nil)' VC for subseqRefl @26:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on l: List[T] / Nil)' VC for subseqRefl @26:3:
 [[34m  Info  [0m]  => VALID
 [[34m  Info  [0m]  - Now solving 'postcondition' VC for isSubseqOf @22:16...
-[[34m  Info  [0m]  - Result for 'precond. (call runFrom[State](thiss, ws, m))' VC for runFrom @288:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'body assertion' VC for runFrom @287:9...
 [[34m  Info  [0m]  - Result for 'postcondition' VC for isSubseqOf @22:16:
 [[34m  Info  [0m]  => VALID
 [[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for isSubseqOf @14:5...
 [[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for isSubseqOf @14:5:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call lessThanAux[State](thiss, s, t, thiss.S))' VC for lessThan @152:5...
-[[34m  Info  [0m]  - Result for 'precond. (call lessThanAux[State](thiss, s, t, thiss.S))' VC for lessThan @152:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call lessThanAux[State](thiss, s, t, xs))' VC for lessThanAux @163:26...
-[[34m  Info  [0m]  - Result for 'precond. (call lessThanAux[State](thiss, s, t, xs))' VC for lessThanAux @163:26:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for lessThanAux @159:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for lessThanAux @159:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for mergeSound @215:7...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for mergeSound @215:7:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call validSetTail[State](thiss, set))' VC for move @174:36...
-[[34m  Info  [0m]  - Result for 'precond. (call validSetTail[State](thiss, set))' VC for move @174:36:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call merge[State](thiss, thiss.M(h, w), move[ ...)' VC for move @175:9...
-[[34m  Info  [0m]  - Result for 'body assertion' VC for runFrom @287:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for runFrom @290:16...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for runFrom @290:16:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for runFrom @282:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for runFrom @282:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call move[State](thiss, set, w))' VC for moveSound @183:14...
-[[34m  Info  [0m]  - Result for 'precond. (call move[State](thiss, set, w))' VC for moveSound @183:14:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call validSetTail[State](thiss, set))' VC for moveSound @187:38...
-[[34m  Info  [0m]  - Result for 'precond. (call validSetTail[State](thiss, set))' VC for moveSound @187:38:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call mergeSound[State](thiss, thiss.M(h, w),  ...)' VC for moveSound @188:11...
-[[34m  Info  [0m]  - Result for 'precond. (call head[List[State]](run[List[State]](det[S ...)' VC for detSound1 @341:18:
+[[34m  Info  [0m]  - Result for 'precond. (call subseqTransitive[T](a, ys, c))' VC for subseqTransitive @65:22:
 [[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for detSound1 @341:5...
-[[34m  Info  [0m]  - Result for 'precond. (call mergeSound[State](thiss, a, ys))' VC for mergeSound @223:36:
-[[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Now solving 'body assertion' VC for mergeSound @218:41...
-[[34m  Info  [0m]  - Result for 'body assertion' VC for mergeSound @218:41:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for mergeSound @211:61...
-[[34m  Info  [0m]  - Result for 'precond. (call merge[State](thiss, thiss.M(h, w), move[ ...)' VC for move @175:9:
-[[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Now solving 'precond. (call move[State](thiss, t, w))' VC for move @175:24...
-[[34m  Info  [0m]  - Result for 'precond. (call move[State](thiss, t, w))' VC for move @175:24:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'body assertion' VC for move @173:23...
-[[34m  Info  [0m]  - Result for 'body assertion' VC for move @173:23:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for move @171:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for move @171:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for move @175:15...
-[[34m  Info  [0m]  - Result for 'lambda precondition' VC for move @175:15:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call validSetTail[State](thiss, a))' VC for merge @201:37...
-[[34m  Info  [0m]  - Result for 'precond. (call validSetTail[State](thiss, a))' VC for merge @201:37:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call merge[State](thiss, xs, ys))' VC for merge @203:39...
-[[34m  Info  [0m]  - Result for 'precond. (call mergeSound[State](thiss, thiss.M(h, w),  ...)' VC for moveSound @188:11:
-[[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Now solving 'precond. (call move[State](thiss, t, w))' VC for moveSound @188:31...
-[[34m  Info  [0m]  - Result for 'precond. (call move[State](thiss, t, w))' VC for moveSound @188:31:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call subseqProp2[T](a, b))' VC for subseqProp3 @53:31...
-[[34m  Info  [0m]  - Result for 'precond. (call subseqProp2[T](a, b))' VC for subseqProp3 @53:31:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'body assertion' VC for subseqProp3 @53:5...
-[[34m  Info  [0m]  - Result for 'body assertion' VC for subseqProp3 @53:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for subseqProp3 @49:57...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for subseqProp3 @49:57:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subseqProp3 @55:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subseqProp3 @55:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for inv @117:1...
-[[34m  Info  [0m]  - Result for 'lambda precondition' VC for inv @117:1:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for inv @127:49...
-[[34m  Info  [0m]  - Result for 'lambda precondition' VC for inv @127:49:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[State]](validSubsets[State]( ...)' VC for validSubsetsSound @322:5...
-[[34m  Info  [0m]  - Result for 'precond. (call forall[List[State]](validSubsets[State]( ...)' VC for validSubsetsSound @322:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call validSubsets[State](thiss, set))' VC for validSubsetsSound @322:5...
-[[34m  Info  [0m]  - Result for 'precond. (call validSubsets[State](thiss, set))' VC for validSubsetsSound @322:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for validSubsetsSound @320:54...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for mergeSound @211:61:
-[[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Result for 'precond. (call merge[State](thiss, xs, ys))' VC for merge @203:39:
-[[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Now solving 'precond. (call lessThan[State](thiss, x, y))' VC for merge @204:18...
-[[34m  Info  [0m]  - Result for 'precond. (call lessThan[State](thiss, x, y))' VC for merge @204:18:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call merge[State](thiss, xs, b))' VC for merge @204:39...
-[[34m  Info  [0m]  - Result for 'precond. (call merge[State](thiss, xs, b))' VC for merge @204:39:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call merge[State](thiss, a, ys))' VC for merge @205:39...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for validSubsetsSound @320:54:
-[[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Now solving 'precond. (call runFrom[State](thiss, word, Cons[State]( ...)' VC for run @295:5...
-[[34m  Info  [0m]  - Result for 'precond. (call runFrom[State](thiss, word, Cons[State]( ...)' VC for run @295:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for run @296:16...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for run @296:16:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call isPath[State](thiss, states, word, thiss ...)' VC for isAcceptingPath @241:43...
-[[34m  Info  [0m]  - Result for 'precond. (call isPath[State](thiss, states, word, thiss ...)' VC for isAcceptingPath @241:43:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for isAcceptingPath @239:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for isAcceptingPath @239:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Result for 'postcondition' VC for detSound1 @341:5:
-[[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Result for 'precond. (call merge[State](thiss, a, ys))' VC for merge @205:39:
-[[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Now solving 'body assertion' VC for merge @200:39...
-[[34m  Info  [0m]  - Result for 'body assertion' VC for merge @200:39:
-[[34m  Info  [0m]  => VALID
 [[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ verification summary ╞═══════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                                                                               ║
-[[34m  Info  [0m] ║ NEW  det                adt invariant                                                 Automaton.scala:335:5   timeout  nativez3  5.227 ║
-[[34m  Info  [0m] ║ NEW  det                body assertion                                                Automaton.scala:327:39  valid    nativez3  0.180 ║
-[[34m  Info  [0m] ║ NEW  det                postcondition                                                 Automaton.scala:336:16  valid    nativez3  0.597 ║
-[[34m  Info  [0m] ║ NEW  det                precond. (call map[List[State], List[State]](withFilter ...)  Automaton.scala:333:19  valid    nativez3  0.092 ║
-[[34m  Info  [0m] ║ NEW  det                precond. (call move[State](thiss, s, w))                      Automaton.scala:331:55  valid    nativez3  0.102 ║
-[[34m  Info  [0m] ║ NEW  det                precond. (call validSubsets[State](thiss, thiss.S))           Automaton.scala:330:19  valid    nativez3  0.125 ║
-[[34m  Info  [0m] ║ NEW  det                precond. (call withFilter[List[State]](valid, (s: List[ ...)  Automaton.scala:333:29  valid    nativez3  0.050 ║
-[[34m  Info  [0m] ║ NEW  detSound1          postcondition                                                 Automaton.scala:341:5   timeout  nativez3  9.081 ║
-[[34m  Info  [0m] ║ NEW  detSound1          precond. (call head[List[State]](run[List[State]](det[S ...)  Automaton.scala:341:18  timeout  nativez3  5.354 ║
-[[34m  Info  [0m] ║ NEW  detSound2          postcondition                                                 Automaton.scala:347:5   timeout  nativez3  5.650 ║
-[[34m  Info  [0m] ║ NEW  inv                lambda precondition                                           Automaton.scala:117:1   valid    nativez3  0.034 ║
-[[34m  Info  [0m] ║ NEW  inv                lambda precondition                                           Automaton.scala:127:49  valid    nativez3  0.055 ║
-[[34m  Info  [0m] ║ NEW  isAcceptingPath    match exhaustiveness                                          Automaton.scala:239:5   valid    nativez3  0.040 ║
-[[34m  Info  [0m] ║ NEW  isAcceptingPath    precond. (call isPath[State](thiss, states, word, thiss ...)  Automaton.scala:241:43  valid    nativez3  0.093 ║
-[[34m  Info  [0m] ║ NEW  isDeterministic    lambda precondition                                           Automaton.scala:232:27  valid    nativez3  0.093 ║
-[[34m  Info  [0m] ║ NEW  isPath             lambda precondition                                           Automaton.scala:253:9   valid    nativez3  0.276 ║
-[[34m  Info  [0m] ║ NEW  isPath             match exhaustiveness                                          Automaton.scala:249:5   valid    nativez3  0.081 ║
-[[34m  Info  [0m] ║ NEW  isPath             precond. (call isPath[State](thiss, ss, ws, from))            Automaton.scala:253:32  valid    nativez3  1.137 ║
-[[34m  Info  [0m] ║ NEW  isSubseqOf         match exhaustiveness                                          Automaton.scala:14:5    valid    nativez3  0.060 ║
-[[34m  Info  [0m] ║ NEW  isSubseqOf         postcondition                                                 Automaton.scala:22:16   valid    nativez3  0.152 ║
-[[34m  Info  [0m] ║ NEW  lessThan           precond. (call lessThanAux[State](thiss, s, t, thiss.S))      Automaton.scala:152:5   valid    nativez3  0.042 ║
-[[34m  Info  [0m] ║ NEW  lessThanAux        match exhaustiveness                                          Automaton.scala:159:5   valid    nativez3  0.040 ║
-[[34m  Info  [0m] ║ NEW  lessThanAux        precond. (call lessThanAux[State](thiss, s, t, xs))           Automaton.scala:163:26  valid    nativez3  0.079 ║
-[[34m  Info  [0m] ║ NEW  merge              body assertion                                                Automaton.scala:200:39  valid    nativez3  0.123 ║
-[[34m  Info  [0m] ║ NEW  merge              match exhaustiveness                                          Automaton.scala:197:5   valid    nativez3  0.679 ║
-[[34m  Info  [0m] ║ NEW  merge              precond. (call lessThan[State](thiss, x, y))                  Automaton.scala:204:18  valid    nativez3  0.194 ║
-[[34m  Info  [0m] ║ NEW  merge              precond. (call merge[State](thiss, a, ys))                    Automaton.scala:205:39  timeout  nativez3  5.069 ║
-[[34m  Info  [0m] ║ NEW  merge              precond. (call merge[State](thiss, xs, b))                    Automaton.scala:204:39  valid    nativez3  0.063 ║
-[[34m  Info  [0m] ║ NEW  merge              precond. (call merge[State](thiss, xs, ys))                   Automaton.scala:203:39  timeout  nativez3  5.069 ║
-[[34m  Info  [0m] ║ NEW  merge              precond. (call validSetTail[State](thiss, a))                 Automaton.scala:201:37  valid    nativez3  0.024 ║
-[[34m  Info  [0m] ║ NEW  mergeSound         body assertion                                                Automaton.scala:218:41  valid    nativez3  0.223 ║
-[[34m  Info  [0m] ║ NEW  mergeSound         match exhaustiveness                                          Automaton.scala:215:7   valid    nativez3  0.019 ║
-[[34m  Info  [0m] ║ NEW  mergeSound         postcondition                                                 Automaton.scala:211:61  timeout  nativez3  5.109 ║
-[[34m  Info  [0m] ║ NEW  mergeSound         precond. (call lessThan[State](thiss, x, y))                  Automaton.scala:222:20  valid    nativez3  0.364 ║
-[[34m  Info  [0m] ║ NEW  mergeSound         precond. (call mergeSound[State](thiss, a, ys))               Automaton.scala:223:36  timeout  nativez3  5.127 ║
-[[34m  Info  [0m] ║ NEW  mergeSound         precond. (call mergeSound[State](thiss, xs, b))               Automaton.scala:222:36  valid    nativez3  0.150 ║
-[[34m  Info  [0m] ║ NEW  mergeSound         precond. (call mergeSound[State](thiss, xs, ys))              Automaton.scala:221:36  timeout  nativez3  5.089 ║
-[[34m  Info  [0m] ║ NEW  mergeSound         precond. (call merge[State](thiss, a, b))                     Automaton.scala:214:14  valid    nativez3  0.045 ║
-[[34m  Info  [0m] ║ NEW  mergeSound         precond. (call validSetTail[State](thiss, a))                 Automaton.scala:219:39  valid    nativez3  0.053 ║
-[[34m  Info  [0m] ║ NEW  mkPath             lambda precondition                                           Automaton.scala:267:30  valid    nativez3  0.199 ║
-[[34m  Info  [0m] ║ NEW  mkPath             match exhaustiveness                                          Automaton.scala:265:27  valid    nativez3  0.078 ║
-[[34m  Info  [0m] ║ NEW  mkPath             match exhaustiveness                                          Automaton.scala:263:5   valid    nativez3  0.058 ║
-[[34m  Info  [0m] ║ NEW  mkPath             match exhaustiveness                                          Automaton.scala:267:30  valid    nativez3  0.115 ║
-[[34m  Info  [0m] ║ NEW  mkPath             match exhaustiveness                                          Automaton.scala:266:28  valid    nativez3  0.241 ║
-[[34m  Info  [0m] ║ NEW  mkPath             precond. (call mkPath[State](thiss, ws, from))                Automaton.scala:265:27  valid    nativez3  0.035 ║
-[[34m  Info  [0m] ║ NEW  move               body assertion                                                Automaton.scala:173:23  valid    nativez3  0.248 ║
-[[34m  Info  [0m] ║ NEW  move               lambda precondition                                           Automaton.scala:175:15  valid    nativez3  0.071 ║
-[[34m  Info  [0m] ║ NEW  move               match exhaustiveness                                          Automaton.scala:171:5   valid    nativez3  0.009 ║
-[[34m  Info  [0m] ║ NEW  move               precond. (call merge[State](thiss, thiss.M(h, w), move[ ...)  Automaton.scala:175:9   timeout  nativez3  5.058 ║
-[[34m  Info  [0m] ║ NEW  move               precond. (call move[State](thiss, t, w))                      Automaton.scala:175:24  valid    nativez3  0.111 ║
-[[34m  Info  [0m] ║ NEW  move               precond. (call validSetTail[State](thiss, set))               Automaton.scala:174:36  valid    nativez3  0.031 ║
-[[34m  Info  [0m] ║ NEW  moveSound          body assertion                                                Automaton.scala:186:25  valid    nativez3  0.587 ║
-[[34m  Info  [0m] ║ NEW  moveSound          lambda precondition                                           Automaton.scala:188:22  valid    nativez3  0.106 ║
-[[34m  Info  [0m] ║ NEW  moveSound          match exhaustiveness                                          Automaton.scala:184:7   valid    nativez3  0.042 ║
-[[34m  Info  [0m] ║ NEW  moveSound          postcondition                                                 Automaton.scala:180:55  valid    nativez3  0.887 ║
-[[34m  Info  [0m] ║ NEW  moveSound          precond. (call mergeSound[State](thiss, thiss.M(h, w),  ...)  Automaton.scala:188:11  timeout  nativez3  5.087 ║
-[[34m  Info  [0m] ║ NEW  moveSound          precond. (call moveSound[State](thiss, t, w))                 Automaton.scala:188:46  valid    nativez3  1.265 ║
-[[34m  Info  [0m] ║ NEW  moveSound          precond. (call move[State](thiss, set, w))                    Automaton.scala:183:14  valid    nativez3  0.030 ║
-[[34m  Info  [0m] ║ NEW  moveSound          precond. (call move[State](thiss, t, w))                      Automaton.scala:188:31  valid    nativez3  0.059 ║
-[[34m  Info  [0m] ║ NEW  moveSound          precond. (call validSetTail[State](thiss, set))               Automaton.scala:187:38  valid    nativez3  0.065 ║
-[[34m  Info  [0m] ║ NEW  run                postcondition                                                 Automaton.scala:296:16  valid    nativez3  0.063 ║
-[[34m  Info  [0m] ║ NEW  run                precond. (call runFrom[State](thiss, word, Cons[State]( ...)  Automaton.scala:295:5   valid    nativez3  0.025 ║
-[[34m  Info  [0m] ║ NEW  runFrom            body assertion                                                Automaton.scala:287:9   valid    nativez3  0.599 ║
-[[34m  Info  [0m] ║ NEW  runFrom            match exhaustiveness                                          Automaton.scala:282:5   valid    nativez3  0.041 ║
-[[34m  Info  [0m] ║ NEW  runFrom            postcondition                                                 Automaton.scala:290:16  valid    nativez3  0.219 ║
-[[34m  Info  [0m] ║ NEW  runFrom            precond. (call moveSound[State](thiss, from, w))              Automaton.scala:287:36  valid    nativez3  0.056 ║
-[[34m  Info  [0m] ║ NEW  runFrom            precond. (call move[State](thiss, from, w))                   Automaton.scala:285:17  valid    nativez3  0.046 ║
-[[34m  Info  [0m] ║ NEW  runFrom            precond. (call runFrom[State](thiss, ws, m))                  Automaton.scala:288:9   valid    nativez3  0.214 ║
-[[34m  Info  [0m] ║ NEW  subseqId           postcond. (ind. on l: List[T] / Cons)                         Automaton.scala:26:3    valid    nativez3  0.056 ║
-[[34m  Info  [0m] ║ NEW  subseqId           postcond. (ind. on l: List[T] / Nil)                          Automaton.scala:26:3    valid    nativez3  0.145 ║
-[[34m  Info  [0m] ║ NEW  subseqProp1        match exhaustiveness                                          Automaton.scala:33:7    valid    nativez3  0.051 ║
-[[34m  Info  [0m] ║ NEW  subseqProp1        postcondition                                                 Automaton.scala:32:5    valid    nativez3  0.158 ║
-[[34m  Info  [0m] ║ NEW  subseqProp2        postcondition                                                 Automaton.scala:43:57   valid    nativez3  0.118 ║
-[[34m  Info  [0m] ║ NEW  subseqProp3        body assertion                                                Automaton.scala:53:5    valid    nativez3  0.105 ║
-[[34m  Info  [0m] ║ NEW  subseqProp3        match exhaustiveness                                          Automaton.scala:55:5    valid    nativez3  0.090 ║
-[[34m  Info  [0m] ║ NEW  subseqProp3        postcondition                                                 Automaton.scala:49:57   valid    nativez3  0.085 ║
-[[34m  Info  [0m] ║ NEW  subseqProp3        precond. (call subseqProp2[T](a, b))                          Automaton.scala:53:31   valid    nativez3  0.030 ║
-[[34m  Info  [0m] ║ NEW  subseqProp4        body assertion                                                Automaton.scala:67:5    valid    nativez3  0.110 ║
-[[34m  Info  [0m] ║ NEW  subseqProp4        match exhaustiveness                                          Automaton.scala:69:5    valid    nativez3  0.133 ║
-[[34m  Info  [0m] ║ NEW  subseqProp4        postcondition                                                 Automaton.scala:63:57   valid    nativez3  0.120 ║
-[[34m  Info  [0m] ║ NEW  subseqProp4        precond. (call subseqProp2[T](a, b))                          Automaton.scala:67:31   valid    nativez3  0.059 ║
-[[34m  Info  [0m] ║ NEW  subseqTail         match exhaustiveness                                          Automaton.scala:79:5    valid    nativez3  0.028 ║
-[[34m  Info  [0m] ║ NEW  subseqTail         postcond. (ind. on l: List[T] / Cons)                         Automaton.scala:78:3    valid    nativez3  0.153 ║
-[[34m  Info  [0m] ║ NEW  subseqTail         postcond. (ind. on l: List[T] / Nil)                          Automaton.scala:78:3    valid    nativez3  0.057 ║
-[[34m  Info  [0m] ║ NEW  subseqTransitive   body assertion                                                Automaton.scala:97:11   valid    nativez3  0.058 ║
-[[34m  Info  [0m] ║ NEW  subseqTransitive   body assertion                                                Automaton.scala:93:26   valid    nativez3  0.040 ║
-[[34m  Info  [0m] ║ NEW  subseqTransitive   match exhaustiveness                                          Automaton.scala:100:33  valid    nativez3  0.136 ║
-[[34m  Info  [0m] ║ NEW  subseqTransitive   match exhaustiveness                                          Automaton.scala:91:7    valid    nativez3  0.008 ║
-[[34m  Info  [0m] ║ NEW  subseqTransitive   match exhaustiveness                                          Automaton.scala:99:11   valid    nativez3  0.103 ║
-[[34m  Info  [0m] ║ NEW  subseqTransitive   postcondition                                                 Automaton.scala:87:74   valid    nativez3  0.235 ║
-[[34m  Info  [0m] ║ NEW  subseqTransitive   precond. (call subseqProp2[T](b, c))                          Automaton.scala:97:37   valid    nativez3  0.051 ║
-[[34m  Info  [0m] ║ NEW  subseqTransitive   precond. (call subseqTransitive[T](a, b, zs))                 Automaton.scala:103:66  valid    nativez3  0.193 ║
-[[34m  Info  [0m] ║ NEW  subseqTransitive   precond. (call subseqTransitive[T](a, ys, c))                 Automaton.scala:104:22  timeout  nativez3  5.120 ║
-[[34m  Info  [0m] ║ NEW  subseqTransitive   precond. (call subseqTransitive[T](xs, ys, zs))               Automaton.scala:103:32  valid    nativez3  0.269 ║
-[[34m  Info  [0m] ║ NEW  validSetTail       match exhaustiveness                                          Automaton.scala:141:5   valid    nativez3  0.051 ║
-[[34m  Info  [0m] ║ NEW  validSetTail       postcondition                                                 Automaton.scala:138:49  valid    nativez3  0.651 ║
-[[34m  Info  [0m] ║ NEW  validSetTail       precond. (call subseqTransitive[State](t, set, thiss.S))      Automaton.scala:144:28  valid    nativez3  0.601 ║
-[[34m  Info  [0m] ║ NEW  validSubsets       body assertion                                                Automaton.scala:309:23  valid    nativez3  0.429 ║
-[[34m  Info  [0m] ║ NEW  validSubsets       match exhaustiveness                                          Automaton.scala:307:5   valid    nativez3  0.038 ║
-[[34m  Info  [0m] ║ NEW  validSubsets       precond. (call map[List[State], List[State]](ps, (x$9:  ...)  Automaton.scala:314:15  valid    nativez3  0.095 ║
-[[34m  Info  [0m] ║ NEW  validSubsets       precond. (call validSetTail[State](thiss, set))               Automaton.scala:310:36  valid    nativez3  0.061 ║
-[[34m  Info  [0m] ║ NEW  validSubsets       precond. (call validSubsets[State](thiss, t))                 Automaton.scala:311:18  valid    nativez3  0.159 ║
-[[34m  Info  [0m] ║ NEW  validSubsetsSound  postcondition                                                 Automaton.scala:320:54  timeout  nativez3  5.044 ║
-[[34m  Info  [0m] ║ NEW  validSubsetsSound  precond. (call forall[List[State]](validSubsets[State]( ...)  Automaton.scala:322:5   valid    nativez3  0.041 ║
-[[34m  Info  [0m] ║ NEW  validSubsetsSound  precond. (call validSubsets[State](thiss, set))               Automaton.scala:322:5   valid    nativez3  0.076 ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ total: 105    valid: 92   (0 from cache)   invalid: 0      unknown: 13    time:  86.642                                                ║
-[[34m  Info  [0m] ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] ╔═╡ verification summary ╞════════════════════════════════════════════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                                                                ║
+[[34m  Info  [0m] ║ NEW  isSubseqOf        match exhaustiveness                             Automaton.scala:14:5   valid    nativez3  0.029 ║
+[[34m  Info  [0m] ║ NEW  isSubseqOf        postcondition                                    Automaton.scala:22:16  valid    nativez3  0.113 ║
+[[34m  Info  [0m] ║ NEW  subseqCons        match exhaustiveness                             Automaton.scala:33:7   valid    nativez3  0.570 ║
+[[34m  Info  [0m] ║ NEW  subseqCons        postcondition                                    Automaton.scala:32:5   valid    nativez3  0.172 ║
+[[34m  Info  [0m] ║ NEW  subseqRefl        postcond. (ind. on l: List[T] / Cons)            Automaton.scala:26:3   valid    nativez3  0.067 ║
+[[34m  Info  [0m] ║ NEW  subseqRefl        postcond. (ind. on l: List[T] / Nil)             Automaton.scala:26:3   valid    nativez3  0.060 ║
+[[34m  Info  [0m] ║ NEW  subseqTail        match exhaustiveness                             Automaton.scala:45:5   valid    nativez3  0.033 ║
+[[34m  Info  [0m] ║ NEW  subseqTail        postcond. (ind. on l: List[T] / Cons)            Automaton.scala:44:3   valid    nativez3  0.963 ║
+[[34m  Info  [0m] ║ NEW  subseqTail        postcond. (ind. on l: List[T] / Nil)             Automaton.scala:44:3   valid    nativez3  0.051 ║
+[[34m  Info  [0m] ║ NEW  subseqTransitive  match exhaustiveness                             Automaton.scala:60:11  valid    nativez3  0.088 ║
+[[34m  Info  [0m] ║ NEW  subseqTransitive  match exhaustiveness                             Automaton.scala:57:7   valid    nativez3  0.013 ║
+[[34m  Info  [0m] ║ NEW  subseqTransitive  match exhaustiveness                             Automaton.scala:61:33  valid    nativez3  0.117 ║
+[[34m  Info  [0m] ║ NEW  subseqTransitive  postcondition                                    Automaton.scala:53:74  valid    nativez3  0.987 ║
+[[34m  Info  [0m] ║ NEW  subseqTransitive  precond. (call subseqTransitive[T](a, b, zs))    Automaton.scala:64:66  valid    nativez3  0.934 ║
+[[34m  Info  [0m] ║ NEW  subseqTransitive  precond. (call subseqTransitive[T](a, ys, c))    Automaton.scala:65:22  timeout  nativez3  5.100 ║
+[[34m  Info  [0m] ║ NEW  subseqTransitive  precond. (call subseqTransitive[T](xs, ys, zs))  Automaton.scala:64:32  valid    nativez3  0.331 ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ total: 16     valid: 15   (0 from cache)   invalid: 0      unknown: 1     time:   9.628                                 ║
+[[34m  Info  [0m] ╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 [[34m  Info  [0m] Shutting down executor service.

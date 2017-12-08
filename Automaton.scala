@@ -23,53 +23,19 @@ object Subseq {
 
 
   @induct
-  def subseqId[T](l: List[T]): Boolean = {
+  def subseqRefl[T](l: List[T]): Boolean = {
     isSubseqOf(l, l)
   }.holds
 
 
-  def subseqProp1[T](l: List[T], x: T): Boolean = {
+  def subseqCons[T](l: List[T], x: T): Boolean = {
     isSubseqOf(l, x :: l) because {
       l match {
         case Nil()      => true
         case Cons(h, t) =>
-          if (h == x) subseqProp1(t, h)
-          else        subseqId(l)
+          if (h == x) subseqCons(t, h)
+          else        subseqRefl(l)
       }
-    }
-  }.holds
-
-
-  def subseqProp2[T](a: List[T], b: List[T]): Boolean = {
-    require(isSubseqOf(a, b))
-    a.nonEmpty ==> b.nonEmpty
-  }.holds
-
-
-  def subseqProp3[T](a: List[T], b: List[T]): Boolean = {
-    require(a.nonEmpty && isSubseqOf(a, b))
-
-    // FIXME:
-    assert(b.nonEmpty because subseqProp2(a, b))
-
-    (a, b) match {
-      case (Cons(x, xs), Cons(y, ys)) =>
-        if (x == y) isSubseqOf(xs, ys)
-        else        true
-    }
-  }.holds
-
-
-  def subseqProp4[T](a: List[T], b: List[T]): Boolean = {
-    require(a.nonEmpty && isSubseqOf(a, b))
-
-    // FIXME:
-    assert(b.nonEmpty because subseqProp2(a, b))
-
-    (a, b) match {
-      case (Cons(x, _), Cons(y, ys)) =>
-        if (x == y) true
-        else        isSubseqOf(a, ys)
     }
   }.holds
 
@@ -78,7 +44,7 @@ object Subseq {
   def subseqTail[T](l: List[T]): Boolean = {
     l match {
       case Nil()      => true
-      case Cons(h, t) => isSubseqOf(t, l) because subseqProp1(t, h)
+      case Cons(h, t) => isSubseqOf(t, l) because subseqCons(t, h)
     }
   }.holds
 
@@ -91,11 +57,6 @@ object Subseq {
       a match {
         case Nil()       => true
         case Cons(x, xs) =>
-          assert(b.nonEmpty)
-
-          // FIXME:
-          assert(c.nonEmpty because subseqProp2(b, c))
-
           b match {
             case Cons(y, ys) => c match {
               case Cons(z, zs) =>
@@ -325,7 +286,7 @@ case class Automaton[State](
 
   // FIXME: adt invariant?
   def det(): Automaton[List[State]] = {
-    assert(validSet(S) because subseqId(S))
+    assert(validSet(S) because subseqRefl(S))
 
     val valid   = validSubsets(S)
     val trans   = { (s: List[State], w: Char) => List(move(s, w)) }
