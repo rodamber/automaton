@@ -53,6 +53,22 @@ object Utils {
     res => isSortedUnique(res) && res.content == a.content ++ b.content
   }
 
+  // def sortedUniqueProp(set: List[List[BigInt]], x: BigInt): Boolean = {
+  //   require(set forall { l => isSortedUnique(l) && (l.nonEmpty ==> x < l.head) })
+  //   set.map(x :: _) forall { isSortedUnique _ }
+  // }.holds because {
+  //   set.map(x :: _) forall { l =>
+  //     l match {
+  //       case Cons(y, ys) => (x == y) && isSortedUnique(ys)
+  //     }
+  //   }
+  // }
+
+  // @induct
+  // def mapProp(l: List[List[BigInt]], x: BigInt): Boolean = {
+  //   l.map(x :: _) forall(_.head == x)
+  // }.holds
+
   def sortedUniquePC(ls: List[BigInt]): Boolean = {
     isSortedUnique(sortedUnique(ls))
   }.holds because {
@@ -102,7 +118,7 @@ case class DFA(states: List[List[BigInt]], trans: (List[BigInt], Char) => List[B
 
 case class NFA(states: List[BigInt], trans: (BigInt, Char) => List[BigInt]) {
   require(
-    // isSortedUnique(states) &&
+    isSortedUnique(states) &&
     forall((s: BigInt, w: Char) => trans(s, w).content subsetOf states.content))
 
   def validStates(s: List[BigInt]): Boolean = {
@@ -148,12 +164,30 @@ case class NFA(states: List[BigInt], trans: (BigInt, Char) => List[BigInt]) {
   // FIXME
   def validSubsets(set: List[BigInt]): List[List[BigInt]] = {
     require(validStates(set))
-    Nil()
-  }
+
+    set match {
+      case Nil()      => List(Nil())
+      case Cons(h, t) =>
+        val ps = validSubsets(t)
+        ps ++ ps.map { h :: _ }
+    }
+  } // ensuring { res => res.forall { validStates _ } }
+
+  // FIXME
+  def validSubsetsPC(set: List[BigInt]): Boolean = {
+    require(validStates(set))
+    validSubsets(set).forall { validStates _ }
+  }.holds
 
   // FIXME: adt invariant?
   def det(): DFA = DFA(validSubsets(states),
                        { (s: List[BigInt], w: Char) => move(s, w) })
+
+  def detValidStates(word: List[Char], from: List[BigInt]): Boolean = {
+    require(validStates(from))
+
+    validStates(det().runFrom(word, from))
+  }.holds
 
   // FIXME: Unverified.
   def detSound(word: List[Char], from: List[BigInt]): Boolean = {
