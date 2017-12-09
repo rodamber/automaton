@@ -1,51 +1,89 @@
-[[34m  Info  [0m]  - Now solving 'precond. (call runFrom(thiss, word, from))' VC for runFromPC @93:16...
-[[34m  Info  [0m]  - Now solving 'precond. (call runFromPC(thiss, ws, to))' VC for runFromPC @99:33...
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for runFromPC @91:66...
-[[34m  Info  [0m]  - Now solving 'precond. (call runFrom(thiss, word, from))' VC for runFromPC @141:17...
-[[34m  Info  [0m]  - Result for 'precond. (call runFrom(thiss, word, from))' VC for runFromPC @141:17:
+[[33mWarning [0m] Parallelism is disabled.
+[[34m  Info  [0m]  - Now solving 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @27:25...
+[[34m  Info  [0m]  - Result for 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @27:25:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Result for 'precond. (call runFrom(thiss, word, from))' VC for runFromPC @93:16:
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean](|[Boolean, Boolean,  ...)' VC for powerSetSize @32:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean](|[Boolean, Boolean,  ...)' VC for powerSetSize @32:9:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call movePC(thiss, from, w))' VC for runFromPC @145:27...
-[[34m  Info  [0m]  - Result for 'precond. (call movePC(thiss, from, w))' VC for runFromPC @145:27:
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)' VC for powerSetSize @32:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)' VC for powerSetSize @32:9:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call runFromPC(thiss, ws, move(thiss, from, w ...)' VC for runFromPC @145:46...
-[[34m  Info  [0m]  - Result for 'precond. (call runFromPC(thiss, ws, to))' VC for runFromPC @99:33:
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)' VC for powerSetSize @32:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)' VC for powerSetSize @32:9:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Result for 'precond. (call runFromPC(thiss, ws, move(thiss, from, w ...)' VC for runFromPC @145:46:
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)' VC for powerSetSize @32:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)' VC for powerSetSize @32:9:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for runFromPC @95:5...
-[[34m  Info  [0m]  - Now solving 'precond. (call move(thiss, from, w))' VC for runFromPC @145:60...
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for runFromPC @139:66...
-[[34m  Info  [0m]  - Result for 'precond. (call move(thiss, from, w))' VC for runFromPC @145:60:
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean, Boolean](==|[Boolean ...)' VC for powerSetSize @32:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean, Boolean](==|[Boolean ...)' VC for powerSetSize @32:9:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for runFromPC @143:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for runFromPC @95:5:
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSize @32:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSize @32:9:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for runFromPC @98:18...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for runFromPC @143:5:
+[[34m  Info  [0m]  - Now solving 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @32:35...
+[[34m  Info  [0m]  - Result for 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @32:35:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Result for 'postcondition' VC for runFromPC @91:66:
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSize @33:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSize @33:10:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Result for 'postcondition' VC for runFromPC @139:66:
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetSize @33:26...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetSize @33:26:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Result for 'lambda precondition' VC for runFromPC @98:18:
+[[34m  Info  [0m]  - Now solving 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @33:60...
+[[34m  Info  [0m]  - Result for 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @33:60:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSize @34:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSize @34:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetSize @34:29...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetSize @34:29:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @34:62...
+[[34m  Info  [0m]  - Result for 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @34:62:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSize @35:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSize @35:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @35:50...
+[[34m  Info  [0m]  - Result for 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @35:50:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSize @36:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSize @36:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @36:34...
+[[34m  Info  [0m]  - Result for 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @36:34:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call pow2(size[BigInt](xs)))' VC for powerSetSize @37:13...
+[[34m  Info  [0m]  - Result for 'precond. (call pow2(size[BigInt](xs)))' VC for powerSetSize @37:13:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @37:30...
+[[34m  Info  [0m]  - Result for 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @37:30:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for powerSetSize @27:5...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for powerSetSize @27:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for powerSetSize @29:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for powerSetSize @29:5:
 [[34m  Info  [0m]  => VALID
 [[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ verification summary ╞═════════════════════════════════════════════════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                                                                     ║
-[[34m  Info  [0m] ║ NEW  runFromPC  lambda precondition                                           Automaton.scala:98:18   valid  nativez3  0.148 ║
-[[34m  Info  [0m] ║ NEW  runFromPC  match exhaustiveness                                          Automaton.scala:95:5    valid  nativez3  0.056 ║
-[[34m  Info  [0m] ║ NEW  runFromPC  postcondition                                                 Automaton.scala:91:66   valid  nativez3  1.128 ║
-[[34m  Info  [0m] ║ NEW  runFromPC  precond. (call runFrom(thiss, word, from))                    Automaton.scala:93:16   valid  nativez3  0.607 ║
-[[34m  Info  [0m] ║ NEW  runFromPC  precond. (call runFromPC(thiss, ws, to))                      Automaton.scala:99:33   valid  nativez3  0.950 ║
-[[34m  Info  [0m] ║ NEW  runFromPC  match exhaustiveness                                          Automaton.scala:143:5   valid  nativez3  0.033 ║
-[[34m  Info  [0m] ║ NEW  runFromPC  postcondition                                                 Automaton.scala:139:66  valid  nativez3  0.193 ║
-[[34m  Info  [0m] ║ NEW  runFromPC  precond. (call move(thiss, from, w))                          Automaton.scala:145:60  valid  nativez3  0.027 ║
-[[34m  Info  [0m] ║ NEW  runFromPC  precond. (call movePC(thiss, from, w))                        Automaton.scala:145:27  valid  nativez3  0.042 ║
-[[34m  Info  [0m] ║ NEW  runFromPC  precond. (call runFrom(thiss, word, from))                    Automaton.scala:141:17  valid  nativez3  0.607 ║
-[[34m  Info  [0m] ║ NEW  runFromPC  precond. (call runFromPC(thiss, ws, move(thiss, from, w ...)  Automaton.scala:145:46  valid  nativez3  0.287 ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ total: 11     valid: 11   (0 from cache)   invalid: 0      unknown: 0     time:   4.078                                      ║
-[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                                                                 ║
+[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mpostcondition[0m                                                 [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:27:5[0m   [32m0.747[0m ║
+[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mprecond. (call pow2(size[BigInt](l)))[0m                         [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:27:25[0m  [32m0.178[0m ║
+[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mmatch exhaustiveness[0m                                          [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:29:5[0m   [32m0.007[0m ║
+[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mprecond. (call |[Boolean, Boolean, Boolean](==|[Boolean ...)[0m  [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:32:9[0m   [32m0.230[0m ║
+[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mprecond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)[0m  [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:32:9[0m   [32m2.417[0m ║
+[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mprecond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)[0m  [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:32:9[0m   [32m0.619[0m ║
+[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mprecond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)[0m  [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:32:9[0m   [32m1.222[0m ║
+[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mprecond. (call |[Boolean, Boolean](|[Boolean, Boolean,  ...)[0m  [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:32:9[0m   [32m3.923[0m ║
+[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mprecond. (call map[List[BigInt], List[BigInt]](powerSet ...)[0m  [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:33:26[0m  [32m0.018[0m ║
+[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mprecond. (call map[List[BigInt], List[BigInt]](powerSet ...)[0m  [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:34:29[0m  [32m0.012[0m ║
+[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mprecond. (call ==|[Boolean]({ ...)[0m                            [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:35:9[0m   [32m0.038[0m ║
+[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mprecond. (call ==|[Boolean]({ ...)[0m                            [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:36:9[0m   [32m0.340[0m ║
+[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mprecond. (call pow2(size[BigInt](xs)))[0m                        [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:37:13[0m  [32m0.030[0m ║
+[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mprecond. (call pow2(size[BigInt](l)))[0m                         [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:37:30[0m  [32m0.032[0m ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [32mtotal: 14   valid: 14   (0 from cache) invalid: 0    unknown: 0    time:   9.813[0m                                         ║
+[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 16830 ms
 [[34m  Info  [0m] Shutting down executor service.
