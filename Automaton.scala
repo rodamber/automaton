@@ -48,9 +48,8 @@ object Subseq {
     }
   }.holds
 
-
   // FIXME: Unverified.
-  def subseqTransitive[T](a: List[T], b: List[T], c: List[T]): Boolean = {
+  def subseqTrans[T](a: List[T], b: List[T], c: List[T]): Boolean = {
     require(isSubseqOf(a, b) && isSubseqOf(b, c))
 
     isSubseqOf(a, c) because {
@@ -58,9 +57,13 @@ object Subseq {
         case (Nil(), _, _) => true
         case (Cons(x, xs), Cons(y, ys), Cons(z, zs)) =>
           if (x == y) {
-            if (y == z) subseqTransitive(xs, ys, zs)
-            else        subseqTransitive(a,  b,  zs)
-          } else        subseqTransitive(a,  ys, c) // FIXME
+            if (y == z) subseqTrans(xs, ys, zs)
+            else        subseqTrans(a,  b,  zs)
+          } else        subseqTrans(a,  ys, c) && {
+            check(isSubseqOf(ys, c)) because {
+              check(subseqTrans(ys, b, c)) && check(subseqTail(b))
+            }
+          }
       }
     }
   }.holds
@@ -98,7 +101,7 @@ case class Automaton[State](
     set match {
       case Nil() => true
       case Cons(_, t) => validSet(t) because {
-        subseqTail(set) && subseqTransitive(t, set, S)
+        subseqTail(set) && subseqTrans(t, set, S)
       }
     }
   }.holds
