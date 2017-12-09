@@ -1,53 +1,51 @@
-[[34m  Info  [0m]  - Now solving 'precond. (call merge(thiss, a, b))' VC for mergeLemma @70:15...
-[[34m  Info  [0m]  - Now solving 'precond. (call mergeLemma(thiss, a, ys))' VC for mergeLemma @74:65...
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for mergeLemma @71:7...
-[[34m  Info  [0m]  - Now solving 'precond. (call merge(thiss, a, ys))' VC for merge @63:25...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for mergeLemma @71:7:
+[[34m  Info  [0m]  - Now solving 'precond. (call runFrom(thiss, word, from))' VC for runFromPC @93:16...
+[[34m  Info  [0m]  - Now solving 'precond. (call runFromPC(thiss, ws, to))' VC for runFromPC @99:33...
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for runFromPC @91:66...
+[[34m  Info  [0m]  - Now solving 'precond. (call runFrom(thiss, word, from))' VC for runFromPC @141:17...
+[[34m  Info  [0m]  - Result for 'precond. (call runFrom(thiss, word, from))' VC for runFromPC @141:17:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Result for 'precond. (call merge(thiss, a, b))' VC for mergeLemma @70:15:
+[[34m  Info  [0m]  - Result for 'precond. (call runFrom(thiss, word, from))' VC for runFromPC @93:16:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call mergeLemma(thiss, xs, b))' VC for mergeLemma @74:44...
-[[34m  Info  [0m]  - Now solving 'precond. (call merge(thiss, xs, b))' VC for merge @62:25...
-[[34m  Info  [0m]  - Result for 'precond. (call mergeLemma(thiss, a, ys))' VC for mergeLemma @74:65:
+[[34m  Info  [0m]  - Now solving 'precond. (call movePC(thiss, from, w))' VC for runFromPC @145:27...
+[[34m  Info  [0m]  - Result for 'precond. (call movePC(thiss, from, w))' VC for runFromPC @145:27:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for mergeLemma @67:63...
-[[34m  Info  [0m]  - Result for 'precond. (call merge(thiss, xs, b))' VC for merge @62:25:
+[[34m  Info  [0m]  - Now solving 'precond. (call runFromPC(thiss, ws, move(thiss, from, w ...)' VC for runFromPC @145:46...
+[[34m  Info  [0m]  - Result for 'precond. (call runFromPC(thiss, ws, to))' VC for runFromPC @99:33:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for merge @58:5...
-[[34m  Info  [0m]  - Result for 'precond. (call mergeLemma(thiss, xs, b))' VC for mergeLemma @74:44:
+[[34m  Info  [0m]  - Result for 'precond. (call runFromPC(thiss, ws, move(thiss, from, w ...)' VC for runFromPC @145:46:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Result for 'precond. (call merge(thiss, a, ys))' VC for merge @63:25:
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for runFromPC @95:5...
+[[34m  Info  [0m]  - Now solving 'precond. (call move(thiss, from, w))' VC for runFromPC @145:60...
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for runFromPC @139:66...
+[[34m  Info  [0m]  - Result for 'precond. (call move(thiss, from, w))' VC for runFromPC @145:60:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for merge @58:5:
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for runFromPC @143:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for runFromPC @95:5:
 [[34m  Info  [0m]  => VALID
-[[31m Error  [0m] Quantification content[BigInt](x$117.trans.f(x$80, x$81)) ⊆ x$118 does not fit in supported fragment.
-[[31m Error  [0m]   Reason: Unandled implications from operation content[BigInt](x$117.trans.f(x$80, x$81))
-[[31m Error  [0m] Model obtained was:
-[[31m Error  [0m]   a: List[BigInt] -> Cons[BigInt](6905, Nil[BigInt]())
-[[31m Error  [0m]   b: List[BigInt] -> Cons[BigInt](6905, Nil[BigInt]())
-[[31m Error  [0m]   thiss: NFA      -> NFA(Cons[BigInt](6905, Nil[BigInt]()), (x$140: BigInt, x$141: Char) => if (x$140 == 10 && x$141 == '\u0000') {
-[[31m Error  [0m]     Nil[BigInt]()
-[[31m Error  [0m]   } else if (x$141 == '\u0000') {
-[[31m Error  [0m]     Nil[BigInt]()
-[[31m Error  [0m]   } else if (x$140 == 10) {
-[[31m Error  [0m]     Nil[BigInt]()
-[[31m Error  [0m]   } else {
-[[31m Error  [0m]     Nil[BigInt]()
-[[31m Error  [0m]   })
-[[34m  Info  [0m]  - Result for 'postcondition' VC for mergeLemma @67:63:
-[[33mWarning [0m]  => UNKNOWN
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for runFromPC @98:18...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for runFromPC @143:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Result for 'postcondition' VC for runFromPC @91:66:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Result for 'postcondition' VC for runFromPC @139:66:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for runFromPC @98:18:
+[[34m  Info  [0m]  => VALID
 [[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ verification summary ╞═══════════════════════════════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                                                   ║
-[[34m  Info  [0m] ║ NEW  merge       match exhaustiveness                      Automaton.scala:58:5   valid    nativez3  0.043 ║
-[[34m  Info  [0m] ║ NEW  merge       precond. (call merge(thiss, a, ys))       Automaton.scala:63:25  valid    nativez3  1.022 ║
-[[34m  Info  [0m] ║ NEW  merge       precond. (call merge(thiss, xs, b))       Automaton.scala:62:25  valid    nativez3  0.407 ║
-[[34m  Info  [0m] ║ NEW  mergeLemma  match exhaustiveness                      Automaton.scala:71:7   valid    nativez3  0.564 ║
-[[34m  Info  [0m] ║ NEW  mergeLemma  postcondition                             Automaton.scala:67:63  unknown  nativez3  0.657 ║
-[[34m  Info  [0m] ║ NEW  mergeLemma  precond. (call merge(thiss, a, b))        Automaton.scala:70:15  valid    nativez3  0.565 ║
-[[34m  Info  [0m] ║ NEW  mergeLemma  precond. (call mergeLemma(thiss, a, ys))  Automaton.scala:74:65  valid    nativez3  0.930 ║
-[[34m  Info  [0m] ║ NEW  mergeLemma  precond. (call mergeLemma(thiss, xs, b))  Automaton.scala:74:44  valid    nativez3  0.432 ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ total: 8      valid: 7    (0 from cache)   invalid: 0      unknown: 1     time:   4.620                    ║
-[[34m  Info  [0m] ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] ╔═╡ verification summary ╞═════════════════════════════════════════════════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                                                                     ║
+[[34m  Info  [0m] ║ NEW  runFromPC  lambda precondition                                           Automaton.scala:98:18   valid  nativez3  0.148 ║
+[[34m  Info  [0m] ║ NEW  runFromPC  match exhaustiveness                                          Automaton.scala:95:5    valid  nativez3  0.056 ║
+[[34m  Info  [0m] ║ NEW  runFromPC  postcondition                                                 Automaton.scala:91:66   valid  nativez3  1.128 ║
+[[34m  Info  [0m] ║ NEW  runFromPC  precond. (call runFrom(thiss, word, from))                    Automaton.scala:93:16   valid  nativez3  0.607 ║
+[[34m  Info  [0m] ║ NEW  runFromPC  precond. (call runFromPC(thiss, ws, to))                      Automaton.scala:99:33   valid  nativez3  0.950 ║
+[[34m  Info  [0m] ║ NEW  runFromPC  match exhaustiveness                                          Automaton.scala:143:5   valid  nativez3  0.033 ║
+[[34m  Info  [0m] ║ NEW  runFromPC  postcondition                                                 Automaton.scala:139:66  valid  nativez3  0.193 ║
+[[34m  Info  [0m] ║ NEW  runFromPC  precond. (call move(thiss, from, w))                          Automaton.scala:145:60  valid  nativez3  0.027 ║
+[[34m  Info  [0m] ║ NEW  runFromPC  precond. (call movePC(thiss, from, w))                        Automaton.scala:145:27  valid  nativez3  0.042 ║
+[[34m  Info  [0m] ║ NEW  runFromPC  precond. (call runFrom(thiss, word, from))                    Automaton.scala:141:17  valid  nativez3  0.607 ║
+[[34m  Info  [0m] ║ NEW  runFromPC  precond. (call runFromPC(thiss, ws, move(thiss, from, w ...)  Automaton.scala:145:46  valid  nativez3  0.287 ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ total: 11     valid: 11   (0 from cache)   invalid: 0      unknown: 0     time:   4.078                                      ║
+[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 [[34m  Info  [0m] Shutting down executor service.
