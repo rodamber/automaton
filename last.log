@@ -1,43 +1,71 @@
-[[34m  Info  [0m]  - Now solving 'precond. (call subseqTrans[T](xs, ys, zs))' VC for subseqTrans @60:25...
-[[34m  Info  [0m]  - Now solving 'precond. (call subseqTrans[T](a, ys, c))' VC for subseqTrans @62:25...
-[[34m  Info  [0m]  - Now solving 'precond. (call check(subseqTrans[T](ys, b, c)))' VC for subseqTrans @64:15...
-[[34m  Info  [0m]  - Now solving 'precond. (call subseqTrans[T](a, b, zs))' VC for subseqTrans @61:25...
-[[34m  Info  [0m]  - Result for 'precond. (call subseqTrans[T](a, b, zs))' VC for subseqTrans @61:25:
+[[34m  Info  [0m]  - Now solving 'adt invariant' VC for det @62:5...
+[[34m  Info  [0m]  - Now solving 'precond. (call runFrom[State](thiss, ws, move[State](th ...)' VC for runFrom @47:27...
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for detSound @66:45...
+[[34m  Info  [0m]  - Now solving 'precond. (call move[State](thiss, from, w))' VC for runFrom @47:39...
+[[34m  Info  [0m]  - Result for 'precond. (call move[State](thiss, from, w))' VC for runFrom @47:39:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Result for 'precond. (call subseqTrans[T](xs, ys, zs))' VC for subseqTrans @60:25:
+[[34m  Info  [0m]  - Result for 'postcondition' VC for detSound @66:45:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call check(subseqTail[T](b)))' VC for subseqTrans @64:47...
-[[34m  Info  [0m]  - Now solving 'precond. (call check(isSubseqOf[T](ys, c)))' VC for subseqTrans @63:13...
-[[34m  Info  [0m]  - Result for 'precond. (call check(subseqTrans[T](ys, b, c)))' VC for subseqTrans @64:15:
+[[34m  Info  [0m]  - Now solving 'precond. (call validSubsets[State](thiss, thiss.S))' VC for det @59:17...
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for runFrom @45:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for runFrom @45:5:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call subseqTrans[T](ys, b, c))' VC for subseqTrans @64:21...
-[[34m  Info  [0m]  - Result for 'precond. (call check(isSubseqOf[T](ys, c)))' VC for subseqTrans @63:13:
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for move @28:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for move @28:5:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Result for 'precond. (call check(subseqTail[T](b)))' VC for subseqTrans @64:47:
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for move @30:32...
+[[34m  Info  [0m]  - Result for 'precond. (call validSubsets[State](thiss, thiss.S))' VC for det @59:17:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for subseqTrans @52:69...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for subseqTrans @52:69:
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for move @30:32:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subseqTrans @56:7...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subseqTrans @56:7:
+[[34m  Info  [0m]  - Now solving 'precond. (call move[State](thiss, s, w))' VC for det @60:53...
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for inv @11:1...
+[[34m  Info  [0m]  - Result for 'precond. (call move[State](thiss, s, w))' VC for det @60:53:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Result for 'precond. (call subseqTrans[T](a, ys, c))' VC for subseqTrans @62:25:
+[[34m  Info  [0m]  - Now solving 'precond. (call merge[State](thiss, thiss.M(h, w), move[ ...)' VC for move @30:26...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for inv @11:1:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for inv @17:38...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for inv @17:38:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call move[State](thiss, t, w))' VC for move @30:41...
+[[34m  Info  [0m]  - Result for 'precond. (call move[State](thiss, t, w))' VC for move @30:41:
+[[34m  Info  [0m]  => VALID
+[[31m Error  [0m] Quantification x$86.M.pre(x$72, x$73) does not fit in supported fragment.
+[[31m Error  [0m]   Reason: Can't guarantee model for complex matchers.
+[[31m Error  [0m] Model obtained was:
+[[31m Error  [0m]   thiss: Automaton[State] -> Automaton[State](Cons[State](State#3, Cons[State](State#11, Cons[State](State#10, Nil[State]()))), (x$198: State, x$199: Char) => if (x$198 == State#12 && x$199 == '\u0010') {
+[[31m Error  [0m]     Nil[State]()
+[[31m Error  [0m]   } else if (x$198 == State#12) {
+[[31m Error  [0m]     Nil[State]()
+[[31m Error  [0m]   } else if (x$199 == '\u0010') {
+[[31m Error  [0m]     Nil[State]()
+[[31m Error  [0m]   } else {
+[[31m Error  [0m]     Nil[State]()
+[[31m Error  [0m]   })
+[[34m  Info  [0m]  - Result for 'adt invariant' VC for det @62:5:
+[[33mWarning [0m]  => UNKNOWN
+[[34m  Info  [0m]  - Result for 'precond. (call runFrom[State](thiss, ws, move[State](th ...)' VC for runFrom @47:27:
 [[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Result for 'precond. (call subseqTrans[T](ys, b, c))' VC for subseqTrans @64:21:
+[[34m  Info  [0m]  - Result for 'precond. (call merge[State](thiss, thiss.M(h, w), move[ ...)' VC for move @30:26:
 [[33mWarning [0m]  => TIMEOUT
 [[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ verification summary ╞═══════════════════════════════════════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                                                           ║
-[[34m  Info  [0m] ║ NEW  subseqTrans  match exhaustiveness                             Automaton.scala:56:7   valid    nativez3  0.108 ║
-[[34m  Info  [0m] ║ NEW  subseqTrans  postcondition                                    Automaton.scala:52:69  valid    nativez3  0.497 ║
-[[34m  Info  [0m] ║ NEW  subseqTrans  precond. (call check(isSubseqOf[T](ys, c)))      Automaton.scala:63:13  valid    nativez3  0.343 ║
-[[34m  Info  [0m] ║ NEW  subseqTrans  precond. (call check(subseqTail[T](b)))          Automaton.scala:64:47  valid    nativez3  0.372 ║
-[[34m  Info  [0m] ║ NEW  subseqTrans  precond. (call check(subseqTrans[T](ys, b, c)))  Automaton.scala:64:15  valid    nativez3  1.089 ║
-[[34m  Info  [0m] ║ NEW  subseqTrans  precond. (call subseqTrans[T](a, b, zs))         Automaton.scala:61:25  valid    nativez3  0.824 ║
-[[34m  Info  [0m] ║ NEW  subseqTrans  precond. (call subseqTrans[T](a, ys, c))         Automaton.scala:62:25  timeout  nativez3  5.619 ║
-[[34m  Info  [0m] ║ NEW  subseqTrans  precond. (call subseqTrans[T](xs, ys, zs))       Automaton.scala:60:25  valid    nativez3  0.825 ║
-[[34m  Info  [0m] ║ NEW  subseqTrans  precond. (call subseqTrans[T](ys, b, c))         Automaton.scala:64:21  timeout  nativez3  5.071 ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ total: 9      valid: 7    (0 from cache)   invalid: 0      unknown: 2     time:  14.748                            ║
-[[34m  Info  [0m] ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] ╔═╡ verification summary ╞═════════════════════════════════════════════════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                                                                     ║
+[[34m  Info  [0m] ║ NEW  det       adt invariant                                                 Automaton.scala:62:5   unknown  nativez3  1.881 ║
+[[34m  Info  [0m] ║ NEW  det       precond. (call move[State](thiss, s, w))                      Automaton.scala:60:53  valid    nativez3  0.024 ║
+[[34m  Info  [0m] ║ NEW  det       precond. (call validSubsets[State](thiss, thiss.S))           Automaton.scala:59:17  valid    nativez3  0.241 ║
+[[34m  Info  [0m] ║ NEW  detSound  postcondition                                                 Automaton.scala:66:45  valid    nativez3  0.549 ║
+[[34m  Info  [0m] ║ NEW  inv       lambda precondition                                           Automaton.scala:11:1   valid    nativez3  0.030 ║
+[[34m  Info  [0m] ║ NEW  inv       lambda precondition                                           Automaton.scala:17:38  valid    nativez3  0.030 ║
+[[34m  Info  [0m] ║ NEW  move      lambda precondition                                           Automaton.scala:30:32  valid    nativez3  0.140 ║
+[[34m  Info  [0m] ║ NEW  move      match exhaustiveness                                          Automaton.scala:28:5   valid    nativez3  0.048 ║
+[[34m  Info  [0m] ║ NEW  move      precond. (call merge[State](thiss, thiss.M(h, w), move[ ...)  Automaton.scala:30:26  timeout  nativez3  5.095 ║
+[[34m  Info  [0m] ║ NEW  move      precond. (call move[State](thiss, t, w))                      Automaton.scala:30:41  valid    nativez3  0.115 ║
+[[34m  Info  [0m] ║ NEW  runFrom   match exhaustiveness                                          Automaton.scala:45:5   valid    nativez3  0.047 ║
+[[34m  Info  [0m] ║ NEW  runFrom   precond. (call move[State](thiss, from, w))                   Automaton.scala:47:39  valid    nativez3  0.549 ║
+[[34m  Info  [0m] ║ NEW  runFrom   precond. (call runFrom[State](thiss, ws, move[State](th ...)  Automaton.scala:47:27  timeout  nativez3  5.520 ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ total: 13     valid: 10   (0 from cache)   invalid: 0      unknown: 3     time:  14.269                                      ║
+[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 [[34m  Info  [0m] Shutting down executor service.
