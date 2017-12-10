@@ -30,6 +30,8 @@ object Set {
     }
   }
 
+  // This set constructor guarantees that the underlying list of the set has the
+  // isSet property.
   def set[T](list: List[T]): Set[T] = {
     assert(uniqueIdem(list))
     Set(list.unique)
@@ -149,97 +151,40 @@ case class Set[T](list: List[T]) {
     this ++ set(x)
   }
 
-  def size: BigInt = list.size
-
-  def subsetOf(that: Set[T]): Boolean =
-    that.list.content subsetOf this.list.content
-
   def contains(x: T): Boolean = list.contains(x)
 
-  def powerSet: List[Set[T]] = {
-    this.list match {
-      case Nil()     => List(empty)
-      case (x :: xs) =>
-        val ps = set(xs).powerSet
+  def forall(p: T => Boolean): Boolean = list.forall(p)
+
+  def subsetOf(that: Set[T]): Boolean = {
+    that forall { x => this contains x }
+  }
+
+  def ==(that: Set[T]): Boolean = {
+    (this subsetOf that) && (that subsetOf this)
+  }
+
+  def map[U](f: T => U): Set[U] = set(list map f)
+
+  def powerSet: Set[Set[T]] = {
+    this match {
+      case (xs + x) =>
+        val ps = xs.powerSet
         ps ++ ps.map { _ + x }
+      case _ => set(this)
     }
   }
 
-  // def lemma: Boolean = {
-  //   list match {
-  //     case Nil() => true
-  //     case (x :: xs) => Set(xs).powerSet forall { !_.contains(x) }
-  //   }
-  // }.holds
-
-  @induct
-  def appContains[T](a: List[T], b: List[T], x: T): Boolean = {
-    (a.contains(x) || b.contains(x)) == (a ++ b).contains(x)
+  def thm1(s: Set[T]): Boolean = {
+    (powerSet contains s) ==> (s subsetOf this)
   }.holds
 
-  // FIXME
-  // We should really streamline the set interface before trying to tackle this proof.
-  // It's really awkward to do all of this wrapping/unwrapping and it only makes
-  // things more confusing
+  def thm2(s: Set[T]): Boolean = {
+    (s subsetOf this) ==> (powerSet contains s)
+  }.holds
 
-  @ignore
-  def powerSetSound(that: Set[T]): Boolean = {
-    require(that subsetOf this)
-    powerSet contains that
-  }.holds because {
-    (this.list, that.list) match {
-      case (Nil(), _) => trivial
-      case (_, Nil()) => trivial
-      case (x :: xs, y :: ys) =>
-        val ps = set(xs).powerSet
-
-        if (x == y) {
-          powerSet.contains(that)                             ==| trivial |
-          (ps ++ ps.map(_ + x)).contains(that)                ==| trivial |
-          (ps.contains(that) || ps.map(_ + x).contains(that)) ==| trivial |
-          ps.map(_ + x).contains(that)                        ==| trivial |
-          ps.contains(set(ys))                                ==| set(xs).powerSetSound(set(ys)) |
-          true
-        }.qed else {
-          powerSet.contains(that)                             ==| trivial |
-          (ps ++ ps.map(_ + x)).contains(that)                ==| trivial |
-          (ps.contains(that) || ps.map(_ + x).contains(that)) ==| trivial |
-          ps.contains(that)                                   ==| set(xs).powerSetSound(that) |
-          true
-        }.qed
-    }
-  }
-
-
-  // Computes 2^x (two to the power of x).
-  def pow2(x: BigInt): BigInt = {
-    require(x >= 0)
-
-    if (x == 0) BigInt(1)
-    else 2 * pow2(x - 1)
-  } ensuring { _ > 0 }
-
-  // Proof that the cardinality of the powerset is two to the power of the
-  // cardinality of the input set.
-  @ignore
-  def powerSetSize: Boolean = {
-    powerSet.size == pow2(size)
-  }.holds because {
-    list match {
-      case Nil() => trivial
-      case Cons(x, xs) => {
-        powerSet.size                                            ==| trivial              |
-        (set(xs).powerSet ++ set(xs).powerSet.map(_ + x)).size   ==| trivial              |
-        set(xs).powerSet.size + set(xs).powerSet.map(_ + x).size ==| trivial              |
-        set(xs).powerSet.size + set(xs).powerSet.size            ==| trivial              |
-        2 * set(xs).powerSet.size                                ==| set(xs).powerSetSize |
-        2 * pow2(xs.size)                                        ==| trivial              |
-        pow2(list.size)                                          ==| trivial              |
-        pow2(size)
-      }.qed
-    }
-  }
-
+  def thm3(s: Set[T]): Boolean = {
+   (powerSet contains s) == (s subsetOf this)
+  }.holds because { thm1(s) && thm2(s) }
 }
 
 object + {
@@ -256,5 +201,4 @@ object SNil {
     case _     => false
   }
 }
-
 
