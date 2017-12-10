@@ -10,14 +10,7 @@ import stainless.proof._
 import set._
 
 
-case class Automaton[State, Sym](
-  validStates : Set[State],
-  trans       : (State, Sym) => Set[State]
-) {
-  require {
-    forall((s: State, w: Sym) => trans(s, w) subsetOf validStates)
-  }
-
+case class Automaton[State, Sym](trans : (State, Sym) => Set[State]) {
   def move(states: Set[State], w: Sym): Set[State]  = {
     states match {
       case (ss + s) => trans(s, w) ++ move(ss, w)
@@ -33,8 +26,7 @@ case class Automaton[State, Sym](
   }
 
   def det: Automaton[Set[State], Sym] = {
-    Automaton(validStates.powerSet,
-              { (s: Set[State], w: Sym) => Set.set(move(s, w)) })
+    Automaton({ (s: Set[State], w: Sym) => Set.set(move(s, w)) })
   }
 
   def detIsDeterministic(s: Set[State], w: Sym): Boolean = {
@@ -54,13 +46,7 @@ case class Automaton[State, Sym](
     Set.set(run(states, word)) == det.run(Set.set(states), word)
   }.holds because {
     word match {
-      case Nil() => {
-        Set.set(run(states, word))     ==| trivial |
-        Set.set(states)
-      }.qed && {
-        det.run(Set.set(states), word) ==| trivial |
-        Set.set(states)
-      }.qed
+      case Nil() => trivial
       case (w :: ws) => {
         det.run(Set.set(states), word)                              ==| trivial |
         det.run(Set.set(List(states)), word)                        ==| trivial |
@@ -72,7 +58,7 @@ case class Automaton[State, Sym](
         det.run(det.trans(states, w), ws)                           ==| trivial |
         det.run(Set.set(move(states, w)), ws)                       ==| detSound(move(states, w), ws) |
         Set.set(run(move(states, w), ws))                           ==| trivial |
-        Set.set(run(states, ws))
+        Set.set(run(states, word))
       }.qed
     }
   }

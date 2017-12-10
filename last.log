@@ -1,131 +1,115 @@
 [[33mWarning [0m] Parallelism is disabled.
-[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[Set[State]], Set[Set[State]]](==|[ ...)' VC for detSound @58:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[Set[Set[State]], Set[Set[State]]](==|[ ...)' VC for detSound @58:9:
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[Set[State]], Set[Set[State]]](|[Se ...)' VC for detSound @51:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[Set[State]], Set[Set[State]]](|[Se ...)' VC for detSound @51:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @51:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @51:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @51:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @51:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @51:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @51:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @51:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @51:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @51:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @51:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @51:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @51:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @51:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @51:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @51:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @51:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @51:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @51:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @51:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @51:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @52:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @52:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @53:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @53:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @54:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @54:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @55:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @55:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @56:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @56:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @57:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @57:9:
 [[34m  Info  [0m]  => VALID
 [[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @58:9...
 [[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @58:9:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[Set[State]], Set[Set[State]]](==|[ ...)' VC for detSound @61:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[Set[Set[State]], Set[Set[State]]](==|[ ...)' VC for detSound @61:9:
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @59:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @59:9:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @61:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @61:9:
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @60:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @60:9:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[Set[State]], Set[Set[State]]](|[Se ...)' VC for detSound @65:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[Set[Set[State]], Set[Set[State]]](|[Se ...)' VC for detSound @65:9:
-[[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @65:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @65:9:
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for detSound @46:5...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for detSound @46:5:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @65:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @65:9:
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for detSound @48:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for detSound @48:5:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @65:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @65:9:
+[[34m  Info  [0m]  - Now solving 'adt invariant' VC for detSound @53:17...
+[[34m  Info  [0m]  - Result for 'adt invariant' VC for detSound @53:17:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @65:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @65:9:
+[[34m  Info  [0m]  - Now solving 'adt invariant' VC for detSound @54:17...
+[[34m  Info  [0m]  - Result for 'adt invariant' VC for detSound @54:17:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @65:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @65:9:
+[[34m  Info  [0m]  - Now solving 'adt invariant' VC for detSound @55:26...
+[[34m  Info  [0m]  - Result for 'adt invariant' VC for detSound @55:26:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @65:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @65:9:
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for detSound @56:17...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for detSound @56:17:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @65:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @65:9:
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for detSound @57:17...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for detSound @57:17:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @65:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @65:9:
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for detSound @57:99...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for detSound @57:99:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @65:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)' VC for detSound @65:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @65:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @65:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @66:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @66:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @67:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @67:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @68:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @68:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @69:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @69:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @70:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @70:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @71:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @71:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @72:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @72:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @73:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @73:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @74:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[Set[State]]]({ ...)' VC for detSound @74:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for detSound @54:5...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for detSound @54:5:
-[[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for detSound @56:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for detSound @56:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'adt invariant' VC for detSound @67:17...
-[[34m  Info  [0m]  - Result for 'adt invariant' VC for detSound @67:17:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'adt invariant' VC for detSound @68:17...
-[[34m  Info  [0m]  - Result for 'adt invariant' VC for detSound @68:17:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'adt invariant' VC for detSound @69:26...
-[[34m  Info  [0m]  - Result for 'adt invariant' VC for detSound @69:26:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for detSound @70:17...
-[[34m  Info  [0m]  - Result for 'lambda precondition' VC for detSound @70:17:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for detSound @71:17...
-[[34m  Info  [0m]  - Result for 'lambda precondition' VC for detSound @71:17:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for detSound @71:99...
-[[34m  Info  [0m]  - Result for 'lambda precondition' VC for detSound @71:99:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for detSound @72:17...
-[[34m  Info  [0m]  - Result for 'lambda precondition' VC for detSound @72:17:
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for detSound @58:17...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for detSound @58:17:
 [[34m  Info  [0m]  => VALID
 [[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ [31mverification summary[0m ╞═════════════════════════════════════════════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                                                                 ║
-[[34m  Info  [0m] ║ [33mdetSound[0m  [33mpostcondition[0m                                                 [33mtimeout[0m  [33mnativez3[0m  [33mAutomaton.scala:54:5[0m   [33m17.059[0m ║
-[[34m  Info  [0m] ║ [32mdetSound[0m  [32mmatch exhaustiveness[0m                                          [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:56:5[0m   [32m0.064[0m  ║
-[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call ==|[Set[Set[State]]]({ ...)[0m                    [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:58:9[0m   [32m0.082[0m  ║
-[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call |[Set[Set[State]], Set[Set[State]]](==|[ ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:58:9[0m   [32m1.344[0m  ║
-[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call ==|[Set[Set[State]]]({ ...)[0m                    [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:61:9[0m   [32m0.102[0m  ║
-[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call |[Set[Set[State]], Set[Set[State]]](==|[ ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:61:9[0m   [32m0.186[0m  ║
-[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:65:9[0m   [32m0.845[0m  ║
-[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:65:9[0m   [32m1.244[0m  ║
-[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:65:9[0m   [32m14.586[0m ║
-[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:65:9[0m   [32m10.954[0m ║
-[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:65:9[0m   [32m9.568[0m  ║
-[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:65:9[0m   [32m16.355[0m ║
-[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:65:9[0m   [32m8.516[0m  ║
-[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:65:9[0m   [32m2.609[0m  ║
-[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:65:9[0m   [32m2.329[0m  ║
-[[34m  Info  [0m] ║ [33mdetSound[0m  [33mprecond. (call |[Set[Set[State]], Set[Set[State]]](|[Se ...)[0m  [33mtimeout[0m  [33mnativez3[0m  [33mAutomaton.scala:65:9[0m   [33m24.807[0m ║
-[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call ==|[Set[Set[State]]]({ ...)[0m                    [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:67:9[0m   [32m1.291[0m  ║
-[[34m  Info  [0m] ║ [32mdetSound[0m  [32madt invariant[0m                                                 [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:67:17[0m  [32m1.340[0m  ║
-[[34m  Info  [0m] ║ [32mdetSound[0m  [32madt invariant[0m                                                 [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:69:26[0m  [32m2.074[0m  ║
-[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call ==|[Set[Set[State]]]({ ...)[0m                    [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:71:9[0m   [32m0.070[0m  ║
-[[34m  Info  [0m] ║ [32mdetSound[0m  [32mlambda precondition[0m                                           [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:72:17[0m  [32m0.631[0m  ║
-[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call ==|[Set[Set[State]]]({ ...)[0m                    [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:73:9[0m   [32m1.160[0m  ║
-[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call ==|[Set[Set[State]]]({ ...)[0m                    [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:74:9[0m   [32m0.047[0m  ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ [31mtotal: 23   valid: 21   (0 from cache) invalid: 0    unknown: 2    time: 117.263[0m                                         ║
-[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-[[34m  Info  [0m] Cycle took 129133 ms
+[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═══════════════════════════════════════════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                                                               ║
+[[34m  Info  [0m] ║ [32mdetSound[0m  [32mpostcondition[0m                                                 [32mvalid[0m  [32mnativez3[0m  [32mAutomaton.scala:46:5[0m   [32m9.277[0m  ║
+[[34m  Info  [0m] ║ [32mdetSound[0m  [32mmatch exhaustiveness[0m                                          [32mvalid[0m  [32mnativez3[0m  [32mAutomaton.scala:48:5[0m   [32m0.036[0m  ║
+[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)[0m  [32mvalid[0m  [32mnativez3[0m  [32mAutomaton.scala:51:9[0m   [32m8.525[0m  ║
+[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)[0m  [32mvalid[0m  [32mnativez3[0m  [32mAutomaton.scala:51:9[0m   [32m2.474[0m  ║
+[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)[0m  [32mvalid[0m  [32mnativez3[0m  [32mAutomaton.scala:51:9[0m   [32m0.810[0m  ║
+[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)[0m  [32mvalid[0m  [32mnativez3[0m  [32mAutomaton.scala:51:9[0m   [32m9.541[0m  ║
+[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)[0m  [32mvalid[0m  [32mnativez3[0m  [32mAutomaton.scala:51:9[0m   [32m10.837[0m ║
+[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)[0m  [32mvalid[0m  [32mnativez3[0m  [32mAutomaton.scala:51:9[0m   [32m1.035[0m  ║
+[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)[0m  [32mvalid[0m  [32mnativez3[0m  [32mAutomaton.scala:51:9[0m   [32m16.624[0m ║
+[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)[0m  [32mvalid[0m  [32mnativez3[0m  [32mAutomaton.scala:51:9[0m   [32m1.155[0m  ║
+[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call |[Set[Set[State]], Set[Set[State]], Set[ ...)[0m  [32mvalid[0m  [32mnativez3[0m  [32mAutomaton.scala:51:9[0m   [32m13.775[0m ║
+[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call |[Set[Set[State]], Set[Set[State]]](|[Se ...)[0m  [32mvalid[0m  [32mnativez3[0m  [32mAutomaton.scala:51:9[0m   [32m19.684[0m ║
+[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call ==|[Set[Set[State]]]({ ...)[0m                    [32mvalid[0m  [32mnativez3[0m  [32mAutomaton.scala:53:9[0m   [32m1.209[0m  ║
+[[34m  Info  [0m] ║ [32mdetSound[0m  [32madt invariant[0m                                                 [32mvalid[0m  [32mnativez3[0m  [32mAutomaton.scala:53:17[0m  [32m1.169[0m  ║
+[[34m  Info  [0m] ║ [32mdetSound[0m  [32madt invariant[0m                                                 [32mvalid[0m  [32mnativez3[0m  [32mAutomaton.scala:55:26[0m  [32m1.812[0m  ║
+[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call ==|[Set[Set[State]]]({ ...)[0m                    [32mvalid[0m  [32mnativez3[0m  [32mAutomaton.scala:57:9[0m   [32m0.046[0m  ║
+[[34m  Info  [0m] ║ [32mdetSound[0m  [32mlambda precondition[0m                                           [32mvalid[0m  [32mnativez3[0m  [32mAutomaton.scala:58:17[0m  [32m0.584[0m  ║
+[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call ==|[Set[Set[State]]]({ ...)[0m                    [32mvalid[0m  [32mnativez3[0m  [32mAutomaton.scala:59:9[0m   [32m0.890[0m  ║
+[[34m  Info  [0m] ║ [32mdetSound[0m  [32mprecond. (call ==|[Set[Set[State]]]({ ...)[0m                    [32mvalid[0m  [32mnativez3[0m  [32mAutomaton.scala:60:9[0m   [32m0.037[0m  ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [32mtotal: 19   valid: 19   (0 from cache) invalid: 0    unknown: 0    time:  99.520[0m                                       ║
+[[34m  Info  [0m] ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 110136 ms
 [[34m  Info  [0m] Shutting down executor service.
