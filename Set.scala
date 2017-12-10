@@ -38,7 +38,7 @@ case class Set[T](list: List[T]) {
   }
 
   private def content: lang.Set[T] = {
-    list content
+    list.content
   }
 
   def forall(p: T => Boolean): Boolean = {
