@@ -33,15 +33,16 @@ case class Automaton[State, Sym](
   }
 
   def det: Automaton[Set[State], Sym] = {
-    Automaton(validStates.powerSet, { (s: Set[State], w: Sym) => move(s, w) })
-  } ensuring { isDeterministic _ }
-
-  def isDeterministic: Boolean = forall {
-    (s: State, w: Sym) => trans(s, w).size == 1
+    Automaton(validStates.powerSet,
+              { (s: Set[State], w: Sym) => Set.set(move(s, w)) })
   }
 
+  def detIsDeterministic: Boolean = {
+    forall { (s: Set[State], w: Sym) => det.trans(s, w).size == 1 }
+  }.holds
+
   def detSound(states: Set[State], word: List[Sym]): Boolean = {
-    set(run(states, word)) == det.run(set(states), from)
+    Set.set(run(states, word)) == det.run(Set.set(states), word)
   }.holds
 
 }

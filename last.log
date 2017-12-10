@@ -1,81 +1,12 @@
 [[33mWarning [0m] Parallelism is disabled.
-[[34m  Info  [0m]  - Now solving 'adt invariant' VC for empty @12:26...
-[[34m  Info  [0m]  - Result for 'adt invariant' VC for empty @12:26:
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for unapply @205:40...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for unapply @205:40:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for unapply @199:40...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for unapply @199:40:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call runFrom(det(thiss), word, from))' VC for detValidStates @191:17...
-[[34m  Info  [0m]  - Result for 'precond. (call runFrom(det(thiss), word, from))' VC for detValidStates @191:17:
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for detIsDeterministic @41:5...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for detIsDeterministic @41:5:
 [[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for detValidStates @188:71...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for detValidStates @188:71:
-[[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Now solving 'precond. (call runFrom(thiss, word, from))' VC for runFromPC @158:17...
-[[34m  Info  [0m]  - Result for 'precond. (call runFrom(thiss, word, from))' VC for runFromPC @158:17:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call movePC(thiss, from, w))' VC for runFromPC @162:27...
-[[34m  Info  [0m]  - Result for 'precond. (call movePC(thiss, from, w))' VC for runFromPC @162:27:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call runFromPC(thiss, ws, move(thiss, from, w ...)' VC for runFromPC @162:46...
-[[34m  Info  [0m]  - Result for 'precond. (call runFromPC(thiss, ws, move(thiss, from, w ...)' VC for runFromPC @162:46:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call move(thiss, from, w))' VC for runFromPC @162:60...
-[[34m  Info  [0m]  - Result for 'precond. (call move(thiss, from, w))' VC for runFromPC @162:60:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for runFromPC @156:66...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for runFromPC @156:66:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for runFromPC @160:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for runFromPC @160:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call sortedInsertPC(sortedUnique(xs), x))' VC for sortedUniquePC @79:49...
-[[34m  Info  [0m]  - Result for 'precond. (call sortedInsertPC(sortedUnique(xs), x))' VC for sortedUniquePC @79:49:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for sortedUniquePC @75:5...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for sortedUniquePC @75:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for sortedUniquePC @77:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for sortedUniquePC @77:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call sortedInsert(sortedUnique(t), h))' VC for sortedUnique @25:26...
-[[34m  Info  [0m]  - Result for 'precond. (call sortedInsert(sortedUnique(t), h))' VC for sortedUnique @25:26:
-[[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for sortedUnique @24:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for sortedUnique @24:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call sortedInsert(ls, v), ind. on (ls: List[BigInt] : Cons))' VC for sortedInsertPC @87:13...
-[[34m  Info  [0m]  - Result for 'precond. (call sortedInsert(ls, v), ind. on (ls: List[BigInt] : Cons))' VC for sortedInsertPC @87:13:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call sortedInsert(ls, v), ind. on (ls: List[BigInt] : Nil))' VC for sortedInsertPC @87:13...
-[[34m  Info  [0m]  - Result for 'precond. (call sortedInsert(ls, v), ind. on (ls: List[BigInt] : Nil))' VC for sortedInsertPC @87:13:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcond. (ind. on ls: List[BigInt] / Cons)' VC for sortedInsertPC @84:3...
-[[34m  Info  [0m]  - Result for 'postcond. (ind. on ls: List[BigInt] / Cons)' VC for sortedInsertPC @84:3:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcond. (ind. on ls: List[BigInt] / Nil)' VC for sortedInsertPC @84:3...
-[[34m  Info  [0m]  - Result for 'postcond. (ind. on ls: List[BigInt] / Nil)' VC for sortedInsertPC @84:3:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call sortedInsert(t, v))' VC for sortedInsert @39:34...
-[[34m  Info  [0m]  - Result for 'precond. (call sortedInsert(t, v))' VC for sortedInsert @39:34:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for sortedInsert @33:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for sortedInsert @33:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](validSubsets(thiss, ...)' VC for validSubsetsPC @181:5...
-[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](validSubsets(thiss, ...)' VC for validSubsetsPC @181:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call validSubsets(thiss, set))' VC for validSubsetsPC @181:5...
-[[34m  Info  [0m]  - Result for 'precond. (call validSubsets(thiss, set))' VC for validSubsetsPC @181:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for validSubsetsPC @179:52...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for validSubsetsPC @179:52:
-[[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for inv @94:1...
-[[34m  Info  [0m]  - Result for 'lambda precondition' VC for inv @94:1:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for inv @95:64...
-[[34m  Info  [0m]  - Result for 'lambda precondition' VC for inv @95:64:
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for detIsDeterministic @41:41...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for detIsDeterministic @41:41:
 [[34m  Info  [0m]  => VALID
 [[34m  Info  [0m]  - Now solving 'precond. (call tailNotContains[T](l))' VC for isSet @20:9...
 [[34m  Info  [0m]  - Result for 'precond. (call tailNotContains[T](l))' VC for isSet @20:9:
@@ -140,631 +71,47 @@
 [[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for tailNotContains @48:5...
 [[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for tailNotContains @48:5:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call runFrom(thiss, word, from))' VC for detSound @197:5...
-[[31m Error  [0m] Quantification content[BigInt](x$1007.trans.f(x$609, x$610)) ⊆ x$1008 does not fit in supported fragment.
-[[31m Error  [0m]   Reason: Unandled implications from operation content[BigInt](x$1007.trans.f(x$609, x$610))
-[[31m Error  [0m] Model obtained was:
-[[31m Error  [0m]   from: List[BigInt] -> Cons[BigInt](6282, Nil[BigInt]())
-[[31m Error  [0m]   thiss: NFA         -> NFA(Nil[BigInt](), (x$1046: BigInt, x$1047: Char) => if (x$1046 == 4 && x$1047 == '\u0000') {
-[[31m Error  [0m]     Nil[BigInt]()
-[[31m Error  [0m]   } else if (x$1046 == 4) {
-[[31m Error  [0m]     Nil[BigInt]()
-[[31m Error  [0m]   } else if (x$1047 == '\u0000') {
-[[31m Error  [0m]     Nil[BigInt]()
-[[31m Error  [0m]   } else {
-[[31m Error  [0m]     Nil[BigInt]()
-[[31m Error  [0m]   })
-[[34m  Info  [0m]  - Result for 'precond. (call runFrom(thiss, word, from))' VC for detSound @197:5:
-[[33mWarning [0m]  => UNKNOWN
-[[34m  Info  [0m]  - Now solving 'precond. (call runFrom(dfa, word, from))' VC for detSound @197:28...
-[[31m Error  [0m] Quantification content[BigInt](x$1059.trans.f(x$609, x$610)) ⊆ x$1060 does not fit in supported fragment.
-[[31m Error  [0m]   Reason: Unandled implications from operation content[BigInt](x$1059.trans.f(x$609, x$610))
-[[31m Error  [0m] Model obtained was:
-[[31m Error  [0m]   from: List[BigInt] -> Cons[BigInt](8, Nil[BigInt]())
-[[31m Error  [0m]   thiss: NFA         -> NFA(Nil[BigInt](), (x$1088: BigInt, x$1089: Char) => if (x$1088 == 4 && x$1089 == '\u0000') {
-[[31m Error  [0m]     Nil[BigInt]()
-[[31m Error  [0m]   } else if (x$1089 == '\u0000') {
-[[31m Error  [0m]     Nil[BigInt]()
-[[31m Error  [0m]   } else if (x$1088 == 4) {
-[[31m Error  [0m]     Nil[BigInt]()
-[[31m Error  [0m]   } else {
-[[31m Error  [0m]     Nil[BigInt]()
-[[31m Error  [0m]   })
-[[34m  Info  [0m]  - Result for 'precond. (call runFrom(dfa, word, from))' VC for detSound @197:28:
-[[33mWarning [0m]  => UNKNOWN
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for detSound @195:65...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for detSound @195:65:
-[[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Now solving 'precond. (call validSubsets(thiss, thiss.states))' VC for det @185:24...
-[[34m  Info  [0m]  - Result for 'precond. (call validSubsets(thiss, thiss.states))' VC for det @185:24:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call move(thiss, s, w))' VC for det @186:56...
-[[34m  Info  [0m]  - Result for 'precond. (call move(thiss, s, w))' VC for det @186:56:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'adt invariant' VC for det @185:20...
-[[31m Error  [0m] Quantification contains[List[BigInt]](x$1146, x$1147.trans.f(x$618, x$610)) does not fit in supported fragment.
-[[31m Error  [0m]   Reason: Can't guarantee model for complex matchers.
-[[31m Error  [0m] Model obtained was:
-[[31m Error  [0m]   thiss: NFA -> NFA(Nil[BigInt](), (x$1180: BigInt, x$1181: Char) => if (x$1180 == 69 && x$1181 == '\u0001') {
-[[31m Error  [0m]     Nil[BigInt]()
-[[31m Error  [0m]   } else if (x$1180 == 69) {
-[[31m Error  [0m]     Nil[BigInt]()
-[[31m Error  [0m]   } else if (x$1181 == '\u0001') {
-[[31m Error  [0m]     Nil[BigInt]()
-[[31m Error  [0m]   } else {
-[[31m Error  [0m]     Nil[BigInt]()
-[[31m Error  [0m]   })
-[[34m  Info  [0m]  - Result for 'adt invariant' VC for det @185:20:
-[[33mWarning [0m]  => UNKNOWN
-[[34m  Info  [0m]  - Now solving 'precond. (call validSubsets(thiss, t))' VC for validSubsets @173:18...
-[[34m  Info  [0m]  - Result for 'precond. (call validSubsets(thiss, t))' VC for validSubsets @173:18:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](ps, (x$4 ...)' VC for validSubsets @174:15...
-[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](ps, (x$4 ...)' VC for validSubsets @174:15:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for validSubsets @170:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for validSubsets @170:5:
-[[34m  Info  [0m]  => VALID
 [[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for subCons @62:3...
 [[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for subCons @62:3:
 [[34m  Info  [0m]  => VALID
 [[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for subCons @62:3...
 [[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for subCons @62:3:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for inv @121:1...
-[[34m  Info  [0m]  - Result for 'lambda precondition' VC for inv @121:1:
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for unapply @197:52...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for unapply @197:52:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for inv @124:36...
-[[34m  Info  [0m]  - Result for 'lambda precondition' VC for inv @124:36:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for thm3 @186:4...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for thm3 @186:4:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for thm1 @178:5...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for thm1 @178:5:
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for detSound @45:5...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for detSound @45:5:
 [[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Now solving 'precond. (call runFrom(thiss, ws, move(thiss, from, w)))' VC for runFrom @152:27...
-[[34m  Info  [0m]  - Result for 'precond. (call runFrom(thiss, ws, move(thiss, from, w)))' VC for runFrom @152:27:
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for run @29:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for run @29:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for thm3 @192:4...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for thm3 @192:4:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for thm1 @184:5...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for thm1 @184:5:
 [[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Now solving 'precond. (call move(thiss, from, w))' VC for runFrom @152:39...
-[[34m  Info  [0m]  - Result for 'precond. (call move(thiss, from, w))' VC for runFrom @152:39:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for runFrom @150:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for runFrom @150:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call move(thiss, set, w), ind. on (set: List[BigInt] : Cons))' VC for movePC @142:17...
-[[34m  Info  [0m]  - Result for 'precond. (call move(thiss, set, w), ind. on (set: List[BigInt] : Cons))' VC for movePC @142:17:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call move(thiss, set, w), ind. on (set: List[BigInt] : Nil))' VC for movePC @142:17...
-[[34m  Info  [0m]  - Result for 'precond. (call move(thiss, set, w), ind. on (set: List[BigInt] : Nil))' VC for movePC @142:17:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcond. (ind. on set: List[BigInt] / Cons)' VC for movePC @140:3...
-[[34m  Info  [0m]  - Result for 'postcond. (ind. on set: List[BigInt] / Cons)' VC for movePC @140:3:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcond. (ind. on set: List[BigInt] / Nil)' VC for movePC @140:3...
-[[34m  Info  [0m]  - Result for 'postcond. (ind. on set: List[BigInt] / Nil)' VC for movePC @140:3:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call merge(thiss.trans(h, w), move(thiss, t,  ...)' VC for move @135:26...
-[[34m  Info  [0m]  - Result for 'precond. (call merge(thiss.trans(h, w), move(thiss, t,  ...)' VC for move @135:26:
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for thm2 @188:5...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for thm2 @188:5:
 [[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Now solving 'precond. (call move(thiss, t, w))' VC for move @135:45...
-[[34m  Info  [0m]  - Result for 'precond. (call move(thiss, t, w))' VC for move @135:45:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for move @133:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for move @133:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for move @135:32...
-[[34m  Info  [0m]  - Result for 'lambda precondition' VC for move @135:32:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call merge(xs, ys))' VC for merge @50:31...
-[[34m  Info  [0m]  - Result for 'precond. (call merge(xs, ys))' VC for merge @50:31:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call merge(xs, b))' VC for merge @51:31...
-[[34m  Info  [0m]  - Result for 'precond. (call merge(xs, b))' VC for merge @51:31:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call merge(a, ys))' VC for merge @52:31...
-[[34m  Info  [0m]  - Result for 'precond. (call merge(a, ys))' VC for merge @52:31:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for merge @55:5...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for merge @55:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for merge @46:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for merge @46:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for isSortedUnique @16:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for isSortedUnique @16:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for thm2 @182:5...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for thm2 @182:5:
-[[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Now solving 'precond. (call map[Set[T], Set[T]](ps, (x$19: Set[T]) = ...)' VC for powerSet @172:15...
-[[34m  Info  [0m]  - Result for 'precond. (call map[Set[T], Set[T]](ps, (x$19: Set[T]) = ...)' VC for powerSet @172:15:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for powerSet @169:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for powerSet @169:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call map[T, U](thiss.list, f))' VC for map @166:39...
-[[34m  Info  [0m]  - Result for 'precond. (call map[T, U](thiss.list, f))' VC for map @166:39:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for map @166:14...
-[[34m  Info  [0m]  - Result for 'lambda precondition' VC for map @166:14:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call runFrom(thiss, word, from))' VC for runFromPC @110:16...
-[[34m  Info  [0m]  - Result for 'precond. (call runFrom(thiss, word, from))' VC for runFromPC @110:16:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call runFromPC(thiss, ws, to))' VC for runFromPC @116:33...
-[[34m  Info  [0m]  - Result for 'precond. (call runFromPC(thiss, ws, to))' VC for runFromPC @116:33:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for runFromPC @108:66...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for runFromPC @108:66:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for runFromPC @112:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for runFromPC @112:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for runFromPC @115:18...
-[[34m  Info  [0m]  - Result for 'lambda precondition' VC for runFromPC @115:18:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call runFrom(thiss, ws, thiss.trans(from, w)))' VC for runFrom @104:27...
-[[34m  Info  [0m]  - Result for 'precond. (call runFrom(thiss, ws, thiss.trans(from, w)))' VC for runFrom @104:27:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for runFrom @102:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for runFrom @102:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for runFrom @104:39...
-[[34m  Info  [0m]  - Result for 'lambda precondition' VC for runFrom @104:39:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](that, (x: T) => { ...)' VC for subsetOf @159:5...
-[[34m  Info  [0m]  - Result for 'precond. (call forall[T](that, (x: T) => { ...)' VC for subsetOf @159:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](thiss.list, p))' VC for forall @156:42...
-[[34m  Info  [0m]  - Result for 'precond. (call forall[T](thiss.list, p))' VC for forall @156:42:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for forall @156:14...
-[[34m  Info  [0m]  - Result for 'lambda precondition' VC for forall @156:14:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for unapply @191:52...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for unapply @191:52:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'body assertion' VC for set @35:39...
-[[34m  Info  [0m]  - Result for 'body assertion' VC for set @35:39:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'adt invariant' VC for set @37:5...
-[[34m  Info  [0m]  - Result for 'adt invariant' VC for set @37:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for uniqueIdem @125:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for uniqueIdem @125:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for uniqueIdem @125:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for uniqueIdem @125:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @125:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @125:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @126:10...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @126:10:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @127:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @127:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @128:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @128:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @129:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @129:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @130:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @130:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for uniqueIdem @120:5...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for uniqueIdem @120:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for uniqueIdem @122:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for uniqueIdem @122:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for subUniqueComm @89:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for subUniqueComm @89:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for subUniqueComm @89:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for subUniqueComm @89:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @89:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @89:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @90:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @90:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @91:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @91:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @92:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @92:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @93:10...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @93:10:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @94:10...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @94:10:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @95:10...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @95:10:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call uniqueNotContains[T](-[T](xs, x), x))' VC for subUniqueComm @95:43...
-[[34m  Info  [0m]  - Result for 'precond. (call uniqueNotContains[T](-[T](xs, x), x))' VC for subUniqueComm @95:43:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call subId[T](unique[T](-[T](xs, x)), x))' VC for subUniqueComm @96:45...
-[[34m  Info  [0m]  - Result for 'precond. (call subId[T](unique[T](-[T](xs, x)), x))' VC for subUniqueComm @96:45:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for subUniqueComm @99:10...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for subUniqueComm @99:10:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for subUniqueComm @99:10...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for subUniqueComm @99:10:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @99:10...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @99:10:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @100:10...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @100:10:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @101:10...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @101:10:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @102:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @102:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @103:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @103:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @104:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @104:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @105:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @105:9:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for subUniqueComm @84:6...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for subUniqueComm @84:6:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subUniqueComm @86:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subUniqueComm @86:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for uniqueNotContains @56:3...
-[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for uniqueNotContains @56:3:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for uniqueNotContains @56:3...
-[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for uniqueNotContains @56:3:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for subComm @69:3...
-[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for subComm @69:3:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for subComm @69:3...
-[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for subComm @69:3:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for subId @76:3...
-[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for subId @76:3:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for subId @76:3...
-[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for subId @76:3:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for subIdem @113:3...
-[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for subIdem @113:3:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for subIdem @113:3...
-[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for subIdem @113:3:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ [31mverification summary[0m ╞════════════════════════════════════════════════════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                                                                        ║
-[[34m  Info  [0m] ║ [33mdet[0m             [33madt invariant[0m                                                 [33munknown[0m  [33mnativez3[0m  [33mAutomaton.scala:185:20[0m  [33m3.183[0m  ║
-[[34m  Info  [0m] ║ [33mdetSound[0m        [33mpostcondition[0m                                                 [33mtimeout[0m  [33mnativez3[0m  [33mAutomaton.scala:195:65[0m  [33m10.021[0m ║
-[[34m  Info  [0m] ║ [33mdetSound[0m        [33mprecond. (call runFrom(thiss, word, from))[0m                    [33munknown[0m  [33mnativez3[0m  [33mAutomaton.scala:197:5[0m   [33m0.207[0m  ║
-[[34m  Info  [0m] ║ [33mdetSound[0m        [33mprecond. (call runFrom(dfa, word, from))[0m                      [33munknown[0m  [33mnativez3[0m  [33mAutomaton.scala:197:28[0m  [33m0.113[0m  ║
-[[34m  Info  [0m] ║ [33mdetValidStates[0m  [33mpostcondition[0m                                                 [33mtimeout[0m  [33mnativez3[0m  [33mAutomaton.scala:188:71[0m  [33m10.038[0m ║
-[[34m  Info  [0m] ║ [33mdetValidStates[0m  [33mprecond. (call runFrom(det(thiss), word, from))[0m               [33mtimeout[0m  [33mnativez3[0m  [33mAutomaton.scala:191:17[0m  [33m10.055[0m ║
-[[34m  Info  [0m] ║ [33mmove[0m            [33mprecond. (call merge(thiss.trans(h, w), move(thiss, t,  ...)[0m  [33mtimeout[0m  [33mnativez3[0m  [33mAutomaton.scala:135:26[0m  [33m10.030[0m ║
-[[34m  Info  [0m] ║ [33mrunFrom[0m         [33mprecond. (call runFrom(thiss, ws, move(thiss, from, w)))[0m      [33mtimeout[0m  [33mnativez3[0m  [33mAutomaton.scala:152:27[0m  [33m10.025[0m ║
-[[34m  Info  [0m] ║ [33msortedUnique[0m    [33mprecond. (call sortedInsert(sortedUnique(t), h))[0m              [33mtimeout[0m  [33mnativez3[0m  [33mAutomaton.scala:25:26[0m   [33m10.023[0m ║
-[[34m  Info  [0m] ║ [33mthm1[0m            [33mpostcondition[0m                                                 [33mtimeout[0m  [33mnativez3[0m  [33mSet.scala:178:5[0m         [33m12.792[0m ║
-[[34m  Info  [0m] ║ [33mthm2[0m            [33mpostcondition[0m                                                 [33mtimeout[0m  [33mnativez3[0m  [33mSet.scala:182:5[0m         [33m10.038[0m ║
-[[34m  Info  [0m] ║ [33mvalidSubsetsPC[0m  [33mpostcondition[0m                                                 [33mtimeout[0m  [33mnativez3[0m  [33mAutomaton.scala:179:52[0m  [33m10.031[0m ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ [31mtotal: 142  valid: 130  (0 from cache) invalid: 0    unknown: 12   time: 224.701[0m                                                ║
-[[34m  Info  [0m] ╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-[[34m  Info  [0m] Cycle took 233155 ms
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Waiting for source changes...
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Automaton.scala
-[[31m Error  [0m] Automaton.scala:16:15: error: identifier expected but ':' found.
-             trans       : (State, Sym) => Set[State],
-                         [31m^[0m
-[[31m Error  [0m] Automaton.scala:34:2: error: ')' expected but eof found.
-           }
-            [31m^[0m
-[[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
-[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
-[[34m  Info  [0m] Cycle took 233 ms
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Waiting for source changes...
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Set.scala
-[[31m Error  [0m] Automaton.scala:16:15: error: identifier expected but ':' found.
-             trans       : (State, Sym) => Set[State],
-                         [31m^[0m
-[[31m Error  [0m] Automaton.scala:34:2: error: ')' expected but eof found.
-           }
-            [31m^[0m
-[[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
-[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
-[[34m  Info  [0m] Cycle took 206 ms
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Waiting for source changes...
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Automaton.scala
-[[31m Error  [0m] Automaton.scala:16:15: error: identifier expected but ':' found.
-             trans       : (State, Sym) => Set[State],
-                         [31m^[0m
-[[31m Error  [0m] Automaton.scala:34:2: error: ')' expected but eof found.
-           }
-            [31m^[0m
-[[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
-[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
-[[34m  Info  [0m] Cycle took 163 ms
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Waiting for source changes...
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Automaton.scala
-[[31m Error  [0m] Automaton.scala:18:16: error: not found: type state
-               forall((s: state, w: Sym) => trans(s, w) subsetOf validStates)
-                          [31m^[0m
-[[31m Error  [0m] Automaton.scala:23:16: error: not found: value +
-                 case (ss + s) => trans(s, w) ++ move(ss, w)
-                          [31m^[0m
-[[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
-[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
-[[34m  Info  [0m] Cycle took 1138 ms
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Waiting for source changes...
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Automaton.scala
-[[31m Error  [0m] Automaton.scala:18:16: error: not found: type state
-               forall((s: state, w: Sym) => trans(s, w) subsetOf validStates)
-                          [31m^[0m
-[[31m Error  [0m] Automaton.scala:23:16: error: not found: value +
-                 case (ss + s) => trans(s, w) ++ move(ss, w)
-                          [31m^[0m
-[[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
-[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
-[[34m  Info  [0m] Cycle took 1032 ms
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Waiting for source changes...
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Automaton.scala
-[[31m Error  [0m] Automaton.scala:23:16: error: not found: value +
-                 case (ss + s) => trans(s, w) ++ move(ss, w)
-                          [31m^[0m
-[[31m Error  [0m] Automaton.scala:24:17: error: not found: value empty
-                 case _ => empty
-                           [31m^[0m
-[[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
-[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
-[[34m  Info  [0m] Cycle took 918 ms
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Waiting for source changes...
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Automaton.scala
-[[31m Error  [0m] Automaton.scala:24:17: error: not found: value empty
-                 case _ => empty
-                           [31m^[0m
-[[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
-[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
-[[34m  Info  [0m] Cycle took 774 ms
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Waiting for source changes...
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Automaton.scala
-[[31m Error  [0m] Automaton.scala:27:5: error: missing parameter type
-               res => (states subsetOf validStates) ==> (res subsetOf validStates)
-               [31m^[0m
-[[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
-[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
-[[34m  Info  [0m] Cycle took 1497 ms
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Waiting for source changes...
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Automaton.scala
-[[31m Error  [0m] Automaton.scala:26:5: error: overloaded method value ensuring with alternatives:
-[[31m Error  [0m]   (cond: set.Set[_1] => Boolean,msg: => Any)set.Set[_1] <and>
-[[31m Error  [0m]   (cond: set.Set[_1] => Boolean)set.Set[_1] <and>
-[[31m Error  [0m]   (cond: Boolean,msg: => Any)set.Set[_1] <and>
-[[31m Error  [0m]   (cond: Boolean)set.Set[_1]
-[[31m Error  [0m]  cannot be applied to (set.Set[State] => Boolean)
-             } ensuring {
-               [31m^[0m
-[[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
-[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
-[[34m  Info  [0m] Cycle took 708 ms
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Waiting for source changes...
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Automaton.scala
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for unapply @208:40...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for unapply @208:40:
-[[34m  Info  [0m]  => VALID
 [[34m  Info  [0m]  - Now solving 'lambda precondition' VC for inv @13:1...
 [[34m  Info  [0m]  - Result for 'lambda precondition' VC for inv @13:1:
 [[34m  Info  [0m]  => VALID
 [[34m  Info  [0m]  - Now solving 'lambda precondition' VC for inv @18:34...
 [[34m  Info  [0m]  - Result for 'lambda precondition' VC for inv @18:34:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call tailNotContains[T](l))' VC for isSet @20:9...
-[[34m  Info  [0m]  - Result for 'precond. (call tailNotContains[T](l))' VC for isSet @20:9:
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](that, (x: T) => { ...)' VC for subsetOf @165:5...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](that, (x: T) => { ...)' VC for subsetOf @165:5:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call uniqueNotContains[T](xs, x))' VC for isSet @20:31...
-[[34m  Info  [0m]  - Result for 'precond. (call uniqueNotContains[T](xs, x))' VC for isSet @20:31:
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](thiss.list, p))' VC for forall @162:42...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](thiss.list, p))' VC for forall @162:42:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for isSet @21:11...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for isSet @21:11:
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for forall @162:14...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for forall @162:14:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for isSet @21:11...
-[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for isSet @21:11:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for isSet @21:11...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for isSet @21:11:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call subCons[T](xs, x))' VC for isSet @21:42...
-[[34m  Info  [0m]  - Result for 'precond. (call subCons[T](xs, x))' VC for isSet @21:42:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for isSet @22:11...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for isSet @22:11:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for isSet @23:12...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for isSet @23:12:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for isSet @24:11...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for isSet @24:11:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for isSet @25:11...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for isSet @25:11:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call subId[T](unique[T](xs), x))' VC for isSet @25:42...
-[[34m  Info  [0m]  - Result for 'precond. (call subId[T](unique[T](xs), x))' VC for isSet @25:42:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for isSet @26:11...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for isSet @26:11:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call subId[T](unique[T](xs), x))' VC for isSet @26:42...
-[[34m  Info  [0m]  - Result for 'precond. (call subId[T](unique[T](xs), x))' VC for isSet @26:42:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for isSet @17:5...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for isSet @17:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for isSet @17:12...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for isSet @17:12:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for tailNotContains @45:49...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for tailNotContains @45:49:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for tailNotContains @48:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for tailNotContains @48:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for subCons @62:3...
-[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for subCons @62:3:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for subCons @62:3...
-[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for subCons @62:3:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for isEmpty @155:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for isEmpty @155:5:
+[[34m  Info  [0m]  - Now solving 'adt invariant' VC for det @36:5...
+[[34m  Info  [0m]  - Result for 'adt invariant' VC for det @36:5:
 [[34m  Info  [0m]  => VALID
 [[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for move @22:5...
 [[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for move @22:5:
@@ -775,38 +122,17 @@
 [[34m  Info  [0m]  - Now solving 'adt invariant' VC for empty @12:26...
 [[34m  Info  [0m]  - Result for 'adt invariant' VC for empty @12:26:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for thm3 @195:4...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for thm3 @195:4:
+[[34m  Info  [0m]  - Now solving 'precond. (call map[Set[T], Set[T]](ps, (x$19: Set[T]) = ...)' VC for powerSet @178:15...
+[[34m  Info  [0m]  - Result for 'precond. (call map[Set[T], Set[T]](ps, (x$19: Set[T]) = ...)' VC for powerSet @178:15:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for thm1 @187:5...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for thm1 @187:5:
-[[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for thm2 @191:5...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for thm2 @191:5:
-[[33mWarning [0m]  => TIMEOUT
-[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](that, (x: T) => { ...)' VC for subsetOf @168:5...
-[[34m  Info  [0m]  - Result for 'precond. (call forall[T](that, (x: T) => { ...)' VC for subsetOf @168:5:
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for powerSet @175:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for powerSet @175:5:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](thiss.list, p))' VC for forall @165:42...
-[[34m  Info  [0m]  - Result for 'precond. (call forall[T](thiss.list, p))' VC for forall @165:42:
+[[34m  Info  [0m]  - Now solving 'precond. (call map[T, U](thiss.list, f))' VC for map @172:39...
+[[34m  Info  [0m]  - Result for 'precond. (call map[T, U](thiss.list, f))' VC for map @172:39:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for forall @165:14...
-[[34m  Info  [0m]  - Result for 'lambda precondition' VC for forall @165:14:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call map[Set[T], Set[T]](ps, (x$19: Set[T]) = ...)' VC for powerSet @181:15...
-[[34m  Info  [0m]  - Result for 'precond. (call map[Set[T], Set[T]](ps, (x$19: Set[T]) = ...)' VC for powerSet @181:15:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for powerSet @178:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for powerSet @178:5:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call map[T, U](thiss.list, f))' VC for map @175:39...
-[[34m  Info  [0m]  - Result for 'precond. (call map[T, U](thiss.list, f))' VC for map @175:39:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for map @175:14...
-[[34m  Info  [0m]  - Result for 'lambda precondition' VC for map @175:14:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for unapply @200:52...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for unapply @200:52:
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for map @172:14...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for map @172:14:
 [[34m  Info  [0m]  => VALID
 [[34m  Info  [0m]  - Now solving 'body assertion' VC for set @35:39...
 [[34m  Info  [0m]  - Result for 'body assertion' VC for set @35:39:
@@ -952,11 +278,11 @@
 [[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subUniqueComm @86:5...
 [[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subUniqueComm @86:5:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for subComm @69:3...
-[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for subComm @69:3:
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for subId @76:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for subId @76:3:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for subComm @69:3...
-[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for subComm @69:3:
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for subId @76:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for subId @76:3:
 [[34m  Info  [0m]  => VALID
 [[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for uniqueNotContains @56:3...
 [[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for uniqueNotContains @56:3:
@@ -964,146 +290,112 @@
 [[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for uniqueNotContains @56:3...
 [[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for uniqueNotContains @56:3:
 [[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for subComm @69:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for subComm @69:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for subComm @69:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for subComm @69:3:
+[[34m  Info  [0m]  => VALID
 [[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for subIdem @113:3...
 [[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for subIdem @113:3:
 [[34m  Info  [0m]  => VALID
 [[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for subIdem @113:3...
 [[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for subIdem @113:3:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for subId @76:3...
-[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for subId @76:3:
-[[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for subId @76:3...
-[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for subId @76:3:
-[[34m  Info  [0m]  => VALID
 [[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ [31mverification summary[0m ╞═══════════════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                                   ║
-[[34m  Info  [0m] ║ [33mthm1[0m    [33mpostcondition[0m         [33mtimeout[0m     [33mnativez3[0m      [33mSet.scala:187:5[0m          [33m11.268[0m    ║
-[[34m  Info  [0m] ║ [33mthm2[0m    [33mpostcondition[0m         [33mtimeout[0m     [33mnativez3[0m      [33mSet.scala:191:5[0m          [33m10.036[0m    ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ [31mtotal: 85   valid: 83   (0 from cache) invalid: 0    unknown: 2    time: 155.932[0m           ║
-[[34m  Info  [0m] ╚════════════════════════════════════════════════════════════════════════════════════════════╝
-[[34m  Info  [0m] Cycle took 158315 ms
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Waiting for source changes...
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Automaton.scala
-[[31m Error  [0m] Automaton.scala:35:12: error: wrong number of type arguments for automaton.Automaton, should be 2
-             def det: Automaton[Set[State]] = {
-                      [31m^[0m
-[[31m Error  [0m] Automaton.scala:36:27: error: type mismatch;
-[[31m Error  [0m]  found   : set.Set[set.Set[State]]
-[[31m Error  [0m]  required: set.Set[Any]
-[[31m Error  [0m] Note: set.Set[State] <: Any, but class Set is invariant in type T.
-[[31m Error  [0m] You may wish to define T as +T instead. (SLS 4.5)
-               Automaton(validStates.powerSet, { (s: Set[State], w: Sym) => move(s, w) })
-                                     [31m^[0m
-[[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
-[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
-[[34m  Info  [0m] Cycle took 679 ms
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Waiting for source changes...
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Automaton.scala
-[[31m Error  [0m] Automaton.scala:35:12: error: wrong number of type arguments for automaton.Automaton, should be 2
-             def det: Automaton[Set[State]] = {
-                      [31m^[0m
-[[31m Error  [0m] Automaton.scala:36:27: error: type mismatch;
-[[31m Error  [0m]  found   : set.Set[set.Set[State]]
-[[31m Error  [0m]  required: set.Set[Any]
-[[31m Error  [0m] Note: set.Set[State] <: Any, but class Set is invariant in type T.
-[[31m Error  [0m] You may wish to define T as +T instead. (SLS 4.5)
-               Automaton(validStates.powerSet, { (s: Set[State], w: Sym) => move(s, w) })
-                                     [31m^[0m
-[[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
-[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
-[[34m  Info  [0m] Cycle took 665 ms
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Waiting for source changes...
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Set.scala
-[[31m Error  [0m] Automaton.scala:35:12: error: wrong number of type arguments for automaton.Automaton, should be 2
-             def det: Automaton[Set[State]] = {
-                      [31m^[0m
-[[31m Error  [0m] Automaton.scala:36:27: error: type mismatch;
-[[31m Error  [0m]  found   : set.Set[set.Set[State]]
-[[31m Error  [0m]  required: set.Set[Any]
-[[31m Error  [0m] Note: set.Set[State] <: Any, but class Set is invariant in type T.
-[[31m Error  [0m] You may wish to define T as +T instead. (SLS 4.5)
-               Automaton(validStates.powerSet, { (s: Set[State], w: Sym) => move(s, w) })
-                                     [31m^[0m
-[[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
-[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
-[[34m  Info  [0m] Cycle took 619 ms
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Waiting for source changes...
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Automaton.scala
-[[31m Error  [0m] Automaton.scala:35:12: error: wrong number of type arguments for automaton.Automaton, should be 2
-             def det: Automaton[Set[State]] = {
-                      [31m^[0m
-[[31m Error  [0m] Automaton.scala:36:27: error: type mismatch;
-[[31m Error  [0m]  found   : set.Set[set.Set[State]]
-[[31m Error  [0m]  required: set.Set[Any]
-[[31m Error  [0m] Note: set.Set[State] <: Any, but class Set is invariant in type T.
-[[31m Error  [0m] You may wish to define T as +T instead. (SLS 4.5)
-               Automaton(validStates.powerSet, { (s: Set[State], w: Sym) => move(s, w) })
-                                     [31m^[0m
-[[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
-[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
-[[34m  Info  [0m] Cycle took 590 ms
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Waiting for source changes...
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Automaton.scala
-[[31m Error  [0m] Automaton.scala:36:27: error: type mismatch;
-[[31m Error  [0m]  found   : set.Set[set.Set[State]]
-[[31m Error  [0m]  required: set.Set[Any]
-[[31m Error  [0m] Note: set.Set[State] <: Any, but class Set is invariant in type T.
-[[31m Error  [0m] You may wish to define T as +T instead. (SLS 4.5)
-               Automaton(validStates.powerSet, { (s: Set[State], w: Sym) => move(s, w) })
-                                     [31m^[0m
-[[31m Error  [0m] Automaton.scala:36:63: error: type mismatch;
-[[31m Error  [0m]  found   : (set.Set[State], Sym) => set.Set[State]
-[[31m Error  [0m]  required: (Any, Sym) => set.Set[Any]
-               Automaton(validStates.powerSet, { (s: Set[State], w: Sym) => move(s, w) })
-                                                                         [31m^[0m
-[[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
-[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
-[[34m  Info  [0m] Cycle took 628 ms
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
-[[34m  Info  [0m] Waiting for source changes...
-[[34m  Info  [0m] 
-[[34m  Info  [0m] 
+[[34m  Info  [0m] ╔═╡ [31mverification summary[0m ╞═══════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                                                                           ║
+[[34m  Info  [0m] ║ [32mdet[0m                 [32madt invariant[0m                                                 [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:36:5[0m   [32m0.610[0m  ║
+[[34m  Info  [0m] ║ [33mdetIsDeterministic[0m  [33mpostcondition[0m                                                 [33mtimeout[0m  [33mnativez3[0m  [33mAutomaton.scala:41:5[0m   [33m10.182[0m ║
+[[34m  Info  [0m] ║ [32mdetIsDeterministic[0m  [32mlambda precondition[0m                                           [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:41:41[0m  [32m0.676[0m  ║
+[[34m  Info  [0m] ║ [33mdetSound[0m            [33mpostcondition[0m                                                 [33mtimeout[0m  [33mnativez3[0m  [33mAutomaton.scala:45:5[0m   [33m10.030[0m ║
+[[34m  Info  [0m] ║ [32mempty[0m               [32madt invariant[0m                                                 [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:12:26[0m        [32m0.600[0m  ║
+[[34m  Info  [0m] ║ [32mforall[0m              [32mlambda precondition[0m                                           [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:162:14[0m       [32m0.011[0m  ║
+[[34m  Info  [0m] ║ [32mforall[0m              [32mprecond. (call forall[T](thiss.list, p))[0m                      [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:162:42[0m       [32m0.010[0m  ║
+[[34m  Info  [0m] ║ [32minv[0m                 [32mlambda precondition[0m                                           [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:13:1[0m   [32m0.007[0m  ║
+[[34m  Info  [0m] ║ [32minv[0m                 [32mlambda precondition[0m                                           [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:18:34[0m  [32m0.010[0m  ║
+[[34m  Info  [0m] ║ [32misSet[0m               [32mpostcondition[0m                                                 [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:17:5[0m         [32m1.050[0m  ║
+[[34m  Info  [0m] ║ [32misSet[0m               [32mmatch exhaustiveness[0m                                          [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:17:12[0m        [32m0.012[0m  ║
+[[34m  Info  [0m] ║ [32misSet[0m               [32mprecond. (call tailNotContains[T](l))[0m                         [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:20:9[0m         [32m0.606[0m  ║
+[[34m  Info  [0m] ║ [32misSet[0m               [32mprecond. (call uniqueNotContains[T](xs, x))[0m                   [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:20:31[0m        [32m0.038[0m  ║
+[[34m  Info  [0m] ║ [32misSet[0m               [32mprecond. (call ==|[List[T]]({ ...)[0m                            [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:21:11[0m        [32m0.032[0m  ║
+[[34m  Info  [0m] ║ [32misSet[0m               [32mprecond. (call |[List[T], List[T], List[T]](==|[List[T] ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:21:11[0m        [32m0.650[0m  ║
+[[34m  Info  [0m] ║ [32misSet[0m               [32mprecond. (call |[List[T], List[T], List[T]](|[List[T],  ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:21:11[0m        [32m0.722[0m  ║
+[[34m  Info  [0m] ║ [32misSet[0m               [32mprecond. (call |[List[T], List[T], List[T]](|[List[T],  ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:21:11[0m        [32m1.411[0m  ║
+[[34m  Info  [0m] ║ [32misSet[0m               [32mprecond. (call |[List[T], List[T], List[T]](|[List[T],  ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:21:11[0m        [32m0.844[0m  ║
+[[34m  Info  [0m] ║ [32misSet[0m               [32mprecond. (call |[List[T], List[T], List[T]](|[List[T],  ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:21:11[0m        [32m1.030[0m  ║
+[[34m  Info  [0m] ║ [32misSet[0m               [32mprecond. (call |[List[T], List[T]](|[List[T], List[T],  ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:21:11[0m        [32m1.718[0m  ║
+[[34m  Info  [0m] ║ [32misSet[0m               [32mprecond. (call subCons[T](xs, x))[0m                             [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:21:42[0m        [32m0.035[0m  ║
+[[34m  Info  [0m] ║ [32misSet[0m               [32mprecond. (call ==|[List[T]]({ ...)[0m                            [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:22:11[0m        [32m0.542[0m  ║
+[[34m  Info  [0m] ║ [32misSet[0m               [32mprecond. (call ==|[List[T]]({ ...)[0m                            [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:24:11[0m        [32m0.034[0m  ║
+[[34m  Info  [0m] ║ [32misSet[0m               [32mprecond. (call ==|[List[T]]({ ...)[0m                            [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:26:11[0m        [32m0.033[0m  ║
+[[34m  Info  [0m] ║ [32misSet[0m               [32mprecond. (call subId[T](unique[T](xs), x))[0m                    [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:26:42[0m        [32m0.042[0m  ║
+[[34m  Info  [0m] ║ [32mmap[0m                 [32mlambda precondition[0m                                           [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:172:14[0m       [32m0.009[0m  ║
+[[34m  Info  [0m] ║ [32mmap[0m                 [32mprecond. (call map[T, U](thiss.list, f))[0m                      [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:172:39[0m       [32m0.010[0m  ║
+[[34m  Info  [0m] ║ [32mmove[0m                [32mmatch exhaustiveness[0m                                          [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:22:5[0m   [32m0.008[0m  ║
+[[34m  Info  [0m] ║ [32mmove[0m                [32mlambda precondition[0m                                           [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:23:24[0m  [32m0.029[0m  ║
+[[34m  Info  [0m] ║ [32mpowerSet[0m            [32mmatch exhaustiveness[0m                                          [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:175:5[0m        [32m0.007[0m  ║
+[[34m  Info  [0m] ║ [32mpowerSet[0m            [32mprecond. (call map[Set[T], Set[T]](ps, (x$19: Set[T]) = ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:178:15[0m       [32m0.013[0m  ║
+[[34m  Info  [0m] ║ [32mrun[0m                 [32mmatch exhaustiveness[0m                                          [32mvalid[0m    [32mnativez3[0m  [32mAutomaton.scala:29:5[0m   [32m0.009[0m  ║
+[[34m  Info  [0m] ║ [32mset[0m                 [32mbody assertion[0m                                                [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:35:39[0m        [32m0.483[0m  ║
+[[34m  Info  [0m] ║ [32mset[0m                 [32madt invariant[0m                                                 [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:37:5[0m         [32m4.811[0m  ║
+[[34m  Info  [0m] ║ [32msubComm[0m             [32mpostcond. (ind. on xs: List[T] / Cons)[0m                        [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:69:3[0m         [32m0.030[0m  ║
+[[34m  Info  [0m] ║ [32msubComm[0m             [32mpostcond. (ind. on xs: List[T] / Nil)[0m                         [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:69:3[0m         [32m0.018[0m  ║
+[[34m  Info  [0m] ║ [32msubCons[0m             [32mpostcond. (ind. on xs: List[T] / Cons)[0m                        [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:62:3[0m         [32m0.039[0m  ║
+[[34m  Info  [0m] ║ [32msubCons[0m             [32mpostcond. (ind. on xs: List[T] / Nil)[0m                         [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:62:3[0m         [32m0.031[0m  ║
+[[34m  Info  [0m] ║ [32msubId[0m               [32mpostcond. (ind. on xs: List[T] / Cons)[0m                        [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:76:3[0m         [32m0.027[0m  ║
+[[34m  Info  [0m] ║ [32msubId[0m               [32mpostcond. (ind. on xs: List[T] / Nil)[0m                         [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:76:3[0m         [32m0.020[0m  ║
+[[34m  Info  [0m] ║ [32msubIdem[0m             [32mpostcond. (ind. on xs: List[T] / Cons)[0m                        [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:113:3[0m        [32m0.019[0m  ║
+[[34m  Info  [0m] ║ [32msubIdem[0m             [32mpostcond. (ind. on xs: List[T] / Nil)[0m                         [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:113:3[0m        [32m0.016[0m  ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mpostcondition[0m                                                 [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:84:6[0m         [32m13.607[0m ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mmatch exhaustiveness[0m                                          [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:86:5[0m         [32m0.025[0m  ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mprecond. (call |[List[T], List[T], List[T]](==|[List[T] ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:89:9[0m         [32m0.097[0m  ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mprecond. (call |[List[T], List[T], List[T]](|[List[T],  ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:89:9[0m         [32m6.413[0m  ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mprecond. (call |[List[T], List[T], List[T]](|[List[T],  ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:89:9[0m         [32m0.211[0m  ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mprecond. (call |[List[T], List[T], List[T]](|[List[T],  ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:89:9[0m         [32m5.633[0m  ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mprecond. (call |[List[T], List[T], List[T]](|[List[T],  ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:89:9[0m         [32m6.478[0m  ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mprecond. (call |[List[T], List[T], List[T]](|[List[T],  ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:89:9[0m         [32m6.054[0m  ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mprecond. (call |[List[T], List[T]](|[List[T], List[T],  ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:89:9[0m         [32m6.897[0m  ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mprecond. (call ==|[List[T]]({ ...)[0m                            [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:91:9[0m         [32m0.037[0m  ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mprecond. (call ==|[List[T]]({ ...)[0m                            [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:92:9[0m         [32m4.891[0m  ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mprecond. (call ==|[List[T]]({ ...)[0m                            [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:94:10[0m        [32m0.033[0m  ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mprecond. (call ==|[List[T]]({ ...)[0m                            [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:95:10[0m        [32m0.042[0m  ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mprecond. (call uniqueNotContains[T](-[T](xs, x), x))[0m          [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:95:43[0m        [32m0.040[0m  ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mprecond. (call subId[T](unique[T](-[T](xs, x)), x))[0m           [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:96:45[0m        [32m0.044[0m  ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mprecond. (call |[List[T], List[T], List[T]](==|[List[T] ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:99:10[0m        [32m0.092[0m  ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mprecond. (call |[List[T], List[T], List[T]](|[List[T],  ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:99:10[0m        [32m5.633[0m  ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mprecond. (call |[List[T], List[T], List[T]](|[List[T],  ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:99:10[0m        [32m6.892[0m  ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mprecond. (call |[List[T], List[T], List[T]](|[List[T],  ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:99:10[0m        [32m6.400[0m  ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mprecond. (call |[List[T], List[T], List[T]](|[List[T],  ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:99:10[0m        [32m0.193[0m  ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mprecond. (call |[List[T], List[T], List[T]](|[List[T],  ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:99:10[0m        [32m5.838[0m  ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mprecond. (call |[List[T], List[T]](|[List[T], List[T],  ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:99:10[0m        [32m7.313[0m  ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mprecond. (call ==|[List[T]]({ ...)[0m                            [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:102:9[0m        [32m5.372[0m  ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mprecond. (call ==|[List[T]]({ ...)[0m                            [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:103:9[0m        [32m0.039[0m  ║
+[[34m  Info  [0m] ║ [32msubUniqueComm[0m       [32mprecond. (call ==|[List[T]]({ ...)[0m                            [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:105:9[0m        [32m0.029[0m  ║
+[[34m  Info  [0m] ║ [32msubsetOf[0m            [32mprecond. (call forall[T](that, (x: T) => { ...)[0m               [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:165:5[0m        [32m0.007[0m  ║
+[[34m  Info  [0m] ║ [32mtailNotContains[0m     [32mpostcondition[0m                                                 [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:45:49[0m        [32m0.574[0m  ║
+[[34m  Info  [0m] ║ [32mtailNotContains[0m     [32mmatch exhaustiveness[0m                                          [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:48:5[0m         [32m0.534[0m  ║
+[[34m  Info  [0m] ║ [33mthm1[0m                [33mpostcondition[0m                                                 [33mtimeout[0m  [33mnativez3[0m  [33mSet.scala:184:5[0m        [33m12.450[0m ║
+[[34m  Info  [0m] ║ [33mthm2[0m                [33mpostcondition[0m                                                 [33mtimeout[0m  [33mnativez3[0m  [33mSet.scala:188:5[0m        [33m10.033[0m ║
+[[34m  Info  [0m] ║ [32mthm3[0m                [32mpostcondition[0m                                                 [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:192:4[0m        [32m0.048[0m  ║
+[[34m  Info  [0m] ║ [32munapply[0m             [32mmatch exhaustiveness[0m                                          [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:197:52[0m       [32m0.005[0m  ║
+[[34m  Info  [0m] ║ [32munapply[0m             [32mmatch exhaustiveness[0m                                          [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:205:40[0m       [32m0.140[0m  ║
+[[34m  Info  [0m] ║ [32muniqueIdem[0m          [32mpostcondition[0m                                                 [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:120:5[0m        [32m4.730[0m  ║
+[[34m  Info  [0m] ║ [32muniqueIdem[0m          [32mmatch exhaustiveness[0m                                          [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:122:5[0m        [32m0.013[0m  ║
+[[34m  Info  [0m] ║ [32muniqueIdem[0m          [32mprecond. (call |[List[T], List[T], List[T]](==|[List[T] ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:125:9[0m        [32m0.084[0m  ║
+[[34m  Info  [0m] ║ [32muniqueIdem[0m          [32mprecond. (call |[List[T], List[T], List[T]](|[List[T],  ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:125:9[0m        [32m5.026[0m  ║
+[[34m  Info  [0m] ║ [32muniqueIdem[0m          [32mprecond. (call |[List[T], List[T], List[T]](|[List[T],  ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:125:9[0m        [32m4.872[0m  ║
+[[34m  Info  [0m] ║ [32muniqueIdem[0m          [32mprecond. (call |[List[T], List[T], List[T]](|[List[T],  ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:125:9[0m        [32m5.578[0m  ║
+[[34m  Info  [0m] ║ [32muniqueIdem[0m          [32mprecond. (call |[List[T], List[T], List[T]](|[List[T],  ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:125:9[0m        [32m4.100[0m  ║
+[[34m  Info  [0m] ║ [32muniqueIdem[0m          [32mprecond. (call |[List[T], List[T]](|[List[T], List[T],  ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:125:9[0m        [32m5.855[0m  ║
+[[34m  Info  [0m] ║ [32muniqueIdem[0m          [32mprecond. (call ==|[List[T]]({ ...)[0m                            [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:127:9[0m        [32m3.834[0m  ║
+[[34m  Info  [0m] ║ [32muniqueIdem[0m          [32mprecond. (call ==|[List[T]]({ ...)[0m                            [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:128:9[0m        [32m0.472[0m  ║
+[[34m  Info  [0m] ║ [32muniqueIdem[0m          [32mprecond. (call ==|[List[T]]({ ...)[0m                            [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:129:9[0m        [32m0.019[0m  ║
+[[34m  Info  [0m] ║ [32muniqueIdem[0m          [32mprecond. (call ==|[List[T]]({ ...)[0m                            [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:130:9[0m        [32m0.012[0m  ║
+[[34m  Info  [0m] ║ [32muniqueNotContains[0m   [32mpostcond. (ind. on xs: List[T] / Cons)[0m                        [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:56:3[0m         [32m0.036[0m  ║
+[[34m  Info  [0m] ║ [32muniqueNotContains[0m   [32mpostcond. (ind. on xs: List[T] / Nil)[0m                         [32mvalid[0m    [32mnativez3[0m  [32mSet.scala:56:3[0m         [32m0.015[0m  ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [31mtotal: 89   valid: 85   (0 from cache) invalid: 0    unknown: 4    time: 183.254[0m                                                   ║
+[[34m  Info  [0m] ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 190500 ms
+[[34m  Info  [0m] Shutting down executor service.
