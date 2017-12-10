@@ -1,89 +1,1091 @@
 [[33mWarning [0m] Parallelism is disabled.
-[[34m  Info  [0m]  - Now solving 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @27:25...
-[[34m  Info  [0m]  - Result for 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @27:25:
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](powerSet(set), (l:  ...)' VC for powerSetProp1 @85:5...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](powerSet(set), (l:  ...)' VC for powerSetProp1 @85:5:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean](|[Boolean, Boolean,  ...)' VC for powerSetSize @32:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean](|[Boolean, Boolean,  ...)' VC for powerSetSize @32:9:
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean](|[Boolean, Boolean,  ...)' VC for powerSetProp1 @90:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean](|[Boolean, Boolean,  ...)' VC for powerSetProp1 @90:10:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)' VC for powerSetSize @32:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)' VC for powerSetSize @32:9:
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean, Boolean](==|[Boolean ...)' VC for powerSetProp1 @90:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean, Boolean](==|[Boolean ...)' VC for powerSetProp1 @90:10:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)' VC for powerSetSize @32:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)' VC for powerSetSize @32:9:
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for powerSetProp1 @90:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for powerSetProp1 @90:10:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)' VC for powerSetSize @32:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)' VC for powerSetSize @32:9:
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](++[List[BigInt]](po ...)' VC for powerSetProp1 @90:10...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](++[List[BigInt]](po ...)' VC for powerSetProp1 @90:10:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean, Boolean](==|[Boolean ...)' VC for powerSetSize @32:9...
-[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean, Boolean](==|[Boolean ...)' VC for powerSetSize @32:9:
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetProp1 @90:26...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetProp1 @90:26:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSize @32:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSize @32:9:
+[[34m  Info  [0m]  - Now solving 'precond. (call appForall[List[BigInt]](powerSet(xs), ma ...)' VC for powerSetProp1 @90:88...
+[[34m  Info  [0m]  - Result for 'precond. (call appForall[List[BigInt]](powerSet(xs), ma ...)' VC for powerSetProp1 @90:88:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @32:35...
-[[34m  Info  [0m]  - Result for 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @32:35:
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetProp1 @90:112...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetProp1 @90:112:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSize @33:10...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSize @33:10:
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for powerSetProp1 @91:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for powerSetProp1 @91:9:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetSize @33:26...
-[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetSize @33:26:
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](powerSet(xs), (l: L ...)' VC for powerSetProp1 @91:10...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](powerSet(xs), (l: L ...)' VC for powerSetProp1 @91:10:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @33:60...
-[[34m  Info  [0m]  - Result for 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @33:60:
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for powerSetProp1 @91:42...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for powerSetProp1 @91:42:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSize @34:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSize @34:9:
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetProp1 @91:42...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetProp1 @91:42:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetSize @34:29...
-[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetSize @34:29:
+[[34m  Info  [0m]  - Now solving 'precond. (call powerSetProp1(xs))' VC for powerSetProp1 @91:89...
+[[34m  Info  [0m]  - Result for 'precond. (call powerSetProp1(xs))' VC for powerSetProp1 @91:89:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @34:62...
-[[34m  Info  [0m]  - Result for 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @34:62:
+[[34m  Info  [0m]  - Now solving 'precond. (call mapConsSet(powerSet(xs), x))' VC for powerSetProp1 @91:110...
+[[34m  Info  [0m]  - Result for 'precond. (call mapConsSet(powerSet(xs), x))' VC for powerSetProp1 @91:110:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for powerSetProp1 @83:51...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for powerSetProp1 @83:51:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for powerSetProp1 @87:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for powerSetProp1 @87:5:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSize @35:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSize @35:9:
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](ps, (x$1 ...)' VC for powerSet @18:15...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](ps, (x$1 ...)' VC for powerSet @18:15:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @35:50...
-[[34m  Info  [0m]  - Result for 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @35:50:
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for powerSet @14:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for powerSet @14:5:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSize @36:9...
-[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSize @36:9:
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](set, (l: List[BigIn ...)' VC for mapConsSet @69:13...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](set, (l: List[BigIn ...)' VC for mapConsSet @69:13:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @36:34...
-[[34m  Info  [0m]  - Result for 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @36:34:
+[[34m  Info  [0m]  - Now solving 'precond. (call head[BigInt](l))' VC for mapConsSet @69:61...
+[[34m  Info  [0m]  - Result for 'precond. (call head[BigInt](l))' VC for mapConsSet @69:61:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call pow2(size[BigInt](xs)))' VC for powerSetSize @37:13...
-[[34m  Info  [0m]  - Result for 'precond. (call pow2(size[BigInt](xs)))' VC for powerSetSize @37:13:
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for mapConsSet @70:5...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for mapConsSet @70:5:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @37:30...
-[[34m  Info  [0m]  - Result for 'precond. (call pow2(size[BigInt](l)))' VC for powerSetSize @37:30:
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](set, (x$ ...)' VC for mapConsSet @70:5...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](set, (x$ ...)' VC for mapConsSet @70:5:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'postcondition' VC for powerSetSize @27:5...
-[[34m  Info  [0m]  - Result for 'postcondition' VC for powerSetSize @27:5:
+[[34m  Info  [0m]  - Now solving 'precond. (call consSet(l, x))' VC for mapConsSet @74:27...
+[[34m  Info  [0m]  - Result for 'precond. (call consSet(l, x))' VC for mapConsSet @74:27:
 [[34m  Info  [0m]  => VALID
-[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for powerSetSize @29:5...
-[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for powerSetSize @29:5:
+[[34m  Info  [0m]  - Now solving 'precond. (call mapConsSet(ls, x))' VC for mapConsSet @74:44...
+[[34m  Info  [0m]  - Result for 'precond. (call mapConsSet(ls, x))' VC for mapConsSet @74:44:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for mapConsSet @68:65...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for mapConsSet @68:65:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for mapConsSet @72:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for mapConsSet @72:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call head[BigInt](l))' VC for consSet @58:45...
+[[34m  Info  [0m]  - Result for 'precond. (call head[BigInt](l))' VC for consSet @58:45:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call consSet(ys, x))' VC for consSet @63:62...
+[[34m  Info  [0m]  - Result for 'precond. (call consSet(ys, x))' VC for consSet @63:62:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for consSet @57:54...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for consSet @57:54:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for consSet @61:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for consSet @61:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for isSet @48:6...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for isSet @48:6:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](a, p), ind. on (a: List[T] : Cons))' VC for appForall @80:6...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](a, p), ind. on (a: List[T] : Cons))' VC for appForall @80:6:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](a, p), ind. on (a: List[T] : Nil))' VC for appForall @80:6...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](a, p), ind. on (a: List[T] : Nil))' VC for appForall @80:6:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](b, p), ind. on (a: List[T] : Cons))' VC for appForall @80:21...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](b, p), ind. on (a: List[T] : Cons))' VC for appForall @80:21:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](b, p), ind. on (a: List[T] : Nil))' VC for appForall @80:21...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](b, p), ind. on (a: List[T] : Nil))' VC for appForall @80:21:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](++[T](a, b), p), ind. on (a: List[T] : Cons))' VC for appForall @80:38...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](++[T](a, b), p), ind. on (a: List[T] : Cons))' VC for appForall @80:38:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](++[T](a, b), p), ind. on (a: List[T] : Nil))' VC for appForall @80:38...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](++[T](a, b), p), ind. on (a: List[T] : Nil))' VC for appForall @80:38:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on a: List[T] / Cons)' VC for appForall @79:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on a: List[T] / Cons)' VC for appForall @79:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on a: List[T] / Nil)' VC for appForall @79:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on a: List[T] / Nil)' VC for appForall @79:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for appForall @79:44...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for appForall @79:44:
 [[34m  Info  [0m]  => VALID
 [[34m  Info  [0m]   ┌──────────────────────┐
-[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════════════════════════════════════════════╗
-[[34m  Info  [0m] ║ └──────────────────────┘                                                                                                 ║
-[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mpostcondition[0m                                                 [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:27:5[0m   [32m0.747[0m ║
-[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mprecond. (call pow2(size[BigInt](l)))[0m                         [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:27:25[0m  [32m0.178[0m ║
-[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mmatch exhaustiveness[0m                                          [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:29:5[0m   [32m0.007[0m ║
-[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mprecond. (call |[Boolean, Boolean, Boolean](==|[Boolean ...)[0m  [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:32:9[0m   [32m0.230[0m ║
-[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mprecond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)[0m  [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:32:9[0m   [32m2.417[0m ║
-[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mprecond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)[0m  [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:32:9[0m   [32m0.619[0m ║
-[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mprecond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)[0m  [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:32:9[0m   [32m1.222[0m ║
-[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mprecond. (call |[Boolean, Boolean](|[Boolean, Boolean,  ...)[0m  [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:32:9[0m   [32m3.923[0m ║
-[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mprecond. (call map[List[BigInt], List[BigInt]](powerSet ...)[0m  [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:33:26[0m  [32m0.018[0m ║
-[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mprecond. (call map[List[BigInt], List[BigInt]](powerSet ...)[0m  [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:34:29[0m  [32m0.012[0m ║
-[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mprecond. (call ==|[Boolean]({ ...)[0m                            [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:35:9[0m   [32m0.038[0m ║
-[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mprecond. (call ==|[Boolean]({ ...)[0m                            [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:36:9[0m   [32m0.340[0m ║
-[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mprecond. (call pow2(size[BigInt](xs)))[0m                        [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:37:13[0m  [32m0.030[0m ║
-[[34m  Info  [0m] ║ [32mpowerSetSize[0m  [32mprecond. (call pow2(size[BigInt](l)))[0m                         [32mvalid[0m  [32mnativez3[0m  [32mPowerSet.scala:37:30[0m  [32m0.032[0m ║
-[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
-[[34m  Info  [0m] ║ [32mtotal: 14   valid: 14   (0 from cache) invalid: 0    unknown: 0    time:   9.813[0m                                         ║
-[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-[[34m  Info  [0m] Cycle took 16830 ms
-[[34m  Info  [0m] Shutting down executor service.
+[[34m  Info  [0m] ╔═╡ [31mverification summary[0m ╞════════════════════════════════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                                                    ║
+[[34m  Info  [0m] ║ [33mpowerSetProp1[0m  [33mpostcondition[0m                                [33mtimeout[0m  [33mnativez3[0m  [33mPowerSet.scala:83:51[0m   [33m5.152[0m ║
+[[34m  Info  [0m] ║ [33mpowerSetProp1[0m  [33mprecond. (call mapConsSet(powerSet(xs), x))[0m  [33mtimeout[0m  [33mnativez3[0m  [33mPowerSet.scala:91:110[0m  [33m5.279[0m ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [31mtotal: 40   valid: 38   (0 from cache) invalid: 0    unknown: 2    time:  14.795[0m                            ║
+[[34m  Info  [0m] ╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 21604 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/PowerSet.scala
+[[31m Error  [0m] PowerSet.scala:93:5: error: value holds is not a member of AnyVal
+[[31m Error  [0m] possible cause: maybe a semicolon is missing before `value holds'?
+             }.holds
+               [31m^[0m
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
+[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 1465 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/PowerSet.scala
+[[31m Error  [0m] PowerSet.scala:89:47: error: type mismatch;
+[[31m Error  [0m]  found   : stainless.collection.List[BigInt]
+[[31m Error  [0m]  required: scala.math.BigInt
+                 case Cons(x, xs)    => x < powerSet(xs).head
+                                                         [31m^[0m
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
+[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 1134 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/PowerSet.scala
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](powerSet(xs), (l: L ...)' VC for lemma @89:30...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](powerSet(xs), (l: L ...)' VC for lemma @89:30:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call head[BigInt](l))' VC for lemma @89:76...
+[[34m  Info  [0m]  - Result for 'precond. (call head[BigInt](l))' VC for lemma @89:76:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for lemma @83:41...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for lemma @83:41:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for lemma @86:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for lemma @86:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](powerSet(set), (l:  ...)' VC for powerSetProp1 @95:5...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](powerSet(set), (l:  ...)' VC for powerSetProp1 @95:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean](|[Boolean, Boolean,  ...)' VC for powerSetProp1 @100:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean](|[Boolean, Boolean,  ...)' VC for powerSetProp1 @100:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean, Boolean](==|[Boolean ...)' VC for powerSetProp1 @100:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean, Boolean](==|[Boolean ...)' VC for powerSetProp1 @100:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for powerSetProp1 @100:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for powerSetProp1 @100:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](++[List[BigInt]](po ...)' VC for powerSetProp1 @100:10...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](++[List[BigInt]](po ...)' VC for powerSetProp1 @100:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetProp1 @100:26...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetProp1 @100:26:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call appForall[List[BigInt]](powerSet(xs), ma ...)' VC for powerSetProp1 @100:88...
+[[34m  Info  [0m]  - Result for 'precond. (call appForall[List[BigInt]](powerSet(xs), ma ...)' VC for powerSetProp1 @100:88:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetProp1 @100:112...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetProp1 @100:112:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for powerSetProp1 @101:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for powerSetProp1 @101:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](powerSet(xs), (l: L ...)' VC for powerSetProp1 @101:10...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](powerSet(xs), (l: L ...)' VC for powerSetProp1 @101:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for powerSetProp1 @101:42...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for powerSetProp1 @101:42:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetProp1 @101:42...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetProp1 @101:42:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call powerSetProp1(xs))' VC for powerSetProp1 @101:89...
+[[34m  Info  [0m]  - Result for 'precond. (call powerSetProp1(xs))' VC for powerSetProp1 @101:89:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call mapConsSet(powerSet(xs), x))' VC for powerSetProp1 @101:110...
+[[34m  Info  [0m]  - Result for 'precond. (call mapConsSet(powerSet(xs), x))' VC for powerSetProp1 @101:110:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for powerSetProp1 @93:51...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for powerSetProp1 @93:51:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for powerSetProp1 @97:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for powerSetProp1 @97:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](ps, (x$1 ...)' VC for powerSet @18:15...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](ps, (x$1 ...)' VC for powerSet @18:15:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for powerSet @14:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for powerSet @14:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](set, (l: List[BigIn ...)' VC for mapConsSet @69:13...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](set, (l: List[BigIn ...)' VC for mapConsSet @69:13:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call head[BigInt](l))' VC for mapConsSet @69:61...
+[[34m  Info  [0m]  - Result for 'precond. (call head[BigInt](l))' VC for mapConsSet @69:61:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for mapConsSet @70:5...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for mapConsSet @70:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](set, (x$ ...)' VC for mapConsSet @70:5...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](set, (x$ ...)' VC for mapConsSet @70:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call consSet(l, x))' VC for mapConsSet @74:27...
+[[34m  Info  [0m]  - Result for 'precond. (call consSet(l, x))' VC for mapConsSet @74:27:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call mapConsSet(ls, x))' VC for mapConsSet @74:44...
+[[34m  Info  [0m]  - Result for 'precond. (call mapConsSet(ls, x))' VC for mapConsSet @74:44:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for mapConsSet @68:65...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for mapConsSet @68:65:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for mapConsSet @72:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for mapConsSet @72:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call head[BigInt](l))' VC for consSet @58:45...
+[[34m  Info  [0m]  - Result for 'precond. (call head[BigInt](l))' VC for consSet @58:45:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call consSet(ys, x))' VC for consSet @63:62...
+[[34m  Info  [0m]  - Result for 'precond. (call consSet(ys, x))' VC for consSet @63:62:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for consSet @57:54...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for consSet @57:54:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for consSet @61:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for consSet @61:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for isSet @48:6...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for isSet @48:6:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](a, p), ind. on (a: List[T] : Cons))' VC for appForall @80:6...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](a, p), ind. on (a: List[T] : Cons))' VC for appForall @80:6:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](a, p), ind. on (a: List[T] : Nil))' VC for appForall @80:6...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](a, p), ind. on (a: List[T] : Nil))' VC for appForall @80:6:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](b, p), ind. on (a: List[T] : Cons))' VC for appForall @80:21...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](b, p), ind. on (a: List[T] : Cons))' VC for appForall @80:21:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](b, p), ind. on (a: List[T] : Nil))' VC for appForall @80:21...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](b, p), ind. on (a: List[T] : Nil))' VC for appForall @80:21:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](++[T](a, b), p), ind. on (a: List[T] : Cons))' VC for appForall @80:38...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](++[T](a, b), p), ind. on (a: List[T] : Cons))' VC for appForall @80:38:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](++[T](a, b), p), ind. on (a: List[T] : Nil))' VC for appForall @80:38...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](++[T](a, b), p), ind. on (a: List[T] : Nil))' VC for appForall @80:38:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on a: List[T] / Cons)' VC for appForall @79:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on a: List[T] / Cons)' VC for appForall @79:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on a: List[T] / Nil)' VC for appForall @79:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on a: List[T] / Nil)' VC for appForall @79:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for appForall @79:44...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for appForall @79:44:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [31mverification summary[0m ╞═════════════════════════════════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                                                     ║
+[[34m  Info  [0m] ║ [33mlemma[0m          [33mpostcondition[0m                                [33mtimeout[0m  [33mnativez3[0m  [33mPowerSet.scala:83:41[0m    [33m5.070[0m ║
+[[34m  Info  [0m] ║ [33mpowerSetProp1[0m  [33mpostcondition[0m                                [33mtimeout[0m  [33mnativez3[0m  [33mPowerSet.scala:93:51[0m    [33m5.135[0m ║
+[[34m  Info  [0m] ║ [33mpowerSetProp1[0m  [33mprecond. (call mapConsSet(powerSet(xs), x))[0m  [33mtimeout[0m  [33mnativez3[0m  [33mPowerSet.scala:101:110[0m  [33m5.107[0m ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [31mtotal: 44   valid: 41   (0 from cache) invalid: 0    unknown: 3    time:  18.622[0m                             ║
+[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 20607 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/PowerSet.scala
+[[31m Error  [0m] PowerSet.scala:96:21: error: missing parameter type
+                     val p = { l => l.nonEmpty ==> x < l.head }
+                               [31m^[0m
+[[31m Error  [0m] PowerSet.scala:99:75: error: type mismatch;
+[[31m Error  [0m]  found   : stainless.proof.Internal.WithProof[Boolean,Boolean]
+[[31m Error  [0m]  required: Boolean
+                       powerSet(ys).forall(p) && powerSet(ys).map(y :: _).forall(p)  ==| lemma(xs)                                            |
+                                                                                     [31m^[0m
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
+[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 998 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/PowerSet.scala
+[[31m Error  [0m] PowerSet.scala:101:27: error: type mismatch;
+[[31m Error  [0m]  found   : stainless.collection.List[stainless.collection.List[BigInt]]
+[[31m Error  [0m]  required: stainless.collection.List[BigInt]
+                       isSet(powerSet(ys))
+                                     [31m^[0m
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
+[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 898 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/PowerSet.scala
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](powerSet(xs), (l: L ...)' VC for lemma @88:27...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](powerSet(xs), (l: L ...)' VC for lemma @88:27:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call head[BigInt](l))' VC for lemma @88:73...
+[[34m  Info  [0m]  - Result for 'precond. (call head[BigInt](l))' VC for lemma @88:73:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call head[BigInt](l))' VC for lemma @96:61...
+[[34m  Info  [0m]  - Result for 'precond. (call head[BigInt](l))' VC for lemma @96:61:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean](|[Boolean, Boolean,  ...)' VC for lemma @98:14...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean](|[Boolean, Boolean,  ...)' VC for lemma @98:14:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)' VC for lemma @98:14...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)' VC for lemma @98:14:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean, Boolean](==|[Boolean ...)' VC for lemma @98:14...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean, Boolean](==|[Boolean ...)' VC for lemma @98:14:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for lemma @98:14...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for lemma @98:14:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](++[List[BigInt]](po ...)' VC for lemma @98:14...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](++[List[BigInt]](po ...)' VC for lemma @98:14:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for lemma @98:30...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for lemma @98:30:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call appForall[List[BigInt]](powerSet(ys), ma ...)' VC for lemma @98:81...
+[[34m  Info  [0m]  - Result for 'precond. (call appForall[List[BigInt]](powerSet(ys), ma ...)' VC for lemma @98:81:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for lemma @98:105...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for lemma @98:105:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for lemma @99:13...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for lemma @99:13:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](powerSet(ys), p))' VC for lemma @99:14...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](powerSet(ys), p))' VC for lemma @99:14:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for lemma @99:40...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for lemma @99:40:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for lemma @99:40...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for lemma @99:40:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call lemma(xs))' VC for lemma @99:81...
+[[34m  Info  [0m]  - Result for 'precond. (call lemma(xs))' VC for lemma @99:81:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for lemma @100:13...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for lemma @100:13:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for lemma @100:13...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for lemma @100:13:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for lemma @100:13...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for lemma @100:13:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call mapConsSet(powerSet(ys), x))' VC for lemma @100:81...
+[[34m  Info  [0m]  - Result for 'precond. (call mapConsSet(powerSet(ys), x))' VC for lemma @100:81:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](powerSet(ys), p))' VC for lemma @101:13...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](powerSet(ys), p))' VC for lemma @101:13:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for lemma @83:41...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for lemma @83:41:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for lemma @86:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for lemma @86:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for lemma @91:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for lemma @91:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for lemma @93:27...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for lemma @93:27:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](powerSet(set), (l:  ...)' VC for powerSetProp1 @109:5...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](powerSet(set), (l:  ...)' VC for powerSetProp1 @109:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean](|[Boolean, Boolean,  ...)' VC for powerSetProp1 @114:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean](|[Boolean, Boolean,  ...)' VC for powerSetProp1 @114:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean, Boolean](==|[Boolean ...)' VC for powerSetProp1 @114:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean, Boolean](==|[Boolean ...)' VC for powerSetProp1 @114:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for powerSetProp1 @114:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for powerSetProp1 @114:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](++[List[BigInt]](po ...)' VC for powerSetProp1 @114:10...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](++[List[BigInt]](po ...)' VC for powerSetProp1 @114:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetProp1 @114:26...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetProp1 @114:26:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call appForall[List[BigInt]](powerSet(xs), ma ...)' VC for powerSetProp1 @114:88...
+[[34m  Info  [0m]  - Result for 'precond. (call appForall[List[BigInt]](powerSet(xs), ma ...)' VC for powerSetProp1 @114:88:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetProp1 @114:112...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetProp1 @114:112:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for powerSetProp1 @115:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for powerSetProp1 @115:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](powerSet(xs), (l: L ...)' VC for powerSetProp1 @115:10...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](powerSet(xs), (l: L ...)' VC for powerSetProp1 @115:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for powerSetProp1 @115:42...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for powerSetProp1 @115:42:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetProp1 @115:42...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetProp1 @115:42:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call powerSetProp1(xs))' VC for powerSetProp1 @115:89...
+[[34m  Info  [0m]  - Result for 'precond. (call powerSetProp1(xs))' VC for powerSetProp1 @115:89:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call mapConsSet(powerSet(xs), x))' VC for powerSetProp1 @115:110...
+[[34m  Info  [0m]  - Result for 'precond. (call mapConsSet(powerSet(xs), x))' VC for powerSetProp1 @115:110:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for powerSetProp1 @107:51...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for powerSetProp1 @107:51:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for powerSetProp1 @111:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for powerSetProp1 @111:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](ps, (x$1 ...)' VC for powerSet @18:15...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](ps, (x$1 ...)' VC for powerSet @18:15:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for powerSet @14:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for powerSet @14:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](set, (l: List[BigIn ...)' VC for mapConsSet @69:13...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](set, (l: List[BigIn ...)' VC for mapConsSet @69:13:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call head[BigInt](l))' VC for mapConsSet @69:61...
+[[34m  Info  [0m]  - Result for 'precond. (call head[BigInt](l))' VC for mapConsSet @69:61:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for mapConsSet @70:5...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for mapConsSet @70:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](set, (x$ ...)' VC for mapConsSet @70:5...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](set, (x$ ...)' VC for mapConsSet @70:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call consSet(l, x))' VC for mapConsSet @74:27...
+[[34m  Info  [0m]  - Result for 'precond. (call consSet(l, x))' VC for mapConsSet @74:27:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call mapConsSet(ls, x))' VC for mapConsSet @74:44...
+[[34m  Info  [0m]  - Result for 'precond. (call mapConsSet(ls, x))' VC for mapConsSet @74:44:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for mapConsSet @68:65...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for mapConsSet @68:65:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for mapConsSet @72:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for mapConsSet @72:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call head[BigInt](l))' VC for consSet @58:45...
+[[34m  Info  [0m]  - Result for 'precond. (call head[BigInt](l))' VC for consSet @58:45:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call consSet(ys, x))' VC for consSet @63:62...
+[[34m  Info  [0m]  - Result for 'precond. (call consSet(ys, x))' VC for consSet @63:62:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for consSet @57:54...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for consSet @57:54:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for consSet @61:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for consSet @61:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for isSet @48:6...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for isSet @48:6:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](a, p), ind. on (a: List[T] : Cons))' VC for appForall @80:6...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](a, p), ind. on (a: List[T] : Cons))' VC for appForall @80:6:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](a, p), ind. on (a: List[T] : Nil))' VC for appForall @80:6...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](a, p), ind. on (a: List[T] : Nil))' VC for appForall @80:6:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](b, p), ind. on (a: List[T] : Cons))' VC for appForall @80:21...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](b, p), ind. on (a: List[T] : Cons))' VC for appForall @80:21:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](b, p), ind. on (a: List[T] : Nil))' VC for appForall @80:21...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](b, p), ind. on (a: List[T] : Nil))' VC for appForall @80:21:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](++[T](a, b), p), ind. on (a: List[T] : Cons))' VC for appForall @80:38...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](++[T](a, b), p), ind. on (a: List[T] : Cons))' VC for appForall @80:38:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](++[T](a, b), p), ind. on (a: List[T] : Nil))' VC for appForall @80:38...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](++[T](a, b), p), ind. on (a: List[T] : Nil))' VC for appForall @80:38:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on a: List[T] / Cons)' VC for appForall @79:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on a: List[T] / Cons)' VC for appForall @79:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on a: List[T] / Nil)' VC for appForall @79:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on a: List[T] / Nil)' VC for appForall @79:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for appForall @79:44...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for appForall @79:44:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [31mverification summary[0m ╞══════════════════════════════════════════════════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                                                                      ║
+[[34m  Info  [0m] ║ [33mlemma[0m          [33mpostcondition[0m                                                 [33mtimeout[0m  [33mnativez3[0m  [33mPowerSet.scala:83:41[0m    [33m5.270[0m ║
+[[34m  Info  [0m] ║ [33mlemma[0m          [33mprecond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)[0m  [33mtimeout[0m  [33mnativez3[0m  [33mPowerSet.scala:98:14[0m    [33m5.863[0m ║
+[[34m  Info  [0m] ║ [33mlemma[0m          [33mprecond. (call |[Boolean, Boolean](|[Boolean, Boolean,  ...)[0m  [33mtimeout[0m  [33mnativez3[0m  [33mPowerSet.scala:98:14[0m    [33m6.427[0m ║
+[[34m  Info  [0m] ║ [33mlemma[0m          [33mprecond. (call mapConsSet(powerSet(ys), x))[0m                   [33mtimeout[0m  [33mnativez3[0m  [33mPowerSet.scala:100:81[0m   [33m5.068[0m ║
+[[34m  Info  [0m] ║ [33mpowerSetProp1[0m  [33mpostcondition[0m                                                 [33mtimeout[0m  [33mnativez3[0m  [33mPowerSet.scala:107:51[0m   [33m5.142[0m ║
+[[34m  Info  [0m] ║ [33mpowerSetProp1[0m  [33mprecond. (call mapConsSet(powerSet(xs), x))[0m                   [33mtimeout[0m  [33mnativez3[0m  [33mPowerSet.scala:115:110[0m  [33m5.127[0m ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [31mtotal: 65   valid: 59   (0 from cache) invalid: 0    unknown: 6    time:  38.023[0m                                              ║
+[[34m  Info  [0m] ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 39925 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/PowerSet.scala
+[[31m Error  [0m] PowerSet.scala:84:35: error: not found: value l
+               require(set forall { isSorted(l) && (l.nonEmpty ==> x < l.head) })
+                                             [31m^[0m
+[[31m Error  [0m] PowerSet.scala:84:42: error: not found: value l
+               require(set forall { isSorted(l) && (l.nonEmpty ==> x < l.head) })
+                                                    [31m^[0m
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
+[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 765 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/PowerSet.scala
+[[31m Error  [0m] PowerSet.scala:84:35: error: not found: value l
+               require(set forall { isSorted(l) && (l.nonEmpty ==> x < l.head) })
+                                             [31m^[0m
+[[31m Error  [0m] PowerSet.scala:84:42: error: not found: value l
+               require(set forall { isSorted(l) && (l.nonEmpty ==> x < l.head) })
+                                                    [31m^[0m
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
+[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 834 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/PowerSet.scala
+[[31m Error  [0m] PowerSet.scala:84:35: error: not found: value l
+               require(set forall { isSorted(l) && (l.nonEmpty ==> x < l.head) })
+                                             [31m^[0m
+[[31m Error  [0m] PowerSet.scala:84:42: error: not found: value l
+               require(set forall { isSorted(l) && (l.nonEmpty ==> x < l.head) })
+                                                    [31m^[0m
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
+[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 682 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/PowerSet.scala
+[[31m Error  [0m] PowerSet.scala:84:35: error: not found: value l
+               require(set forall { isSorted(l) && (l.nonEmpty ==> x < l.head) })
+                                             [31m^[0m
+[[31m Error  [0m] PowerSet.scala:84:42: error: not found: value l
+               require(set forall { isSorted(l) && (l.nonEmpty ==> x < l.head) })
+                                                    [31m^[0m
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
+[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 651 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/PowerSet.scala
+[[31m Error  [0m] PowerSet.scala:105:104: error: type mismatch;
+[[31m Error  [0m]  found   : stainless.collection.List[BigInt]
+[[31m Error  [0m]  required: stainless.collection.List[stainless.collection.List[BigInt]]
+                   powerSet(xs).map(x :: _).forall(isSorted _)                                      ==| mapSorted(xs, x)                                                  |
+                                                                                                                  [31m^[0m
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
+[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 671 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/PowerSet.scala
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](set, (l: List[BigIn ...)' VC for mapConsSet @69:13...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](set, (l: List[BigIn ...)' VC for mapConsSet @69:13:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call head[BigInt](l))' VC for mapConsSet @69:61...
+[[34m  Info  [0m]  - Result for 'precond. (call head[BigInt](l))' VC for mapConsSet @69:61:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for mapConsSet @70:5...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for mapConsSet @70:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](set, (x$ ...)' VC for mapConsSet @70:5...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](set, (x$ ...)' VC for mapConsSet @70:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call consSet(l, x))' VC for mapConsSet @74:27...
+[[34m  Info  [0m]  - Result for 'precond. (call consSet(l, x))' VC for mapConsSet @74:27:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call mapConsSet(ls, x))' VC for mapConsSet @74:44...
+[[34m  Info  [0m]  - Result for 'precond. (call mapConsSet(ls, x))' VC for mapConsSet @74:44:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for mapConsSet @68:65...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for mapConsSet @68:65:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for mapConsSet @72:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for mapConsSet @72:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call head[BigInt](l))' VC for consSet @58:45...
+[[34m  Info  [0m]  - Result for 'precond. (call head[BigInt](l))' VC for consSet @58:45:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call consSet(ys, x))' VC for consSet @63:62...
+[[34m  Info  [0m]  - Result for 'precond. (call consSet(ys, x))' VC for consSet @63:62:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for consSet @57:54...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for consSet @57:54:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for consSet @61:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for consSet @61:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for isSet @48:6...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for isSet @48:6:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](powerSet(set), (ls: ...)' VC for powerSetSorted @98:5...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](powerSet(set), (ls: ...)' VC for powerSetSorted @98:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean](|[Boolean, Boolean,  ...)' VC for powerSetSorted @103:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean](|[Boolean, Boolean,  ...)' VC for powerSetSorted @103:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)' VC for powerSetSorted @103:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)' VC for powerSetSorted @103:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean, Boolean](==|[Boolean ...)' VC for powerSetSorted @103:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean, Boolean](==|[Boolean ...)' VC for powerSetSorted @103:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSorted @103:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSorted @103:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](++[List[BigInt]](po ...)' VC for powerSetSorted @103:10...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](++[List[BigInt]](po ...)' VC for powerSetSorted @103:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetSorted @103:26...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetSorted @103:26:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call appForall[List[BigInt]](powerSet(xs), ma ...)' VC for powerSetSorted @103:94...
+[[34m  Info  [0m]  - Result for 'precond. (call appForall[List[BigInt]](powerSet(xs), ma ...)' VC for powerSetSorted @103:94:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetSorted @103:118...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetSorted @103:118:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSorted @104:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSorted @104:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](powerSet(xs), (ls:  ...)' VC for powerSetSorted @104:10...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](powerSet(xs), (ls:  ...)' VC for powerSetSorted @104:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for powerSetSorted @104:45...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for powerSetSorted @104:45:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetSorted @104:45...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetSorted @104:45:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call powerSetSorted(xs))' VC for powerSetSorted @104:94...
+[[34m  Info  [0m]  - Result for 'precond. (call powerSetSorted(xs))' VC for powerSetSorted @104:94:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSorted @105:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSorted @105:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for powerSetSorted @105:9...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for powerSetSorted @105:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetSorted @105:9...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetSorted @105:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call mapSorted(powerSet(xs), x))' VC for powerSetSorted @105:94...
+[[34m  Info  [0m]  - Result for 'precond. (call mapSorted(powerSet(xs), x))' VC for powerSetSorted @105:94:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](powerSet(xs), (ls:  ...)' VC for powerSetSorted @106:9...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](powerSet(xs), (ls:  ...)' VC for powerSetSorted @106:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for powerSetSorted @96:52...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for powerSetSorted @96:52:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for powerSetSorted @100:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for powerSetSorted @100:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](set, (l: List[BigIn ...)' VC for mapSorted @84:13...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](set, (l: List[BigIn ...)' VC for mapSorted @84:13:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call head[BigInt](l))' VC for mapSorted @84:66...
+[[34m  Info  [0m]  - Result for 'precond. (call head[BigInt](l))' VC for mapSorted @84:66:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for mapSorted @85:5...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for mapSorted @85:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](set, (x$ ...)' VC for mapSorted @85:5...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](set, (x$ ...)' VC for mapSorted @85:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean](==|[Boolean]({ ...)' VC for mapSorted @90:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean](==|[Boolean]({ ...)' VC for mapSorted @90:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for mapSorted @90:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for mapSorted @90:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for mapSorted @90:30...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for mapSorted @90:30:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](ls, (x$1 ...)' VC for mapSorted @90:30...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](ls, (x$1 ...)' VC for mapSorted @90:30:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call mapSorted(ls, x))' VC for mapSorted @90:69...
+[[34m  Info  [0m]  - Result for 'precond. (call mapSorted(ls, x))' VC for mapSorted @90:69:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for mapSorted @83:64...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for mapSorted @83:64:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for mapSorted @87:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for mapSorted @87:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](ps, (x$1 ...)' VC for powerSet @18:15...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](ps, (x$1 ...)' VC for powerSet @18:15:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for powerSet @14:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for powerSet @14:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](a, p), ind. on (a: List[T] : Cons))' VC for appForall @80:6...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](a, p), ind. on (a: List[T] : Cons))' VC for appForall @80:6:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](a, p), ind. on (a: List[T] : Nil))' VC for appForall @80:6...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](a, p), ind. on (a: List[T] : Nil))' VC for appForall @80:6:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](b, p), ind. on (a: List[T] : Cons))' VC for appForall @80:21...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](b, p), ind. on (a: List[T] : Cons))' VC for appForall @80:21:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](b, p), ind. on (a: List[T] : Nil))' VC for appForall @80:21...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](b, p), ind. on (a: List[T] : Nil))' VC for appForall @80:21:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](++[T](a, b), p), ind. on (a: List[T] : Cons))' VC for appForall @80:38...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](++[T](a, b), p), ind. on (a: List[T] : Cons))' VC for appForall @80:38:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](++[T](a, b), p), ind. on (a: List[T] : Nil))' VC for appForall @80:38...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](++[T](a, b), p), ind. on (a: List[T] : Nil))' VC for appForall @80:38:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on a: List[T] / Cons)' VC for appForall @79:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on a: List[T] / Cons)' VC for appForall @79:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on a: List[T] / Nil)' VC for appForall @79:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on a: List[T] / Nil)' VC for appForall @79:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for appForall @79:44...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for appForall @79:44:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [31mverification summary[0m ╞════════════════════════════════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                                                    ║
+[[34m  Info  [0m] ║ [33mpowerSetSorted[0m  [33mpostcondition[0m                               [33mtimeout[0m  [33mnativez3[0m  [33mPowerSet.scala:96:52[0m   [33m5.275[0m ║
+[[34m  Info  [0m] ║ [33mpowerSetSorted[0m  [33mprecond. (call mapSorted(powerSet(xs), x))[0m  [33mtimeout[0m  [33mnativez3[0m  [33mPowerSet.scala:105:94[0m  [33m5.043[0m ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [31mtotal: 56   valid: 54   (0 from cache) invalid: 0    unknown: 2    time:  17.303[0m                            ║
+[[34m  Info  [0m] ╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 18728 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/PowerSet.scala
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](powerSet(set), (ls: ...)' VC for powerSetSorted @77:5...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](powerSet(set), (ls: ...)' VC for powerSetSorted @77:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean](|[Boolean, Boolean,  ...)' VC for powerSetSorted @82:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean](|[Boolean, Boolean,  ...)' VC for powerSetSorted @82:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)' VC for powerSetSorted @82:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)' VC for powerSetSorted @82:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean, Boolean](==|[Boolean ...)' VC for powerSetSorted @82:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean, Boolean](==|[Boolean ...)' VC for powerSetSorted @82:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSorted @82:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSorted @82:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](++[List[BigInt]](po ...)' VC for powerSetSorted @82:10...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](++[List[BigInt]](po ...)' VC for powerSetSorted @82:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetSorted @82:26...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetSorted @82:26:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call appForall[List[BigInt]](powerSet(xs), ma ...)' VC for powerSetSorted @82:94...
+[[34m  Info  [0m]  - Result for 'precond. (call appForall[List[BigInt]](powerSet(xs), ma ...)' VC for powerSetSorted @82:94:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetSorted @82:118...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetSorted @82:118:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSorted @83:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSorted @83:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](powerSet(xs), (ls:  ...)' VC for powerSetSorted @83:10...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](powerSet(xs), (ls:  ...)' VC for powerSetSorted @83:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for powerSetSorted @83:45...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for powerSetSorted @83:45:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetSorted @83:45...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetSorted @83:45:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call powerSetSorted(xs))' VC for powerSetSorted @83:94...
+[[34m  Info  [0m]  - Result for 'precond. (call powerSetSorted(xs))' VC for powerSetSorted @83:94:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSorted @84:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for powerSetSorted @84:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for powerSetSorted @84:9...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for powerSetSorted @84:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetSorted @84:9...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](powerSet ...)' VC for powerSetSorted @84:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call mapSorted(powerSet(xs), x))' VC for powerSetSorted @84:94...
+[[34m  Info  [0m]  - Result for 'precond. (call mapSorted(powerSet(xs), x))' VC for powerSetSorted @84:94:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](powerSet(xs), (ls:  ...)' VC for powerSetSorted @85:9...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](powerSet(xs), (ls:  ...)' VC for powerSetSorted @85:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for powerSetSorted @75:52...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for powerSetSorted @75:52:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for powerSetSorted @79:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for powerSetSorted @79:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](a, p), ind. on (a: List[T] : Cons))' VC for appForall @59:6...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](a, p), ind. on (a: List[T] : Cons))' VC for appForall @59:6:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](a, p), ind. on (a: List[T] : Nil))' VC for appForall @59:6...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](a, p), ind. on (a: List[T] : Nil))' VC for appForall @59:6:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](b, p), ind. on (a: List[T] : Cons))' VC for appForall @59:21...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](b, p), ind. on (a: List[T] : Cons))' VC for appForall @59:21:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](b, p), ind. on (a: List[T] : Nil))' VC for appForall @59:21...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](b, p), ind. on (a: List[T] : Nil))' VC for appForall @59:21:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](++[T](a, b), p), ind. on (a: List[T] : Cons))' VC for appForall @59:38...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](++[T](a, b), p), ind. on (a: List[T] : Cons))' VC for appForall @59:38:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](++[T](a, b), p), ind. on (a: List[T] : Nil))' VC for appForall @59:38...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](++[T](a, b), p), ind. on (a: List[T] : Nil))' VC for appForall @59:38:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on a: List[T] / Cons)' VC for appForall @58:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on a: List[T] / Cons)' VC for appForall @58:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on a: List[T] / Nil)' VC for appForall @58:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on a: List[T] / Nil)' VC for appForall @58:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for appForall @58:44...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for appForall @58:44:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](ps, (x$1 ...)' VC for powerSet @18:15...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](ps, (x$1 ...)' VC for powerSet @18:15:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for powerSet @14:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for powerSet @14:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](set, (l: List[BigIn ...)' VC for mapSorted @63:13...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](set, (l: List[BigIn ...)' VC for mapSorted @63:13:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call head[BigInt](l))' VC for mapSorted @63:66...
+[[34m  Info  [0m]  - Result for 'precond. (call head[BigInt](l))' VC for mapSorted @63:66:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for mapSorted @64:5...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for mapSorted @64:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](set, (x$ ...)' VC for mapSorted @64:5...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](set, (x$ ...)' VC for mapSorted @64:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean](==|[Boolean]({ ...)' VC for mapSorted @69:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean](==|[Boolean]({ ...)' VC for mapSorted @69:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for mapSorted @69:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for mapSorted @69:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for mapSorted @69:30...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for mapSorted @69:30:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](ls, (x$1 ...)' VC for mapSorted @69:30...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](ls, (x$1 ...)' VC for mapSorted @69:30:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call mapSorted(ls, x))' VC for mapSorted @69:69...
+[[34m  Info  [0m]  - Result for 'precond. (call mapSorted(ls, x))' VC for mapSorted @69:69:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for mapSorted @62:64...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for mapSorted @62:64:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for mapSorted @66:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for mapSorted @66:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](set, (l: List[BigIn ...)' VC for mapConsSet @103:13...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](set, (l: List[BigIn ...)' VC for mapConsSet @103:13:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call head[BigInt](l))' VC for mapConsSet @103:61...
+[[34m  Info  [0m]  - Result for 'precond. (call head[BigInt](l))' VC for mapConsSet @103:61:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for mapConsSet @104:5...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[List[BigInt]](map[List[BigInt], L ...)' VC for mapConsSet @104:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[List[BigInt], List[BigInt]](set, (x$ ...)' VC for mapConsSet @104:5...
+[[34m  Info  [0m]  - Result for 'precond. (call map[List[BigInt], List[BigInt]](set, (x$ ...)' VC for mapConsSet @104:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call consSet(l, x))' VC for mapConsSet @108:27...
+[[34m  Info  [0m]  - Result for 'precond. (call consSet(l, x))' VC for mapConsSet @108:27:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call mapConsSet(ls, x))' VC for mapConsSet @108:44...
+[[34m  Info  [0m]  - Result for 'precond. (call mapConsSet(ls, x))' VC for mapConsSet @108:44:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for mapConsSet @102:65...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for mapConsSet @102:65:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for mapConsSet @106:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for mapConsSet @106:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call head[BigInt](l))' VC for consSet @92:45...
+[[34m  Info  [0m]  - Result for 'precond. (call head[BigInt](l))' VC for consSet @92:45:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call consSet(ys, x))' VC for consSet @97:62...
+[[34m  Info  [0m]  - Result for 'precond. (call consSet(ys, x))' VC for consSet @97:62:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for consSet @91:54...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for consSet @91:54:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for consSet @95:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for consSet @95:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for isSet @48:6...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for isSet @48:6:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [31mverification summary[0m ╞═══════════════════════════════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                                                   ║
+[[34m  Info  [0m] ║ [33mpowerSetSorted[0m  [33mpostcondition[0m                               [33mtimeout[0m  [33mnativez3[0m  [33mPowerSet.scala:75:52[0m  [33m5.202[0m ║
+[[34m  Info  [0m] ║ [33mpowerSetSorted[0m  [33mprecond. (call mapSorted(powerSet(xs), x))[0m  [33mtimeout[0m  [33mnativez3[0m  [33mPowerSet.scala:84:94[0m  [33m5.037[0m ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [31mtotal: 56   valid: 54   (0 from cache) invalid: 0    unknown: 2    time:  16.709[0m                           ║
+[[34m  Info  [0m] ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 18309 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/PowerSet.scala
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [31mverification summary[0m ╞═══════════════════════════════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                                                   ║
+[[34m  Info  [0m] ║ [33mpowerSetSorted[0m  [33mpostcondition[0m                               [33mtimeout[0m  [33mnativez3[0m  [33mPowerSet.scala:75:52[0m  [33m5.202[0m ║
+[[34m  Info  [0m] ║ [33mpowerSetSorted[0m  [33mprecond. (call mapSorted(powerSet(xs), x))[0m  [33mtimeout[0m  [33mnativez3[0m  [33mPowerSet.scala:84:94[0m  [33m5.037[0m ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [31mtotal: 56   valid: 54   (0 from cache) invalid: 0    unknown: 2    time:  16.709[0m                           ║
+[[34m  Info  [0m] ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 1469 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/PowerSet.scala
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [31mverification summary[0m ╞═══════════════════════════════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                                                   ║
+[[34m  Info  [0m] ║ [33mpowerSetSorted[0m  [33mpostcondition[0m                               [33mtimeout[0m  [33mnativez3[0m  [33mPowerSet.scala:75:52[0m  [33m5.202[0m ║
+[[34m  Info  [0m] ║ [33mpowerSetSorted[0m  [33mprecond. (call mapSorted(powerSet(xs), x))[0m  [33mtimeout[0m  [33mnativez3[0m  [33mPowerSet.scala:84:94[0m  [33m5.037[0m ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [31mtotal: 56   valid: 54   (0 from cache) invalid: 0    unknown: 2    time:  16.709[0m                           ║
+[[34m  Info  [0m] ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 1550 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/PowerSet.scala
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [31mverification summary[0m ╞═══════════════════════════════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                                                   ║
+[[34m  Info  [0m] ║ [33mpowerSetSorted[0m  [33mpostcondition[0m                               [33mtimeout[0m  [33mnativez3[0m  [33mPowerSet.scala:75:52[0m  [33m5.202[0m ║
+[[34m  Info  [0m] ║ [33mpowerSetSorted[0m  [33mprecond. (call mapSorted(powerSet(xs), x))[0m  [33mtimeout[0m  [33mnativez3[0m  [33mPowerSet.scala:84:94[0m  [33m5.037[0m ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [31mtotal: 56   valid: 54   (0 from cache) invalid: 0    unknown: 2    time:  16.709[0m                           ║
+[[34m  Info  [0m] ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 890 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/PowerSet.scala
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [31mverification summary[0m ╞═══════════════════════════════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                                                   ║
+[[34m  Info  [0m] ║ [33mpowerSetSorted[0m  [33mpostcondition[0m                               [33mtimeout[0m  [33mnativez3[0m  [33mPowerSet.scala:75:52[0m  [33m5.202[0m ║
+[[34m  Info  [0m] ║ [33mpowerSetSorted[0m  [33mprecond. (call mapSorted(powerSet(xs), x))[0m  [33mtimeout[0m  [33mnativez3[0m  [33mPowerSet.scala:84:94[0m  [33m5.037[0m ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [31mtotal: 56   valid: 54   (0 from cache) invalid: 0    unknown: 2    time:  16.709[0m                           ║
+[[34m  Info  [0m] ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 902 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
