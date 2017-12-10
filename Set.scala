@@ -151,6 +151,12 @@ case class Set[T](list: List[T]) {
     this ++ set(x)
   }
 
+  def isEmpty: Boolean = list.isEmpty
+
+  def nonEmpty: Boolean = !isEmpty
+
+  def size: BigInt = list.size
+
   def contains(x: T): Boolean = list.contains(x)
 
   def forall(p: T => Boolean): Boolean = list.forall(p)
