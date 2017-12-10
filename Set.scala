@@ -106,7 +106,6 @@ object Set {
     }
   }
 
-
   // List subtraction is idempotent.
   @induct
   def subIdem[T](xs: List[T], x: T): Boolean = {
@@ -250,6 +249,7 @@ object + {
   }
 }
 
+// FIXME: Bug: Stainless doesn't seem to support boolean extractors.
 object SNil {
   def unapply[T](s: Set[T]): Boolean = s.list match {
     case Nil() => true
