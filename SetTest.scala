@@ -147,56 +147,121 @@ case class Set[T](list: List[T]) {
 
   def size: BigInt = list.size
 
-  def subsetOf(that: Set[T]): Boolean = 
+  def subsetOf(that: Set[T]): Boolean =
     that.list.content subsetOf this.list.content
+
+  def contains(x: T): Boolean = list.contains(x)
 
   def powerSet: List[Set[T]] = {
     this.list match {
       case Nil()     => List(empty)
       case (x :: xs) =>
         assert(tailIsSet(list))
+
         val ps = Set(xs).powerSet
         ps ++ ps.map { _ + x }
     }
   }
 
-  def -(x: T): Set[T] = {
+  def lemma: Boolean = {
     list match {
-      case Nil() => this
-      case (y :: ys) =>
-        if (x == y) Set(ys)
-        else        Set(ys) - x
+      case Nil() => true
+      case (x :: xs) => Set(xs).powerSet forall { !_.contains(x) }
     }
-  }
+  }.holds
+
+  @induct
+  def appContains[T](a: List[T], b: List[T], x: T): Boolean = {
+    (a.contains(x) || b.contains(x)) == (a ++ b).contains(x)
+  }.holds
+
+  // FIXME
+  // We should really streamline the set interface before trying to tackle this proof.
+  // It's really awkward to do all of this wrapping/unwrapping and it only makes
+  // things more confusing
+
+  def step1(that: Set[T]): Boolean = {
+    assert(tailIsSet(this.list))
+    assert(tailIsSet(that.list))
+
+    (this.list, that.list) match {
+      case (Nil(), _) => trivial
+      case (_, Nil()) => trivial
+      case (x :: xs, y :: ys) =>
+        val ps = Set(xs).powerSet
+
+        { powerSet.contains(that)                             ==| trivial |
+          (ps.contains(that) || ps.map(_ + x).contains(that))
+        }.qed
+    }
+  }.holds
+
+  def step2(that: Set[T]): Boolean = {
+    assert(tailIsSet(this.list))
+    assert(tailIsSet(that.list))
+
+    (this.list, that.list) match {
+      case (Nil(), _) => trivial
+      case (_, Nil()) => trivial
+      case (x :: xs, y :: ys) =>
+        val ps = Set(xs).powerSet
+
+        { (ps ++ ps.map(_ + x)).contains(that)                 ==| appContains(ps, ps.map(_ + x), that) |
+           (ps.contains(that) || ps.map(_ + x).contains(that))
+        }.qed
+    }
+  }.holds
+
+  def step3(that: Set[T]): Boolean = {
+    assert(tailIsSet(this.list))
+    assert(tailIsSet(that.list))
+
+    (this.list, that.list) match {
+      case (Nil(), _) => trivial
+      case (_, Nil()) => trivial
+      case (x :: xs, y :: ys) =>
+        val ps = Set(xs).powerSet
+
+        if (x == y) {
+          (ps.contains(that) || ps.map(_ + x).contains(that)) ==| trivial |
+           ps.map(_ + x).contains(that)
+        }.qed else true
+    }
+  }.holds
+
+
+
 
   def powerSetSound(that: Set[T]): Boolean = {
     require(that subsetOf this)
     powerSet contains that
   }.holds because {
     assert(tailIsSet(this.list))
+    assert(tailIsSet(that.list))
 
     (this.list, that.list) match {
+      case (Nil(), _) => trivial
       case (_, Nil()) => trivial
-      case (x :: xs, y :: ys) => 
+      case (x :: xs, y :: ys) =>
         val ps = Set(xs).powerSet
 
         if (x == y) {
           powerSet.contains(that)                             ==| trivial |
           (ps ++ ps.map(_ + x)).contains(that)                ==| trivial |
           (ps.contains(that) || ps.map(_ + x).contains(that)) ==| trivial |
-          (ps.contains(that) || ps.contains(that - x))        ==| trivial |
-          ps.contains(that - x)                               ==| trivial |
-          // ...
+          ps.map(_ + x).contains(that)                        ==| trivial |
+          ps.contains(Set(ys))                                ==| Set(xs).powerSetSound(Set(ys)) |
+          true
         }.qed else {
           powerSet.contains(that)                             ==| trivial |
           (ps ++ ps.map(_ + x)).contains(that)                ==| trivial |
           (ps.contains(that) || ps.map(_ + x).contains(that)) ==| trivial |
-          ps.contains(that)                                   ==| trivial |
-          // ...
-
+          ps.contains(that)                                   ==| Set(xs).powerSetSound(that) |
+          true
         }.qed
     }
   }
+
 
   // Computes 2^x (two to the power of x).
   def pow2(x: BigInt): BigInt = {

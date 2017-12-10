@@ -1,1 +1,25 @@
 [[33mWarning [0m] Parallelism is disabled.
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[Set[T]](powerSet[T](Set[T](xs)),  ...)' VC for lemma @169:25...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[Set[T]](powerSet[T](Set[T](xs)),  ...)' VC for lemma @169:25:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for lemma @167:5...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for lemma @167:5:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for lemma @167:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for lemma @167:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'adt invariant' VC for lemma @169:25...
+[[34m  Info  [0m]  - Result for 'adt invariant' VC for lemma @169:25:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [31mverification summary[0m ╞═════════════════════════════════════════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                                                             ║
+[[34m  Info  [0m] ║ [32mlemma[0m  [32mmatch exhaustiveness[0m                                          [32mvalid[0m    [32mnativez3[0m  [32mSetTest.scala:167:5[0m   [32m0.013[0m  ║
+[[34m  Info  [0m] ║ [33mlemma[0m  [33mpostcondition[0m                                                 [33mtimeout[0m  [33mnativez3[0m  [33mSetTest.scala:167:5[0m   [33m15.262[0m ║
+[[34m  Info  [0m] ║ [33mlemma[0m  [33madt invariant[0m                                                 [33mtimeout[0m  [33mnativez3[0m  [33mSetTest.scala:169:25[0m  [33m15.035[0m ║
+[[34m  Info  [0m] ║ [32mlemma[0m  [32mprecond. (call forall[Set[T]](powerSet[T](Set[T](xs)),  ...)[0m  [32mvalid[0m    [32mnativez3[0m  [32mSetTest.scala:169:25[0m  [32m0.177[0m  ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [31mtotal: 4    valid: 2    (0 from cache) invalid: 0    unknown: 2    time:  30.487[0m                                     ║
+[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 36680 ms
+[[34m  Info  [0m] Shutting down executor service.
