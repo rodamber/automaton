@@ -52,6 +52,29 @@ case class Automaton[State, Sym](
 
   def detSound(states: Set[State], word: List[Sym]): Boolean = {
     Set.set(run(states, word)) == det.run(Set.set(states), word)
-  }.holds
+  }.holds because {
+    word match {
+      case Nil() => {
+        Set.set(run(states, word))     ==| trivial |
+        Set.set(states)
+      }.qed && {
+        det.run(Set.set(states), word) ==| trivial |
+        Set.set(states)
+      }.qed
+      case (w :: ws) => {
+        det.run(Set.set(states), word)                              ==| trivial |
+        det.run(Set.set(List(states)), word)                        ==| trivial |
+        det.run(Set(List(states).unique), word)                     ==| Set.isSet(List(states)) |
+        det.run(Set(List(states)), word)                            ==| trivial |
+        det.run(det.move(Set(List(states)), w), ws)                 ==| trivial |
+        det.run(det.trans(states, w) ++ det.move(Set.empty, w), ws) ==| trivial |
+        det.run(det.trans(states, w) ++ Set.empty, ws)              ==| ListSpecs.rightUnitAppend(det.trans(states, w).list) |
+        det.run(det.trans(states, w), ws)                           ==| trivial |
+        det.run(Set.set(move(states, w)), ws)                       ==| detSound(move(states, w), ws) |
+        Set.set(run(move(states, w), ws))                           ==| trivial |
+        Set.set(run(states, ws))
+      }.qed
+    }
+  }
 
 }
