@@ -11,34 +11,35 @@ object Set {
 
   def empty[T]: Set[T] = Set(Nil[T]())
 
-  def singleton[T](x: T): Set[T] = Set(List(x))
-
   def isSet[T](l: List[T]): Boolean = {
     l == l.unique
-  }
-
-  def tailIsSet[T](l: List[T]): Boolean = {
-    require(isSet(l))
-
-    l match {
+  } ensuring {
+    res => l match {
       case Nil() => true
-      case (_ :: xs) => isSet(xs)
-    }
-  }.holds because {
-    l match {
-      case Nil() => trivial
-      case (x :: xs) => tailNotContains(l) && uniqueNotContains(xs, x) && {
-        xs                         ==| subCons(xs, x)      |
-        (x :: xs) - x              ==| isSet(x :: xs)      |
-        (x :: xs).unique - x       ==| trivial             |
-        (x :: (xs.unique - x)) - x ==| trivial             |
-        (xs.unique - x) - x        ==| subId(xs.unique, x) |
-        xs.unique - x              ==| subId(xs.unique, x) |
-        xs.unique
-      }.qed
+      case (x :: xs) => (res ==> isSet(xs)) because {
+        tailNotContains(l) && uniqueNotContains(xs, x) && {
+          xs                         ==| subCons(xs, x)      |
+          (x :: xs) - x              ==| isSet(x :: xs)      |
+          (x :: xs).unique - x       ==| trivial             |
+          (x :: (xs.unique - x)) - x ==| trivial             |
+          (xs.unique - x) - x        ==| subId(xs.unique, x) |
+          xs.unique - x              ==| subId(xs.unique, x) |
+          xs.unique
+        }.qed
+      }
     }
   }
 
+  def set[T](list: List[T]): Set[T] = {
+    assert(uniqueIdem(list))
+    Set(list.unique)
+  }
+
+  def set[T](x: T): Set[T] = {
+    set(List(x))
+  }
+
+  // If every element of (x :: xs) only occurs once then xs does not contain x.
   def tailNotContains[T](l: List[T]): Boolean = {
     require(isSet(l))
 
@@ -48,6 +49,7 @@ object Set {
     }
   }.holds
 
+  // List.unique does not add elements that weren't already there.
   @induct
   def uniqueNotContains[T](xs: List[T], x: T): Boolean = {
     require(!xs.contains(x))
@@ -60,22 +62,22 @@ object Set {
     xs == (x :: xs) - x
   }.holds
 
-
-  // @ignore
-  // def apply[T](elems: T*): Set[T] = Set(List(elems : _*))
-
+  // List subtraction is "commutative".
   @induct
   def subComm[T](xs: List[T], y: T, x: T): Boolean = {
     (xs - y) - x == (xs - x) - y
   }.holds
 
+  // Trying to subtract something that isn't there in the first place does
+  // nothing.
   @induct
   def subId[T](xs: List[T], x: T): Boolean = {
     require(!xs.contains(x))
     xs - x == xs
   }.holds
 
-  // Needed timeout of 10 secs to verify on my machine.
+  // List substraction and unique "commute".
+  // May need a larger timeout to verify.
   def subUniqueComm[T](xs: List[T], x: T): Boolean = {
     (xs - x).unique == xs.unique - x
   }.holds because {
@@ -88,7 +90,7 @@ object Set {
         (ys.unique - x) - y          ==| subUniqueComm(ys, x)     |
         (ys - x).unique - y          ==| trivial                  |
         ((x :: ys) - x).unique - y   ==| trivial                  |
-        (xs - x).unique - x          ==| (uniqueNotContains(xs - x, x) && 
+        (xs - x).unique - x          ==| (uniqueNotContains(xs - x, x) &&
                                             subId((xs - x).unique, x)) |
         (xs - x).unique
       }.qed else {
@@ -105,11 +107,14 @@ object Set {
   }
 
 
+  // List subtraction is idempotent.
   @induct
   def subIdem[T](xs: List[T], x: T): Boolean = {
     (xs - x) == ((xs - x) - x)
   }.holds
 
+  // This is the main result about sets. With this, we can call unique on any
+  // list and call it a set.
   def uniqueIdem[T](l: List[T]): Boolean = {
     l.unique == l.unique.unique
   }.holds because {
@@ -135,14 +140,14 @@ import Set._
 case class Set[T](list: List[T]) {
   require(isSet(list))
 
+  // Set union.
   def ++(that: Set[T]): Set[T] = {
-    val app = this.list ++ that.list
-    assert(uniqueIdem(app))
-    Set(app.unique)
+    set(this.list ++ that.list)
   }
 
+  // Set element addition.
   def +(x: T): Set[T] = {
-    this ++ Set(List(x))
+    this ++ set(x)
   }
 
   def size: BigInt = list.size
@@ -156,19 +161,17 @@ case class Set[T](list: List[T]) {
     this.list match {
       case Nil()     => List(empty)
       case (x :: xs) =>
-        assert(tailIsSet(list))
-
-        val ps = Set(xs).powerSet
+        val ps = set(xs).powerSet
         ps ++ ps.map { _ + x }
     }
   }
 
-  def lemma: Boolean = {
-    list match {
-      case Nil() => true
-      case (x :: xs) => Set(xs).powerSet forall { !_.contains(x) }
-    }
-  }.holds
+  // def lemma: Boolean = {
+  //   list match {
+  //     case Nil() => true
+  //     case (x :: xs) => Set(xs).powerSet forall { !_.contains(x) }
+  //   }
+  // }.holds
 
   @induct
   def appContains[T](a: List[T], b: List[T], x: T): Boolean = {
@@ -180,83 +183,29 @@ case class Set[T](list: List[T]) {
   // It's really awkward to do all of this wrapping/unwrapping and it only makes
   // things more confusing
 
-  def step1(that: Set[T]): Boolean = {
-    assert(tailIsSet(this.list))
-    assert(tailIsSet(that.list))
-
-    (this.list, that.list) match {
-      case (Nil(), _) => trivial
-      case (_, Nil()) => trivial
-      case (x :: xs, y :: ys) =>
-        val ps = Set(xs).powerSet
-
-        { powerSet.contains(that)                             ==| trivial |
-          (ps.contains(that) || ps.map(_ + x).contains(that))
-        }.qed
-    }
-  }.holds
-
-  def step2(that: Set[T]): Boolean = {
-    assert(tailIsSet(this.list))
-    assert(tailIsSet(that.list))
-
-    (this.list, that.list) match {
-      case (Nil(), _) => trivial
-      case (_, Nil()) => trivial
-      case (x :: xs, y :: ys) =>
-        val ps = Set(xs).powerSet
-
-        { (ps ++ ps.map(_ + x)).contains(that)                 ==| appContains(ps, ps.map(_ + x), that) |
-           (ps.contains(that) || ps.map(_ + x).contains(that))
-        }.qed
-    }
-  }.holds
-
-  def step3(that: Set[T]): Boolean = {
-    assert(tailIsSet(this.list))
-    assert(tailIsSet(that.list))
-
-    (this.list, that.list) match {
-      case (Nil(), _) => trivial
-      case (_, Nil()) => trivial
-      case (x :: xs, y :: ys) =>
-        val ps = Set(xs).powerSet
-
-        if (x == y) {
-          (ps.contains(that) || ps.map(_ + x).contains(that)) ==| trivial |
-           ps.map(_ + x).contains(that)
-        }.qed else true
-    }
-  }.holds
-
-
-
-
+  @ignore
   def powerSetSound(that: Set[T]): Boolean = {
     require(that subsetOf this)
     powerSet contains that
   }.holds because {
-    assert(tailIsSet(this.list))
-    assert(tailIsSet(that.list))
-
     (this.list, that.list) match {
       case (Nil(), _) => trivial
       case (_, Nil()) => trivial
       case (x :: xs, y :: ys) =>
-        val ps = Set(xs).powerSet
+        val ps = set(xs).powerSet
 
         if (x == y) {
           powerSet.contains(that)                             ==| trivial |
           (ps ++ ps.map(_ + x)).contains(that)                ==| trivial |
           (ps.contains(that) || ps.map(_ + x).contains(that)) ==| trivial |
           ps.map(_ + x).contains(that)                        ==| trivial |
-          ps.contains(Set(ys))                                ==| Set(xs).powerSetSound(Set(ys)) |
+          ps.contains(set(ys))                                ==| set(xs).powerSetSound(set(ys)) |
           true
         }.qed else {
           powerSet.contains(that)                             ==| trivial |
           (ps ++ ps.map(_ + x)).contains(that)                ==| trivial |
           (ps.contains(that) || ps.map(_ + x).contains(that)) ==| trivial |
-          ps.contains(that)                                   ==| Set(xs).powerSetSound(that) |
+          ps.contains(that)                                   ==| set(xs).powerSetSound(that) |
           true
         }.qed
     }
@@ -273,19 +222,18 @@ case class Set[T](list: List[T]) {
 
   // Proof that the cardinality of the powerset is two to the power of the
   // cardinality of the input set.
+  @ignore
   def powerSetSize: Boolean = {
     powerSet.size == pow2(size)
   }.holds because {
-    assert(tailIsSet(list))
-
     list match {
       case Nil() => trivial
       case Cons(x, xs) => {
         powerSet.size                                            ==| trivial              |
-        (Set(xs).powerSet ++ Set(xs).powerSet.map(_ + x)).size   ==| trivial              |
-        Set(xs).powerSet.size + Set(xs).powerSet.map(_ + x).size ==| trivial              |
-        Set(xs).powerSet.size + Set(xs).powerSet.size            ==| trivial              |
-        2 * Set(xs).powerSet.size                                ==| Set(xs).powerSetSize |
+        (set(xs).powerSet ++ set(xs).powerSet.map(_ + x)).size   ==| trivial              |
+        set(xs).powerSet.size + set(xs).powerSet.map(_ + x).size ==| trivial              |
+        set(xs).powerSet.size + set(xs).powerSet.size            ==| trivial              |
+        2 * set(xs).powerSet.size                                ==| set(xs).powerSetSize |
         2 * pow2(xs.size)                                        ==| trivial              |
         pow2(list.size)                                          ==| trivial              |
         pow2(size)
@@ -293,6 +241,20 @@ case class Set[T](list: List[T]) {
     }
   }
 
-
-
 }
+
+object + {
+  def unapply[T](s: Set[T]): Option[(Set[T], T)] = s.list match {
+    case Nil() => None()
+    case Cons(x, xs) => Some((set(xs), x))
+  }
+}
+
+object SNil {
+  def unapply[T](s: Set[T]): Boolean = s.list match {
+    case Nil() => true
+    case _     => false
+  }
+}
+
+
