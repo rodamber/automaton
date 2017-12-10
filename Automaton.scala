@@ -37,9 +37,18 @@ case class Automaton[State, Sym](
               { (s: Set[State], w: Sym) => Set.set(move(s, w)) })
   }
 
-  def detIsDeterministic: Boolean = {
-    forall { (s: Set[State], w: Sym) => det.trans(s, w).size == 1 }
-  }.holds
+  def detIsDeterministic(s: Set[State], w: Sym): Boolean = {
+    det.trans(s, w).size == 1
+  }.holds because {
+    det.trans(s, w).size                             ==| trivial |
+    Set.set(move(s, w)).size                         ==| trivial |
+    Set.set(List(move(s, w))).size                   ==| trivial |
+    Set(List(move(s, w)).unique).size                ==| trivial |
+    List(move(s, w)).unique.size                     ==| trivial |
+    Cons(move(s, w), Nil().unique - move(s, w)).size ==| trivial |
+    Cons(move(s, w), Nil()).size                     ==| trivial |
+    BigInt(1)
+  }.qed
 
   def detSound(states: Set[State], word: List[Sym]): Boolean = {
     Set.set(run(states, word)) == det.run(Set.set(states), word)
