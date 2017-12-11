@@ -14,7 +14,18 @@ import set._
 object DFA {
 
   def apply[State, Sym](nfa: NFA[State, Sym]): DFA[Set[State], Sym] = {
-    DFA({ (s: Set[State], w: Sym) => nfa.epsClosure(nfa.move(s, Some(w))) })
+    val validStates = nfa.validStates.powerSet
+
+    val move = { (s: Set[State], w: Sym) =>
+      nfa.epsClosure(nfa.move(s, Some(w)))
+    }
+
+    val initialState = nfa.epsClosure(nfa.initialState)
+    val acceptStates = validStates filter { s =>
+      (s & nfa.acceptStates).nonEmpty
+    }
+
+    DFA(validStates, move, initialState, acceptStates)
   }
 
   def dfaEquivNfa[State, Sym](nfa: NFA[State, Sym], states: Set[State],
@@ -47,13 +58,28 @@ object DFA {
 
 }
 
-case class DFA[State, Sym](move: (State, Sym) => State) {
+case class DFA[State, Sym](
+  validStates: Set[State],
+  move: (State, Sym) => State,
+  initialState: State,
+  acceptStates: Set[State]
+) {
+  require {
+    validStates.nonEmpty &&
+    validStates.contains(initialState) &&
+    acceptStates.subsetOf(validStates) &&
+    forall((s: State, w: Sym) => validStates contains move(s, w))
+  }
 
   def run(state: State, word: List[Sym]): State = {
     word match {
       case Nil() => state
       case (w :: ws) => run(move(state, w), ws)
     }
+  } ensuring { validStates contains _ }
+
+  def accepts(word: List[Sym]): Boolean = {
+    acceptStates contains run(initialState, word)
   }
 
 }
@@ -71,7 +97,7 @@ case class NFA[State, Sym](
     validStates.nonEmpty &&
     validStates.contains(initialState) &&
     acceptStates.subsetOf(validStates) &&
-    forall((s: State, ow: Option[Sym]) => validStates contains move(s, ow) )
+    forall((s: State, ow: Option[Sym]) => validStates contains move(s, ow))
   }
 
   def move(states: Set[State], w: Option[Sym]): Set[State] = {
