@@ -151,6 +151,15 @@ case class Set[T](list: List[T]) {
     this ++ set(x)
   }
 
+  def &(that: Set[T]): Set[T] = {
+    this match {
+      case (ss + s) =>
+        if (that contains s) (ss & that) + s
+        else (ss & that)
+      case _ => this
+    }
+  }
+
   def isEmpty: Boolean = list.isEmpty
 
   def nonEmpty: Boolean = !isEmpty
@@ -173,6 +182,14 @@ case class Set[T](list: List[T]) {
 
   def flatMap[U](f: T => Set[U]): Set[U] =
     SetOps.flatten(this map f)
+
+  def filter(p: T => Boolean): Set[T] = {
+    this match {
+      case (ss + s) if p(s) => ss.filter(p) + s
+      case (ss + s) => ss.filter(p)
+      case _ => this
+    }
+  }
 
   def powerSet: Set[Set[T]] = {
     this match {

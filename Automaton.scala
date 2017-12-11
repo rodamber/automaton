@@ -20,7 +20,7 @@ object DFA {
       nfa.epsClosure(nfa.move(s, Some(w)))
     }
 
-    val initialState = nfa.epsClosure(nfa.initialState)
+    val initialState = nfa.epsClosure(Set.set(nfa.initialState))
     val acceptStates = validStates filter { s =>
       (s & nfa.acceptStates).nonEmpty
     }
@@ -97,7 +97,7 @@ case class NFA[State, Sym](
     validStates.nonEmpty &&
     validStates.contains(initialState) &&
     acceptStates.subsetOf(validStates) &&
-    forall((s: State, ow: Option[Sym]) => validStates contains move(s, ow))
+    forall((s: State, ow: Option[Sym]) => move(s, ow) subsetOf validStates)
   }
 
   def move(states: Set[State], w: Option[Sym]): Set[State] = {
@@ -113,11 +113,11 @@ case class NFA[State, Sym](
       case (w :: ws) =>
         val newStates = move(states, Some(w))
         run(epsClosure(newStates), ws)
-    } ensuring { _ subsetOf validStates }
-  }
+    }
+  } ensuring { _ subsetOf validStates }
 
   def epsClosure(states: Set[State]): Set[State] = {
-    val newStates = move(states, None())
+    val newStates: Set[State] = move(states, None())
 
     if (newStates == states) newStates
     else epsClosure(newStates)
