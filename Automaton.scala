@@ -37,7 +37,7 @@ object DFA {
       case (w :: ws) => {
         dfa.run(states, word)                                  ==| trivial |
         dfa.run(dfa.move(states, w), ws)                       ==| trivial |
-        dfa.run(dfa.trans(states, w), ws)                      ==| trivial |
+        dfa.run(dfa.move(states, w), ws)                      ==| trivial |
         dfa.run(nfa.epsClosure(nfa.move(states, Some(w))), ws) ==| dfaEquivNfa(nfa, nfa.epsClosure(nfa.move(states, Some(w))), ws) |
         nfa.run(nfa.epsClosure(nfa.move(states, Some(w))), ws) ==| trivial |
         nfa.run(states, word)
@@ -47,9 +47,7 @@ object DFA {
 
 }
 
-case class DFA[State, Sym](trans: (State, Sym) => State) {
-
-  def move(state: State, w: Sym): State = trans(state, w)
+case class DFA[State, Sym](move: (State, Sym) => State) {
 
   def run(state: State, word: List[Sym]): State = {
     word match {
@@ -65,7 +63,7 @@ case class DFA[State, Sym](trans: (State, Sym) => State) {
 
 case class NFA[State, Sym](
   validStates: Set[State],
-  trans: (State, Option[Sym]) => Set[State],
+  move: (State, Option[Sym]) => Set[State],
   initialState: State,
   acceptStates: Set[State]
 ) {
@@ -73,12 +71,12 @@ case class NFA[State, Sym](
     validStates.nonEmpty &&
     validStates.contains(initialState) &&
     acceptStates.subsetOf(validStates) &&
-    forall((s: State, ow: Option[Sym]) => validStates contains trans(s, ow) )
+    forall((s: State, ow: Option[Sym]) => validStates contains move(s, ow) )
   }
 
   def move(states: Set[State], w: Option[Sym]): Set[State] = {
     states match {
-      case (ss + s) => trans(s, w) ++ move(ss, w)
+      case (ss + s) => move(s, w) ++ move(ss, w)
       case _ => Set.empty
     }
   } ensuring { _ subsetOf validStates }
