@@ -63,13 +63,25 @@ case class DFA[State, Sym](trans: (State, Sym) => State) {
 // We represent ε-moves as by passing a None() to the transition function.
 // The ε character/word is never representend explicitly.
 
-case class NFA[State, Sym](trans: (State, Option[Sym]) => Set[State]) {
+case class NFA[State, Sym](
+  validStates: Set[State],
+  trans: (State, Option[Sym]) => Set[State],
+  initialState: State,
+  acceptStates: Set[State]
+) {
+  require {
+    validStates.nonEmpty &&
+    validStates.contains(initialState) &&
+    acceptStates.subsetOf(validStates) &&
+    forall((s: State, ow: Option[Sym]) => validStates contains trans(s, ow) )
+  }
+
   def move(states: Set[State], w: Option[Sym]): Set[State] = {
     states match {
       case (ss + s) => trans(s, w) ++ move(ss, w)
       case _ => Set.empty
     }
-  }
+  } ensuring { _ subsetOf validStates }
 
   def run(states: Set[State], word: List[Sym]): Set[State] = {
     word match {
@@ -77,7 +89,7 @@ case class NFA[State, Sym](trans: (State, Option[Sym]) => Set[State]) {
       case (w :: ws) =>
         val newStates = move(states, Some(w))
         run(epsClosure(newStates), ws)
-    }
+    } ensuring { _ subsetOf validStates }
   }
 
   def epsClosure(states: Set[State]): Set[State] = {
@@ -85,10 +97,17 @@ case class NFA[State, Sym](trans: (State, Option[Sym]) => Set[State]) {
 
     if (newStates == states) newStates
     else epsClosure(newStates)
-  } ensuring { epsClosed _ }
+  } ensuring {
+    (epsClosed _) && (_ subsetOf validStates)
+  }
 
   def epsClosed(states: Set[State]): Boolean = {
     states == epsClosure(states)
+  }
+
+  def accepts(word: List[Sym]): Boolean = {
+    val start = epsClosure(Set.set(initialState))
+    (run(start, word) & acceptStates).nonEmpty
   }
 
 }
