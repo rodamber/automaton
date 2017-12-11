@@ -28,13 +28,14 @@ object DFA {
     DFA(validStates, move, initialState, acceptStates)
   }
 
-  def dfaEquivNfa[State, Sym](nfa: NFA[State, Sym], states: Set[State],
-                              word: List[Sym]): Boolean = {
+  def lemma[State, Sym](nfa: NFA[State, Sym], states: Set[State],
+                        word: List[Sym]): Boolean = {
     require(nfa.epsClosed(states))
     val dfa = DFA(nfa)
 
     nfa.run(states, word) == dfa.run(states, word)
   }.holds because {
+
     val dfa = DFA(nfa)
 
     word match {
@@ -56,6 +57,14 @@ object DFA {
     }
   }
 
+  def initEpsClosed[State, Sym](nfa: NFA[State, Sym]): Boolean = {
+    epsClosed(DFA(nfa).initialState)
+  }.holds
+
+  def DfaNfaEquiv[State, Sym](nfa: NFA[State, Sym], word: List[Sym]): Boolean = {
+    val dfa = DFA(nfa)
+    nfa.accepts(word) == dfa.accepts(word)
+  }.holds
 }
 
 case class DFA[State, Sym](
