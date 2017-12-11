@@ -1,12 +1,1481 @@
 [[33mWarning [0m] Parallelism is disabled.
-[[31m Error  [0m] Automaton.scala:108:16: error: missing parameter type for expanded function ((x$2) => x$2.subsetOf(validStates))
-             } ensuring { _ subsetOf validStates }
-                          [31m^[0m
-[[31m Error  [0m] Automaton.scala:120:33: error: overloaded method value move with alternatives:
+[[31m Error  [0m] Automaton.scala:22:42: error: value exists is not a member of set.Set[State]
+               val isFinal = { (s: Set[State]) => s exists nfa.isFinal }
+                                                    [31m^[0m
+[[31m Error  [0m] Automaton.scala:49:68: error: not found: value dfaEquivNfa
+                   dfa.run(nfa.epsClosure(nfa.move(states, Some(w))), ws) ==| dfaEquivNfa(nfa, nfa.epsClosure(nfa.move(states, Some(w))), ws) |
+                                                                              [31m^[0m
+[[34m  Info  [0m] Cycle took 3881 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Set.scala
+[[31m Error  [0m] Automaton.scala:49:68: error: not found: value dfaEquivNfa
+                   dfa.run(nfa.epsClosure(nfa.move(states, Some(w))), ws) ==| dfaEquivNfa(nfa, nfa.epsClosure(nfa.move(states, Some(w))), ws) |
+                                                                              [31m^[0m
+[[31m Error  [0m] Automaton.scala:57:5: error: not found: value epsClosed
+               epsClosed(DFA(nfa).initialState)
+               [31m^[0m
+[[34m  Info  [0m] Cycle took 1346 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Automaton.scala
+[[31m Error  [0m] Automaton.scala:57:5: error: not found: value epsClosed
+               epsClosed(DFA(nfa).initialState)
+               [31m^[0m
+[[31m Error  [0m] Automaton.scala:79:13: error: value run is not a member of State => Boolean
+               isFinal run(initialState, word)
+                       [31m^[0m
+[[34m  Info  [0m] Cycle took 1063 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Automaton.scala
+[[31m Error  [0m] Automaton.scala:57:5: error: not found: value epsClosed
+               epsClosed(DFA(nfa).initialState)
+               [31m^[0m
+[[31m Error  [0m] Automaton.scala:79:13: error: value run is not a member of State => Boolean
+               isFinal run(initialState, word)
+                       [31m^[0m
+[[34m  Info  [0m] Cycle took 936 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Automaton.scala
+[[31m Error  [0m] Automaton.scala:57:5: error: not found: value epsClosed
+               epsClosed(DFA(nfa).initialState)
+               [31m^[0m
+[[31m Error  [0m] Automaton.scala:109:33: error: overloaded method value move with alternatives:
 [[31m Error  [0m]   (states: set.Set[State],w: stainless.lang.Option[Sym])set.Set[State] <and>
 [[31m Error  [0m]   => (State, stainless.lang.Option[Sym]) => set.Set[State]
 [[31m Error  [0m]  cannot be applied to (set.Set[State], stainless.lang.None[Nothing])
                val newStates: Set[State] = move(states, None())
                                            [31m^[0m
-[[34m  Info  [0m] Cycle took 3883 ms
-[[34m  Info  [0m] Shutting down executor service.
+[[34m  Info  [0m] Cycle took 905 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Automaton.scala
+[[31m Error  [0m] Automaton.scala:57:5: error: not found: value epsClosed
+               epsClosed(DFA(nfa).initialState)
+               [31m^[0m
+[[31m Error  [0m] Automaton.scala:121:16: error: type mismatch;
+[[31m Error  [0m]  found   : set.Set[State]
+[[31m Error  [0m]  required: State
+               isFinal(run(start, word))
+                          [31m^[0m
+[[34m  Info  [0m] Cycle took 863 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Automaton.scala
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for inv @87:1...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for inv @87:1:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for inv @87:1...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for inv @87:1:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for inv @66:1...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for inv @66:1:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for inv @66:1...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for inv @66:1:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for unapply @237:40...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for unapply @237:40:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[T, Set[U]](thiss, f))' VC for flatMap @186:20...
+[[34m  Info  [0m]  - Result for 'precond. (call map[T, Set[U]](thiss, f))' VC for flatMap @186:20:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for flatMap @185:18...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for flatMap @185:18:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for flatten @220:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for flatten @220:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for thm3 @214:4...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for thm3 @214:4:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for thm1 @206:5...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for thm1 @206:5:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for initEpsClosed @57:5...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for initEpsClosed @57:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for unapply @229:52...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for unapply @229:52:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[State], Set[State]](|[Set[State],  ...)' VC for lemma @39:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[State], Set[State]](|[Set[State],  ...)' VC for lemma @39:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[State], Set[State], Set[State]](|[ ...)' VC for lemma @39:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[State], Set[State], Set[State]](|[ ...)' VC for lemma @39:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[State], Set[State], Set[State]](== ...)' VC for lemma @39:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[State], Set[State], Set[State]](== ...)' VC for lemma @39:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @39:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @39:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @40:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @40:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @41:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @41:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[State], Set[State]](|[Set[State],  ...)' VC for lemma @46:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[State], Set[State]](|[Set[State],  ...)' VC for lemma @46:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[State], Set[State], Set[State]](|[ ...)' VC for lemma @46:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[State], Set[State], Set[State]](|[ ...)' VC for lemma @46:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[State], Set[State], Set[State]](|[ ...)' VC for lemma @46:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[State], Set[State], Set[State]](|[ ...)' VC for lemma @46:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[State], Set[State], Set[State]](|[ ...)' VC for lemma @46:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[State], Set[State], Set[State]](|[ ...)' VC for lemma @46:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[State], Set[State], Set[State]](== ...)' VC for lemma @46:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[State], Set[State], Set[State]](== ...)' VC for lemma @46:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @46:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @46:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @47:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @47:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @48:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @48:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @49:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @49:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call lemma[State, Sym](nfa, epsClosure[State, ...)' VC for lemma @49:68...
+[[34m  Info  [0m]  - Result for 'precond. (call lemma[State, Sym](nfa, epsClosure[State, ...)' VC for lemma @49:68:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @50:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @50:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for lemma @28:53...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for lemma @28:53:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for lemma @37:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for lemma @37:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for lemma @47:17...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for lemma @47:17:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for lemma @48:17...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for lemma @48:17:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call filter[T](ss, p))' VC for filter @190:32...
+[[34m  Info  [0m]  - Result for 'precond. (call filter[T](ss, p))' VC for filter @190:32:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call filter[T](ss, p))' VC for filter @191:24...
+[[34m  Info  [0m]  - Result for 'precond. (call filter[T](ss, p))' VC for filter @191:24:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for filter @188:14...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for filter @188:14:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for filter @189:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for filter @189:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for filter @190:24...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for filter @190:24:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for dfaNfaEquiv @60:81...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for dfaNfaEquiv @60:81:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now solving 'precond. (call exists[State](run[State, Sym](thiss, sta ...)' VC for accepts @121:5...
+[[34m  Info  [0m]  - Result for 'precond. (call exists[State](run[State, Sym](thiss, sta ...)' VC for accepts @121:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for run @100:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for run @100:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call exists[State](s, nfa.isFinal))' VC for apply @22:40...
+[[34m  Info  [0m]  - Result for 'precond. (call exists[State](s, nfa.isFinal))' VC for apply @22:40:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for apply @173:14...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for apply @173:14:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'adt invariant' VC for apply @24:5...
+[[34m  Info  [0m]  - Result for 'adt invariant' VC for apply @24:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for epsClosure @113:16...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for epsClosure @113:16:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call exists[T](thiss.list, p))' VC for exists @173:42...
+[[34m  Info  [0m]  - Result for 'precond. (call exists[T](thiss.list, p))' VC for exists @173:42:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for exists @173:14...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for exists @173:14:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for move @93:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for move @93:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for move @94:24...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for move @94:24:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'adt invariant' VC for empty @12:26...
+[[34m  Info  [0m]  - Result for 'adt invariant' VC for empty @12:26:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for & @155:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for & @155:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for thm2 @210:5...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for thm2 @210:5:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](that, (x: T) => { ...)' VC for subsetOf @176:5...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](that, (x: T) => { ...)' VC for subsetOf @176:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](thiss.list, p))' VC for forall @171:42...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](thiss.list, p))' VC for forall @171:42:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for forall @171:14...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for forall @171:14:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[Set[T], Set[T]](ps, (x$19: Set[T]) = ...)' VC for powerSet @200:15...
+[[34m  Info  [0m]  - Result for 'precond. (call map[Set[T], Set[T]](ps, (x$19: Set[T]) = ...)' VC for powerSet @200:15:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for powerSet @197:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for powerSet @197:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[T, U](thiss.list, f))' VC for map @183:39...
+[[34m  Info  [0m]  - Result for 'precond. (call map[T, U](thiss.list, f))' VC for map @183:39:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for map @183:14...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for map @183:14:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'body assertion' VC for set @35:39...
+[[34m  Info  [0m]  - Result for 'body assertion' VC for set @35:39:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'adt invariant' VC for set @37:5...
+[[34m  Info  [0m]  - Result for 'adt invariant' VC for set @37:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for uniqueIdem @125:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for uniqueIdem @125:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for uniqueIdem @125:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for uniqueIdem @125:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @125:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @125:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @126:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @126:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @127:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @127:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @128:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @128:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @129:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @129:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @130:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @130:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for uniqueIdem @120:5...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for uniqueIdem @120:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for uniqueIdem @122:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for uniqueIdem @122:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for subUniqueComm @89:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for subUniqueComm @89:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for subUniqueComm @89:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for subUniqueComm @89:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @89:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @89:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @90:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @90:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @91:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @91:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @92:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @92:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @93:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @93:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @94:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @94:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @95:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @95:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call uniqueNotContains[T](-[T](xs, x), x))' VC for subUniqueComm @95:43...
+[[34m  Info  [0m]  - Result for 'precond. (call uniqueNotContains[T](-[T](xs, x), x))' VC for subUniqueComm @95:43:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call subId[T](unique[T](-[T](xs, x)), x))' VC for subUniqueComm @96:45...
+[[34m  Info  [0m]  - Result for 'precond. (call subId[T](unique[T](-[T](xs, x)), x))' VC for subUniqueComm @96:45:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for subUniqueComm @99:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for subUniqueComm @99:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for subUniqueComm @99:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for subUniqueComm @99:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @99:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @99:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @100:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @100:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @101:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @101:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @102:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @102:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @103:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @103:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @104:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @104:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @105:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @105:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for subUniqueComm @84:6...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for subUniqueComm @84:6:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subUniqueComm @86:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subUniqueComm @86:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for subComm @69:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for subComm @69:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for subComm @69:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for subComm @69:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for accepts @79:5...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for accepts @79:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for run @72:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for run @72:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for run @74:29...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for run @74:29:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call tailNotContains[T](l))' VC for isSet @20:9...
+[[34m  Info  [0m]  - Result for 'precond. (call tailNotContains[T](l))' VC for isSet @20:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call uniqueNotContains[T](xs, x))' VC for isSet @20:31...
+[[34m  Info  [0m]  - Result for 'precond. (call uniqueNotContains[T](xs, x))' VC for isSet @20:31:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for isSet @21:11...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for isSet @21:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for isSet @21:11...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for isSet @21:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for isSet @21:11...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for isSet @21:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call subCons[T](xs, x))' VC for isSet @21:42...
+[[34m  Info  [0m]  - Result for 'precond. (call subCons[T](xs, x))' VC for isSet @21:42:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for isSet @22:11...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for isSet @22:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for isSet @23:12...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for isSet @23:12:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for isSet @24:11...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for isSet @24:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for isSet @25:11...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for isSet @25:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call subId[T](unique[T](xs), x))' VC for isSet @25:42...
+[[34m  Info  [0m]  - Result for 'precond. (call subId[T](unique[T](xs), x))' VC for isSet @25:42:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for isSet @26:11...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for isSet @26:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call subId[T](unique[T](xs), x))' VC for isSet @26:42...
+[[34m  Info  [0m]  - Result for 'precond. (call subId[T](unique[T](xs), x))' VC for isSet @26:42:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for isSet @17:5...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for isSet @17:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for isSet @17:12...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for isSet @17:12:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for tailNotContains @45:49...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for tailNotContains @45:49:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for tailNotContains @48:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for tailNotContains @48:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for subId @76:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for subId @76:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for subId @76:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for subId @76:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for subCons @62:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for subCons @62:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for subCons @62:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for subCons @62:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for uniqueNotContains @56:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for uniqueNotContains @56:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for uniqueNotContains @56:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for uniqueNotContains @56:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for subIdem @113:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for subIdem @113:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for subIdem @113:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for subIdem @113:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [31mverification summary[0m ╞═══════════════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                                   ║
+[[34m  Info  [0m] ║ [33mdfaNfaEquiv[0m    [33mpostcondition[0m     [33mtimeout[0m    [33mnativez3[0m    [33mAutomaton.scala:60:81[0m      [33m10.098[0m  ║
+[[34m  Info  [0m] ║ [33mthm1[0m           [33mpostcondition[0m     [33mtimeout[0m    [33mnativez3[0m    [33mSet.scala:206:5[0m            [33m10.045[0m  ║
+[[34m  Info  [0m] ║ [33mthm2[0m           [33mpostcondition[0m     [33mtimeout[0m    [33mnativez3[0m    [33mSet.scala:210:5[0m            [33m11.775[0m  ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [31mtotal: 124  valid: 121  (0 from cache) invalid: 0    unknown: 3    time: 189.312[0m           ║
+[[34m  Info  [0m] ╚════════════════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 195161 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Set.scala
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for inv @87:1...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for inv @87:1:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for inv @87:1...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for inv @87:1:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for inv @66:1...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for inv @66:1:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for inv @66:1...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for inv @66:1:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for unapply @226:40...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for unapply @226:40:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[T, Set[U]](thiss, f))' VC for flatMap @186:20...
+[[34m  Info  [0m]  - Result for 'precond. (call map[T, Set[U]](thiss, f))' VC for flatMap @186:20:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for flatMap @185:18...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for flatMap @185:18:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for flatten @209:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for flatten @209:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](that, (x: T) => { ...)' VC for subsetOf @176:5...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](that, (x: T) => { ...)' VC for subsetOf @176:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](thiss.list, p))' VC for forall @171:42...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](thiss.list, p))' VC for forall @171:42:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for forall @171:14...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for forall @171:14:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for initEpsClosed @57:5...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for initEpsClosed @57:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[State], Set[State]](|[Set[State],  ...)' VC for lemma @39:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[State], Set[State]](|[Set[State],  ...)' VC for lemma @39:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[State], Set[State], Set[State]](|[ ...)' VC for lemma @39:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[State], Set[State], Set[State]](|[ ...)' VC for lemma @39:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[State], Set[State], Set[State]](== ...)' VC for lemma @39:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[State], Set[State], Set[State]](== ...)' VC for lemma @39:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @39:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @39:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @40:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @40:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @41:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @41:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[State], Set[State]](|[Set[State],  ...)' VC for lemma @46:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[State], Set[State]](|[Set[State],  ...)' VC for lemma @46:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[State], Set[State], Set[State]](|[ ...)' VC for lemma @46:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[State], Set[State], Set[State]](|[ ...)' VC for lemma @46:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[State], Set[State], Set[State]](|[ ...)' VC for lemma @46:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[State], Set[State], Set[State]](|[ ...)' VC for lemma @46:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[State], Set[State], Set[State]](|[ ...)' VC for lemma @46:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[State], Set[State], Set[State]](|[ ...)' VC for lemma @46:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[State], Set[State], Set[State]](== ...)' VC for lemma @46:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[State], Set[State], Set[State]](== ...)' VC for lemma @46:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @46:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @46:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @47:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @47:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @48:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @48:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @49:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @49:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call lemma[State, Sym](nfa, epsClosure[State, ...)' VC for lemma @49:68...
+[[34m  Info  [0m]  - Result for 'precond. (call lemma[State, Sym](nfa, epsClosure[State, ...)' VC for lemma @49:68:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @50:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @50:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for lemma @28:53...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for lemma @28:53:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for lemma @37:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for lemma @37:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for lemma @47:17...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for lemma @47:17:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for lemma @48:17...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for lemma @48:17:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for unapply @218:52...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for unapply @218:52:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call filter[T](ss, p))' VC for filter @190:32...
+[[34m  Info  [0m]  - Result for 'precond. (call filter[T](ss, p))' VC for filter @190:32:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call filter[T](ss, p))' VC for filter @191:24...
+[[34m  Info  [0m]  - Result for 'precond. (call filter[T](ss, p))' VC for filter @191:24:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for filter @188:14...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for filter @188:14:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for filter @189:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for filter @189:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for filter @190:24...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for filter @190:24:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for dfaNfaEquiv @60:81...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for dfaNfaEquiv @60:81:
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now solving 'precond. (call exists[State](run[State, Sym](thiss, sta ...)' VC for accepts @121:5...
+[[34m  Info  [0m]  - Result for 'precond. (call exists[State](run[State, Sym](thiss, sta ...)' VC for accepts @121:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for run @100:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for run @100:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call exists[State](s, nfa.isFinal))' VC for apply @22:40...
+[[34m  Info  [0m]  - Result for 'precond. (call exists[State](s, nfa.isFinal))' VC for apply @22:40:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for apply @173:14...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for apply @173:14:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'adt invariant' VC for apply @24:5...
+[[34m  Info  [0m]  - Result for 'adt invariant' VC for apply @24:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for epsClosure @113:16...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for epsClosure @113:16:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call exists[T](thiss.list, p))' VC for exists @173:42...
+[[34m  Info  [0m]  - Result for 'precond. (call exists[T](thiss.list, p))' VC for exists @173:42:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for exists @173:14...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for exists @173:14:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for move @93:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for move @93:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for move @94:24...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for move @94:24:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for & @155:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for & @155:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[Set[T], Set[T]](ps, (x$19: Set[T]) = ...)' VC for powerSet @200:15...
+[[34m  Info  [0m]  - Result for 'precond. (call map[Set[T], Set[T]](ps, (x$19: Set[T]) = ...)' VC for powerSet @200:15:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for powerSet @197:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for powerSet @197:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[T, U](thiss.list, f))' VC for map @183:39...
+[[34m  Info  [0m]  - Result for 'precond. (call map[T, U](thiss.list, f))' VC for map @183:39:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for map @183:14...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for map @183:14:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'body assertion' VC for set @35:39...
+[[34m  Info  [0m]  - Result for 'body assertion' VC for set @35:39:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'adt invariant' VC for set @37:5...
+[[34m  Info  [0m]  - Result for 'adt invariant' VC for set @37:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for uniqueIdem @125:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for uniqueIdem @125:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for uniqueIdem @125:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for uniqueIdem @125:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @125:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @125:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @126:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @126:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @127:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @127:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @128:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @128:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @129:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @129:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @130:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @130:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for uniqueIdem @120:5...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for uniqueIdem @120:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for uniqueIdem @122:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for uniqueIdem @122:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for subUniqueComm @89:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for subUniqueComm @89:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for subUniqueComm @89:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for subUniqueComm @89:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @89:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @89:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @90:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @90:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @91:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @91:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @92:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @92:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @93:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @93:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @94:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @94:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @95:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @95:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call uniqueNotContains[T](-[T](xs, x), x))' VC for subUniqueComm @95:43...
+[[34m  Info  [0m]  - Result for 'precond. (call uniqueNotContains[T](-[T](xs, x), x))' VC for subUniqueComm @95:43:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call subId[T](unique[T](-[T](xs, x)), x))' VC for subUniqueComm @96:45...
+[[34m  Info  [0m]  - Result for 'precond. (call subId[T](unique[T](-[T](xs, x)), x))' VC for subUniqueComm @96:45:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for subUniqueComm @99:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for subUniqueComm @99:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for subUniqueComm @99:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for subUniqueComm @99:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @99:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @99:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @100:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @100:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @101:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @101:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @102:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @102:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @103:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @103:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @104:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @104:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @105:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @105:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for subUniqueComm @84:6...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for subUniqueComm @84:6:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subUniqueComm @86:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subUniqueComm @86:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for subComm @69:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for subComm @69:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for subComm @69:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for subComm @69:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'adt invariant' VC for empty @12:26...
+[[34m  Info  [0m]  - Result for 'adt invariant' VC for empty @12:26:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for accepts @79:5...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for accepts @79:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for run @72:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for run @72:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for run @74:29...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for run @74:29:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call tailNotContains[T](l))' VC for isSet @20:9...
+[[34m  Info  [0m]  - Result for 'precond. (call tailNotContains[T](l))' VC for isSet @20:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call uniqueNotContains[T](xs, x))' VC for isSet @20:31...
+[[34m  Info  [0m]  - Result for 'precond. (call uniqueNotContains[T](xs, x))' VC for isSet @20:31:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for isSet @21:11...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for isSet @21:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for isSet @21:11...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for isSet @21:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for isSet @21:11...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for isSet @21:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call subCons[T](xs, x))' VC for isSet @21:42...
+[[34m  Info  [0m]  - Result for 'precond. (call subCons[T](xs, x))' VC for isSet @21:42:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for isSet @22:11...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for isSet @22:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for isSet @23:12...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for isSet @23:12:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for isSet @24:11...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for isSet @24:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for isSet @25:11...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for isSet @25:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call subId[T](unique[T](xs), x))' VC for isSet @25:42...
+[[34m  Info  [0m]  - Result for 'precond. (call subId[T](unique[T](xs), x))' VC for isSet @25:42:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for isSet @26:11...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for isSet @26:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call subId[T](unique[T](xs), x))' VC for isSet @26:42...
+[[34m  Info  [0m]  - Result for 'precond. (call subId[T](unique[T](xs), x))' VC for isSet @26:42:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for isSet @17:5...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for isSet @17:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for isSet @17:12...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for isSet @17:12:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for tailNotContains @45:49...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for tailNotContains @45:49:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for tailNotContains @48:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for tailNotContains @48:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for subCons @62:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for subCons @62:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for subCons @62:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for subCons @62:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for uniqueNotContains @56:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for uniqueNotContains @56:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for uniqueNotContains @56:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for uniqueNotContains @56:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for subIdem @113:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for subIdem @113:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for subIdem @113:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for subIdem @113:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for subId @76:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for subId @76:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for subId @76:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for subId @76:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [31mverification summary[0m ╞═══════════════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                                   ║
+[[34m  Info  [0m] ║ [33mdfaNfaEquiv[0m    [33mpostcondition[0m     [33mtimeout[0m    [33mnativez3[0m    [33mAutomaton.scala:60:81[0m      [33m10.291[0m  ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [31mtotal: 123  valid: 122  (0 from cache) invalid: 0    unknown: 1    time: 152.916[0m           ║
+[[34m  Info  [0m] ╚════════════════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 150390 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Automaton.scala
+[[31m Error  [0m] Automaton.scala:65:12: error: not enough arguments for method run: (states: set.Set[State], word: stainless.collection.List[Sym])set.Set[State].
+[[31m Error  [0m] Unspecified value parameter word.
+               nfa.run(epsClosure(Set.set(nfa.initialState))).exists(isFinal)       ==| lemma(nfa, epsClosure(Set.set(nfa.initialState)), word) |
+                      [31m^[0m
+[[31m Error  [0m] Automaton.scala:65:59: error: not found: value isFinal
+               nfa.run(epsClosure(Set.set(nfa.initialState))).exists(isFinal)       ==| lemma(nfa, epsClosure(Set.set(nfa.initialState)), word) |
+                                                                     [31m^[0m
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
+[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 706 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Automaton.scala
+[[31m Error  [0m] Automaton.scala:65:12: error: not enough arguments for method run: (states: set.Set[State], word: stainless.collection.List[Sym])set.Set[State].
+[[31m Error  [0m] Unspecified value parameter word.
+               nfa.run(nfa.epsClosure(Set.set(nfa.initialState))).exists(isFinal)       ==| lemma(nfa, nfa.epsClosure(Set.set(nfa.initialState)), word) |
+                      [31m^[0m
+[[31m Error  [0m] Automaton.scala:65:63: error: not found: value isFinal
+               nfa.run(nfa.epsClosure(Set.set(nfa.initialState))).exists(isFinal)       ==| lemma(nfa, nfa.epsClosure(Set.set(nfa.initialState)), word) |
+                                                                         [31m^[0m
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
+[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 669 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Automaton.scala
+[[31m Error  [0m] Automaton.scala:66:5: error: not found: value dfa
+               dfa.run(nfa.epsClosure(Set.set(nfa.initialState)), word).exists(nfa.isFinal) ==| trivial |
+               [31m^[0m
+[[31m Error  [0m] Automaton.scala:67:5: error: not found: value dfa
+               dfa.run(dfa.initialState, word).exists(nfa.isFinal)                          ==| trivial |
+               [31m^[0m
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
+[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 696 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Automaton.scala
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for inv @95:1...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for inv @95:1:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for inv @95:1...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for inv @95:1:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for inv @74:1...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for inv @74:1:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for inv @74:1...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for inv @74:1:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for unapply @226:40...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for unapply @226:40:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for unapply @218:52...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for unapply @218:52:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[T, Set[U]](thiss, f))' VC for flatMap @186:20...
+[[34m  Info  [0m]  - Result for 'precond. (call map[T, Set[U]](thiss, f))' VC for flatMap @186:20:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for flatMap @185:18...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for flatMap @185:18:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](that, (x: T) => { ...)' VC for subsetOf @176:5...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](that, (x: T) => { ...)' VC for subsetOf @176:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call forall[T](thiss.list, p))' VC for forall @171:42...
+[[34m  Info  [0m]  - Result for 'precond. (call forall[T](thiss.list, p))' VC for forall @171:42:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for forall @171:14...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for forall @171:14:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for initEpsClosed @57:5...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for initEpsClosed @57:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for flatten @209:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for flatten @209:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call filter[T](ss, p))' VC for filter @190:32...
+[[34m  Info  [0m]  - Result for 'precond. (call filter[T](ss, p))' VC for filter @190:32:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call filter[T](ss, p))' VC for filter @191:24...
+[[34m  Info  [0m]  - Result for 'precond. (call filter[T](ss, p))' VC for filter @191:24:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for filter @188:14...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for filter @188:14:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for filter @189:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for filter @189:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for filter @190:24...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for filter @190:24:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean](|[Boolean, Boolean,  ...)' VC for dfaNfaEquiv @64:7...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean](|[Boolean, Boolean,  ...)' VC for dfaNfaEquiv @64:7:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)' VC for dfaNfaEquiv @64:7...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)' VC for dfaNfaEquiv @64:7:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)' VC for dfaNfaEquiv @64:7...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)' VC for dfaNfaEquiv @64:7:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)' VC for dfaNfaEquiv @64:7...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean, Boolean](|[Boolean,  ...)' VC for dfaNfaEquiv @64:7:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Boolean, Boolean, Boolean](==|[Boolean ...)' VC for dfaNfaEquiv @64:7...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Boolean, Boolean, Boolean](==|[Boolean ...)' VC for dfaNfaEquiv @64:7:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for dfaNfaEquiv @64:7...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for dfaNfaEquiv @64:7:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for dfaNfaEquiv @65:7...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for dfaNfaEquiv @65:7:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call exists[State](run[State, Sym](nfa, epsCl ...)' VC for dfaNfaEquiv @65:7...
+[[34m  Info  [0m]  - Result for 'precond. (call exists[State](run[State, Sym](nfa, epsCl ...)' VC for dfaNfaEquiv @65:7:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call lemma[State, Sym](nfa, epsClosure[State, ...)' VC for dfaNfaEquiv @65:88...
+[[34m  Info  [0m]  - Result for 'precond. (call lemma[State, Sym](nfa, epsClosure[State, ...)' VC for dfaNfaEquiv @65:88:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for dfaNfaEquiv @66:7...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for dfaNfaEquiv @66:7:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call exists[State](run[Set[State], Sym](dfa,  ...)' VC for dfaNfaEquiv @66:7...
+[[34m  Info  [0m]  - Result for 'precond. (call exists[State](run[Set[State], Sym](dfa,  ...)' VC for dfaNfaEquiv @66:7:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for dfaNfaEquiv @67:7...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for dfaNfaEquiv @67:7:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call exists[State](run[Set[State], Sym](dfa,  ...)' VC for dfaNfaEquiv @67:7...
+[[34m  Info  [0m]  - Result for 'precond. (call exists[State](run[Set[State], Sym](dfa,  ...)' VC for dfaNfaEquiv @67:7:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Boolean]({ ...)' VC for dfaNfaEquiv @68:7...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Boolean]({ ...)' VC for dfaNfaEquiv @68:7:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for dfaNfaEquiv @60:81...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for dfaNfaEquiv @60:81:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for dfaNfaEquiv @68:7...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for dfaNfaEquiv @68:7:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call exists[State](run[State, Sym](thiss, sta ...)' VC for accepts @129:5...
+[[34m  Info  [0m]  - Result for 'precond. (call exists[State](run[State, Sym](thiss, sta ...)' VC for accepts @129:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[State], Set[State]](|[Set[State],  ...)' VC for lemma @39:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[State], Set[State]](|[Set[State],  ...)' VC for lemma @39:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[State], Set[State], Set[State]](|[ ...)' VC for lemma @39:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[State], Set[State], Set[State]](|[ ...)' VC for lemma @39:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[State], Set[State], Set[State]](== ...)' VC for lemma @39:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[State], Set[State], Set[State]](== ...)' VC for lemma @39:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @39:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @39:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @40:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @40:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @41:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @41:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[State], Set[State]](|[Set[State],  ...)' VC for lemma @46:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[State], Set[State]](|[Set[State],  ...)' VC for lemma @46:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[State], Set[State], Set[State]](|[ ...)' VC for lemma @46:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[State], Set[State], Set[State]](|[ ...)' VC for lemma @46:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[State], Set[State], Set[State]](|[ ...)' VC for lemma @46:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[State], Set[State], Set[State]](|[ ...)' VC for lemma @46:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[State], Set[State], Set[State]](|[ ...)' VC for lemma @46:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[State], Set[State], Set[State]](|[ ...)' VC for lemma @46:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[Set[State], Set[State], Set[State]](== ...)' VC for lemma @46:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[Set[State], Set[State], Set[State]](== ...)' VC for lemma @46:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @46:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @46:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @47:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @47:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @48:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @48:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @49:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @49:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call lemma[State, Sym](nfa, epsClosure[State, ...)' VC for lemma @49:68...
+[[34m  Info  [0m]  - Result for 'precond. (call lemma[State, Sym](nfa, epsClosure[State, ...)' VC for lemma @49:68:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @50:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[Set[State]]({ ...)' VC for lemma @50:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for lemma @28:53...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for lemma @28:53:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for lemma @37:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for lemma @37:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for lemma @47:17...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for lemma @47:17:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for lemma @48:17...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for lemma @48:17:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call exists[State](s, nfa.isFinal))' VC for apply @22:40...
+[[34m  Info  [0m]  - Result for 'precond. (call exists[State](s, nfa.isFinal))' VC for apply @22:40:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for apply @173:14...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for apply @173:14:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'adt invariant' VC for apply @24:5...
+[[34m  Info  [0m]  - Result for 'adt invariant' VC for apply @24:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call exists[T](thiss.list, p))' VC for exists @173:42...
+[[34m  Info  [0m]  - Result for 'precond. (call exists[T](thiss.list, p))' VC for exists @173:42:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for exists @173:14...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for exists @173:14:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for run @108:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for run @108:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for epsClosure @121:16...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for epsClosure @121:16:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for move @101:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for move @101:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for move @102:24...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for move @102:24:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for & @155:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for & @155:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[Set[T], Set[T]](ps, (x$19: Set[T]) = ...)' VC for powerSet @200:15...
+[[34m  Info  [0m]  - Result for 'precond. (call map[Set[T], Set[T]](ps, (x$19: Set[T]) = ...)' VC for powerSet @200:15:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for powerSet @197:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for powerSet @197:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call map[T, U](thiss.list, f))' VC for map @183:39...
+[[34m  Info  [0m]  - Result for 'precond. (call map[T, U](thiss.list, f))' VC for map @183:39:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for map @183:14...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for map @183:14:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'body assertion' VC for set @35:39...
+[[34m  Info  [0m]  - Result for 'body assertion' VC for set @35:39:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'adt invariant' VC for set @37:5...
+[[34m  Info  [0m]  - Result for 'adt invariant' VC for set @37:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for uniqueIdem @125:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for uniqueIdem @125:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for uniqueIdem @125:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for uniqueIdem @125:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for uniqueIdem @125:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @125:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @125:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @126:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @126:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @127:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @127:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @128:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @128:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @129:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @129:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @130:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for uniqueIdem @130:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for uniqueIdem @120:5...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for uniqueIdem @120:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for uniqueIdem @122:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for uniqueIdem @122:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for subUniqueComm @89:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for subUniqueComm @89:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @89:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for subUniqueComm @89:9...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for subUniqueComm @89:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @89:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @89:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @90:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @90:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @91:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @91:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @92:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @92:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @93:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @93:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @94:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @94:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @95:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @95:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call uniqueNotContains[T](-[T](xs, x), x))' VC for subUniqueComm @95:43...
+[[34m  Info  [0m]  - Result for 'precond. (call uniqueNotContains[T](-[T](xs, x), x))' VC for subUniqueComm @95:43:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call subId[T](unique[T](-[T](xs, x)), x))' VC for subUniqueComm @96:45...
+[[34m  Info  [0m]  - Result for 'precond. (call subId[T](unique[T](-[T](xs, x)), x))' VC for subUniqueComm @96:45:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for subUniqueComm @99:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for subUniqueComm @99:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for subUniqueComm @99:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for subUniqueComm @99:10...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for subUniqueComm @99:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @99:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @99:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @100:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @100:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @101:10...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @101:10:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @102:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @102:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @103:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @103:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @104:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @104:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @105:9...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for subUniqueComm @105:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for subUniqueComm @84:6...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for subUniqueComm @84:6:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for subUniqueComm @86:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for subUniqueComm @86:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for subComm @69:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for subComm @69:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for subComm @69:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for subComm @69:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'adt invariant' VC for empty @12:26...
+[[34m  Info  [0m]  - Result for 'adt invariant' VC for empty @12:26:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for accepts @87:5...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for accepts @87:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for run @80:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for run @80:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'lambda precondition' VC for run @82:29...
+[[34m  Info  [0m]  - Result for 'lambda precondition' VC for run @82:29:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call tailNotContains[T](l))' VC for isSet @20:9...
+[[34m  Info  [0m]  - Result for 'precond. (call tailNotContains[T](l))' VC for isSet @20:9:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call uniqueNotContains[T](xs, x))' VC for isSet @20:31...
+[[34m  Info  [0m]  - Result for 'precond. (call uniqueNotContains[T](xs, x))' VC for isSet @20:31:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for isSet @21:11...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T]](|[List[T], List[T],  ...)' VC for isSet @21:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](|[List[T],  ...)' VC for isSet @21:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for isSet @21:11...
+[[34m  Info  [0m]  - Result for 'precond. (call |[List[T], List[T], List[T]](==|[List[T] ...)' VC for isSet @21:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for isSet @21:11...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for isSet @21:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call subCons[T](xs, x))' VC for isSet @21:42...
+[[34m  Info  [0m]  - Result for 'precond. (call subCons[T](xs, x))' VC for isSet @21:42:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for isSet @22:11...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for isSet @22:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for isSet @23:12...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for isSet @23:12:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for isSet @24:11...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for isSet @24:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for isSet @25:11...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for isSet @25:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call subId[T](unique[T](xs), x))' VC for isSet @25:42...
+[[34m  Info  [0m]  - Result for 'precond. (call subId[T](unique[T](xs), x))' VC for isSet @25:42:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call ==|[List[T]]({ ...)' VC for isSet @26:11...
+[[34m  Info  [0m]  - Result for 'precond. (call ==|[List[T]]({ ...)' VC for isSet @26:11:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'precond. (call subId[T](unique[T](xs), x))' VC for isSet @26:42...
+[[34m  Info  [0m]  - Result for 'precond. (call subId[T](unique[T](xs), x))' VC for isSet @26:42:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for isSet @17:5...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for isSet @17:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for isSet @17:12...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for isSet @17:12:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcondition' VC for tailNotContains @45:49...
+[[34m  Info  [0m]  - Result for 'postcondition' VC for tailNotContains @45:49:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'match exhaustiveness' VC for tailNotContains @48:5...
+[[34m  Info  [0m]  - Result for 'match exhaustiveness' VC for tailNotContains @48:5:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for subCons @62:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for subCons @62:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for subCons @62:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for subCons @62:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for uniqueNotContains @56:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for uniqueNotContains @56:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for uniqueNotContains @56:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for uniqueNotContains @56:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for subIdem @113:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for subIdem @113:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for subIdem @113:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for subIdem @113:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Cons)' VC for subId @76:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Cons)' VC for subId @76:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now solving 'postcond. (ind. on xs: List[T] / Nil)' VC for subId @76:3...
+[[34m  Info  [0m]  - Result for 'postcond. (ind. on xs: List[T] / Nil)' VC for subId @76:3:
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [32mtotal: 133  valid: 133  (0 from cache) invalid: 0    unknown: 0    time: 141.947[0m ║
+[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 144788 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 

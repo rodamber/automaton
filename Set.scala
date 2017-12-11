@@ -170,6 +170,8 @@ case class Set[T](list: List[T]) {
 
   def forall(p: T => Boolean): Boolean = list.forall(p)
 
+  def exists(p: T => Boolean): Boolean = list.exists(p)
+
   def subsetOf(that: Set[T]): Boolean = {
     that forall { x => this contains x }
   }
@@ -200,17 +202,6 @@ case class Set[T](list: List[T]) {
     }
   }
 
-  def thm1(s: Set[T]): Boolean = {
-    (powerSet contains s) ==> (s subsetOf this)
-  }.holds
-
-  def thm2(s: Set[T]): Boolean = {
-    (s subsetOf this) ==> (powerSet contains s)
-  }.holds
-
-  def thm3(s: Set[T]): Boolean = {
-   (powerSet contains s) == (s subsetOf this)
-  }.holds because { thm1(s) && thm2(s) }
 }
 
 object SetOps {
