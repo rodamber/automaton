@@ -10,12 +10,25 @@ import stainless.proof._
 import set._
 
 
-case class Automaton[State, Sym](trans : (State, Sym) => Set[State]) {
+// In the current formulation, the automaton might not be finite, so there is
+// no guarantees that it might ever terminate.
+case class Automaton[State, Sym](
+  trans: (State, Sym) => Set[State],
+  eps: Sym
+) {
+
   def move(states: Set[State], w: Sym): Set[State]  = {
     states match {
       case (ss + s) => trans(s, w) ++ move(ss, w)
       case _ => Set.empty
     }
+  }
+
+  def epsClosure(states: Set[State]): Set[State] = {
+    val newStates = states flatMap { trans(_, eps) }
+
+    if (newStates == states) newStates
+    else epsClosure(newStates)
   }
 
   def run(states: Set[State], word: List[Sym]): Set[State] = {
@@ -26,7 +39,7 @@ case class Automaton[State, Sym](trans : (State, Sym) => Set[State]) {
   }
 
   def det: Automaton[Set[State], Sym] = {
-    Automaton({ (s: Set[State], w: Sym) => Set.set(move(s, w)) })
+    Automaton({ (s: Set[State], w: Sym) => Set.set(epsClosure(move(s, w))) }, eps)
   }
 
   def detIsDeterministic(s: Set[State], w: Sym): Boolean = {

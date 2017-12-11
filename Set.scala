@@ -171,6 +171,9 @@ case class Set[T](list: List[T]) {
 
   def map[U](f: T => U): Set[U] = set(list map f)
 
+  def flatMap[U](f: T => Set[U]): Set[U] =
+    SetOps.flatten(this map f)
+
   def powerSet: Set[Set[T]] = {
     this match {
       case (xs + x) =>
@@ -192,6 +195,16 @@ case class Set[T](list: List[T]) {
    (powerSet contains s) == (s subsetOf this)
   }.holds because { thm1(s) && thm2(s) }
 }
+
+object SetOps {
+  def flatten[T](sets: Set[Set[T]]): Set[T] = {
+    sets match {
+      case (ss + s) => s ++ flatten(ss)
+      case _ => Set.empty
+    }
+  }
+}
+
 
 object + {
   def unapply[T](s: Set[T]): Option[(Set[T], T)] = s.list match {
