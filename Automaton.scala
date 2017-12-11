@@ -24,6 +24,10 @@ case class Automaton[State, Sym](
     }
   }
 
+  def epsClosed(states: Set[State]): Boolean = {
+    states == epsClosure(states)
+  }
+
   def epsClosure(states: Set[State]): Set[State] = {
     val newStates = states flatMap { trans(_, eps) }
 
@@ -56,23 +60,38 @@ case class Automaton[State, Sym](
   }.qed
 
   def detSound(states: Set[State], word: List[Sym]): Boolean = {
-    Set.set(run(states, word)) == det.run(Set.set(states), word)
+    require(epsClosed(states))
+    Set.set(run(states, word)) == det.run(Set.set(states), word - eps)
   }.holds because {
-    word match {
-      case Nil() => trivial
-      case (w :: ws) => {
-        det.run(Set.set(states), word)                              ==| trivial |
-        det.run(Set.set(List(states)), word)                        ==| trivial |
-        det.run(Set(List(states).unique), word)                     ==| Set.isSet(List(states)) |
-        det.run(Set(List(states)), word)                            ==| trivial |
-        det.run(det.move(Set(List(states)), w), ws)                 ==| trivial |
-        det.run(det.trans(states, w) ++ det.move(Set.empty, w), ws) ==| trivial |
-        det.run(det.trans(states, w) ++ Set.empty, ws)              ==| ListSpecs.rightUnitAppend(det.trans(states, w).list) |
-        det.run(det.trans(states, w), ws)                           ==| trivial |
-        det.run(Set.set(move(states, w)), ws)                       ==| detSound(move(states, w), ws) |
-        Set.set(run(move(states, w), ws))                           ==| trivial |
+    (word, word - eps) match {
+      case (_, Nil()) => { // word is composed only of ε's
+        det.run(Set.set(states), Nil()) ==| trivial |
+        Set.set(states)                 ==| someLemma1 && someLemma2 | // saying that word is only ε's and that that makes run output states
         Set.set(run(states, word))
       }.qed
+
+      case ((w :: ws), (z :: zs)) => {
+        det.run(Set.set(states), word - eps)               ==| trivial |
+        det.run(Set(List(states).unique), word - eps)      ==| Set.isSet(List(states)) |
+        det.run(Set(List(states)), word - eps)             ==| trivial |
+        det.run(det.move(Set(List(states)), z), zs)        ==| trivial |
+        det.run(det.trans(states, z) ++ Set.empty, zs)     ==| ListSpecs.rightUnitAppend(det.trans(states, w).list) |
+        det.run(det.trans(states, z), zs)                  ==| trivial |
+        det.run(Set.set(epsClosure(move(states, z))), zs)  ==| detSound(epsClosure(move(states, z)), zs) |
+        Set.set(run(epsClosure(move(states, w)), ws))
+      }.qed && (
+        if (w == eps) {
+          Set.set(run(epsClosure(move(states, w)), ws))    ==| epsClosed(states) |
+          Set.set(run(states, ws))                         ==| (epsClosed(states) && (w == eps)) |
+          Set.set(run(states, word))
+        }.qed else {
+          Set.set(run(epsClosure(move(states, w)), ws))    ==| epsClosed(states) |
+            // ...
+          Set.set(run(states, word))
+        }.qed
+      )
+
+      case _ => trivial
     }
   }
 
