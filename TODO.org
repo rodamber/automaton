@@ -1,0 +1,4 @@
+* TODO
+- [ ] Proving termination
+- [ ] Create the nfa correspondent to the regular expression
+  - [ ] Applying this to lexi
