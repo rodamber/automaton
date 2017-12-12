@@ -41,31 +41,29 @@ object DFA {
         states                 ==| trivial               |
         dfa.run(states, word)
       }.qed
+      case (w :: ws) =>
+        val step = nfa.move(states, Some(w))
 
-      case (w :: ws) => {
-        dfa.run(states, word)                                  ==| trivial |
-        dfa.run(dfa.move(states, w), ws)                       ==| trivial |
-        dfa.run(dfa.move(states, w), ws)                       ==| trivial |
-        dfa.run(nfa.epsClosure(nfa.move(states, Some(w))), ws) ==| lemma(nfa, nfa.epsClosure(nfa.move(states, Some(w))), ws) |
-        nfa.run(nfa.epsClosure(nfa.move(states, Some(w))), ws) ==| trivial |
-        nfa.run(states, word)
-      }.qed
+        { dfa.run(states, word)             ==| trivial                              |
+          dfa.run(dfa.move(states, w), ws)  ==| trivial                              |
+          dfa.run(dfa.move(states, w), ws)  ==| trivial                              |
+          dfa.run(nfa.epsClosure(step), ws) ==| lemma(nfa, nfa.epsClosure(step), ws) |
+          nfa.run(nfa.epsClosure(step), ws) ==| trivial                              |
+          nfa.run(states, word)
+        }.qed
     }
   }
 
-  def initEpsClosed[State, Sym](nfa: NFA[State, Sym]): Boolean = {
-    nfa.epsClosed(DFA(nfa).initialState)
-  }.holds
-
   def dfaNfaEquiv[State, Sym](nfa: NFA[State, Sym], word: List[Sym]): Boolean = {
     val dfa = DFA(nfa)
+    val init = nfa.epsClosure(Set.set(nfa.initialState))
 
     (nfa.accepts(word) == dfa.accepts(word)) because {
-      nfa.accepts(word)                                                            ==| trivial |
-      nfa.run(nfa.epsClosure(Set.set(nfa.initialState)), word).exists(nfa.isFinal) ==| lemma(nfa, nfa.epsClosure(Set.set(nfa.initialState)), word) |
-      dfa.run(nfa.epsClosure(Set.set(nfa.initialState)), word).exists(nfa.isFinal) ==| trivial |
-      dfa.run(dfa.initialState, word).exists(nfa.isFinal)                          ==| trivial |
-      dfa.isFinal(dfa.run(dfa.initialState, word))                                 ==| trivial |
+      nfa.accepts(word)                                   ==| trivial                |
+      nfa.run(init, word).exists(nfa.isFinal)             ==| lemma(nfa, init, word) |
+      dfa.run(init, word).exists(nfa.isFinal)             ==| trivial                |
+      dfa.run(dfa.initialState, word).exists(nfa.isFinal) ==| trivial                |
+      dfa.isFinal(dfa.run(dfa.initialState, word))        ==| trivial                |
       dfa.accepts(word)
     }.qed
   }.holds
