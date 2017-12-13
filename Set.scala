@@ -145,7 +145,7 @@ object SetSpecs {
     xs.forall(p) == xs.unique.forall(p)
   }.holds
 
-  def appSubset[T](xs: Set[T], ys: Set[T], zs: Set[T]): Boolean = {
+  def unionSubset[T](xs: Set[T], ys: Set[T], zs: Set[T]): Boolean = {
     (xs.subsetOf(zs) && ys.subsetOf(zs)) == (xs ++ ys).subsetOf(zs)
   }.holds because {
     val p = { (x: T) => zs contains x }

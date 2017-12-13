@@ -325,3 +325,16 @@
 [[34m  Info  [0m] Waiting for source changes...
 [[34m  Info  [0m] 
 [[34m  Info  [0m] 
+[[34m  Info  [0m] Detecting some file modifications...: /Users/rodamber/Workspace/LARA/automaton/Set.scala
+[[34m  Info  [0m]   ┌──────────────────────┐
+[[34m  Info  [0m] ╔═╡ [32mverification summary[0m ╞═════════════════════════════════════════════════════════╗
+[[34m  Info  [0m] ║ └──────────────────────┘                                                         ║
+[[34m  Info  [0m] ╟┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╢
+[[34m  Info  [0m] ║ [32mtotal: 0    valid: 0    (0 from cache) invalid: 0    unknown: 0    time:   0.000[0m ║
+[[34m  Info  [0m] ╚══════════════════════════════════════════════════════════════════════════════════╝
+[[34m  Info  [0m] Cycle took 1085 ms
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Waiting for source changes...
+[[34m  Info  [0m] 
+[[34m  Info  [0m] 
