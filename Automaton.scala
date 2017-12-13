@@ -112,10 +112,10 @@ case class NFA[State, Sym](
   }
 
   def epsClosure(states: Set[State]): Set[State] = {
-    val newStates: Set[State] = move(states, None[Sym]())
+    val newStates: Set[State] = states ++ move(states, None[Sym]())
 
     if (newStates == states) newStates
-    else states ++ epsClosure(newStates)
+    else epsClosure(newStates)
   } ensuring { epsClosed _ }
 
   def epsClosed(states: Set[State]): Boolean = {

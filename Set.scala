@@ -8,6 +8,7 @@ import stainless.proof._
 
 
 object Set {
+  import listspecs.ListSpecs._
 
   def empty[T]: Set[T] = Set(Nil[T]())
 
@@ -50,88 +51,6 @@ object Set {
       case (x :: xs) => !xs.contains(x)
     }
   }.holds
-
-  // List.unique does not add elements that weren't already there.
-  @induct
-  def uniqueNotContains[T](xs: List[T], x: T): Boolean = {
-    require(!xs.contains(x))
-    !xs.unique.contains(x)
-  }.holds
-
-  @induct
-  def subCons[T](xs: List[T], x: T): Boolean = {
-    require(!xs.contains(x))
-    xs == (x :: xs) - x
-  }.holds
-
-  // List subtraction is "commutative".
-  @induct
-  def subComm[T](xs: List[T], y: T, x: T): Boolean = {
-    (xs - y) - x == (xs - x) - y
-  }.holds
-
-  // Trying to subtract something that isn't there in the first place does
-  // nothing.
-  @induct
-  def subId[T](xs: List[T], x: T): Boolean = {
-    require(!xs.contains(x))
-    xs - x == xs
-  }.holds
-
-  // List substraction and unique "commute".
-  // May need a larger timeout to verify.
-  def subUniqueComm[T](xs: List[T], x: T): Boolean = {
-    (xs - x).unique == xs.unique - x
-  }.holds because {
-    xs match {
-      case Nil() => trivial
-      case (y :: ys) => if (y == x) {
-        xs.unique - x                ==| trivial                  |
-        (y :: (ys.unique - y)) - x   ==| trivial                  |
-        (ys.unique - y) - x          ==| subComm(ys.unique, y, x) |
-        (ys.unique - x) - y          ==| subUniqueComm(ys, x)     |
-        (ys - x).unique - y          ==| trivial                  |
-        ((x :: ys) - x).unique - y   ==| trivial                  |
-        (xs - x).unique - x          ==| (uniqueNotContains(xs - x, x) &&
-                                            subId((xs - x).unique, x)) |
-        (xs - x).unique
-      }.qed else {
-        (xs - x).unique              ==| trivial                  |
-        ((y :: ys) - x).unique       ==| trivial                  |
-        (y :: (ys - x)).unique       ==| trivial                  |
-        (y :: ((ys - x).unique - y)) ==| subUniqueComm(ys, x)     |
-        (y :: ((ys.unique - x) - y)) ==| subComm(ys.unique, y, x) |
-        (y :: ((ys.unique - y) - x)) ==| trivial                  |
-        ((y :: (ys.unique - y)) - x) ==| trivial                  |
-        xs.unique - x
-      }.qed
-    }
-  }
-
-  // List subtraction is idempotent.
-  @induct
-  def subIdem[T](xs: List[T], x: T): Boolean = {
-    (xs - x) == ((xs - x) - x)
-  }.holds
-
-  // This is the main result about sets. With this, we can call unique on any
-  // list and call it a set.
-  def uniqueIdem[T](l: List[T]): Boolean = {
-    l.unique == l.unique.unique
-  }.holds because {
-    l match {
-      case Nil() => trivial
-      case (x :: xs) => {
-        l.unique.unique                     ==| trivial                     |
-        (x :: (xs.unique - x)).unique       ==| trivial                     |
-        (x :: ((xs.unique - x).unique - x)) ==| subUniqueComm(xs.unique, x) |
-        (x :: ((xs.unique.unique - x) - x)) ==| uniqueIdem(xs)              |
-        (x :: ((xs.unique - x) - x))        ==| subIdem(xs.unique, x)       |
-        (x :: (xs.unique - x))              ==| trivial                     |
-        l.unique
-      }.qed
-    }
-  }
 
 }
 
