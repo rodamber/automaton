@@ -6,9 +6,9 @@ import stainless.collection._
 import stainless.lang.{Set => _, _}
 import stainless.proof._
 
+import listspecs.ListSpecs._
 
 object Set {
-  import listspecs.ListSpecs._
 
   def empty[T]: Set[T] = Set(Nil[T]())
 
@@ -68,6 +68,10 @@ case class Set[T](list: List[T]) {
   // Set element addition.
   def +(x: T): Set[T] = {
     this ++ set(x)
+  }
+
+  def -(x: T): Set[T] = {
+    set(this.list - x)
   }
 
   def &(that: Set[T]): Set[T] = {
@@ -132,6 +136,61 @@ object SetOps {
       case _ => Set.empty
     }
   }
+}
+
+object SetSpecs {
+
+  def subsetContains[T](xs: Set[T], ys: Set[T], x: T): Boolean = {
+    require(xs.contains(x) && xs.subsetOf(ys))
+    ys.contains(x)
+  }.holds because {
+    xs.list match {
+      case Nil() => trivial
+      case (a :: as) =>
+        if (a == x) trivial
+        else subsetContains(Set(as), ys, x)
+    }
+  }
+
+  @induct
+  def subForall[T](xs: List[T], x: T, p: T => Boolean): Boolean = {
+    require((xs - x).forall(p) && p(x))
+    xs.forall(p)
+  }.holds
+
+  def appSubset[T](xs: Set[T], ys: Set[T], zs: Set[T]): Boolean = {
+    require(xs.subsetOf(zs) && ys.subsetOf(zs))
+    // (xs ++ ys).subsetOf(zs) because {
+      xs.list match {
+        case Nil() => trivial
+        case (a :: as) =>
+          assert(zs contains a)
+          assert(((as ++ ys.list).unique - a).forall(zs.contains(_)))
+
+        {
+          (xs ++ ys).subsetOf(zs)                                                  ==| trivial |
+          (xs ++ ys).forall(zs contains _)                                         ==| trivial |
+          (set(xs.list ++ ys.list).forall(zs contains _))                          ==| trivial |
+          (Set((xs.list ++ ys.list).unique).forall(zs contains _))                 ==| trivial |
+          (Set((xs.list ++ ys.list).unique).list.forall(zs contains _))            ==| trivial |
+          ((xs.list ++ ys.list).unique.forall(zs contains _))                      ==| trivial |
+          ((a :: (as ++ ys.list)).unique.forall(zs contains _))                    ==| trivial |
+          ((a :: ((as ++ ys.list).unique - a)).forall(zs contains _))              ==| trivial |
+          ((zs contains a) && ((as ++ ys.list).unique - a).forall(zs contains _))  ==| subsetContains(xs, zs, a) |
+
+          (((as ++ ys.list).unique - a).forall(zs contains _))                     ==| subForall((as ++ ys.list).unique, a, { (x: T) => zs contains x }) |
+
+          ((as ++ ys.list).unique.forall(zs contains _))                           //==| trivial | // trivial ?
+          // (Set((as ++ ys.list).unique).list.forall(zs contains _))      ==| trivial |
+          // (set((as ++ ys.list)).list.forall(zs contains _))             ==| trivial |
+          // (set((as ++ ys.list)).forall(zs contains _))                  ==| trivial |
+          // (Set(as) ++ ys).forall(zs contains _)                         ==| appSubset(Set(as), ys, zs) |
+          // true
+        }.qed
+      }
+    // }
+  }.holds
+
 }
 
 

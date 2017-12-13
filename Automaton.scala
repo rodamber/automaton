@@ -98,7 +98,7 @@ case class NFA[State, Sym](
   isFinal: State => Boolean
 ) {
   require {
-    forall { (s: State, w: Option[Sym]) => move(s, w) subsetOf validStates } &&
+    forall { (s: State, w: Option[Sym]) => move(s, w) subsetOf validStates }
   }
 
   def move(states: Set[State], w: Option[Sym]): Set[State] = {
@@ -106,7 +106,11 @@ case class NFA[State, Sym](
       case (ss + s) => move(s, w) ++ move(ss, w)
       case _ => Set.empty
     }
-  } ensuring { res => res subsetOf validStates }
+  } // ensuring { (res: Set[State]) => res subsetOf validStates }
+
+  def moveValid(states: Set[State], w: Option[Sym]): Boolean = {
+    move(states, w) subsetOf validStates
+  }.holds
 
   def run(states: Set[State], word: List[Sym]): Set[State] = {
     word match {
