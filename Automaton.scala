@@ -106,26 +106,44 @@ case class NFA[State, Sym](
       case (ss + s) => move(s, w) ++ move(ss, w)
       case _ => Set.empty
     }
-  } // ensuring { (res: Set[State]) => res subsetOf validStates }
+  }
 
   def moveValid(states: Set[State], w: Option[Sym]): Boolean = {
     move(states, w) subsetOf validStates
-  }.holds
+  }.holds because {
+    states match {
+      case (ss + s) =>
+        SetSpecs.unionSubset(move(s, w), move(ss, w), validStates) &&
+          moveValid(ss, w)
+      case _ => trivial
+    }
+  }
 
   def run(states: Set[State], word: List[Sym]): Set[State] = {
+    require(states subsetOf validStates)
+
     word match {
       case Nil() => epsClosure(states)
       case (w :: ws) =>
         val newStates = move(states, Some(w))
+
+        assert(moveValid(states, Some(w)))
         run(epsClosure(newStates), ws)
     }
   } ensuring { res => res subsetOf validStates }
 
   def epsClosure(states: Set[State]): Set[State] = {
     require(states subsetOf validStates)
-
     decreases(validStates.size - states.size)
+
     val newStates: Set[State] = states ++ move(states, None[Sym]())
+
+    assert {
+      newStates.subsetOf(validStates) because {
+        moveValid(states, None[Sym]) && 
+          SetSpecs.unionSubset(states, move(states, None[Sym]), validStates)
+      }
+    }
 
     if (newStates == states) newStates
     else epsClosure(newStates)

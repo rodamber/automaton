@@ -141,22 +141,39 @@ object SetOps {
 object SetSpecs {
 
   @induct
+  def subForall[T](xs: List[T], x: T, p: T => Boolean): Boolean = {
+    require(p(x))
+    xs.forall(p) == (xs - x).forall(p)
+  }.holds
+
   def uniqueForall[T](xs: List[T], p: T => Boolean): Boolean = {
     xs.forall(p) == xs.unique.forall(p)
-  }.holds
+  }.holds because {
+    xs match {
+      case Nil() => trivial
+      case (a :: as) => if (p(a)) {
+        xs.unique.forall(p)                  ==| trivial                    |
+        (a :: (as.unique - a)).forall(p)     ==| trivial                    |
+        (p(a) && (as.unique - a).forall(p))  ==| subForall(as.unique, a, p) |
+        (p(a) && as.unique.forall(p))        ==| uniqueForall(as, p)        |
+        (p(a) && as.forall(p))               ==| trivial                    |
+        xs.forall(p)
+      }.qed else trivial // FIXME: This shouldn't be needed...
+    }
+  }
 
   def unionSubset[T](xs: Set[T], ys: Set[T], zs: Set[T]): Boolean = {
     (xs.subsetOf(zs) && ys.subsetOf(zs)) == (xs ++ ys).subsetOf(zs)
   }.holds because {
     val p = { (x: T) => zs contains x }
 
-    (xs ++ ys).subsetOf(zs)                                          ==| trivial |
-    (xs ++ ys).forall(zs contains _)                                 ==| trivial |
-    set(xs.list ++ ys.list).list.forall(zs contains _)               ==| trivial |
-    (xs.list ++ ys.list).unique.forall(zs contains _)                ==| uniqueForall(xs.list ++ ys.list, p) |
-    (xs.list ++ ys.list).forall(zs contains _)                       ==| forallAssoc(xs.list, ys.list, p) |
-    (xs.list.forall(zs contains _) && ys.list.forall(zs contains _)) ==| trivial |
-    (xs.forall(zs contains _) && ys.forall(zs contains _))           ==| trivial |
+    (xs ++ ys).subsetOf(zs)                  ==| trivial |
+    (xs ++ ys).forall(p)                     ==| trivial |
+    set(xs.list ++ ys.list).list.forall(p)   ==| trivial |
+    (xs.list ++ ys.list).unique.forall(p)    ==| uniqueForall(xs.list ++ ys.list, p) |
+    (xs.list ++ ys.list).forall(p)           ==| forallAssoc(xs.list, ys.list, p) |
+    (xs.list.forall(p) && ys.list.forall(p)) ==| trivial |
+    (xs.forall(p) && ys.forall(p))           ==| trivial |
     (xs.subsetOf(zs) && ys.subsetOf(zs))
   }.qed
 
