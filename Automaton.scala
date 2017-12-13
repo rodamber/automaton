@@ -14,6 +14,7 @@ import set._
 object DFA {
 
   def apply[State, Sym](nfa: NFA[State, Sym]): DFA[Set[State], Sym] = {
+
     val move = { (s: Set[State], w: Sym) =>
       nfa.epsClosure(nfa.move(s, Some(w)))
     }
@@ -91,16 +92,21 @@ case class DFA[State, Sym](
 // The ε character/word is never representend explicitly.
 
 case class NFA[State, Sym](
+  validStates : Set[State],
   move: (State, Option[Sym]) => Set[State],
   initialState: State,
   isFinal: State => Boolean
 ) {
+  require {
+    forall { (s: State, w: Option[Sym]) => move(s, w) subsetOf validStates } &&
+  }
+
   def move(states: Set[State], w: Option[Sym]): Set[State] = {
     states match {
       case (ss + s) => move(s, w) ++ move(ss, w)
       case _ => Set.empty
     }
-  }
+  } ensuring { res => res subsetOf validStates }
 
   def run(states: Set[State], word: List[Sym]): Set[State] = {
     word match {
@@ -109,14 +115,19 @@ case class NFA[State, Sym](
         val newStates = move(states, Some(w))
         run(epsClosure(newStates), ws)
     }
-  }
+  } ensuring { res => res subsetOf validStates }
 
   def epsClosure(states: Set[State]): Set[State] = {
+    require(states subsetOf validStates)
+
+    decreases(validStates.size - states.size)
     val newStates: Set[State] = states ++ move(states, None[Sym]())
 
     if (newStates == states) newStates
     else epsClosure(newStates)
-  } ensuring { epsClosed _ }
+  } ensuring { res =>
+    epsClosed(res) && (res subsetOf validStates)
+  }
 
   def epsClosed(states: Set[State]): Boolean = {
     states == epsClosure(states)

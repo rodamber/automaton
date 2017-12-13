@@ -92,12 +92,14 @@ case class Set[T](list: List[T]) {
   def exists(p: T => Boolean): Boolean = list.exists(p)
 
   def subsetOf(that: Set[T]): Boolean = {
-    that forall { x => this contains x }
+    forall { x => that contains x }
   }
 
   def ==(that: Set[T]): Boolean = {
     (this subsetOf that) && (that subsetOf this)
   }
+
+  // def foldRight[U](f: (T, U) => U, z: U): U = set(list foldRight(f, z))
 
   def map[U](f: T => U): Set[U] = set(list map f)
 
