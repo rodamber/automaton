@@ -146,8 +146,12 @@ case class NFA[State, Sym](
       }
     }
 
-    if (newStates == states) newStates
-    else epsClosure(newStates)
+    if (newStates == states) {
+      newStates
+    } else {
+      assert(newStates.size > states.size)
+      epsClosure(newStates)
+    }
   } ensuring { res =>
     epsClosed(res) && (res subsetOf validStates)
   }

@@ -17,16 +17,19 @@ object Set {
   } ensuring {
     res => l match {
       case Nil() => true
-      case (x :: xs) => (res ==> isSet(xs)) because {
-        tailNotContains(l) && uniqueNotContains(xs, x) && {
-          xs                         ==| subCons(xs, x)      |
-          (x :: xs) - x              ==| isSet(x :: xs)      |
-          (x :: xs).unique - x       ==| trivial             |
-          (x :: (xs.unique - x)) - x ==| trivial             |
-          (xs.unique - x) - x        ==| subId(xs.unique, x) |
-          xs.unique - x              ==| subId(xs.unique, x) |
-          xs.unique
-        }.qed
+      case (x :: xs) => res ==> {
+        assert(!xs.contains(x))
+        isSet(xs) because {
+          !xs.contains(x) && uniqueNotContains(xs, x) && {
+            xs                         ==| subCons(xs, x)      |
+            (x :: xs) - x              ==| trivial             |
+            (x :: xs).unique - x       ==| trivial             |
+            (x :: (xs.unique - x)) - x ==| trivial             |
+            (xs.unique - x) - x        ==| subId(xs.unique, x) |
+            xs.unique - x              ==| subId(xs.unique, x) |
+            xs.unique
+          }.qed
+        }
       }
     }
   }
@@ -41,16 +44,6 @@ object Set {
   def set[T](x: T): Set[T] = {
     set(List(x))
   }
-
-  // If every element of (x :: xs) only occurs once then xs does not contain x.
-  def tailNotContains[T](l: List[T]): Boolean = {
-    require(isSet(l))
-
-    l match {
-      case Nil() => true
-      case (x :: xs) => !xs.contains(x)
-    }
-  }.holds
 
 }
 
@@ -71,25 +64,37 @@ case class Set[T](list: List[T]) {
   }
 
   def -(x: T): Set[T] = {
-    Set(this.list - x)
-  }
+    assert {
+      ((list - x) == (list - x).unique) because {
+        list - x          ==| isSet(list)            |
+        list.unique - x   ==| subUniqueComm(list, x) |
+        (list - x).unique
+      }.qed
+    }
+
+    Set(list - x)
+  } ensuring { _.size <= size }
 
   def --(that: Set[T]): Set[T] = {
+    decreases(that.size)
+
     that match {
       case (ss + s) =>
         (this - s) -- ss
       case _ => this
     }
-  }
+  } ensuring { _.size <= size }
 
-  def &(that: Set[T]): Set[T] = {
-    this match {
-      case (ss + s) =>
-        if (that contains s) (ss & that) + s
-        else (ss & that)
-      case _ => this
-    }
-  }
+  // def &(that: Set[T]): Set[T] = {
+  //   decreases(list.size)
+
+  //   this match {
+  //     case (ss + s) =>
+  //       if (that contains s) (ss & that) + s
+  //       else (ss & that)
+  //     case _ => this
+  //   }
+  // }
 
   def isEmpty: Boolean = list.isEmpty
 
@@ -123,15 +128,6 @@ case class Set[T](list: List[T]) {
       case (ss + s) if p(s) => ss.filter(p) + s
       case (ss + s) => ss.filter(p)
       case _ => this
-    }
-  }
-
-  def powerSet: Set[Set[T]] = {
-    this match {
-      case (xs + x) =>
-        val ps = xs.powerSet
-        ps ++ ps.map { _ + x }
-      case _ => set(this)
     }
   }
 
@@ -189,6 +185,11 @@ object SetSpecs {
   def count[T](xs: List[T], x: T): BigInt = {
     xs.filter(_ == x).size
   }
+
+  @induct
+  def countContain[T](xs: List[T], x: T): Boolean = {
+    (count(xs, x) == 0) == !xs.contains(x)
+  }.holds
 
   @induct
   def subCount[T](xs: List[T], x: T): Boolean = {
