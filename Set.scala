@@ -105,7 +105,7 @@ case class Set[T](list: List[T]) {
 
   def subsetOf(that: Set[T]): Boolean = {
     forall { x => that contains x }
-  } // ensuring { _ ==> (this.size <= that.size) }
+  } ensuring { _ ==> SetSpecs.subsetOfSize(this, that) }
 
   def ==(that: Set[T]): Boolean = {
     (this subsetOf that) && (that subsetOf this)

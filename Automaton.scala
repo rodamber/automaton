@@ -98,7 +98,8 @@ case class NFA[State, Sym](
   isFinal: State => Boolean
 ) {
   require {
-    forall { (s: State, w: Option[Sym]) => move(s, w) subsetOf validStates }
+    forall { (s: State, w: Option[Sym]) => move(s, w) subsetOf validStates } &&
+    validStates.contains(initialState)
   }
 
   def move(states: Set[State], w: Option[Sym]): Set[State] = {
@@ -140,7 +141,7 @@ case class NFA[State, Sym](
 
     assert {
       newStates.subsetOf(validStates) because {
-        moveValid(states, None[Sym]) && 
+        moveValid(states, None[Sym]) &&
           SetSpecs.unionSubset(states, move(states, None[Sym]), validStates)
       }
     }
@@ -152,6 +153,7 @@ case class NFA[State, Sym](
   }
 
   def epsClosed(states: Set[State]): Boolean = {
+    require(states subsetOf validStates)
     states == epsClosure(states)
   }
 
