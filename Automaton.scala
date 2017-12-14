@@ -22,12 +22,12 @@ object DFA {
     val initialState = nfa.epsClosure(Set.set(nfa.initialState))
     val isFinal = { (s: Set[State]) => s exists nfa.isFinal }
 
-    DFA(move, initialState, isFinal )
+    DFA(move, initialState, isFinal)
   }
 
   def lemma[State, Sym](nfa: NFA[State, Sym], states: Set[State],
                         word: List[Sym]): Boolean = {
-    require(nfa.epsClosed(states))
+    require(states.subsetOf(nfa.validStates) && nfa.epsClosed(states))
     val dfa = DFA(nfa)
 
     nfa.run(states, word) == dfa.run(states, word)
