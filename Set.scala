@@ -97,7 +97,7 @@ case class Set[T](list: List[T]) {
 
   def subsetOf(that: Set[T]): Boolean = {
     forall { x => that contains x }
-  }
+  } // ensuring { _ ==> (this.size <= that.size) }
 
   def ==(that: Set[T]): Boolean = {
     (this subsetOf that) && (that subsetOf this)
@@ -176,6 +176,103 @@ object SetSpecs {
     (xs.forall(p) && ys.forall(p))           ==| trivial |
     (xs.subsetOf(zs) && ys.subsetOf(zs))
   }.qed
+
+
+  def count[T](xs: List[T], x: T): BigInt = {
+    xs.filter(_ == x).size
+  }
+
+  @induct
+  def subCount[T](xs: List[T], x: T): Boolean = {
+    count(xs - x, x) == 0
+  }.holds
+
+  @induct
+  def subCount2[T](xs: List[T], x: T, y: T): Boolean = {
+    require(x != y)
+    count(xs - x, y) == count(xs, y)
+  }.holds
+
+  def uniqueCount[T](xs: List[T], x: T): Boolean = {
+    require(xs contains x)
+    count(xs.unique, x) == 1
+  }.holds because {
+
+    xs match {
+      case Nil() => trivial
+      case (y :: ys) => {
+        if (y == x) {
+          count(xs.unique, x)                         ==| trivial                |
+          xs.unique.filter(_ == x).size               ==| trivial                |
+          (y :: (ys.unique - y)).filter(_ == x).size  ==| (y == x)               |
+          (y :: (ys.unique - y).filter(_ == x)).size  ==| trivial                |
+          1 + (ys.unique - y).filter(_ == x).size     ==| trivial                |
+          1 + count(ys.unique - y, x)                 ==| subCount(ys.unique, x) |
+          BigInt(1)
+        }.qed else {
+          count(xs.unique, x)                         ==| trivial                    |
+          xs.unique.filter(_ == x).size               ==| trivial                    |
+          (y :: (ys.unique - y)).filter(_ == x).size  ==| (y != x)                   |
+          (ys.unique - y).filter(_ == x).size         ==| trivial                    |
+          count(ys.unique - y, x)                     ==| subCount2(ys.unique, y, x) |
+          count(ys.unique, x)                         ==| uniqueCount(ys, x)         |
+          BigInt(1)
+        }
+      }.qed
+    }
+  }
+
+  def uniqueSubSize[T](xs: List[T], z: T): Boolean = {
+    require(xs contains z)
+    xs.unique.size == 1 + (xs.unique - z).size
+  }.holds // because {
+  //   xs match {
+  //     case (y :: Nil()) => {
+  //       assert(y == z)
+
+  //       xs.unique.size                  ==| trivial  |
+  //       (y :: (Nil().unique - y)).size  ==| trivial  |
+  //       (y :: Nil()).size               ==| trivial  |
+  //       BigInt(1)                       ==| trivial  |
+  //       1 + (List(z).unique - z).size   ==| (y == z) |
+  //       1 + (xs.unique - z).size
+  //     }.qed
+  //     case (y :: ys) => if (z == y) {
+  //       xs.unique.size               ==| trivial              |
+  //       (y :: (ys.unique - y)).size  ==| trivial              |
+  //       1 + (ys.unique - y).size     ==| subUniqueComm(ys, y) |
+  //       1 + (ys - y).unique.size     ==| (z == y)             |
+  //       1 + (xs - z).unique.size     ==| subUniqueComm(xs, z) |
+  //       1 + (xs.unique - z).size
+  //     }.qed else {
+  //       xs.unique.size                         ==| trivial                  |
+  //       (y :: (ys.unique - y)).size            ==| trivial                  |
+  //       1 + (ys.unique - y).size               ==| subUniqueComm(ys, y)     |
+  //       1 + (ys - y).unique.size               ==| uniqueSubSize(ys - y, z) |
+  //       2 + ((ys - y).unique - z).size         //==| subUniqueComm(ys, y)     |
+  //       // 2 + ((ys.unique - y) - z).size         //==| trivial                  |
+  //       // 1 + (y :: ((ys.unique - y) - z)).size  ==| (y != z)                 |
+  //       // 1 + ((y :: (ys.unique - y)) - z).size  ==| trivial                  |
+  //       // 1 + (xs.unique - z).size
+  //     }.qed
+  //   }
+  // }
+
+
+  @induct
+  def subSize[T](xs: List[T], x: T): Boolean = {
+    (xs - x).size <= xs.size
+  }.holds
+
+  def containsSize[T](xs: Set[T], x: T): Boolean = {
+    require(xs contains x)
+    (xs - x).size <= xs.size
+  }.holds because { subSize(xs.list, x) }
+
+  def subsetOfSize[T](xs: Set[T], ys: Set[T]): Boolean = {
+    require(xs subsetOf ys)
+    xs.size <= ys.size
+  }.holds
 
 }
 
