@@ -71,7 +71,15 @@ case class Set[T](list: List[T]) {
   }
 
   def -(x: T): Set[T] = {
-    set(this.list - x)
+    Set(this.list - x)
+  }
+
+  def --(that: Set[T]): Set[T] = {
+    that match {
+      case (ss + s) =>
+        (this - s) -- ss
+      case _ => this
+    }
   }
 
   def &(that: Set[T]): Set[T] = {
@@ -228,18 +236,67 @@ object SetSpecs {
 
   def uniqueSubSize[T](xs: List[T], x: T): Boolean = {
     require(xs contains x)
-    xs.unique.size == BigInt(1) + (xs.unique - x).size
+    (xs.unique - x).size == xs.unique.size - 1
   }.holds because {
     (xs.unique - x).size                  ==| subCount3(xs.unique, x) |
     xs.unique.size - count(xs.unique, x)  ==| uniqueCount(xs, x)      |
     xs.unique.size - 1
   }.qed
 
+  def setSubSize[T](xs: Set[T], x: T): Boolean = {
+    require(xs contains x)
+    (xs - x).size == xs.size - 1
+  }.holds because { uniqueSubSize(xs.list, x) }
+
+  def setSubSubSize[T](xs: Set[T], ys: Set[T]): Boolean = {
+    require(ys subsetOf xs)
+    (xs -- ys).size == xs.size - ys.size
+  }.holds because {
+    ys match {
+      case (ss + s) => {
+        assert(ss.subsetOf(xs - s) because subSubset(xs, ss, s))
+
+        (xs -- ys).size              ==| trivial                   |
+        ((xs - s) -- ss).size        ==| setSubSubSize(xs - s, ss) |
+        (xs - s).size - ss.size      ==| trivial                   |
+        (xs - s).size - ys.size + 1  ==| setSubSize(xs, s)         |
+        xs.size - 1 - ys.size + 1    ==| trivial                   |
+        xs.size - ys.size
+      }.qed
+      case _ => trivial
+    }
+  }
+
+  def subSubset[T](xs: Set[T], ys: Set[T], y: T): Boolean = {
+    require(ys.subsetOf(xs) && !ys.contains(y))
+    ys.subsetOf(xs - y)
+  }.holds because {
+    ys.list match {
+      case Nil() => trivial
+      case (a :: as) => {
+        val zs = xs - y // FIXME: Hack
+        val p = { (x: T) => zs contains x }
+
+        ys.subsetOf(zs)         ==| trivial                   |
+        ys.forall(p)            ==| trivial                   |
+        ys.list.forall(p)       ==| trivial                   |
+        (p(a) && as.forall(p))  ==| xs.contains(a)            |
+        as.forall(p)            ==| isSet(as)                 |
+        Set(as).forall(p)       ==| trivial                   |
+        Set(as).subsetOf(xs)    ==| subSubset(xs, Set(as), y) |
+        true
+      }.qed
+    }
+  }
+
 
   def subsetOfSize[T](xs: Set[T], ys: Set[T]): Boolean = {
     require(xs subsetOf ys)
     xs.size <= ys.size
-  }.holds
+  }.holds because {
+    ys.size                    ==| setSubSubSize(ys, xs) |
+    (ys -- xs).size + xs.size
+  }.qed
 
 }
 
