@@ -7,146 +7,218 @@ import stainless.lang.{Set => _, _}
 import stainless.proof._
 
 
-object Set {
-  import listspecs.ListSpecs._
+sealed abstract class Set[T] {
 
-  def empty[T]: Set[T] = Set(Nil[T]())
+  import SetSpecs._
 
-  def isSet[T](l: List[T]): Boolean = {
-    l == l.unique
-  } ensuring {
-    res => l match {
-      case Nil() => true
-      case (x :: xs) => (res ==> isSet(xs)) because {
-        tailNotContains(l) && uniqueNotContains(xs, x) && {
-          xs                         ==| subCons(xs, x)      |
-          (x :: xs) - x              ==| isSet(x :: xs)      |
-          (x :: xs).unique - x       ==| trivial             |
-          (x :: (xs.unique - x)) - x ==| trivial             |
-          (xs.unique - x) - x        ==| subId(xs.unique, x) |
-          xs.unique - x              ==| subId(xs.unique, x) |
-          xs.unique
-        }.qed
-      }
+  def size: BigInt = {
+    this match {
+      case SNil() => BigInt(0)
+      case SCons(_, xs) => 1 + xs.size
     }
+  } ensuring { _ >= 0 }
+
+  def forall(p: T => Boolean): Boolean = this match {
+    case SNil() => true
+    case SCons(x, xs) => p(x) && xs.forall(p)
   }
 
-  // This set constructor guarantees that the underlying list of the set has the
-  // isSet property.
-  def set[T](list: List[T]): Set[T] = {
-    assert(uniqueIdem(list))
-    Set(list.unique)
+  def exists(p: T => Boolean): Boolean = this match {
+    case SNil() => false
+    case SCons(x, xs) => p(x) || xs.exists(p)
   }
 
-  def set[T](x: T): Set[T] = {
-    set(List(x))
-  }
+  def contains(x: T): Boolean = exists(_ == x)
 
-  // If every element of (x :: xs) only occurs once then xs does not contain x.
-  def tailNotContains[T](l: List[T]): Boolean = {
-    require(isSet(l))
+  def subsetOf(ys: Set[T]): Boolean = forall { ys contains _ }
 
-    l match {
-      case Nil() => true
-      case (x :: xs) => !xs.contains(x)
+  def +(y: T): Set[T] = {
+    require(setInv(this))
+
+    this match {
+      case SNil() =>
+        SCons(y, SNil())
+      case SCons(x, xs) =>
+        if (x == y) {
+          this
+        } else {
+          SCons(x, xs + y)
+        }
     }
+  } // ensuring { setInv(_) }
+
+  def ++(that: Set[T]): Set[T] = {
+    require(setInv(this) && setInv(that))
+    decreases(size + 1)
+
+    this match {
+      case SNil() => that
+      case SCons(x, xs) =>
+        assert(addInv(xs ++ that, x))
+        assert(xs.size < size)
+
+        (xs ++ that) + x
+    }
+  } ensuring { setInv(_) }
+
+  def -(y: T): Set[T] = {
+    require(setInv(this))
+
+    this match {
+      case SNil() => SNil()
+      case SCons(x, xs) =>
+        if (x == y) xs
+        else SCons(x, xs - y)
+    }
+  } // ensuring { setInv(_) }
+
+  def --(that: Set[T]): Set[T] = {
+    require(setInv(this) && setInv(that))
+    decreases(that.size + 1)
+
+    that match {
+      case SNil() => this
+      case SCons(y, ys) =>
+        assert(subInv(this -- ys, y))
+        assert(ys.size < that.size)
+
+        (this -- ys) - y
+    }
+  } ensuring { setInv(_) }
+
+}
+
+case class SCons[T](x: T, xs: Set[T]) extends Set[T]
+case class SNil[T]() extends Set[T]
+
+object SetSpecs {
+
+  // Set invariant
+  def setInv[T](set: Set[T]): Boolean = set match {
+    case SNil() => true
+    case SCons(x, xs) => !xs.contains(x) && setInv(xs)
+  }
+
+  @induct
+  def addContains[T](set: Set[T], y: T, z: T): Boolean = {
+    require(setInv(set))
+    (set + y).contains(z) == (set.contains(z) || y == z)
   }.holds
 
-}
-
-import Set._
-
-
-case class Set[T](list: List[T]) {
-  require(isSet(list))
-
-  // Set union.
-  def ++(that: Set[T]): Set[T] = {
-    set(this.list ++ that.list)
-  }
-
-  // Set element addition.
-  def +(x: T): Set[T] = {
-    this ++ set(x)
-  }
-
-  def &(that: Set[T]): Set[T] = {
-    this match {
-      case (ss + s) =>
-        if (that contains s) (ss & that) + s
-        else (ss & that)
-      case _ => this
+  def addInv[T](set: Set[T], y: T): Boolean = {
+    require(setInv(set))
+    setInv(set + y)
+  }.holds because {
+    set match {
+      case SNil() => trivial
+      case SCons(x, xs) => if (x == y) {
+        trivial
+      } else {
+        setInv(set + y)                           ==| trivial              |
+        setInv(SCons(x, xs + y))                  ==| trivial              |
+        (!(xs + y).contains(x) && setInv(xs + y)) ==| addInv(xs, y)        |
+        !(xs + y).contains(x)                     ==| addContains(xs, y, x)|
+        !(xs.contains(x) || y == x)               ==| trivial              |
+        true
+      }.qed
     }
   }
 
-  def isEmpty: Boolean = list.isEmpty
+  @induct
+  def addForall[T](set: Set[T], x: T, p: T => Boolean): Boolean = {
+    require(setInv(set))
+    (set + x).forall(p) == (set.forall(p) && p(x))
+  }.holds
 
-  def nonEmpty: Boolean = !isEmpty
-
-  def size: BigInt = list.size
-
-  def contains(x: T): Boolean = list.contains(x)
-
-  def forall(p: T => Boolean): Boolean = list.forall(p)
-
-  def exists(p: T => Boolean): Boolean = list.exists(p)
-
-  def subsetOf(that: Set[T]): Boolean = {
-    forall { x => that contains x }
-  }
-
-  def ==(that: Set[T]): Boolean = {
-    (this subsetOf that) && (that subsetOf this)
-  }
-
-  // def foldRight[U](f: (T, U) => U, z: U): U = set(list foldRight(f, z))
-
-  def map[U](f: T => U): Set[U] = set(list map f)
-
-  def flatMap[U](f: T => Set[U]): Set[U] =
-    SetOps.flatten(this map f)
-
-  def filter(p: T => Boolean): Set[T] = {
-    this match {
-      case (ss + s) if p(s) => ss.filter(p) + s
-      case (ss + s) => ss.filter(p)
-      case _ => this
+  def unionSubset[T](set1: Set[T], set2: Set[T], set3: Set[T]): Boolean = {
+    require(setInv(set1) && setInv(set2))
+    (set1.subsetOf(set3) && set2.subsetOf(set3)) ==
+      (set1 ++ set2).subsetOf(set3)
+  }.holds because {
+    set1 match {
+      case SNil() => trivial
+      case SCons(x, xs) => {
+        (set1 ++ set2).subsetOf(set3)                     ==| trivial |
+        ((xs ++ set2) + x).subsetOf(set3)                 ==| trivial |
+        ((xs ++ set2) + x).forall(set3 contains _)        ==| 
+          addForall((xs ++ set2), x, (y: T) => set3 contains y) |
+        ((xs ++ set2).forall(set3 contains _) &&
+           set3.contains(x))                              ==| trivial |
+        ((xs ++ set2).subsetOf(set3) && set3.contains(x)) ==| unionSubset(xs, set2, set3) |
+        (xs.subsetOf(set3) && set3.contains(x) &&
+           set2.subsetOf(set3))                           ==| trivial |
+        (set1.subsetOf(set3) && set2.subsetOf(set3))
+      }.qed
     }
   }
 
-  def powerSet: Set[Set[T]] = {
-    this match {
-      case (xs + x) =>
-        val ps = xs.powerSet
-        ps ++ ps.map { _ + x }
-      case _ => set(this)
+  @induct
+  def subContains[T](set: Set[T], y: T, z: T): Boolean = {
+    require(setInv(set) && y != z)
+    (set - y).contains(z) == set.contains(z)
+  }.holds
+
+  def subInv[T](set: Set[T], y: T): Boolean = {
+    require(setInv(set))
+    setInv(set - y)
+  }.holds because {
+    set match {
+      case SNil() => trivial
+      case SCons(x, xs) => if (x == y) {
+        trivial
+      } else {
+        setInv(set - y)                           ==| trivial               |
+        setInv(SCons(x, xs - y))                  ==| trivial               |
+        (!(xs - y).contains(x) && setInv(xs - y)) ==| subInv(xs, y)         |
+        !(xs - y).contains(x)                     ==| subContains(xs, y, x) |
+        !xs.contains(x)
+      }.qed
     }
   }
 
-}
+  @induct
+  def subSize[T](set: Set[T], x: T): Boolean = {
+    require(setInv(set) && set.contains(x))
+    (set - x).size == set.size - 1
+  }.holds
 
-object SetOps {
-  def flatten[T](sets: Set[Set[T]]): Set[T] = {
-    sets match {
-      case (ss + s) => s ++ flatten(ss)
-      case _ => Set.empty
+  def subSubContains[T](set1: Set[T], set2: Set[T], z: T): Boolean = {
+    require(setInv(set1) && setInv(set2) && set1.contains(z) &&
+              !set2.contains(z))
+    (set1 -- set2).contains(z)
+  }.holds because {
+    set2 match {
+      case SNil() => trivial
+      case SCons(y, ys) => {
+        (set1 -- set2).contains(z)     ==| trivial                       |
+        ((set1 -- ys) - y).contains(z) ==| subContains(set1 -- ys, y, z) |
+        (set1 -- ys).contains(z)       ==| subSubContains(set1, ys, z)   |
+        true
+      }.qed
     }
   }
-}
 
+  def subSubSize[T](set1: Set[T], set2: Set[T]): Boolean = {
+    require(setInv(set1) && setInv(set2) && set2.subsetOf(set1))
+    (set1 -- set2).size == set1.size - set2.size
+  }.holds because {
+    set2 match {
+      case SNil() => trivial
+      case SCons(y, ys) => {
+        assert((set1 -- ys).contains(y) because subSubContains(set1, ys, y))
 
-object + {
-  def unapply[T](s: Set[T]): Option[(Set[T], T)] = s.list match {
-    case Nil() => None()
-    case Cons(x, xs) => Some((set(xs), x))
+        (set1 -- set2).size     ==| trivial                 |
+        ((set1 -- ys) - y).size ==| subSize(set1 -- ys, y)  |
+        (set1 -- ys).size - 1   ==| subSubSize(set1, ys)    |
+        set1.size - ys.size - 1 ==| trivial                 |
+        set1.size - set2.size
+      }.qed
+    }
   }
-}
 
-// FIXME: Bug: Stainless doesn't seem to support boolean extractors.
-object SNil {
-  def unapply[T](s: Set[T]): Boolean = s.list match {
-    case Nil() => true
-    case _     => false
-  }
-}
+  def sizeSubsetOf[T](set1: Set[T], set2: Set[T]): Boolean = {
+    require(setInv(set1) && setInv(set2) && set1.subsetOf(set2))
+    set1.size <= set2.size
+  }.holds because { subSubSize(set2, set1) }
 
+}
