@@ -108,6 +108,8 @@ object USetSpecs {
     case USCons(x, xs) => !xs.contains(x) && setInv(xs)
   }
 
+  // ---------------------------------------------------------------------------
+
   @induct
   def addContains[T](set: USet[T], y: T, z: T): Boolean = {
     require(setInv(set))
@@ -132,6 +134,8 @@ object USetSpecs {
       }.qed
     }
   }
+
+  // ---------------------------------------------------------------------------
 
   @induct
   def addForall[T](set: USet[T], x: T, p: T => Boolean): Boolean = {
@@ -161,6 +165,8 @@ object USetSpecs {
     }
   }
 
+  // ---------------------------------------------------------------------------
+
   def subsetTail[T](set: USet[T]): Boolean = {
     set match {
       case USNil() => true
@@ -189,6 +195,8 @@ object USetSpecs {
     set1.subsetOf(set1 ++ set2) && set2.subsetOf(set1 ++ set2)
   }.holds because { unionSubset(set1, set2, set1 ++ set2) && subsetOfId(set1 ++ set2) }
 
+  // ---------------------------------------------------------------------------
+
   @induct
   def subContains[T](set: USet[T], y: T, z: T): Boolean = {
     require(setInv(set) && y != z)
@@ -212,6 +220,8 @@ object USetSpecs {
       }.qed
     }
   }
+
+  // ---------------------------------------------------------------------------
 
   @induct
   def subSize[T](set: USet[T], y: T): Boolean = {
@@ -253,20 +263,27 @@ object USetSpecs {
     }
   }
 
+  // ---------------------------------------------------------------------------
+
   def sizeSubsetOf[T](set1: USet[T], set2: USet[T]): Boolean = {
     require(setInv(set1) && setInv(set2) && set1.subsetOf(set2))
     set1.size <= set2.size
   }.holds because { subSubSize(set2, set1) }
 
-  def sizeEq[T](set1: USet[T], set2: USet[T]): Boolean = {
-    require(setInv(set1) && setInv(set2) && set1.same(set2))
-     set1.size == set2.size
-  }.holds because { sizeSubsetOf(set1, set2) && sizeSubsetOf(set2, set1) }
-
   def sizeStrictSubsetOf[T](set1: USet[T], set2: USet[T]): Boolean = {
     require(setInv(set1) && setInv(set2) && set1.subsetOf(set2) && set1.nsame(set2))
     set1.size < set2.size
-  }.holds because { sizeSubsetOf(set1, set2) && sizeEq(set1, set2) }
+  }.holds // because { sizeSubsetOf(set1, set2) && sizeEq(set1, set2) }
+
+  // ---------------------------------------------------------------------------
+
+  def lemma[T](set1: USet[T], set2: USet[T]): Boolean = {
+    require(setInv(set1) && setInv(set2) && set1.subsetOf(set2))
+    (set1.size == set2.size) ==> set2.subsetOf(set1)
+  }.holds because {
+    (set1.size == set2.size)   ==| subSubSize(set2, set1) |
+    ((set2 -- set1).size == 0)
+  }.qed
 
 }
 
