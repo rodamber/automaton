@@ -125,21 +125,29 @@ case class NFA[State, Sym](
   def epsClosure(states: Set[State]): Set[State] = {
     require(states.subsetOf(validStates))
 
-    assert((states.size <= validStates.size) because sizeSubsetOf(states, validStates))
+    assert { (states.size <= validStates.size) because
+      subsetIsSmallerOrEqual(states, validStates) }
+
     decreases(validStates.size - states.size + 1)
 
     val newStates: Set[State] = states ++ move(states, None[Sym]())
 
-    assert(moveValid(this, states, None[Sym]()))
-    assert(unionSubset(states, move(states, None[Sym]()), validStates))
+    assert {
+      states.subsetOf(newStates) because {
+        moveValid(this, states, None[Sym]()) &&
+        unionOfSubsetsIsSubset(states, move(states, None[Sym]()), validStates)
+      }
+    }
 
-    assert(states subsetOf newStates)
-
-    if (newStates.neq(states)) {
+    if (states.eq(newStates)) {
       newStates
     } else {
-      assert(sizeStrictSubsetOf(states, newStates))
-      assert(newStates.size > states.size)
+      assert {
+        (states.size < newStates.size) because {
+          states.strictSubsetOf(newStates) && strictSubsetIsSmaller(states, newStates)
+        }
+      }
+
       epsClosure(newStates)
     }
   } ensuring { res =>
@@ -147,7 +155,8 @@ case class NFA[State, Sym](
   }
 
   def epsClosed(states: Set[State]): Boolean = {
-    require(states.subsetOf(validStates) && sizeSubsetOf(states, validStates))
+    require(states.subsetOf(validStates))
+    // assert(subsetIsSmallerOrEqual(states, validStates))
     states == epsClosure(states)
   }
 
@@ -165,7 +174,7 @@ object NFASpecs {
   }.holds because {
     states match {
       case (x + xs) => moveValid(nfa, xs, w) &&
-          unionSubset(nfa.move(x, w), nfa.move(xs, w), nfa.validStates)
+          unionOfSubsetsIsSubset(nfa.move(x, w), nfa.move(xs, w), nfa.validStates)
       case _ => trivial
     }
   }

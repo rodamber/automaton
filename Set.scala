@@ -31,8 +31,6 @@ object + {
 case class Set[T](uset: USet[T]) {
   require(USetSpecs.setInvariant(uset))
 
-  def size: BigInt = { uset.size } ensuring { _ >= 0 }
-
   def contains(x: T): Boolean = uset.contains(x)
 
   def subsetOf(that: Set[T]): Boolean = uset.subsetOf(that.uset)
@@ -44,6 +42,12 @@ case class Set[T](uset: USet[T]) {
   def neq(that: Set[T]): Boolean = this.uset.neq(that.uset)
 
   def isEmpty: Boolean = uset.isEmpty
+
+  def nonEmpty: Boolean = uset.nonEmpty
+
+  def exists(p: T => Boolean): Boolean = uset.exists(p)
+
+  def size: BigInt = { uset.size } ensuring { _ >= 0 }
 
   def +(y: T): Set[T] = {
     assert(setInvariant(uset + y) because addIsSound(uset, y))

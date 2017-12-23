@@ -35,6 +35,11 @@ sealed abstract class USet[T] {
 
   def nonEmpty: Boolean = !isEmpty
 
+  def exists(p: T => Boolean): Boolean = this match {
+    case USNil() => false
+    case USCons(x, xs) => p(x) || xs.exists(p)
+  }
+
   def size: BigInt = {
     require(setInvariant(this))
 
