@@ -71,6 +71,10 @@ object SetSpecs {
     (set1.subsetOf(set3) && set2.subsetOf(set3)) == (set1 ++ set2).subsetOf(set3)
   }.holds because { USetSpecs.unionOfSubsetsIsSubset(set1.uset, set2.uset, set3.uset) }
 
+  def subsetOfUnion[T](set1: Set[T], set2: Set[T]): Boolean = {
+    set1.subsetOf(set1 ++ set2) && set2.subsetOf(set1 ++ set2)
+  }.holds because { USetSpecs.subsetOfUnion(set1.uset, set2.uset) }
+
   def subsetIsSmallerOrEqual[T](set1: Set[T], set2: Set[T]): Boolean = {
     require(set1 subsetOf set2)
     set1.size <= set2.size

@@ -184,7 +184,7 @@ object USetSpecs {
 //     }
 //   }
 
-  def setIsSubsetOfUnion[T](set1: USet[T], set2: USet[T]): Boolean = {
+  def subsetOfUnion[T](set1: USet[T], set2: USet[T]): Boolean = {
     require(setInvariant(set1) && setInvariant(set2))
     set1.subsetOf(set1 ++ set2) && set2.subsetOf(set1 ++ set2)
   }.holds because { unionOfSubsetsIsSubset(set1, set2, set1 ++ set2) && subsetRefl(set1 ++ set2) }
