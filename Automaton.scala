@@ -60,20 +60,21 @@ object DFA {
   }
 
   def dfaNfaEquiv[State, Sym](nfa: NFA[State, Sym], word: List[Sym]): Boolean = {
-    val dfa = DFA(nfa)
+    nfa.accepts(word) == DFA(nfa).accepts(word)
+  }.holds because {
+    val dfa  = DFA(nfa)
     val init = nfa.epsClosure(Set(nfa.initialState))
 
     assert(epsClosureIdem(nfa, Set(nfa.initialState)))
 
-    (nfa.accepts(word) == dfa.accepts(word)) because {
       nfa.accepts(word)                                   ==| trivial                |
       nfa.run(init, word).exists(nfa.isFinal)             ==| lemma(nfa, init, word) |
       dfa.run(init, word).exists(nfa.isFinal)             ==| trivial                |
       dfa.run(dfa.initialState, word).exists(nfa.isFinal) ==| trivial                |
       dfa.isFinal(dfa.run(dfa.initialState, word))        ==| trivial                |
       dfa.accepts(word)
-    }.qed
-  }.holds
+  }.qed
+
 }
 
 case class DFA[State, Sym](
