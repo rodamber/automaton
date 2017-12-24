@@ -38,23 +38,26 @@ object DFA {
 
     word match {
       case Nil() => {
-        nfa.run(states, word)  ==| trivial               |
-        nfa.epsClosure(states) ==| nfa.epsClosed(states) |
-        states                 ==| trivial               |
-        dfa.run(states, word)
+        (nfa.run(states, word) eq dfa.run(states, word))  ==| trivial                           |
+        (nfa.epsClosure(states) eq dfa.run(states, word)) ==| nfa.epsClosed(states)             |
+        (states eq dfa.run(states, word))                 ==| trivial                           |
+        (dfa.run(states, word) eq dfa.run(states, word))  ==| subsetRefl(dfa.run(states, word)) |
+        true
       }.qed
+
       case (w :: ws) => {
         val step = nfa.move(states, Some(w))
 
         assert(epsClosureIdem(nfa, step))
-        // assert(nfa.epsClosed(nfa.epsClosure(step)))
+        assert(nfa.epsClosed(nfa.epsClosure(step)))
 
-        dfa.run(states, word)             ==| trivial                              |
-        dfa.run(dfa.move(states, w), ws)  ==| trivial                              |
-        dfa.run(dfa.move(states, w), ws)  ==| trivial                              |
-        dfa.run(nfa.epsClosure(step), ws) ==| lemma(nfa, nfa.epsClosure(step), ws) |
-        nfa.run(nfa.epsClosure(step), ws) ==| trivial                              |
-        nfa.run(states, word)
+        trivial
+        // dfa.run(states, word)             ==| trivial                              |
+        // dfa.run(dfa.move(states, w), ws)  //==| trivial                              |
+        // dfa.run(dfa.move(states, w), ws)  //==| trivial                              |
+        // dfa.run(nfa.epsClosure(step), ws) //==| lemma(nfa, nfa.epsClosure(step), ws) |
+        // nfa.run(nfa.epsClosure(step), ws) //==| trivial                              |
+        // nfa.run(states, word)
       }.qed
     }
   }

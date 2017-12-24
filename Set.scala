@@ -67,23 +67,27 @@ case class Set[T](uset: USet[T]) {
 
 object SetSpecs {
 
+  def subsetRefl[T](set: Set[T]): Boolean = {
+    set.subsetOf(set)
+  }.holds because USetSpecs.subsetRefl(set.uset)
+
   def unionOfSubsetsIsSubset[T](set1: Set[T], set2: Set[T], set3: Set[T]): Boolean = {
     (set1.subsetOf(set3) && set2.subsetOf(set3)) == (set1 ++ set2).subsetOf(set3)
-  }.holds because { USetSpecs.unionOfSubsetsIsSubset(set1.uset, set2.uset, set3.uset) }
+  }.holds because USetSpecs.unionOfSubsetsIsSubset(set1.uset, set2.uset, set3.uset)
 
   def subsetOfUnion[T](set1: Set[T], set2: Set[T]): Boolean = {
     set1.subsetOf(set1 ++ set2) && set2.subsetOf(set1 ++ set2)
-  }.holds because { USetSpecs.subsetOfUnion(set1.uset, set2.uset) }
+  }.holds because USetSpecs.subsetOfUnion(set1.uset, set2.uset)
 
   def subsetIsSmallerOrEqual[T](set1: Set[T], set2: Set[T]): Boolean = {
     require(set1 subsetOf set2)
     set1.size <= set2.size
-  }.holds because { USetSpecs.subsetIsSmallerOrEqual(set1.uset, set2.uset) }
+  }.holds because USetSpecs.subsetIsSmallerOrEqual(set1.uset, set2.uset)
 
   def strictSubsetIsSmaller[T](set1: Set[T], set2: Set[T]): Boolean = {
     require(set1.subsetOf(set2) && set1.strictSubsetOf(set2))
     set1.size < set2.size
-  }.holds because { USetSpecs.strictSubsetIsSmaller(set1.uset, set2.uset) }
+  }.holds because USetSpecs.strictSubsetIsSmaller(set1.uset, set2.uset)
 
 }
 
