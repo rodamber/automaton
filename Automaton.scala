@@ -30,19 +30,18 @@ object DFA {
   def lemma[State, Sym](nfa: NFA[State, Sym], states: Set[State],
                         word: List[Sym]): Boolean = {
     require(states.subsetOf(nfa.validStates) && nfa.epsClosed(states))
-    val dfa = DFA(nfa)
 
-    nfa.run(states, word) eq dfa.run(states, word)
+    nfa.run(states, word) eq DFA(nfa).run(states, word)
   }.holds because {
     val dfa = DFA(nfa)
 
     word match {
       case Nil() => {
-        (nfa.run(states, word) eq dfa.run(states, word))  ==| trivial                           |
-        (nfa.epsClosure(states) eq dfa.run(states, word)) ==| nfa.epsClosed(states)             |
-        (states eq dfa.run(states, word))                 ==| trivial                           |
-        (dfa.run(states, word) eq dfa.run(states, word))  ==| subsetRefl(dfa.run(states, word)) |
-        true
+        (nfa.run(states, word) eq dfa.run(states, word))  ==| trivial |
+        (nfa.epsClosure(states) eq dfa.run(states, word)) ==|
+          (nfa.epsClosed(states) &&
+             eqTrans(states, nfa.epsClosure(states), dfa.run(states, word))) |
+        (states eq dfa.run(states, word))
       }.qed
 
       case (w :: ws) => {
@@ -51,13 +50,13 @@ object DFA {
         assert(epsClosureIdem(nfa, step))
         assert(nfa.epsClosed(nfa.epsClosure(step)))
 
-        trivial
-        // dfa.run(states, word)             ==| trivial                              |
-        // dfa.run(dfa.move(states, w), ws)  //==| trivial                              |
-        // dfa.run(dfa.move(states, w), ws)  //==| trivial                              |
-        // dfa.run(nfa.epsClosure(step), ws) //==| lemma(nfa, nfa.epsClosure(step), ws) |
-        // nfa.run(nfa.epsClosure(step), ws) //==| trivial                              |
-        // nfa.run(states, word)
+        (nfa.run(states, word) eq dfa.run(states, word))             ==| trivial |
+        (nfa.run(states, word) eq dfa.run(nfa.epsClosure(step), ws)) ==|
+          (lemma(nfa, nfa.epsClosure(step), ws) &&
+             eqTrans(nfa.run(states, word),
+                     dfa.run(nfa.epsClosure(step), ws),
+                     nfa.run(nfa.epsClosure(step), ws))) |
+        (nfa.run(states, word) eq nfa.run(nfa.epsClosure(step), ws))
       }.qed
     }
   }
