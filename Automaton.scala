@@ -124,11 +124,9 @@ case class NFA[State, Sym](
   } ensuring { res => res subsetOf validStates }
 
   def epsClosure(states: Set[State]): Set[State] = {
-    require(states subsetOf validStates)
-
-    assert(subsetIsSmallerOrEqual(states, validStates))
-    assert(states.size <= validStates.size)
-
+    require(states.subsetOf(validStates) &&
+              subsetIsSmallerOrEqual(states, validStates) &&
+              states.size <= validStates.size)
     decreases(validStates.size - states.size + 1)
 
     val m = move(states, None[Sym]())
