@@ -67,9 +67,37 @@ case class Set[T](uset: USet[T]) {
 
 object SetSpecs {
 
+  // ---------------------------------------------------------------------------
+  // subsetOf
+
   def subsetRefl[T](set: Set[T]): Boolean = {
     set.subsetOf(set)
   }.holds because USetSpecs.subsetRefl(set.uset)
+
+  def subsetTrans[T](set1: Set[T], set2: Set[T], set3: Set[T]): Boolean = {
+    require(set1.subsetOf(set2) && set2.subsetOf(set3))
+    set1 subsetOf set3
+  }.holds because USetSpecs.subsetTrans(set1.uset, set2.uset, set3.uset)
+
+  // ---------------------------------------------------------------------------
+  // eq
+
+  def eqRefl[T](set: Set[T]): Boolean = {
+    set eq set
+  }.holds because USetSpecs.eqRefl(set.uset)
+
+  def eqTrans[T](set1: Set[T], set2: Set[T], set3: Set[T]): Boolean = {
+    require(set1.eq(set2) && set2.eq(set3))
+    set1 eq set3
+  }.holds because USetSpecs.eqTrans(set1.uset, set2.uset, set3.uset)
+
+  def eqSymm[T](set1: Set[T], set2: Set[T]): Boolean = {
+    require(set1 eq set2)
+    set2 eq set1
+  }.holds because USetSpecs.eqSymm(set1.uset, set2.uset)
+
+  // ---------------------------------------------------------------------------
+  // subsetOf and ++ (union)
 
   def unionOfSubsetsIsSubset[T](set1: Set[T], set2: Set[T], set3: Set[T]): Boolean = {
     (set1.subsetOf(set3) && set2.subsetOf(set3)) == (set1 ++ set2).subsetOf(set3)
@@ -78,6 +106,9 @@ object SetSpecs {
   def subsetOfUnion[T](set1: Set[T], set2: Set[T]): Boolean = {
     set1.subsetOf(set1 ++ set2) && set2.subsetOf(set1 ++ set2)
   }.holds because USetSpecs.subsetOfUnion(set1.uset, set2.uset)
+
+  // ---------------------------------------------------------------------------
+  // size
 
   def subsetIsSmallerOrEqual[T](set1: Set[T], set2: Set[T]): Boolean = {
     require(set1 subsetOf set2)

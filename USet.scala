@@ -117,6 +117,7 @@ object USetSpecs {
   }
 
   // ---------------------------------------------------------------------------
+  // +
 
   @induct
   def containsDistAdd[T](set: USet[T], y: T, z: T): Boolean = {
@@ -144,17 +145,73 @@ object USetSpecs {
   }
 
   // ---------------------------------------------------------------------------
+  // -
 
   @induct
-  def subsetAdd[T](set1: USet[T], set2: USet[T], x: T): Boolean = {
-    require(setInvariant(set1))
-    (set1 + x).subsetOf(set2) == (set1.subsetOf(set2) && set2.contains(x))
+  def subContains1[T](set: USet[T], y: T, z: T): Boolean = {
+    require(setInvariant(set) && y != z)
+           (set - y).contains(z) == set.contains(z)
   }.holds
+
+  def subIsSound[T](set: USet[T], y: T): Boolean = {
+    require(setInvariant(set))
+    setInvariant(set - y)
+  }.holds because {
+
+    set match {
+      case USNil() => trivial
+      case USCons(x, xs) => if (x == y) {
+        trivial
+      } else {
+        setInvariant(set - y)                           ==| trivial                |
+          setInvariant(USCons(x, xs - y))                 ==| trivial                |
+          (!(xs - y).contains(x) && setInvariant(xs - y)) ==| subIsSound(xs, y)      |
+          !(xs - y).contains(x)                           ==| subContains1(xs, y, x) |
+          !xs.contains(x)
+      }.qed
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // subsetOf
+
+  def subsetRefl[T](set: USet[T]): Boolean = {
+    set subsetOf set
+  }.holds
+
+  def subsetTrans[T](set1: USet[T], set2: USet[T], set3: USet[T]): Boolean = {
+    require(set1.subsetOf(set2) && set2.subsetOf(set3))
+    set1 subsetOf set3
+  }.holds
+
+  // ---------------------------------------------------------------------------
+  // eq
+
+  def eqRefl[T](set: USet[T]): Boolean = {
+    set eq set
+  }.holds because subsetRefl(set)
+
+  def eqTrans[T](set1: USet[T], set2: USet[T], set3: USet[T]): Boolean = {
+    require(set1.eq(set2) && set2.eq(set3))
+    set1 eq set3
+  }.holds because { subsetTrans(set1, set2, set3) && subsetTrans(set3, set2, set1) }
+
+  def eqSymm[T](set1: USet[T], set2: USet[T]): Boolean = {
+    require(set1 eq set2)
+    set2 eq set1
+  }.holds
+
+  // ---------------------------------------------------------------------------
+  // subset, + and ++ (union)
+
+  def subsetOfUnion[T](set1: USet[T], set2: USet[T]): Boolean = {
+    require(setInvariant(set1) && setInvariant(set2))
+    set1.subsetOf(set1 ++ set2) && set2.subsetOf(set1 ++ set2)
+  }.holds because { unionOfSubsetsIsSubset(set1, set2, set1 ++ set2) && subsetRefl(set1 ++ set2) }
 
   def unionOfSubsetsIsSubset[T](set1: USet[T], set2: USet[T], set3: USet[T]): Boolean = {
     require(setInvariant(set1) && setInvariant(set2))
-    (set1.subsetOf(set3) && set2.subsetOf(set3)) ==
-      (set1 ++ set2).subsetOf(set3)
+    (set1.subsetOf(set3) && set2.subsetOf(set3)) == (set1 ++ set2).subsetOf(set3)
   }.holds because {
     set1 match {
       case USNil() => trivial
@@ -167,78 +224,29 @@ object USetSpecs {
     }
   }
 
-  // ---------------------------------------------------------------------------
-
-  def subsetRefl[T](set: USet[T]): Boolean = {
-    set.subsetOf(set)
-  }.holds
-
-// because {
-//     set match {
-//       case USNil() => trivial
-//       case USCons(x, _) => {
-//         set.subsetOf(set) ==| subsetOfProp(set, set, x) |
-//         set.contains(x)   ==| trivial                   |
-//         true
-//       }.qed
-//     }
-//   }
-
-  def subsetOfUnion[T](set1: USet[T], set2: USet[T]): Boolean = {
-    require(setInvariant(set1) && setInvariant(set2))
-    set1.subsetOf(set1 ++ set2) && set2.subsetOf(set1 ++ set2)
-  }.holds because { unionOfSubsetsIsSubset(set1, set2, set1 ++ set2) && subsetRefl(set1 ++ set2) }
-
-  // ---------------------------------------------------------------------------
-
   @induct
-  def subContains1[T](set: USet[T], y: T, z: T): Boolean = {
-    require(setInvariant(set) && y != z)
-    (set - y).contains(z) == set.contains(z)
+  def subsetAdd[T](set1: USet[T], set2: USet[T], x: T): Boolean = {
+    require(setInvariant(set1))
+           (set1 + x).subsetOf(set2) == (set1.subsetOf(set2) && set2.contains(x))
   }.holds
 
-  def subIsSound[T](set: USet[T], y: T): Boolean = {
-    require(setInvariant(set))
-    setInvariant(set - y)
-  }.holds because {
-    set match {
-      case USNil() => trivial
-      case USCons(x, xs) => if (x == y) {
-        trivial
-      } else {
-        setInvariant(set - y)                           ==| trivial                |
-        setInvariant(USCons(x, xs - y))                 ==| trivial                |
-        (!(xs - y).contains(x) && setInvariant(xs - y)) ==| subIsSound(xs, y)      |
-        !(xs - y).contains(x)                           ==| subContains1(xs, y, x) |
-        !xs.contains(x)
-      }.qed
-    }
-  }
-
   // ---------------------------------------------------------------------------
+  // contains
 
   @induct
   def tailContains[T](set: USet[T], y: T): Boolean = {
     require(setInvariant(set) && set.contains(y))
+
     set match {
       case USNil() => true
-      case USCons(x, xs) => if (x == y) true else {
-        xs.contains(y)
-      }
+      case USCons(x, xs) =>
+        if (x == y) true
+        else xs.contains(y)
     }
-  }.qed
-
-  @induct
-  def subDecSize[T](set: USet[T], y: T): Boolean = {
-    require(setInvariant(set) && set.contains(y))
-    assert(subIsSound(set, y))
-
-    (set - y).size == set.size - 1
-  }.holds because tailContains(set, y)
+  }.holds
 
   def diffContains[T](set1: USet[T], set2: USet[T], z: T): Boolean = {
-    require(setInvariant(set1) && setInvariant(set2) && set1.contains(z) &&
-              !set2.contains(z))
+    require(setInvariant(set1) && setInvariant(set2) && set1.contains(z) && !set2.contains(z))
     (set1 -- set2).contains(z)
   }.holds because {
     set2 match {
@@ -251,6 +259,17 @@ object USetSpecs {
       }.qed
     }
   }
+
+  // ---------------------------------------------------------------------------
+  // size
+
+  @induct
+  def subDecSize[T](set: USet[T], y: T): Boolean = {
+    require(setInvariant(set) && set.contains(y))
+    assert(subIsSound(set, y))
+
+    (set - y).size == set.size - 1
+  }.holds because tailContains(set, y)
 
   def diffSubsetSize[T](set1: USet[T], set2: USet[T]): Boolean = {
     require(setInvariant(set1) && setInvariant(set2) && set2.subsetOf(set1))
