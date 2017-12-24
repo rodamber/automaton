@@ -144,13 +144,25 @@ object USetSpecs {
     }
   }
 
+  @induct
+  def addExists[T](set: USet[T], x: T, p: T => Boolean): Boolean = {
+    require(setInvariant(set))
+    (set + x).exists(p) == (p(x) || set.exists(p))
+  }.holds
+
+  @induct
+  def addId[T](set: USet[T], x: T): Boolean = {
+    require(setInvariant(set) && set.contains(x))
+    (set + x) == set
+  }.holds
+
   // ---------------------------------------------------------------------------
   // -
 
   @induct
   def subContains1[T](set: USet[T], y: T, z: T): Boolean = {
     require(setInvariant(set) && y != z)
-           (set - y).contains(z) == set.contains(z)
+    (set - y).contains(z) == set.contains(z)
   }.holds
 
   def subIsSound[T](set: USet[T], y: T): Boolean = {
@@ -184,6 +196,27 @@ object USetSpecs {
     set1 subsetOf set3
   }.holds
 
+  def subsetExists[T](set1: USet[T], set2: USet[T], p: T => Boolean): Boolean = {
+    require(setInvariant(set1) && setInvariant(set2) &&
+              set1.subsetOf(set2) && set1.exists(p))
+    set2.exists(p)
+  }.holds because {
+    set1 match {
+      case USNil() => trivial
+      case USCons(x, xs) => if (p(x)) {
+        set1.exists(p)           ==| trivial |
+          p(x)                     ==| trivial |
+          (p(x) || set2.exists(p)) ==| addExists(set2, x, p) |
+          (set2 + x).exists(p)     ==| addId(set2, x)        |
+          set2.exists(p)
+      } else {
+        set1.exists(p) ==| trivial                   |
+          xs.exists(p)   ==| subsetExists(xs, set2, p) |
+          set2.exists(p)
+      }
+    }
+  }.qed
+
   // ---------------------------------------------------------------------------
   // eq
 
@@ -200,6 +233,15 @@ object USetSpecs {
     require(set1 eq set2)
     set2 eq set1
   }.holds
+
+  def eqExists[T](set1: USet[T], set2: USet[T], p: T => Boolean): Boolean = {
+    require(setInvariant(set1) && setInvariant(set2) && set1.eq(set2))
+    set1.exists(p) == set2.exists(p)
+  }.holds because {
+    if (set1.exists(p))      subsetExists(set1, set2, p)
+    else if (set2.exists(p)) subsetExists(set2, set1, p)
+    else                     trivial
+  }
 
   // ---------------------------------------------------------------------------
   // subset, + and ++ (union)
@@ -227,7 +269,7 @@ object USetSpecs {
   @induct
   def subsetAdd[T](set1: USet[T], set2: USet[T], x: T): Boolean = {
     require(setInvariant(set1))
-           (set1 + x).subsetOf(set2) == (set1.subsetOf(set2) && set2.contains(x))
+    (set1 + x).subsetOf(set2) == (set1.subsetOf(set2) && set2.contains(x))
   }.holds
 
   // ---------------------------------------------------------------------------

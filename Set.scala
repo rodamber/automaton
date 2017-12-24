@@ -96,6 +96,11 @@ object SetSpecs {
     set2 eq set1
   }.holds because USetSpecs.eqSymm(set1.uset, set2.uset)
 
+  def eqExists[T](set1: Set[T], set2: Set[T], p: T => Boolean): Boolean = {
+    require(set1 eq set2)
+    set1.exists(p) == set2.exists(p)
+  }.holds because USetSpecs.eqExists(set1.uset, set2.uset, p)
+
   // ---------------------------------------------------------------------------
   // subsetOf and ++ (union)
 
