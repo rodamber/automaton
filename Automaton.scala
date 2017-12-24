@@ -134,15 +134,12 @@ case class NFA[State, Sym](
 
     assert(moveValid(this, states, None[Sym]()))
     assert(unionOfSubsetsIsSubset(states, m, validStates))
-    assert(newStates subsetOf validStates)
 
     if (states eq newStates) {
-      newStates
+      states
     } else {
       assert(subsetOfUnion(states, m))
-      assert(states.strictSubsetOf(newStates))
       assert(strictSubsetIsSmaller(states, newStates))
-      assert(states.size < newStates.size)
 
       epsClosure(newStates)
     }
