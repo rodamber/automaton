@@ -64,18 +64,12 @@ object DFA {
   def dfaNfaEquiv[State, Sym](nfa: NFA[State, Sym], word: List[Sym]): Boolean = {
     nfa.accepts(word) == DFA(nfa).accepts(word)
   }.holds because {
-    val dfa  = DFA(nfa)
     val init = nfa.epsClosure(Set(nfa.initialState))
-
     assert(epsClosureIdem(nfa, Set(nfa.initialState)))
 
-      nfa.accepts(word)                                   ==| trivial                |
-      nfa.run(init, word).exists(nfa.isFinal)             ==| lemma(nfa, init, word) |
-      dfa.run(init, word).exists(nfa.isFinal)             ==| trivial                |
-      dfa.run(dfa.initialState, word).exists(nfa.isFinal) ==| trivial                |
-      dfa.isFinal(dfa.run(dfa.initialState, word))        ==| trivial                |
-      dfa.accepts(word)
-  }.qed
+    lemma(nfa, init, word) &&
+      eqExists(nfa.run(init, word), DFA(nfa).run(init, word), nfa.isFinal)
+  }
 
 }
 
@@ -184,19 +178,5 @@ object NFASpecs {
     require(states subsetOf nfa.validStates)
     nfa.epsClosure(states) eq nfa.epsClosure(nfa.epsClosure(states))
   }.holds
-
-// because {
-//     val m = nfa.move(states, None[W]())
-
-//     if (states eq (states ++ m)) {
-//       nfa.epsClosure(states)                 ==| trivial |
-//       nfa.epsClosure(states ++ m)            ==| trivial |
-//       nfa.epsClosure(nfa.epsClosure(states))
-//     }.qed else {
-//       trivial
-//       // nfa.epsClosure(nfa.epsClosure(states))      ==| trivial |
-//       // nfa.epsClosure(nfa.epsClosure(states ++ m))
-//     }
-//   }
 
 }
