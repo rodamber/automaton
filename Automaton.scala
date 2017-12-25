@@ -103,9 +103,8 @@ case class NFA[State, Sym](
 ) {
   require {
     forall { (s: State, w: Option[Sym]) =>
-      (validInput(this, s, w) == move.isDefinedAt((s, w))) &&
-      (move.isDefinedAt((s, w)) == move((s, w)).subsetOf(validStates))
-    } && 
+      validInput(this, s, w) ==> move((s, w)).subsetOf(validStates)
+    } &&
     validStates.contains(initialState)
   }
 
@@ -183,11 +182,18 @@ object NFASpecs {
   }
 
   def moveValid[S,W](nfa: NFA[S,W], states: Set[S], w: Option[W]): Boolean = {
+    require(states.subsetOf(nfa.validStates) && validSym(nfa, w))
     nfa.move(states, w) subsetOf nfa.validStates
   }.holds because {
     states match {
-      case (x + xs) => moveValid(nfa, xs, w) &&
-          unionOfSubsetsIsSubset(nfa.move((x, w)), nfa.move(xs, w), nfa.validStates)
+      case (x + xs) => 
+        assert(validInput(nfa, x, w))
+        assert(nfa.move((x, w)) subsetOf nfa.validStates)
+
+        moveValid(nfa, xs, w) &&
+        unionOfSubsetsIsSubset(nfa.move((x, w)),
+                               nfa.move(xs, w),
+                               nfa.validStates)
       case _ => trivial
     }
   }
