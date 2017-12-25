@@ -169,9 +169,18 @@ object NFASpecs {
     }
   }
 
+  def lemma2[S,W](nfa: NFA[S,W], states: Set[S]): Boolean = {
+    require(states subsetOf nfa.validStates)
+
+    val closure = nfa.epsClosure(states)
+    val m = nfa.move(closure, None[W]())
+
+    closure eq (closure ++ m)
+  }.holds
+
   def epsClosureIdem[S,W](nfa: NFA[S,W], states: Set[S]): Boolean = {
     require(states subsetOf nfa.validStates)
     nfa.epsClosure(states) eq nfa.epsClosure(nfa.epsClosure(states))
-  }.holds
+  }.holds because lemma2(nfa, states)
 
 }
