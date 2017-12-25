@@ -63,6 +63,21 @@ case class Set[T](uset: USet[T]) {
 
   def --(that: Set[T]): Set[T] = Set(this.uset -- that.uset)
 
+  // FIXME
+  def powerSet: Set[Set[T]] = {
+    Set[Set[T]](USNil[Set[T]]())
+  }
+
+  // FIXME
+  def *[U](that: Set[U]): Set[(T, U)] = {
+    Set[(T, U)](USNil[(T, U)]())
+  }
+
+  // FIXME
+  def foldLeft[R](z: R)(f: (R,T) => R): R = {
+    z
+  }
+
 }
 
 object SetSpecs {

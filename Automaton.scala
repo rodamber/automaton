@@ -13,65 +13,77 @@ import set._
 import SetSpecs._
 import NFASpecs._
 
-// object DFA {
+object DFA {
 
-//   def apply[State, Sym](nfa: NFA[State, Sym]): DFA[Set[State], Sym] = {
+  def apply[State, Sym](nfa: NFA[State, Sym]): DFA[Set[State], Sym] = {
 
-//     val move = { (s: Set[State], w: Sym) =>
-//       nfa.epsClosure(nfa.move(s, Some(w)))
-//     }
+    val alphabet = nfa.alphabet
+    val validStates = nfa.validStates.powerSet
 
-//     val initialState = nfa.epsClosure(Set(nfa.initialState))
-//     val isFinal = { (s: Set[State]) => s exists nfa.isFinal }
+    val move = {
+      val pairs: Set[(Set[State], Sym)] = validStates * alphabet
+      val m: Map[(Set[State], Sym), Set[State]] = Map.empty
 
-//     DFA(move, initialState, isFinal )
-//   }
+      pairs.foldLeft(m) { (acc, sw) =>
+        sw match {
+          case (s, w) =>
+            val s_ = nfa.epsClosure(nfa.move(s, Some(w)))
+            acc + ((s, w) -> s_)
+        }
+      }
+    }
 
-//   def lemma[State, Sym](nfa: NFA[State, Sym], states: Set[State],
-//                         word: List[Sym]): Boolean = {
-//     require(states.subsetOf(nfa.validStates) && nfa.epsClosed(states))
+    val initialState = nfa.epsClosure(Set(nfa.initialState))
+    val isFinal = { (s: Set[State]) => s exists nfa.isFinal }
 
-//     nfa.run(states, word) eq DFA(nfa).run(states, word)
-//   }.holds because {
-//     val dfa = DFA(nfa)
+    DFA(alphabet, validStates, move, initialState, isFinal)
+  }
 
-//     word match {
-//       case Nil() => {
-//         (nfa.run(states, word) eq dfa.run(states, word))  ==| trivial |
-//         (nfa.epsClosure(states) eq dfa.run(states, word)) ==|
-//           (nfa.epsClosed(states) &&
-//              eqTrans(states, nfa.epsClosure(states), dfa.run(states, word))) |
-//         (states eq dfa.run(states, word))
-//       }.qed
+  // def lemma[State, Sym](nfa: NFA[State, Sym], states: Set[State],
+  //                       word: List[Sym]): Boolean = {
+  //   require(states.subsetOf(nfa.validStates) && nfa.epsClosed(states))
 
-//       case (w :: ws) => {
-//         val step = nfa.move(states, Some(w))
+  //   nfa.run(states, word) eq DFA(nfa).run(states, word)
+  // }.holds because {
+  //   val dfa = DFA(nfa)
 
-//         assert(epsClosureIdem(nfa, step))
-//         assert(nfa.epsClosed(nfa.epsClosure(step)))
+  //   word match {
+  //     case Nil() => {
+  //       (nfa.run(states, word) eq dfa.run(states, word))  ==| trivial |
+  //       (nfa.epsClosure(states) eq dfa.run(states, word)) ==|
+  //         (nfa.epsClosed(states) &&
+  //            eqTrans(states, nfa.epsClosure(states), dfa.run(states, word))) |
+  //       (states eq dfa.run(states, word))
+  //     }.qed
 
-//         (nfa.run(states, word) eq dfa.run(states, word))             ==| trivial |
-//         (nfa.run(states, word) eq dfa.run(nfa.epsClosure(step), ws)) ==|
-//           (lemma(nfa, nfa.epsClosure(step), ws) &&
-//              eqTrans(nfa.run(states, word),
-//                      dfa.run(nfa.epsClosure(step), ws),
-//                      nfa.run(nfa.epsClosure(step), ws))) |
-//         (nfa.run(states, word) eq nfa.run(nfa.epsClosure(step), ws))
-//       }.qed
-//     }
-//   }
+  //     case (w :: ws) => {
+  //       val step = nfa.move(states, Some(w))
 
-//   def dfaNfaEquiv[State, Sym](nfa: NFA[State, Sym], word: List[Sym]): Boolean = {
-//     nfa.accepts(word) == DFA(nfa).accepts(word)
-//   }.holds because {
-//     val init = nfa.epsClosure(Set(nfa.initialState))
-//     assert(epsClosureIdem(nfa, Set(nfa.initialState)))
+  //       assert(epsClosureIdem(nfa, step))
+  //       assert(nfa.epsClosed(nfa.epsClosure(step)))
 
-//     lemma(nfa, init, word) &&
-//       eqExists(nfa.run(init, word), DFA(nfa).run(init, word), nfa.isFinal)
-//   }
+  //       (nfa.run(states, word) eq dfa.run(states, word))             ==| trivial |
+  //       (nfa.run(states, word) eq dfa.run(nfa.epsClosure(step), ws)) ==|
+  //         (lemma(nfa, nfa.epsClosure(step), ws) &&
+  //            eqTrans(nfa.run(states, word),
+  //                    dfa.run(nfa.epsClosure(step), ws),
+  //                    nfa.run(nfa.epsClosure(step), ws))) |
+  //       (nfa.run(states, word) eq nfa.run(nfa.epsClosure(step), ws))
+  //     }.qed
+  //   }
+  // }
 
-// }
+  // def dfaNfaEquiv[State, Sym](nfa: NFA[State, Sym], word: List[Sym]): Boolean = {
+  //   nfa.accepts(word) == DFA(nfa).accepts(word)
+  // }.holds because {
+  //   val init = nfa.epsClosure(Set(nfa.initialState))
+  //   assert(epsClosureIdem(nfa, Set(nfa.initialState)))
+
+  //   lemma(nfa, init, word) &&
+  //     eqExists(nfa.run(init, word), DFA(nfa).run(init, word), nfa.isFinal)
+  // }
+
+}
 
 case class DFA[State, Sym](
   alphabet:     Set[Sym],
