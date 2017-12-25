@@ -73,33 +73,46 @@ import NFASpecs._
 
 // }
 
-// case class DFA[State, Sym](
-//   move: (State, Sym) => State,
-//   initialState: State,
-//   isFinal: State => Boolean
-// ) {
-//   def run(state: State, word: List[Sym]): State = {
-//     word match {
-//       case Nil() => state
-//       case (w :: ws) => run(move(state, w), ws)
-//     }
-//   }
+case class DFA[State, Sym](
+  alphabet:     Set[Sym],
+  validStates:  Set[State],
+  move:         Map[(State, Sym), State], 
+  initialState: State,
+  isFinal:      State => Boolean
+) {
+  require { // FIXME: We could write this a little bit more nicely...
+    forall { (s: State, w: Sym) => 
+      (validStates.contains(s) && alphabet.contains(w)) ==> 
+        validStates.contains(move(s -> w))
+    } &&
+    validStates.contains(initialState)
+  }
 
-//   def accepts(word: List[Sym]): Boolean = {
-//     isFinal(run(initialState, word))
-//   }
+  def run(state: State, word: List[Sym]): State = {
+    require(validStates.contains(state) && word.forall(alphabet contains _))
 
-// }
+    word match {
+      case Nil() => state
+      case (w :: ws) => run(move((state, w)), ws)
+    }
+  }
+
+  def accepts(word: List[Sym]): Boolean = {
+    require(word.forall(alphabet contains _))
+    isFinal(run(initialState, word))
+  }
+
+}
 
 // We represent ε-moves as by passing a None() to the transition function.
 // The ε character/word is never representend explicitly.
 
 case class NFA[State, Sym](
-  alphabet     : Set[Sym],
-  validStates  : Set[State],
-  move         : Map[(State, Option[Sym]), Set[State]],
-  initialState : State,
-  isFinal      : State => Boolean
+  alphabet:     Set[Sym],
+  validStates:  Set[State],
+  move:         Map[(State, Option[Sym]), Set[State]],
+  initialState: State,
+  isFinal:      State => Boolean
 ) {
   require {
     forall { (s: State, w: Option[Sym]) =>
