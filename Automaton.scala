@@ -1,5 +1,3 @@
-// In the current formulation, the automaton might not be finite.
-
 package automaton
 
 import stainless._
@@ -39,62 +37,62 @@ object DFA {
     DFA(alphabet, validStates, move, initialState, isFinal)
   }
 
-  // def lemma[State, Sym](nfa: NFA[State, Sym], states: Set[State],
-  //                       word: List[Sym]): Boolean = {
-  //   require(states.subsetOf(nfa.validStates) && nfa.epsClosed(states))
+  def lemma[State, Sym](nfa: NFA[State, Sym], states: Set[State],
+                        word: List[Sym]): Boolean = {
+    require(states.subsetOf(nfa.validStates) && nfa.epsClosed(states))
 
-  //   nfa.run(states, word) eq DFA(nfa).run(states, word)
-  // }.holds because {
-  //   val dfa = DFA(nfa)
+    nfa.run(states, word) eq DFA(nfa).run(states, word)
+  }.holds because {
+    val dfa = DFA(nfa)
 
-  //   word match {
-  //     case Nil() => {
-  //       (nfa.run(states, word) eq dfa.run(states, word))  ==| trivial |
-  //       (nfa.epsClosure(states) eq dfa.run(states, word)) ==|
-  //         (nfa.epsClosed(states) &&
-  //            eqTrans(states, nfa.epsClosure(states), dfa.run(states, word))) |
-  //       (states eq dfa.run(states, word))
-  //     }.qed
+    word match {
+      case Nil() => {
+        (nfa.run(states, word) eq dfa.run(states, word))  ==| trivial |
+        (nfa.epsClosure(states) eq dfa.run(states, word)) ==|
+          (nfa.epsClosed(states) &&
+             eqTrans(states, nfa.epsClosure(states), dfa.run(states, word))) |
+        (states eq dfa.run(states, word))
+      }.qed
 
-  //     case (w :: ws) => {
-  //       val step = nfa.move(states, Some(w))
+      case (w :: ws) => {
+        val step = nfa.move(states, Some(w))
 
-  //       assert(epsClosureIdem(nfa, step))
-  //       assert(nfa.epsClosed(nfa.epsClosure(step)))
+        assert(epsClosureIdem(nfa, step))
+        assert(nfa.epsClosed(nfa.epsClosure(step)))
 
-  //       (nfa.run(states, word) eq dfa.run(states, word))             ==| trivial |
-  //       (nfa.run(states, word) eq dfa.run(nfa.epsClosure(step), ws)) ==|
-  //         (lemma(nfa, nfa.epsClosure(step), ws) &&
-  //            eqTrans(nfa.run(states, word),
-  //                    dfa.run(nfa.epsClosure(step), ws),
-  //                    nfa.run(nfa.epsClosure(step), ws))) |
-  //       (nfa.run(states, word) eq nfa.run(nfa.epsClosure(step), ws))
-  //     }.qed
-  //   }
-  // }
+        (nfa.run(states, word) eq dfa.run(states, word))             ==| trivial |
+        (nfa.run(states, word) eq dfa.run(nfa.epsClosure(step), ws)) ==|
+          (lemma(nfa, nfa.epsClosure(step), ws) &&
+             eqTrans(nfa.run(states, word),
+                     dfa.run(nfa.epsClosure(step), ws),
+                     nfa.run(nfa.epsClosure(step), ws))) |
+        (nfa.run(states, word) eq nfa.run(nfa.epsClosure(step), ws))
+      }.qed
+    }
+  }
 
-  // def dfaNfaEquiv[State, Sym](nfa: NFA[State, Sym], word: List[Sym]): Boolean = {
-  //   nfa.accepts(word) == DFA(nfa).accepts(word)
-  // }.holds because {
-  //   val init = nfa.epsClosure(Set(nfa.initialState))
-  //   assert(epsClosureIdem(nfa, Set(nfa.initialState)))
+  def dfaNfaEquiv[State, Sym](nfa: NFA[State, Sym], word: List[Sym]): Boolean = {
+    nfa.accepts(word) == DFA(nfa).accepts(word)
+  }.holds because {
+    val init = nfa.epsClosure(Set(nfa.initialState))
+    assert(epsClosureIdem(nfa, Set(nfa.initialState)))
 
-  //   lemma(nfa, init, word) &&
-  //     eqExists(nfa.run(init, word), DFA(nfa).run(init, word), nfa.isFinal)
-  // }
+    lemma(nfa, init, word) &&
+      eqExists(nfa.run(init, word), DFA(nfa).run(init, word), nfa.isFinal)
+  }
 
 }
 
 case class DFA[State, Sym](
   alphabet:     Set[Sym],
   validStates:  Set[State],
-  move:         Map[(State, Sym), State], 
+  move:         Map[(State, Sym), State],
   initialState: State,
   isFinal:      State => Boolean
 ) {
   require { // FIXME: We could write this a little bit more nicely...
-    forall { (s: State, w: Sym) => 
-      (validStates.contains(s) && alphabet.contains(w)) ==> 
+    forall { (s: State, w: Sym) =>
+      (validStates.contains(s) && alphabet.contains(w)) ==>
         validStates.contains(move(s -> w))
     } &&
     validStates.contains(initialState)
@@ -137,7 +135,7 @@ case class NFA[State, Sym](
     require(states.subsetOf(validStates) && validSym(this, w))
 
     states match {
-      case (x + xs) => 
+      case (x + xs) =>
         assert(validInput(this, x, w))
         move((x, w)) ++ move(xs, w)
       case _  => Set()
@@ -211,7 +209,7 @@ object NFASpecs {
     nfa.move(states, w) subsetOf nfa.validStates
   }.holds because {
     states match {
-      case (x + xs) => 
+      case (x + xs) =>
         assert(validInput(nfa, x, w))
         assert(nfa.move((x, w)) subsetOf nfa.validStates)
 
