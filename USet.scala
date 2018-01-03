@@ -103,6 +103,38 @@ sealed abstract class USet[T] {
     }
   } ensuring { setInvariant(_) }
 
+  def powerUSet: USet[USet[T]] = {
+    this match {
+      case USNil() => USNil()
+      case USCons(x, xs) =>
+        val ps = xs.powerUSet
+        ps ++ ps.map { _ + x }
+    }
+  }
+
+  def map[R](f: T => R): USet[R] = {
+    require(setInvariant(this))
+
+    this match {
+      case USNil() => USNil()
+      case USCons(x, xs) =>
+        val m = xs.map(f)
+
+        // assert(setInvariant(m))
+
+        assert(addIsSound(m, f(x)))
+        m + f(x)
+    }
+  } // ensuring { (res: USet[R]) => setInvariant(res) }
+
+  def foldLeft[R](z: R)(f: (R,T) => R): R = {
+    this match {
+      case USNil() => z
+      case USCons(x, xs) => xs.foldLeft(f(z, x))(f)
+    }
+  }
+
+
 }
 
 case class USCons[T](x: T, xs: USet[T]) extends USet[T]
