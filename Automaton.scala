@@ -39,7 +39,9 @@ object DFA {
 
   def lemma[State, Sym](nfa: NFA[State, Sym], states: Set[State],
                         word: List[Sym]): Boolean = {
-    require(states.subsetOf(nfa.validStates) && nfa.epsClosed(states))
+    require(states.subsetOf(nfa.validStates) &&
+            word.forall(nfa.alphabet contains _) &&
+            nfa.epsClosed(states))
 
     nfa.run(states, word) eq DFA(nfa).run(states, word)
   }.holds because {
@@ -72,6 +74,7 @@ object DFA {
   }
 
   def dfaNfaEquiv[State, Sym](nfa: NFA[State, Sym], word: List[Sym]): Boolean = {
+    require(word.forall(nfa.alphabet contains _))
     nfa.accepts(word) == DFA(nfa).accepts(word)
   }.holds because {
     val init = nfa.epsClosure(Set(nfa.initialState))
