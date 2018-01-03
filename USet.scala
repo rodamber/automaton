@@ -189,6 +189,18 @@ object USetSpecs {
 
   def subsetRefl[T](set: USet[T]): Boolean = {
     set subsetOf set
+  }.holds because {
+    set match {
+      case USNil() => trivial
+      case USCons(x, xs) => set.contains(x) && subsetTail(set)
+    }
+  }
+
+  def subsetTail[T](set: USet[T]): Boolean = {
+    set match {
+      case USNil() => true
+      case USCons(x, xs) => xs.subsetOf(set)
+    }
   }.holds
 
   def subsetTrans[T](set1: USet[T], set2: USet[T], set3: USet[T]): Boolean = {
