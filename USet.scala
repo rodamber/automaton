@@ -6,8 +6,8 @@ import stainless.collection._
 import stainless.lang.{Set => _, _}
 import stainless.proof._
 
+import USetOps._
 import USetSpecs._
-
 
 sealed abstract class USet[T] {
 
@@ -38,6 +38,11 @@ sealed abstract class USet[T] {
   def exists(p: T => Boolean): Boolean = this match {
     case USNil() => false
     case USCons(x, xs) => p(x) || xs.exists(p)
+  }
+
+  def forall(p: T => Boolean): Boolean = this match {
+    case USNil() => true
+    case USCons(x, xs) => p(x) && xs.forall(p)
   }
 
   def size: BigInt = {
@@ -103,24 +108,30 @@ sealed abstract class USet[T] {
     }
   } ensuring { setInvariant(_) }
 
-  def powerUSet: USet[USet[T]] = {
-    this match {
-      case USNil() => USNil()
-      case USCons(x, xs) =>
-        val ps = xs.powerUSet
-        ps ++ ps.map { _ + x }
-    }
-  }
+  def powerSet: USet[USet[T]] = {
+    require(setInvariant(this))
 
-  def map[R](f: T => R): USet[R] = {
+    this match {
+      case USNil() => USCons(USNil(), USNil())
+      case USCons(x, xs) =>
+        val ps = xs.powerSet
+
+        assert(powerSetIsSound(xs))
+        assert(powerSetAllSound(xs))
+        assert(mapAddIsSound(ps, x))
+
+        // ps ++ ps.map(_ + x)
+        ps ++ mapAdd(ps, x)
+    }
+  } // ensuring { (res: USet[USet[T]]) => setInvariant(res) }
+
+    def map[R](f: T => R): USet[R] = {
     require(setInvariant(this))
 
     this match {
       case USNil() => USNil()
       case USCons(x, xs) =>
         val m = xs.map(f)
-
-        // assert(setInvariant(m))
 
         assert(addIsSound(m, f(x)))
         m + f(x)
@@ -140,6 +151,20 @@ sealed abstract class USet[T] {
 case class USCons[T](x: T, xs: USet[T]) extends USet[T]
 case class USNil[T]() extends USet[T]
 
+object USetOps {
+
+  def mapAdd[T](sets: USet[USet[T]], x: T): USet[USet[T]] = {
+    require(sets.forall((s: USet[T]) => setInvariant(s) && !s.contains(x)) && setInvariant(sets))
+
+    sets match {
+      case USNil() => USNil()
+      case USCons(s, ss) =>
+        assert(setInvariant(ss))
+        USCons(s + x, mapAdd(ss, x))
+    }
+  } // ensuring { (res: USet[USet[T]]) => setInvariant(res) }
+
+}
 
 object USetSpecs {
 
@@ -384,6 +409,39 @@ object USetSpecs {
     require(setInvariant(set1) && setInvariant(set2) && set1.strictSubsetOf(set2))
     set1.size < set2.size
   }.holds // because { subsetIsSmallerOrEqual(set1, set2) && sizeEq(set1, set2) }
+
+  // ---------------------------------------------------------------------------
+  // map
+
+  def mapIsSound[T,R](set: USet[T], f: T => R): Boolean = {
+    require(setInvariant(set))
+    setInvariant(set map f)
+  }.holds
+
+  def mapAddIsSound[T](sets: USet[USet[T]], x: T): Boolean = {
+    require(sets.forall((s: USet[T]) => setInvariant(s) && !s.contains(x)) && setInvariant(sets))
+
+    val m = mapAdd(sets, x)
+    m.forall(setInvariant(_)) && setInvariant(m)
+  }.holds
+
+  // ---------------------------------------------------------------------------
+  // powerSet
+
+  def powerSetIsSound[T](set: USet[T]): Boolean = {
+    require(setInvariant(set))
+    setInvariant(set.powerSet)
+  }.holds
+
+  def powerSetAllSound[T](set: USet[T]): Boolean = {
+    require(setInvariant(set))
+    set.powerSet.forall(setInvariant(_))
+  }.holds
+
+  def powerSetSubset[T](x: USet[T], y: USet[T]): Boolean = {
+    require(setInvariant(x) && setInvariant(y))
+    x.powerSet.contains(y) == y.subsetOf(x)
+  }.holds
 
 }
 
