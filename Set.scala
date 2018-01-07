@@ -65,7 +65,6 @@ case class Set[T](uset: USet[T]) {
 
   def powerSet: Set[Set[T]] = {
     val ups: USet[USet[T]] = uset.powerSet
-    // assert(ups same USCons(USNil(), USNil()))
 
     assert(USetSpecs.powerSetAllSound(uset))
     assert(USetSpecs.powerSetIsSound(uset))
