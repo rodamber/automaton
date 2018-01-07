@@ -37,9 +37,9 @@ case class Set[T](uset: USet[T]) {
 
   def strictSubsetOf(that: Set[T]): Boolean = uset.strictSubsetOf(that.uset)
 
-  def eq(that: Set[T]): Boolean = this.uset.eq(that.uset)
+  def same(that: Set[T]): Boolean = this.uset.same(that.uset)
 
-  def neq(that: Set[T]): Boolean = this.uset.neq(that.uset)
+  def nsame(that: Set[T]): Boolean = this.uset.nsame(that.uset)
 
   def isEmpty: Boolean = uset.isEmpty
 
@@ -63,9 +63,29 @@ case class Set[T](uset: USet[T]) {
 
   def --(that: Set[T]): Set[T] = Set(this.uset -- that.uset)
 
-  // FIXME
   def powerSet: Set[Set[T]] = {
-    Set[Set[T]](USNil[Set[T]]())
+    val ups: USet[USet[T]] = uset.powerSet
+    // assert(ups same USCons(USNil(), USNil()))
+
+    assert(USetSpecs.powerSetAllSound(uset))
+    assert(USetSpecs.powerSetIsSound(uset))
+
+    // Implied by the previous assertion.
+    assert(USetSpecs.setInvariant(ups))
+
+    // FIXME: I must be missing something here. Stainless tells me that the
+    // previous assertion is true. However, it also tells me that the call
+    // precondition for mapIsSound may be violated...
+    assert(mapIsSound(ups, (us: USet[T]) => {
+                        assert(USetSpecs.setInvariant(us))
+                        Set(us)
+                      }))
+
+    Set(ups.map(Set(_)))
+  }
+
+  def map[R](f: T => R): Set[R] = {
+    Set(uset map f)
   }
 
   // FIXME
@@ -95,26 +115,26 @@ object SetSpecs {
   }.holds because USetSpecs.subsetTrans(set1.uset, set2.uset, set3.uset)
 
   // ---------------------------------------------------------------------------
-  // eq
+  // same
 
-  def eqRefl[T](set: Set[T]): Boolean = {
-    set eq set
-  }.holds because USetSpecs.eqRefl(set.uset)
+  def sameRefl[T](set: Set[T]): Boolean = {
+    set same set
+  }.holds because USetSpecs.sameRefl(set.uset)
 
-  def eqTrans[T](set1: Set[T], set2: Set[T], set3: Set[T]): Boolean = {
-    require(set1.eq(set2) && set2.eq(set3))
-    set1 eq set3
-  }.holds because USetSpecs.eqTrans(set1.uset, set2.uset, set3.uset)
+  def sameTrans[T](set1: Set[T], set2: Set[T], set3: Set[T]): Boolean = {
+    require(set1.same(set2) && set2.same(set3))
+    set1 same set3
+  }.holds because USetSpecs.sameTrans(set1.uset, set2.uset, set3.uset)
 
-  def eqSymm[T](set1: Set[T], set2: Set[T]): Boolean = {
-    require(set1 eq set2)
-    set2 eq set1
-  }.holds because USetSpecs.eqSymm(set1.uset, set2.uset)
+  def sameSymm[T](set1: Set[T], set2: Set[T]): Boolean = {
+    require(set1 same set2)
+    set2 same set1
+  }.holds because USetSpecs.sameSymm(set1.uset, set2.uset)
 
-  def eqExists[T](set1: Set[T], set2: Set[T], p: T => Boolean): Boolean = {
-    require(set1 eq set2)
+  def sameExists[T](set1: Set[T], set2: Set[T], p: T => Boolean): Boolean = {
+    require(set1 same set2)
     set1.exists(p) == set2.exists(p)
-  }.holds because USetSpecs.eqExists(set1.uset, set2.uset, p)
+  }.holds because USetSpecs.sameExists(set1.uset, set2.uset, p)
 
   // ---------------------------------------------------------------------------
   // subsetOf and ++ (union)
@@ -141,4 +161,3 @@ object SetSpecs {
   }.holds because USetSpecs.strictSubsetIsSmaller(set1.uset, set2.uset)
 
 }
-

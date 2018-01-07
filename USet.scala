@@ -24,9 +24,9 @@ sealed abstract class USet[T] {
   def strictSubsetOf(that: USet[T]): Boolean =
     subsetOf(that) && !that.subsetOf(this)
 
-  def eq(that: USet[T]): Boolean = this.subsetOf(that) && that.subsetOf(this)
+  def same(that: USet[T]): Boolean = this.subsetOf(that) && that.subsetOf(this)
 
-  def neq(that: USet[T]): Boolean = !eq(that)
+  def nsame(that: USet[T]): Boolean = !same(that)
 
   def isEmpty: Boolean = this match {
     case USNil() => true
@@ -287,24 +287,24 @@ object USetSpecs {
   }.qed
 
   // ---------------------------------------------------------------------------
-  // eq
+  // same
 
-  def eqRefl[T](set: USet[T]): Boolean = {
-    set eq set
+  def sameRefl[T](set: USet[T]): Boolean = {
+    set same set
   }.holds because subsetRefl(set)
 
-  def eqTrans[T](set1: USet[T], set2: USet[T], set3: USet[T]): Boolean = {
-    require(set1.eq(set2) && set2.eq(set3))
-    set1 eq set3
+  def sameTrans[T](set1: USet[T], set2: USet[T], set3: USet[T]): Boolean = {
+    require(set1.same(set2) && set2.same(set3))
+    set1 same set3
   }.holds because { subsetTrans(set1, set2, set3) && subsetTrans(set3, set2, set1) }
 
-  def eqSymm[T](set1: USet[T], set2: USet[T]): Boolean = {
-    require(set1 eq set2)
-    set2 eq set1
+  def sameSymm[T](set1: USet[T], set2: USet[T]): Boolean = {
+    require(set1 same set2)
+    set2 same set1
   }.holds
 
-  def eqExists[T](set1: USet[T], set2: USet[T], p: T => Boolean): Boolean = {
-    require(setInvariant(set1) && setInvariant(set2) && set1.eq(set2))
+  def sameExists[T](set1: USet[T], set2: USet[T], p: T => Boolean): Boolean = {
+    require(setInvariant(set1) && setInvariant(set2) && set1.same(set2))
     set1.exists(p) == set2.exists(p)
   }.holds because {
     if (set1.exists(p))      subsetExists(set1, set2, p)
@@ -442,6 +442,11 @@ object USetSpecs {
     require(setInvariant(x) && setInvariant(y))
     x.powerSet.contains(y) == y.subsetOf(x)
   }.holds
+
+  //
+
+
+
 
 }
 
