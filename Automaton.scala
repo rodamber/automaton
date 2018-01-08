@@ -75,13 +75,18 @@ object DFA {
 
   def dfaNfaEquiv[State, Sym](nfa: NFA[State, Sym], word: List[Sym]): Boolean = {
     require(word.forall(nfa.alphabet contains _))
-    nfa.accepts(word) == DFA(nfa).accepts(word)
+
+    val dfa = DFA(nfa)
+    nfa.accepts(word) == dfa.accepts(word)
   }.holds because {
     val init = nfa.epsClosure(Set(nfa.initialState))
+    val dfa = DFA(nfa)
+
     assert(epsClosureIdem(nfa, Set(nfa.initialState)))
+    assert(powerSetSubset(nfa.validStates, init))
 
     lemma(nfa, init, word) &&
-      sameExists(nfa.run(init, word), DFA(nfa).run(init, word), nfa.isFinal)
+      sameExists(nfa.run(init, word), dfa.run(init, word), nfa.isFinal)
   }
 
 }
@@ -147,6 +152,7 @@ case class NFA[State, Sym](
 
   def run(states: Set[State], word: List[Sym]): Set[State] = {
     require(states.subsetOf(validStates) && word.forall(alphabet contains _))
+
     word match {
       case Nil() => epsClosure(states)
       case (w :: ws) =>

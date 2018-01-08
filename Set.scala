@@ -151,4 +151,11 @@ object SetSpecs {
     set1.size < set2.size
   }.holds because USetSpecs.strictSubsetIsSmaller(set1.uset, set2.uset)
 
+  // ---------------------------------------------------------------------------
+  // powerSet
+
+  def powerSetSubset[T](x: Set[T], y: Set[T]): Boolean = {
+    x.powerSet.contains(y) == y.subsetOf(x)
+  }.holds because USetSpecs.powerSetSubset(x.uset, y.uset)
+
 }
