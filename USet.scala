@@ -125,7 +125,7 @@ sealed abstract class USet[T] {
     }
   } // ensuring { (res: USet[USet[T]]) => setInvariant(res) }
 
-    def map[R](f: T => R): USet[R] = {
+  def map[R](f: T => R): USet[R] = {
     require(setInvariant(this))
 
     this match {
@@ -137,6 +137,29 @@ sealed abstract class USet[T] {
         m + f(x)
     }
   } // ensuring { (res: USet[R]) => setInvariant(res) }
+
+  def *[U](that: USet[U]): USet[(T, U)] = {
+    require(setInvariant(this) && setInvariant(that))
+
+    that match {
+      case USNil() => USNil()
+      case USCons(x, xs) =>
+        assert(prodIsSound(this, x))
+        assert(prodIsSound(this, xs))
+        (this * x) ++ (this * xs)
+    }
+  } // ensuring { setInvariant(_) }
+
+  def *[U](u: U): USet[(T, U)] = {
+    require(setInvariant(this))
+
+    this match {
+      case USNil() => USNil()
+      case USCons(x, xs) =>
+        assert(prodIsSound(xs, u))
+        (xs * u) + (x, u)
+    }
+  } // ensuring { setInvariant(_) }
 
   def foldLeft[R](z: R)(f: (R,T) => R): R = {
     this match {
@@ -443,7 +466,23 @@ object USetSpecs {
     x.powerSet.contains(y) == y.subsetOf(x)
   }.holds
 
-  //
+  // ---------------------------------------------------------------------------
+  // *
+
+  def prodIsSound[T,U](set: USet[T], u: U): Boolean = {
+    require(setInvariant(set))
+    setInvariant(set * u)
+  }.holds because {
+    set match {
+      case USNil() => trivial
+      case USCons(x, xs) => prodIsSound(xs, u) && addIsSound(xs * u, (x, u))
+    }
+  }
+
+  def prodIsSound[T,U](set: USet[T], xs: USet[U]): Boolean = {
+    require(setInvariant(set) && setInvariant(xs))
+    setInvariant(set * xs)
+  }.holds
 
 
 

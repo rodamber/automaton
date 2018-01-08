@@ -83,19 +83,11 @@ case class Set[T](uset: USet[T]) {
     Set(ups.map(Set(_)))
   }
 
-  def map[R](f: T => R): Set[R] = {
-    Set(uset map f)
-  }
+  def map[R](f: T => R): Set[R] = Set(uset map f)
 
-  // FIXME
-  def *[U](that: Set[U]): Set[(T, U)] = {
-    Set[(T, U)](USNil[(T, U)]())
-  }
+  def *[U](that: Set[U]): Set[(T, U)] = Set(uset * that.uset)
 
-  // FIXME
-  def foldLeft[R](z: R)(f: (R,T) => R): R = {
-    z
-  }
+  def foldLeft[R](z: R)(f: (R,T) => R): R = uset.foldLeft(z)(f)
 
 }
 
