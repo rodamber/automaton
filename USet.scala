@@ -484,6 +484,19 @@ object USetSpecs {
     setInvariant(set * xs)
   }.holds
 
+  def prodContains[T,U](ts: USet[T], us: USet[U], x: T, y: U): Boolean = {
+    require(setInvariant(ts) && setInvariant(us))
+    (ts.contains(x) && us.contains(y)) == (ts * us).contains(x -> y)
+  }.holds
+
+  // ---------------------------------------------------------------------------
+  // forall
+
+  @induct
+  def forallContains[T](set: USet[T], x: T, p: T => Boolean): Boolean = {
+    require(set.contains(x) && set.forall(p))
+    p(x)
+  }.holds
 
 
 

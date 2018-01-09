@@ -14,7 +14,6 @@ import NFASpecs._
 object DFA {
 
   def apply[State, Sym](nfa: NFA[State, Sym]): DFA[Set[State], Sym] = {
-
     val alphabet = nfa.alphabet
     val validStates = nfa.validStates.powerSet
 
@@ -37,23 +36,36 @@ object DFA {
     DFA(alphabet, validStates, move, initialState, isFinal)
   }
 
+  def moveProp[State, Sym](nfa: NFA[State, Sym], states: Set[State], w: Sym): Boolean = {
+    require(states.subsetOf(nfa.validStates) && nfa.alphabet.contains(w))
+    val dfa = DFA(nfa)
+
+    dfa.move((states, w)) == nfa.epsClosure(nfa.move(states, Some(w)))
+  }.holds
+
   def lemma[State, Sym](nfa: NFA[State, Sym], states: Set[State],
                         word: List[Sym]): Boolean = {
     require(states.subsetOf(nfa.validStates) &&
             word.forall(nfa.alphabet contains _) &&
             nfa.epsClosed(states))
 
-    nfa.run(states, word) same DFA(nfa).run(states, word)
+    assert(powerSetSubset(nfa.validStates, states))
+
+    val dfa = DFA(nfa)
+    nfa.run(states, word) same dfa.run(states, word)
   }.holds because {
     val dfa = DFA(nfa)
 
+    assert(powerSetSubset(nfa.validStates, states))
+
     word match {
       case Nil() => {
-        (nfa.run(states, word) same dfa.run(states, word))  ==| trivial |
-        (nfa.epsClosure(states) same dfa.run(states, word)) ==|
+        (nfa.run(states, word)  same dfa.run(states, word))  ==| trivial |
+        (nfa.epsClosure(states) same dfa.run(states, word))  ==|
           (nfa.epsClosed(states) &&
              sameTrans(states, nfa.epsClosure(states), dfa.run(states, word))) |
-        (states same dfa.run(states, word))
+        (states                same dfa.run(states, word))   ==| trivial |
+        (nfa.run(states, word) same dfa.run(states, word))
       }.qed
 
       case (w :: ws) => {
@@ -62,13 +74,22 @@ object DFA {
         assert(epsClosureIdem(nfa, step))
         assert(nfa.epsClosed(nfa.epsClosure(step)))
 
-        (nfa.run(states, word) same dfa.run(states, word))             ==| trivial |
-        (nfa.run(states, word) same dfa.run(nfa.epsClosure(step), ws)) ==|
-          (lemma(nfa, nfa.epsClosure(step), ws) &&
-             sameTrans(nfa.run(states, word),
-                     dfa.run(nfa.epsClosure(step), ws),
-                     nfa.run(nfa.epsClosure(step), ws))) |
-        (nfa.run(states, word) same nfa.run(nfa.epsClosure(step), ws))
+        assert(moveValid(nfa, states, Some(w)))
+        assert(powerSetSubset(nfa.validStates, nfa.epsClosure(step)))
+
+        assert(dfa.validStates.contains(states))
+        assert(dfa.alphabet.contains(w))
+        assert(dfa.validStates.contains(dfa.move(states -> w)))
+
+        (nfa.run(states, word) same dfa.run(states, word))         ==| trivial |
+        (nfa.run(states, word) same dfa.run(dfa.move((states, w)), ws)) //==| moveProp(nfa, states, w) |
+        // (nfa.run(states, word) same dfa.run(nfa.epsClosure(step), ws)) //==|
+        //   (lemma(nfa, nfa.epsClosure(step), ws) &&
+        //      sameTrans(nfa.run(states, word),
+        //              dfa.run(nfa.epsClosure(step), ws),
+        //              nfa.run(nfa.epsClosure(step), ws))) |
+        // (nfa.run(states, word) same nfa.run(nfa.epsClosure(step), ws)) //==| trivial |
+        // (nfa.run(states, word) same dfa.run(states, word))
       }.qed
     }
   }
@@ -91,6 +112,15 @@ object DFA {
 
 }
 
+object DFASpecs {
+  def moveReq[State , Sym](validStates: Set[State], move: Map[(State, Sym), State])
+             (sw: (State, Sym)): Boolean = sw match {
+    case (s, w) => move.isDefinedAt(s -> w) && validStates.contains(move(s -> w))
+  }
+}
+
+import DFASpecs._
+
 case class DFA[State, Sym](
   alphabet:     Set[Sym],
   validStates:  Set[State],
@@ -98,11 +128,8 @@ case class DFA[State, Sym](
   initialState: State,
   isFinal:      State => Boolean
 ) {
-  require { // FIXME: We could write this a little bit more nicely...
-    forall { (s: State, w: Sym) =>
-      (validStates.contains(s) && alphabet.contains(w)) ==>
-        validStates.contains(move(s -> w))
-    } &&
+  require {
+    (validStates * alphabet).forall(moveReq(validStates, move)) &&
     validStates.contains(initialState)
   }
 
@@ -111,7 +138,19 @@ case class DFA[State, Sym](
 
     word match {
       case Nil() => state
-      case (w :: ws) => run(move((state, w)), ws)
+      case (w :: ws) =>
+        assert { (validStates * alphabet).contains(state -> w) because
+          prodContains(validStates, alphabet, state, w) 
+        }
+        assert { 
+          (move.isDefinedAt(state -> w) &&
+             validStates.contains(move(state -> w))) because {
+            forallContains(validStates * alphabet, (state -> w),
+                           moveReq(validStates, move))
+          }
+        }
+
+        run(move((state, w)), ws)
     }
   }
 

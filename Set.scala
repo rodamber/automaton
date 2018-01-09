@@ -47,6 +47,8 @@ case class Set[T](uset: USet[T]) {
 
   def exists(p: T => Boolean): Boolean = uset.exists(p)
 
+  def forall(p: T => Boolean): Boolean = uset.forall(p)
+
   def size: BigInt = { uset.size } ensuring { _ >= 0 }
 
   def +(y: T): Set[T] = {
@@ -157,5 +159,20 @@ object SetSpecs {
   def powerSetSubset[T](x: Set[T], y: Set[T]): Boolean = {
     x.powerSet.contains(y) == y.subsetOf(x)
   }.holds because USetSpecs.powerSetSubset(x.uset, y.uset)
+
+  // ---------------------------------------------------------------------------
+  // *
+
+  def prodContains[T,U](ts: Set[T], us: Set[U], x: T, y: U): Boolean = {
+    (ts.contains(x) && us.contains(y)) == (ts * us).contains(x -> y)
+  }.holds because USetSpecs.prodContains(ts.uset, us.uset, x, y)
+
+  // ---------------------------------------------------------------------------
+  // forall
+
+  def forallContains[T](set: Set[T], x: T, p: T => Boolean): Boolean = {
+    require(set.contains(x) && set.forall(p))
+    p(x)
+  }.holds because USetSpecs.forallContains(set.uset, x, p)
 
 }
