@@ -37,17 +37,15 @@ case class Set[T](uset: USet[T]) {
 
   def strictSubsetOf(that: Set[T]): Boolean = uset.strictSubsetOf(that.uset)
 
-  def same(that: Set[T]): Boolean = this.uset.same(that.uset)
+  def eq(that: Set[T]): Boolean = this.uset.eq(that.uset)
 
-  def nsame(that: Set[T]): Boolean = this.uset.nsame(that.uset)
+  def neq(that: Set[T]): Boolean = this.uset.neq(that.uset)
 
   def isEmpty: Boolean = uset.isEmpty
 
   def nonEmpty: Boolean = uset.nonEmpty
 
   def exists(p: T => Boolean): Boolean = uset.exists(p)
-
-  def forall(p: T => Boolean): Boolean = uset.forall(p)
 
   def size: BigInt = { uset.size } ensuring { _ >= 0 }
 
@@ -64,32 +62,6 @@ case class Set[T](uset: USet[T]) {
   }
 
   def --(that: Set[T]): Set[T] = Set(this.uset -- that.uset)
-
-  def powerSet: Set[Set[T]] = {
-    val ups: USet[USet[T]] = uset.powerSet
-
-    assert(USetSpecs.powerSetAllSound(uset))
-    assert(USetSpecs.powerSetIsSound(uset))
-
-    // Implied by the previous assertion.
-    assert(USetSpecs.setInvariant(ups))
-
-    // FIXME: I must be missing something here. Stainless tells me that the
-    // previous assertion is true. However, it also tells me that the call
-    // precondition for mapIsSound may be violated...
-    assert(mapIsSound(ups, (us: USet[T]) => {
-                        assert(USetSpecs.setInvariant(us))
-                        Set(us)
-                      }))
-
-    Set(ups.map(Set(_)))
-  }
-
-  def map[R](f: T => R): Set[R] = Set(uset map f)
-
-  def *[U](that: Set[U]): Set[(T, U)] = Set(uset * that.uset)
-
-  def foldLeft[R](z: R)(f: (R,T) => R): R = uset.foldLeft(z)(f)
 
 }
 
@@ -108,26 +80,26 @@ object SetSpecs {
   }.holds because USetSpecs.subsetTrans(set1.uset, set2.uset, set3.uset)
 
   // ---------------------------------------------------------------------------
-  // same
+  // eq
 
-  def sameRefl[T](set: Set[T]): Boolean = {
-    set same set
-  }.holds because USetSpecs.sameRefl(set.uset)
+  def eqRefl[T](set: Set[T]): Boolean = {
+    set eq set
+  }.holds because USetSpecs.eqRefl(set.uset)
 
-  def sameTrans[T](set1: Set[T], set2: Set[T], set3: Set[T]): Boolean = {
-    require(set1.same(set2) && set2.same(set3))
-    set1 same set3
-  }.holds because USetSpecs.sameTrans(set1.uset, set2.uset, set3.uset)
+  def eqTrans[T](set1: Set[T], set2: Set[T], set3: Set[T]): Boolean = {
+    require(set1.eq(set2) && set2.eq(set3))
+    set1 eq set3
+  }.holds because USetSpecs.eqTrans(set1.uset, set2.uset, set3.uset)
 
-  def sameSymm[T](set1: Set[T], set2: Set[T]): Boolean = {
-    require(set1 same set2)
-    set2 same set1
-  }.holds because USetSpecs.sameSymm(set1.uset, set2.uset)
+  def eqSymm[T](set1: Set[T], set2: Set[T]): Boolean = {
+    require(set1 eq set2)
+    set2 eq set1
+  }.holds because USetSpecs.eqSymm(set1.uset, set2.uset)
 
-  def sameExists[T](set1: Set[T], set2: Set[T], p: T => Boolean): Boolean = {
-    require(set1 same set2)
+  def eqExists[T](set1: Set[T], set2: Set[T], p: T => Boolean): Boolean = {
+    require(set1 eq set2)
     set1.exists(p) == set2.exists(p)
-  }.holds because USetSpecs.sameExists(set1.uset, set2.uset, p)
+  }.holds because USetSpecs.eqExists(set1.uset, set2.uset, p)
 
   // ---------------------------------------------------------------------------
   // subsetOf and ++ (union)
@@ -153,26 +125,5 @@ object SetSpecs {
     set1.size < set2.size
   }.holds because USetSpecs.strictSubsetIsSmaller(set1.uset, set2.uset)
 
-  // ---------------------------------------------------------------------------
-  // powerSet
-
-  def powerSetSubset[T](x: Set[T], y: Set[T]): Boolean = {
-    x.powerSet.contains(y) == y.subsetOf(x)
-  }.holds because USetSpecs.powerSetSubset(x.uset, y.uset)
-
-  // ---------------------------------------------------------------------------
-  // *
-
-  def prodContains[T,U](ts: Set[T], us: Set[U], x: T, y: U): Boolean = {
-    (ts.contains(x) && us.contains(y)) == (ts * us).contains(x -> y)
-  }.holds because USetSpecs.prodContains(ts.uset, us.uset, x, y)
-
-  // ---------------------------------------------------------------------------
-  // forall
-
-  def forallContains[T](set: Set[T], x: T, p: T => Boolean): Boolean = {
-    require(set.contains(x) && set.forall(p))
-    p(x)
-  }.holds because USetSpecs.forallContains(set.uset, x, p)
-
 }
+

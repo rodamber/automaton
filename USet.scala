@@ -6,8 +6,8 @@ import stainless.collection._
 import stainless.lang.{Set => _, _}
 import stainless.proof._
 
-import USetOps._
 import USetSpecs._
+
 
 sealed abstract class USet[T] {
 
@@ -24,9 +24,9 @@ sealed abstract class USet[T] {
   def strictSubsetOf(that: USet[T]): Boolean =
     subsetOf(that) && !that.subsetOf(this)
 
-  def same(that: USet[T]): Boolean = this.subsetOf(that) && that.subsetOf(this)
+  def eq(that: USet[T]): Boolean = this.subsetOf(that) && that.subsetOf(this)
 
-  def nsame(that: USet[T]): Boolean = !same(that)
+  def neq(that: USet[T]): Boolean = !eq(that)
 
   def isEmpty: Boolean = this match {
     case USNil() => true
@@ -38,11 +38,6 @@ sealed abstract class USet[T] {
   def exists(p: T => Boolean): Boolean = this match {
     case USNil() => false
     case USCons(x, xs) => p(x) || xs.exists(p)
-  }
-
-  def forall(p: T => Boolean): Boolean = this match {
-    case USNil() => true
-    case USCons(x, xs) => p(x) && xs.forall(p)
   }
 
   def size: BigInt = {
@@ -108,86 +103,11 @@ sealed abstract class USet[T] {
     }
   } ensuring { setInvariant(_) }
 
-  def powerSet: USet[USet[T]] = {
-    require(setInvariant(this))
-
-    this match {
-      case USNil() => USCons(USNil(), USNil())
-      case USCons(x, xs) =>
-        val ps = xs.powerSet
-
-        assert(powerSetIsSound(xs))
-        assert(powerSetAllSound(xs))
-        assert(mapAddIsSound(ps, x))
-
-        // ps ++ ps.map(_ + x)
-        ps ++ mapAdd(ps, x)
-    }
-  } // ensuring { (res: USet[USet[T]]) => setInvariant(res) }
-
-  def map[R](f: T => R): USet[R] = {
-    require(setInvariant(this))
-
-    this match {
-      case USNil() => USNil()
-      case USCons(x, xs) =>
-        val m = xs.map(f)
-
-        assert(addIsSound(m, f(x)))
-        m + f(x)
-    }
-  } // ensuring { (res: USet[R]) => setInvariant(res) }
-
-  def *[U](that: USet[U]): USet[(T, U)] = {
-    require(setInvariant(this) && setInvariant(that))
-
-    that match {
-      case USNil() => USNil()
-      case USCons(x, xs) =>
-        assert(prodIsSound(this, x))
-        assert(prodIsSound(this, xs))
-        (this * x) ++ (this * xs)
-    }
-  } // ensuring { setInvariant(_) }
-
-  def *[U](u: U): USet[(T, U)] = {
-    require(setInvariant(this))
-
-    this match {
-      case USNil() => USNil()
-      case USCons(x, xs) =>
-        assert(prodIsSound(xs, u))
-        (xs * u) + (x, u)
-    }
-  } // ensuring { setInvariant(_) }
-
-  def foldLeft[R](z: R)(f: (R,T) => R): R = {
-    this match {
-      case USNil() => z
-      case USCons(x, xs) => xs.foldLeft(f(z, x))(f)
-    }
-  }
-
-
 }
 
 case class USCons[T](x: T, xs: USet[T]) extends USet[T]
 case class USNil[T]() extends USet[T]
 
-object USetOps {
-
-  def mapAdd[T](sets: USet[USet[T]], x: T): USet[USet[T]] = {
-    require(sets.forall((s: USet[T]) => setInvariant(s) && !s.contains(x)) && setInvariant(sets))
-
-    sets match {
-      case USNil() => USNil()
-      case USCons(s, ss) =>
-        assert(setInvariant(ss))
-        USCons(s + x, mapAdd(ss, x))
-    }
-  } // ensuring { (res: USet[USet[T]]) => setInvariant(res) }
-
-}
 
 object USetSpecs {
 
@@ -269,18 +189,6 @@ object USetSpecs {
 
   def subsetRefl[T](set: USet[T]): Boolean = {
     set subsetOf set
-  }.holds because {
-    set match {
-      case USNil() => trivial
-      case USCons(x, xs) => set.contains(x) && subsetTail(set)
-    }
-  }
-
-  def subsetTail[T](set: USet[T]): Boolean = {
-    set match {
-      case USNil() => true
-      case USCons(x, xs) => xs.subsetOf(set)
-    }
   }.holds
 
   def subsetTrans[T](set1: USet[T], set2: USet[T], set3: USet[T]): Boolean = {
@@ -310,24 +218,24 @@ object USetSpecs {
   }.qed
 
   // ---------------------------------------------------------------------------
-  // same
+  // eq
 
-  def sameRefl[T](set: USet[T]): Boolean = {
-    set same set
+  def eqRefl[T](set: USet[T]): Boolean = {
+    set eq set
   }.holds because subsetRefl(set)
 
-  def sameTrans[T](set1: USet[T], set2: USet[T], set3: USet[T]): Boolean = {
-    require(set1.same(set2) && set2.same(set3))
-    set1 same set3
+  def eqTrans[T](set1: USet[T], set2: USet[T], set3: USet[T]): Boolean = {
+    require(set1.eq(set2) && set2.eq(set3))
+    set1 eq set3
   }.holds because { subsetTrans(set1, set2, set3) && subsetTrans(set3, set2, set1) }
 
-  def sameSymm[T](set1: USet[T], set2: USet[T]): Boolean = {
-    require(set1 same set2)
-    set2 same set1
+  def eqSymm[T](set1: USet[T], set2: USet[T]): Boolean = {
+    require(set1 eq set2)
+    set2 eq set1
   }.holds
 
-  def sameExists[T](set1: USet[T], set2: USet[T], p: T => Boolean): Boolean = {
-    require(setInvariant(set1) && setInvariant(set2) && set1.same(set2))
+  def eqExists[T](set1: USet[T], set2: USet[T], p: T => Boolean): Boolean = {
+    require(setInvariant(set1) && setInvariant(set2) && set1.eq(set2))
     set1.exists(p) == set2.exists(p)
   }.holds because {
     if (set1.exists(p))      subsetExists(set1, set2, p)
@@ -432,73 +340,6 @@ object USetSpecs {
     require(setInvariant(set1) && setInvariant(set2) && set1.strictSubsetOf(set2))
     set1.size < set2.size
   }.holds // because { subsetIsSmallerOrEqual(set1, set2) && sizeEq(set1, set2) }
-
-  // ---------------------------------------------------------------------------
-  // map
-
-  def mapIsSound[T,R](set: USet[T], f: T => R): Boolean = {
-    require(setInvariant(set))
-    setInvariant(set map f)
-  }.holds
-
-  def mapAddIsSound[T](sets: USet[USet[T]], x: T): Boolean = {
-    require(sets.forall((s: USet[T]) => setInvariant(s) && !s.contains(x)) && setInvariant(sets))
-
-    val m = mapAdd(sets, x)
-    m.forall(setInvariant(_)) && setInvariant(m)
-  }.holds
-
-  // ---------------------------------------------------------------------------
-  // powerSet
-
-  def powerSetIsSound[T](set: USet[T]): Boolean = {
-    require(setInvariant(set))
-    setInvariant(set.powerSet)
-  }.holds
-
-  def powerSetAllSound[T](set: USet[T]): Boolean = {
-    require(setInvariant(set))
-    set.powerSet.forall(setInvariant(_))
-  }.holds
-
-  def powerSetSubset[T](x: USet[T], y: USet[T]): Boolean = {
-    require(setInvariant(x) && setInvariant(y))
-    x.powerSet.contains(y) == y.subsetOf(x)
-  }.holds
-
-  // ---------------------------------------------------------------------------
-  // *
-
-  def prodIsSound[T,U](set: USet[T], u: U): Boolean = {
-    require(setInvariant(set))
-    setInvariant(set * u)
-  }.holds because {
-    set match {
-      case USNil() => trivial
-      case USCons(x, xs) => prodIsSound(xs, u) && addIsSound(xs * u, (x, u))
-    }
-  }
-
-  def prodIsSound[T,U](set: USet[T], xs: USet[U]): Boolean = {
-    require(setInvariant(set) && setInvariant(xs))
-    setInvariant(set * xs)
-  }.holds
-
-  def prodContains[T,U](ts: USet[T], us: USet[U], x: T, y: U): Boolean = {
-    require(setInvariant(ts) && setInvariant(us))
-    (ts.contains(x) && us.contains(y)) == (ts * us).contains(x -> y)
-  }.holds
-
-  // ---------------------------------------------------------------------------
-  // forall
-
-  @induct
-  def forallContains[T](set: USet[T], x: T, p: T => Boolean): Boolean = {
-    require(set.contains(x) && set.forall(p))
-    p(x)
-  }.holds
-
-
 
 }
 
