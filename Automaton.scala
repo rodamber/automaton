@@ -15,6 +15,7 @@ import NFASpecs._
 
 object DFA {
 
+  @library
   def apply[State, Sym](nfa: NFA[State, Sym]): DFA[Set[State], Sym] = {
 
     val move = { (s: Set[State], w: Sym) =>
@@ -31,17 +32,17 @@ object DFA {
                         word: List[Sym]): Boolean = {
     require(states.subsetOf(nfa.validStates) && nfa.epsClosed(states))
 
-    nfa.run(states, word) eq DFA(nfa).run(states, word)
+    nfa.run(states, word) same DFA(nfa).run(states, word)
   }.holds because {
     val dfa = DFA(nfa)
 
     word match {
       case Nil() => {
-        (nfa.run(states, word) eq dfa.run(states, word))  ==| trivial |
-        (nfa.epsClosure(states) eq dfa.run(states, word)) ==|
+        (nfa.run(states, word) same dfa.run(states, word))  ==| trivial |
+        (nfa.epsClosure(states) same dfa.run(states, word)) ==|
           (nfa.epsClosed(states) &&
-             eqTrans(states, nfa.epsClosure(states), dfa.run(states, word))) |
-        (states eq dfa.run(states, word))
+             sameTrans(states, nfa.epsClosure(states), dfa.run(states, word))) |
+        (states same dfa.run(states, word))
       }.qed
 
       case (w :: ws) => {
@@ -50,13 +51,13 @@ object DFA {
         assert(epsClosureIdem(nfa, step))
         assert(nfa.epsClosed(nfa.epsClosure(step)))
 
-        (nfa.run(states, word) eq dfa.run(states, word))             ==| trivial |
-        (nfa.run(states, word) eq dfa.run(nfa.epsClosure(step), ws)) ==|
+        (nfa.run(states, word) same dfa.run(states, word))             ==| trivial |
+        (nfa.run(states, word) same dfa.run(nfa.epsClosure(step), ws)) ==|
           (lemma(nfa, nfa.epsClosure(step), ws) &&
-             eqTrans(nfa.run(states, word),
+             sameTrans(nfa.run(states, word),
                      dfa.run(nfa.epsClosure(step), ws),
                      nfa.run(nfa.epsClosure(step), ws))) |
-        (nfa.run(states, word) eq nfa.run(nfa.epsClosure(step), ws))
+        (nfa.run(states, word) same nfa.run(nfa.epsClosure(step), ws))
       }.qed
     }
   }
@@ -68,7 +69,7 @@ object DFA {
     assert(epsClosureIdem(nfa, Set(nfa.initialState)))
 
     lemma(nfa, init, word) &&
-      eqExists(nfa.run(init, word), DFA(nfa).run(init, word), nfa.isFinal)
+      sameExists(nfa.run(init, word), DFA(nfa).run(init, word), nfa.isFinal)
   }
 
 }
@@ -135,7 +136,7 @@ case class NFA[State, Sym](
     assert(moveValid(this, states, None[Sym]()))
     assert(unionOfSubsetsIsSubset(states, m, validStates))
 
-    if (states eq newStates) {
+    if (states same newStates) {
       states
     } else {
       assert(subsetOfUnion(states, m))
@@ -147,7 +148,7 @@ case class NFA[State, Sym](
 
   def epsClosed(states: Set[State]): Boolean = {
     require(states subsetOf validStates)
-    states eq epsClosure(states)
+    states same epsClosure(states)
   }
 
   def accepts(word: List[Sym]): Boolean = {
@@ -169,9 +170,10 @@ object NFASpecs {
     }
   }
 
+  @library
   def epsClosureIdem[S,W](nfa: NFA[S,W], states: Set[S]): Boolean = {
     require(states subsetOf nfa.validStates)
-    nfa.epsClosure(states) eq nfa.epsClosure(nfa.epsClosure(states))
+    nfa.epsClosure(states) same nfa.epsClosure(nfa.epsClosure(states))
   }.holds
 
 }
