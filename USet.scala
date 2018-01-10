@@ -187,10 +187,12 @@ object USetSpecs {
   // ---------------------------------------------------------------------------
   // subsetOf
 
+  @library
   def subsetRefl[T](set: USet[T]): Boolean = {
     set subsetOf set
   }.holds
 
+  @library
   def subsetTrans[T](set1: USet[T], set2: USet[T], set3: USet[T]): Boolean = {
     require(set1.subsetOf(set2) && set2.subsetOf(set3))
     set1 subsetOf set3
@@ -336,6 +338,7 @@ object USetSpecs {
     set1.size <= set2.size
   }.holds because { diffSubsetSize(set2, set1) }
 
+  @library
   def strictSubsetIsSmaller[T](set1: USet[T], set2: USet[T]): Boolean = {
     require(setInvariant(set1) && setInvariant(set2) && set1.strictSubsetOf(set2))
     set1.size < set2.size
