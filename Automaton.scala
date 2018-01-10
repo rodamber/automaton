@@ -1,5 +1,3 @@
-// In the current formulation, the automaton might not be finite.
-
 package automaton
 
 import stainless._
