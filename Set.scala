@@ -21,6 +21,7 @@ object + {
   }
 }
 
+// FIXME: Stainless doesn't seem to support this
 // object Empty {
 //   def unapply[T](set: Set[T]): Boolean = set.uset match {
 //     case USNil() => true
@@ -39,70 +40,24 @@ case class Set[T](uset: USet[T]) {
 
   def same(that: Set[T]): Boolean = this.uset.same(that.uset)
 
-  def nsame(that: Set[T]): Boolean = this.uset.nsame(that.uset)
-
-  def isEmpty: Boolean = uset.isEmpty
-
-  def nonEmpty: Boolean = uset.nonEmpty
-
   def exists(p: T => Boolean): Boolean = uset.exists(p)
 
   def size: BigInt = { uset.size } ensuring { _ >= 0 }
 
-  def +(y: T): Set[T] = {
-    assert(setInvariant(uset + y) because addIsSound(uset, y))
-    Set(uset + y)
-  }
-
   def ++(that: Set[T]): Set[T] = Set(this.uset ++ that.uset)
-
-  def -(y: T): Set[T] = {
-    assert(setInvariant(uset - y) because subIsSound(uset, y))
-    Set(uset - y)
-  }
-
-  def --(that: Set[T]): Set[T] = Set(this.uset -- that.uset)
-
 }
 
 object SetSpecs {
-
-  // ---------------------------------------------------------------------------
-  // subsetOf
-
-  def subsetRefl[T](set: Set[T]): Boolean = {
-    set.subsetOf(set)
-  }.holds because USetSpecs.subsetRefl(set.uset)
-
-  def subsetTrans[T](set1: Set[T], set2: Set[T], set3: Set[T]): Boolean = {
-    require(set1.subsetOf(set2) && set2.subsetOf(set3))
-    set1 subsetOf set3
-  }.holds because USetSpecs.subsetTrans(set1.uset, set2.uset, set3.uset)
-
-  // ---------------------------------------------------------------------------
-  // same
-
-  def sameRefl[T](set: Set[T]): Boolean = {
-    set same set
-  }.holds because USetSpecs.sameRefl(set.uset)
 
   def sameTrans[T](set1: Set[T], set2: Set[T], set3: Set[T]): Boolean = {
     require(set1.same(set2) && set2.same(set3))
     set1 same set3
   }.holds because USetSpecs.sameTrans(set1.uset, set2.uset, set3.uset)
 
-  def sameSymm[T](set1: Set[T], set2: Set[T]): Boolean = {
-    require(set1 same set2)
-    set2 same set1
-  }.holds because USetSpecs.sameSymm(set1.uset, set2.uset)
-
   def sameExists[T](set1: Set[T], set2: Set[T], p: T => Boolean): Boolean = {
     require(set1 same set2)
     set1.exists(p) == set2.exists(p)
   }.holds because USetSpecs.sameExists(set1.uset, set2.uset, p)
-
-  // ---------------------------------------------------------------------------
-  // subsetOf and ++ (union)
 
   def unionOfSubsetsIsSubset[T](set1: Set[T], set2: Set[T], set3: Set[T]): Boolean = {
     (set1.subsetOf(set3) && set2.subsetOf(set3)) == (set1 ++ set2).subsetOf(set3)
@@ -111,9 +66,6 @@ object SetSpecs {
   def subsetOfUnion[T](set1: Set[T], set2: Set[T]): Boolean = {
     set1.subsetOf(set1 ++ set2) && set2.subsetOf(set1 ++ set2)
   }.holds because USetSpecs.subsetOfUnion(set1.uset, set2.uset)
-
-  // ---------------------------------------------------------------------------
-  // size
 
   def subsetIsSmallerOrEqual[T](set1: Set[T], set2: Set[T]): Boolean = {
     require(set1 subsetOf set2)

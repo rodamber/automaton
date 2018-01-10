@@ -3,7 +3,7 @@ package uset
 import stainless._
 import stainless.annotation._
 import stainless.collection._
-import stainless.lang.{Set => _, _}
+import stainless.lang._
 import stainless.proof._
 
 import USetSpecs._
@@ -25,15 +25,6 @@ sealed abstract class USet[T] {
     subsetOf(that) && !that.subsetOf(this)
 
   def same(that: USet[T]): Boolean = this.subsetOf(that) && that.subsetOf(this)
-
-  def nsame(that: USet[T]): Boolean = !same(that)
-
-  def isEmpty: Boolean = this match {
-    case USNil() => true
-    case _ => false
-  }
-
-  def nonEmpty: Boolean = !isEmpty
 
   def exists(p: T => Boolean): Boolean = this match {
     case USNil() => false
@@ -169,7 +160,6 @@ object USetSpecs {
     require(setInvariant(set))
     setInvariant(set - y)
   }.holds because {
-
     set match {
       case USNil() => trivial
       case USCons(x, xs) => if (x == y) {
@@ -222,19 +212,10 @@ object USetSpecs {
   // ---------------------------------------------------------------------------
   // same
 
-  def sameRefl[T](set: USet[T]): Boolean = {
-    set same set
-  }.holds because subsetRefl(set)
-
   def sameTrans[T](set1: USet[T], set2: USet[T], set3: USet[T]): Boolean = {
     require(set1.same(set2) && set2.same(set3))
     set1 same set3
   }.holds because { subsetTrans(set1, set2, set3) && subsetTrans(set3, set2, set1) }
-
-  def sameSymm[T](set1: USet[T], set2: USet[T]): Boolean = {
-    require(set1 same set2)
-    set2 same set1
-  }.holds
 
   def sameExists[T](set1: USet[T], set2: USet[T], p: T => Boolean): Boolean = {
     require(setInvariant(set1) && setInvariant(set2) && set1.same(set2))
@@ -342,7 +323,6 @@ object USetSpecs {
   def strictSubsetIsSmaller[T](set1: USet[T], set2: USet[T]): Boolean = {
     require(setInvariant(set1) && setInvariant(set2) && set1.strictSubsetOf(set2))
     set1.size < set2.size
-  }.holds // because { subsetIsSmallerOrEqual(set1, set2) && sizeEq(set1, set2) }
+  }.holds
 
 }
-
