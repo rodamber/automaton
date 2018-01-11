@@ -177,9 +177,24 @@ object USetSpecs {
   // ---------------------------------------------------------------------------
   // subsetOf
 
-  @library
   def subsetRefl[T](set: USet[T]): Boolean = {
     set subsetOf set
+  }.holds because subsetTail(set)
+
+  def subsetTail[T](set: USet[T]): Boolean = {
+    set match {
+      case USNil() => true
+      case USCons(x, xs) => xs.subsetOf(set) because {
+        subsetRefl(xs) && prop(xs, xs, x)
+      }
+    }
+  }.holds
+
+  @induct
+  def prop[T](s1: USet[T], s2: USet[T], x: T): Boolean = {
+    require(s1.subsetOf(s2))
+
+    s1.subsetOf(USCons(x, s2))
   }.holds
 
   @library
