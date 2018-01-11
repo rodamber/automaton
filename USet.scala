@@ -185,13 +185,13 @@ object USetSpecs {
     set match {
       case USNil() => true
       case USCons(x, xs) => xs.subsetOf(set) because {
-        subsetRefl(xs) && prop(xs, xs, x)
+        subsetRefl(xs) && subsetCons(xs, xs, x)
       }
     }
   }.holds
 
   @induct
-  def prop[T](s1: USet[T], s2: USet[T], x: T): Boolean = {
+  def subsetCons[T](s1: USet[T], s2: USet[T], x: T): Boolean = {
     require(s1.subsetOf(s2))
 
     s1.subsetOf(USCons(x, s2))
