@@ -197,10 +197,20 @@ object USetSpecs {
     s1.subsetOf(USCons(x, s2))
   }.holds
 
-  @library
   def subsetTrans[T](set1: USet[T], set2: USet[T], set3: USet[T]): Boolean = {
     require(set1.subsetOf(set2) && set2.subsetOf(set3))
     set1 subsetOf set3
+  }.holds because {
+    set1 match {
+      case USNil() => trivial
+      case USCons(x, xs) => subsetTrans(xs, set2, set3) && containsTrans(set2, set3, x)
+    }
+  }
+
+  @induct
+  def containsTrans[T](set1: USet[T], set2: USet[T], x: T): Boolean = {
+    require(set1.subsetOf(set2) && set1.contains(x))
+    set2.contains(x)
   }.holds
 
   def subsetExists[T](set1: USet[T], set2: USet[T], p: T => Boolean): Boolean = {
