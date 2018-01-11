@@ -283,18 +283,6 @@ object USetSpecs {
   // ---------------------------------------------------------------------------
   // contains
 
-  @induct
-  def tailContains[T](set: USet[T], y: T): Boolean = {
-    require(setInvariant(set) && set.contains(y))
-
-    set match {
-      case USNil() => true
-      case USCons(x, xs) =>
-        if (x == y) true
-        else xs.contains(y)
-    }
-  }.holds
-
   def diffContains[T](set1: USet[T], set2: USet[T], z: T): Boolean = {
     require(setInvariant(set1) && setInvariant(set2) && set1.contains(z) && !set2.contains(z))
     (set1 -- set2).contains(z)
@@ -315,11 +303,11 @@ object USetSpecs {
 
   @induct
   def subDecSize[T](set: USet[T], y: T): Boolean = {
-    require(setInvariant(set) && set.contains(y))
+    require(setInvariant(set))
     assert(subIsSound(set, y))
 
-    (set - y).size == set.size - 1
-  }.holds because tailContains(set, y)
+    set.contains(y) == ((set - y).size == set.size - 1)
+  }.holds
 
   def diffSubsetSize[T](set1: USet[T], set2: USet[T]): Boolean = {
     require(setInvariant(set1) && setInvariant(set2) && set2.subsetOf(set1))
