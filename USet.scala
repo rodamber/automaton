@@ -332,7 +332,6 @@ object USetSpecs {
     set1.size <= set2.size
   }.holds because { diffSubsetSize(set2, set1) }
 
-  @library
   def strictSubsetIsSmaller[T](set1: USet[T], set2: USet[T]): Boolean = {
     require(setInvariant(set1) && setInvariant(set2) && set1.strictSubsetOf(set2))
     set1.size < set2.size
