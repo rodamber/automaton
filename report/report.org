@@ -1,0 +1,54 @@
+* Report
+** Content
+- Problem
+- Motivation
+- Background theory
+- Solution
+  - Formalism
+  - Approach
+  - Results and conclusion
+- Previous approaches
+- Conclusion
+
+** Introduction
+
+*** Problem
+Development of a provably correct DFA to NFA transformation by powerset construction.
+
+Proof of equivalence between DFAs and NFAs.
+
+*TODO*: what does it mean to be 'provably correct'? What is the specification?
+
+*** Motivation
+The DFA to NFA transformation came as part of a project called _lexi_. _lexi_ is
+a simple implementation of a lexer generator, written in Scala. It provides a
+small DSL that allows you to define tokens using regular expressions and
+compiles them to a DFA. The DFA outputs a sequence of tokens when given an
+input string.
+
+The DFA is obtained in two steps: we start by compiling the regular expression
+to an NFA and then transform it to a DFA. In this project, we focus on the
+latter step.
+
+*** Other
+Much of the difficulty came from the fact that the implementation for sets in
+_Stainless_ is limited. For example, while it is possible to check element
+membership, there is no way to actually traverse the elements of the underlying
+structure. Also, it is not possible to check the cardinality of the set, as that
+functionality is broken (_Stainless_ does not compile any program with calls to
+the _size_ method).
+
+With this it became obvious that a solution for this problem would need a new
+set implementation. However, with that, properties about sets that we usually
+take for granted, such as, e.g., reflexivity and transitivity of equality, or
+properties about the relative size of a set and one of its subsets, all need to
+be proven. Properties that otherwise _Stainless_ would be able to easily verify,
+had we used the set implementation in the _Stainless_ library.
+
+*TODO*: Difficulties with understanding _Stainless_ and its shortcomings.
+ Documentation... 
+
+*TODO*: Main difficulty was also figuring out a good representation for automata
+ and sets that made the proofs easier
+
+*TODO*: _Stainless_ version used: master branch, commit ddff4c9
