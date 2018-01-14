@@ -13,7 +13,7 @@ import NFASpecs._
 
 object DFA {
 
-  // @library
+  @library
   def apply[State, Sym](nfa: NFA[State, Sym]): DFA[Set[State], Sym] = {
 
     val move = { (s: Set[State], w: Sym) =>
@@ -168,7 +168,7 @@ object NFASpecs {
     }
   }
 
-  // @library
+  @library
   def epsClosureIdem[S,W](nfa: NFA[S,W], states: Set[S]): Boolean = {
     require(states subsetOf nfa.validStates)
     nfa.epsClosure(states) same nfa.epsClosure(nfa.epsClosure(states))
