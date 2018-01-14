@@ -56,6 +56,11 @@ had we used the set implementation in the _Stainless_ library.
 
 *TODO*: _Stainless_ version used: master branch, commit ddff4c9
 
+$ stainless --timeout=20 --verification --termination --watch --vc-cache USet.scala Set.scala Automaton.scala AutomatonCache.scala
+
+*** Results
+*TODO*: Speak a little bit about what were the results.
+
 ** Background Theory
 We start by stating our definitions of DFA and NFA, as well as the conversion
 algorithm.
@@ -74,7 +79,7 @@ algorithm.
                 sequence of states $r_0, \ldots, r_n$, $r_i \in Q$, $0 \leq i
                 \leq n$, such that:
   1. $r_0 = q_0$;
-  2. δ(r_i, w_{i+1}) = r_{i+1}, $0 \leq i \leq n-1$;
+  2. r_{i+1} = δ(r_i, w_{i+1}), $0 \leq i \leq n-1$;
   3. and $r_n \in F$.
 
 - Definition :: The language recognized by the automaton $A = (Q,Σ,δ,q0,F)$ is
@@ -87,12 +92,66 @@ algorithm.
                 (Q,Σ,δ,q0,F), where:
   1. Q is a finite set (the states);
   2. Σ is a finite set (the alphabet);
-  3. δ is a function defined over Q x (Σ \cup \{ε\}) with values in 2^Q (the
-     transition function);
+  3. δ is a function defined over Q x (\Sigma \cup \{\epsilon\}) with values in
+     2^Q (the transition function);
   4. q0 is an element of Q (the initial state);
   5. and F is a subset of Q (the final states).
 
-- 
+- Definition :: We say that the NFA $A = (Q,Σ,δ,q0,F)$ accepts the word $w =
+                w_1 \ldots w_n$, $w_i \in (\Sigma \cup \{\epsilon \})$, $1 \leq
+                i \leq n$, if there is a sequence of states $r_0, \ldots, r_n$,
+                $r_i \in Q$, $0 \leq i \leq n$, such that:
+  1. $r_0 = q_0$;
+  2. $r_{i+1} \in \delta(r_i, w_{i+1})$, $0 \leq i \leq n-1$;
+  3. and $r_n \in F$.
+  
+It is straightforward to see that every NFA has an equivalent DFA. If we view
+nondeterminism through the perspective of parallel programming, we can imagine a
+nondeterministic computation to be a computation where at each step the machine
+creates threads corresponding to each of the possible next states. If we were
+to simulate a NFA, we would just to keep track of the current states of active
+threads, update them when a new symbol is read, and accept one of the threads if
+any of the threads is in a final state when we reach the end of the word. The
+idea is to create a DFA that runs this simulation algorithm.
 
+*TODO*: maybe talk about and define epsilon closure
 
+** Solution
+*** Representation
+**** Automata
+***** NFA
+We do not explicitly represent the alphabet, as it is not relevant for the
+proof. In pratice, it is implicitly defined by the domain of the transition
+function. By the same reason, we do not restrict the domain of the transition
+function, but only its range. \epsilon-transitions are represented by explicitly
+passing the value None() to the transition function. The set of final states is
+substituted by a predicate that decides final states.
 
+\epsilon-closure was the trickiest part of the project, and what ended up
+motivating the need to implement our own representation of sets. Without the
+need to prove termination, the proof would go just as well if we used lists
+instead.
+
+It is also regarding \epsilon-closure that one of our two assumptions
+is about. We claim (and is easibly verifiable by a human by inspection) that
+\epsilon-closure is idempotent. However, _Stainless_ can not verify this.
+
+***** DFA
+The DFA is much simpler than the NFA. We avoid representing the set of valid
+states and the alphabet of work explicitly, as they are not relevant for the
+proof. In theory, this structure would allow to represent non-finite
+deterministic state automata. The transition function is the same as with the
+NFA, except that we do not allow for \epsilon-transitions.
+
+**** Sets
+**** Memoization
+*** Proof
+# *** Approach
+# To prove equivalence we need to prove that the NFA and the generated DFA
+# recognize the same words. We do this by proving first 
+
+*** Results and Discussion
+**** Approaches to Solve the Shortcomings
+
+** Possible Other Approaches
+** Conclusion
