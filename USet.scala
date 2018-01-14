@@ -31,6 +31,13 @@ sealed abstract class USet[T] {
     case USCons(x, xs) => p(x) || xs.exists(p)
   }
 
+  def find(p: T => Boolean): T = {
+    require(exists(p))
+    this match {
+      case USCons(x, xs) => if (p(x)) x else xs.find(p)
+    }
+  } ensuring { (res: T) => p(res) && contains(res) }
+
   def size: BigInt = {
     require(setInvariant(this))
 
@@ -332,9 +339,23 @@ object USetSpecs {
     set1.size <= set2.size
   }.holds because { diffSubsetSize(set2, set1) }
 
-  def strictSubsetIsSmaller[T](set1: USet[T], set2: USet[T]): Boolean = {
-    require(setInvariant(set1) && setInvariant(set2) && set1.strictSubsetOf(set2))
-    set1.size < set2.size
+  def strictSubsetIsSmaller[T](s1: USet[T], s2: USet[T]): Boolean = {
+    require(setInvariant(s1) && setInvariant(s2) && s2.strictSubsetOf(s1))
+    s1.size > s2.size
+  }.holds because {
+    assert(notSubsetContains(s1, s2))
+    val x = s1.find(!s2.contains(_))
+
+    (s1.size > s2.size)     ==| trivial |
+    (s1.size - s2.size > 0) ==| diffSubsetSize(s1, s2) |
+    ((s1 -- s2).size > 0)   ==| diffContains(s1, s2, x) |
+    true
+  }.qed
+
+  @induct
+  def notSubsetContains[T](s1: USet[T], s2: USet[T]): Boolean = {
+    require(setInvariant(s1) && setInvariant(s2) && !s1.subsetOf(s2))
+    s1.exists(x => !s2.contains(x))
   }.holds
 
 }

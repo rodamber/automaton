@@ -75,7 +75,7 @@ object SetSpecs {
   def strictSubsetIsSmaller[T](set1: Set[T], set2: Set[T]): Boolean = {
     require(set1.subsetOf(set2) && set1.strictSubsetOf(set2))
     set1.size < set2.size
-  }.holds because USetSpecs.strictSubsetIsSmaller(set1.uset, set2.uset)
+  }.holds because USetSpecs.strictSubsetIsSmaller(set2.uset, set1.uset)
 
 }
 
