@@ -244,6 +244,10 @@ object USetSpecs {
   // ---------------------------------------------------------------------------
   // same
 
+  def sameRefl[T](set: USet[T]): Boolean = {
+    set same set
+  }.holds because subsetRefl(set)
+
   def sameTrans[T](set1: USet[T], set2: USet[T], set3: USet[T]): Boolean = {
     require(set1.same(set2) && set2.same(set3))
     set1 same set3

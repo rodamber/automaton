@@ -168,10 +168,17 @@ object NFASpecs {
     }
   }
 
-  @library
   def epsClosureIdem[S,W](nfa: NFA[S,W], states: Set[S]): Boolean = {
     require(states subsetOf nfa.validStates)
     nfa.epsClosure(states) same nfa.epsClosure(nfa.epsClosure(states))
+  }.holds because {
+    epsClosureIdem2(nfa, states) && sameRefl(nfa.epsClosure(states))
+  }
+
+  @library
+  def epsClosureIdem2[S,W](nfa: NFA[S,W], states: Set[S]): Boolean = {
+    require(states subsetOf nfa.validStates)
+    nfa.epsClosure(states) == nfa.epsClosure(nfa.epsClosure(states))
   }.holds
 
 }
