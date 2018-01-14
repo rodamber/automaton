@@ -1,10 +1,8 @@
 package automaton
 
 import stainless._
-import stainless.annotation._
 import stainless.collection._
-import stainless.lang.{Set => _, _}
-import stainless.math._
+import stainless.lang._
 import stainless.proof._
 
 case class MemDFA[State, Sym](
