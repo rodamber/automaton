@@ -154,10 +154,11 @@ It is straightforward to see that every NFA has an equivalent DFA. If we view
 nondeterminism through the perspective of parallel programming, we can imagine a
 nondeterministic computation to be a computation where at each step the machine
 creates threads corresponding to each of the possible next states. If we were
-to simulate a NFA, we would just to keep track of the current states of active
-threads, update them when a new symbol is read, and accept one of the threads if
-any of the threads is in a final state when we reach the end of the word. The
-idea is to create a DFA that runs this simulation algorithm.
+to simulate a NFA (ignoring $\epsilon$-transitions), we would just need to keep
+track of the current states of active threads, update them when a new symbol is
+read, and accept one of the threads if any of the threads is in a final state
+when we reach the end of the word. The idea is to create a DFA that runs this
+simulation algorithm.
 
 % *TODO*: maybe talk about and define epsilon closure
 
@@ -196,28 +197,21 @@ NFA, except that we do not allow for $\epsilon$-transitions.
 
 \subsubsection{Sets}
 
-The current implementation for sets allows for traversing and stores each
-element only once, by guaranteeing that the predicate \textit{contains} is
-mantained as an invariant.
+The current implementation for sets allows for traversing the elements. Each
+element is guaranteed to be stored only once.
 
-Other implementations were tried first. One was a wrapper around a \textit{Stainless}
-list that mantained the invariant that a given list $l$ was always equal
-$l.unique$, essentialy guaranteeing that each element is only stored once. This
-approach, while maybe obvious, lead to proof obligations that were difficult to
-prove. Another was using the \textit{Stainless} implementation for maps, but maps in
-\textit{Stainless} suffer from the same shortcoming as sets, where one is not able to
-traverse its keys.
+Other implementations were tried first. For example, one was a wrapper around a
+\textit{Stainless} list that mantained the invariant that a given list $l$ was
+always equal to $l.unique$, essentialy guaranteeing that each element is only
+stored once. This approach, while maybe obvious, lead to proof obligations that
+were difficult to prove. Another example was using the \textit{Stainless}
+implementation for maps, but maps in \textit{Stainless} suffer from the same
+shortcoming as sets, where one is not able to traverse its keys.
 
 The implementation is divided in two files: USet.scala and Set.scala. The former
-one is where the actual implementation and proofs are done. The latter is just a
+is where the actual implementation and proofs are done. The latter is just a
 convenience wrapper that allows us to use sets without the need to explicitly
 require the set invariants as preconditions everywhere we use them.
-
-% *TODO*: subsequences
-
-Yet another approach was to eliminate sets altogether and try to work everything
-out with lists, with subsequences taking the place of subsets. However, due to
-problems regarding \textit{Stainless} not supporting
 
 \subsubsection{Memoization}
 
